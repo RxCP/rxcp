@@ -57,5 +57,9 @@
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21"
+  },
+  "engines": {
+    "node": "16.x.x",
+    "npm": "8.x.x"
   }
 }
