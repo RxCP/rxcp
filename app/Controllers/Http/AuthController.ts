@@ -2,6 +2,7 @@ import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import User from 'App/Models/User'
+import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/validations/user'
 
 export default class AuthController {
   public async login({ auth, request, response }: HttpContextContract) {
@@ -29,14 +30,10 @@ export default class AuthController {
 
     // Validation
     const postSchema = schema.create({
-      first_name: schema.string({ trim: true }, [rules.maxLength(20)]),
-      last_name: schema.string({ trim: true }, [rules.maxLength(20)]),
-      email: schema.string({ trim: true }, [
-        rules.maxLength(20),
-        rules.email(),
-        rules.unique({ table: 'users', column: 'email' }),
-      ]),
-      password: schema.string({ trim: true }, [rules.minLength(6), rules.maxLength(20)]),
+      first_name: firstNameRules,
+      last_name: lastNameRules,
+      email: emailRules,
+      password: passwordRules,
     })
 
     // Validate
