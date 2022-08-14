@@ -28,6 +28,12 @@ Route.group(() => {
   // Auth
   Route.post('login', 'AuthController.login')
   Route.post('register', 'AuthController.register')
+  Route.post('logout', async ({ auth }) => {
+    await auth.use('api').revoke()
+    return {
+      revoked: true,
+    }
+  })
 
   // Authenticated routes
   Route.group(() => {
