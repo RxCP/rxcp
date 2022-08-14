@@ -27,6 +27,7 @@ Route.get('/', async () => {
 Route.group(() => {
   // Auth
   Route.post('login', 'AuthController.login')
+  Route.post('register', 'AuthController.register')
 
   // Authenticated routes
   Route.group(() => {
