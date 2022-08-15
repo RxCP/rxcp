@@ -41,5 +41,6 @@ Route.group(() => {
     Route.get('users', 'UsersController.index')
     // Accounts
     Route.get('accounts', 'AccountsController.index')
+    Route.post('accounts', 'AccountsController.create')
   }).middleware('auth')
 }).prefix('/api')
