@@ -43,5 +43,6 @@ Route.group(() => {
     Route.get('accounts', 'AccountsController.index')
     Route.post('accounts', 'AccountsController.create')
     Route.put('accounts/:id', 'AccountsController.update')
+    Route.delete('accounts/:id', 'AccountsController.destroy')
   }).middleware('auth')
 }).prefix('/api')

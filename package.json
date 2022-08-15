@@ -57,6 +57,7 @@
     "@adonisjs/core": "^5.8.6",
     "@adonisjs/lucid": "^18.1.0",
     "@adonisjs/repl": "^3.1.11",
+    "adonis-lucid-soft-deletes": "^1.4.3",
     "luxon": "^3.0.1",
     "mysql": "^2.18.1",
     "phc-argon2": "^1.1.3",

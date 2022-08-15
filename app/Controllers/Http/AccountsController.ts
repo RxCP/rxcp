@@ -57,7 +57,7 @@ export default class AccountsController {
    * @param param
    * @returns
    */
-  public async update({ auth, request, response }: HttpContextContract) {
+  public async update({ auth, request, response, params }: HttpContextContract) {
     const fields = this.getFormFields(request)
     const email = auth.use('api').user?.email
 
@@ -65,7 +65,7 @@ export default class AccountsController {
     await this.validateRequest(request, true)
 
     try {
-      const account = await Account.findOrFail(request.params()?.id)
+      const account = await Account.findOrFail(params?.id)
       await account
         .merge({
           userid: fields.userId,
@@ -79,6 +79,27 @@ export default class AccountsController {
       return response.created({
         data: account,
       })
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
+  }
+
+  /**
+   * Soft delete an account
+   * @param param
+   * @returns
+   */
+  public async destroy({ params, response }: HttpContextContract) {
+    try {
+      const account = await Account.findOrFail(params?.id)
+      await account.delete()
+      return response.noContent()
     } catch (e) {
       return response.badRequest({
         errors: [

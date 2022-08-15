@@ -59,6 +59,7 @@ const databaseConfig: DatabaseConfig = {
       },
       migrations: {
         naturalSort: true,
+        paths: ['./database/ragnarok/migrations'],
       },
       healthCheck: false,
       debug: false,
