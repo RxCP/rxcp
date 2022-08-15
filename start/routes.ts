@@ -39,5 +39,7 @@ Route.group(() => {
   Route.group(() => {
     // Users
     Route.get('users', 'UsersController.index')
+    // Accounts
+    Route.get('accounts', 'AccountsController.index')
   }).middleware('auth')
 }).prefix('/api')
