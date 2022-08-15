@@ -1,8 +1,14 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Account from 'App/Models/Account'
-import { birthdateRules, genderRules, passwordRules, userIdRules } from 'App/validations/account'
-import { emailRules } from 'App/validations/user'
+import { RequestContract } from '@ioc:Adonis/Core/Request'
 import { schema } from '@ioc:Adonis/Core/Validator'
+import Account from 'App/Models/Account'
+import {
+  birthdateRules,
+  genderRules,
+  userIdRules,
+  userIdUpdateRules,
+} from 'App/validations/account'
+import { passwordRules } from 'App/validations/user'
 
 export default class AccountsController {
   public async index({ request }: HttpContextContract) {
@@ -10,41 +16,26 @@ export default class AccountsController {
     const limit = 10
     return Account.query().paginate(page, limit)
   }
-  public async create({ auth, request, response }: HttpContextContract) {
-    const userId = request.input('userId')
-    const password = request.input('password')
-    const gender = request.input('gender')
-    const birthdate = request.input('birthdate')
 
+  /**
+   * Create account
+   * @param param
+   * @returns
+   */
+  public async create({ auth, request, response }: HttpContextContract) {
+    const fields = this.getFormFields(request)
     const email = auth.use('api').user?.email
 
-    if (!email) {
-      return response.badRequest({
-        errors: [
-          {
-            message: 'Invalid email',
-          },
-        ],
-      })
-    }
-
     // Validation
-    const accountSchema = schema.create({
-      userId: userIdRules,
-      password: passwordRules,
-      gender: genderRules,
-      birthdate: birthdateRules,
-    })
-
-    await request.validate({ schema: accountSchema })
+    await this.validateRequest(request, false)
 
     try {
       const account = await Account.create({
-        userid: userId,
-        sex: gender,
-        birthdate,
+        userid: fields.userId,
+        sex: fields.gender,
+        birthdate: fields.birthdate,
         email,
-        user_pass: password,
+        user_pass: fields.password,
       })
 
       return response.created({
@@ -58,6 +49,79 @@ export default class AccountsController {
           },
         ],
       })
+    }
+  }
+
+  /**
+   * Updaate account
+   * @param param
+   * @returns
+   */
+  public async update({ auth, request, response }: HttpContextContract) {
+    const fields = this.getFormFields(request)
+    const email = auth.use('api').user?.email
+
+    // Validation
+    await this.validateRequest(request, true)
+
+    try {
+      const account = await Account.findOrFail(request.params()?.id)
+      await account
+        .merge({
+          userid: fields.userId,
+          sex: fields.gender,
+          birthdate: fields.birthdate,
+          email,
+          user_pass: fields.password,
+        })
+        .save()
+
+      return response.created({
+        data: account,
+      })
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
+  }
+
+  /**
+   * Validaate request's inputs
+   * @param request
+   * @param isUpdate
+   */
+  private async validateRequest(request: RequestContract, isUpdate?: boolean) {
+    const accountSchema = schema.create({
+      user_id: isUpdate ? userIdUpdateRules(request.params()?.id) : userIdRules,
+      password: passwordRules,
+      gender: genderRules,
+      birthdate: birthdateRules,
+    })
+
+    await request.validate({ schema: accountSchema })
+  }
+
+  /**
+   *
+   * @param request
+   * @returns {object}
+   */
+  private getFormFields(request: RequestContract) {
+    const userId = request.input('user_id')
+    const password = request.input('password')
+    const gender = request.input('gender')
+    const birthdate = request.input('birthdate')
+
+    return {
+      userId,
+      password,
+      gender,
+      birthdate,
     }
   }
 }

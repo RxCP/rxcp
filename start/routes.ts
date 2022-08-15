@@ -42,5 +42,6 @@ Route.group(() => {
     // Accounts
     Route.get('accounts', 'AccountsController.index')
     Route.post('accounts', 'AccountsController.create')
+    Route.put('accounts/:id', 'AccountsController.update')
   }).middleware('auth')
 }).prefix('/api')

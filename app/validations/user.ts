@@ -10,4 +10,5 @@ export const emailRules = schema.string({ trim: true }, [
 export const passwordRules = schema.string({ trim: true }, [
   rules.minLength(6),
   rules.maxLength(20),
+  rules.confirmed(),
 ])
