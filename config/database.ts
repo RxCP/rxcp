@@ -48,6 +48,22 @@ const databaseConfig: DatabaseConfig = {
       healthCheck: false,
       debug: false,
     },
+    ragnarok: {
+      client: 'mysql',
+      connection: {
+        host: Env.get('RAGNAROK_HOST'),
+        port: Env.get('RAGNAROK_PORT'),
+        user: Env.get('RAGNAROK_USER'),
+        password: Env.get('RAGNAROK_PASSWORD', ''),
+        database: Env.get('RAGNAROK_DB_NAME'),
+      },
+      migrations: {
+        naturalSort: true,
+        paths: ['./database/ragnarok/migrations'],
+      },
+      healthCheck: false,
+      debug: false,
+    },
   },
 }
 

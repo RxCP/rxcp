@@ -17,7 +17,8 @@
       "@adonisjs/repl",
       "@japa/preset-adonis/build/adonis-typings",
       "@adonisjs/auth",
-      "@adonisjs/lucid"
+      "@adonisjs/lucid",
+      "adonis-lucid-soft-deletes"
     ]
   }
 }
