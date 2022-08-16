@@ -1,4 +1,5 @@
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import Account from './Account'
 
 export default class Character extends BaseModel {
   public static connection = 'ragnarok'
@@ -195,4 +196,9 @@ export default class Character extends BaseModel {
 
   @column()
   public show_equip: number
+
+  @belongsTo(() => Account, {
+    foreignKey: 'account_id',
+  })
+  public account: BelongsTo<typeof Account>
 }

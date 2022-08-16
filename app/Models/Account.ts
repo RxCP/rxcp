@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import Character from './Character'
 
 // The login table
 export default class Account extends BaseModel {
@@ -60,6 +61,8 @@ export default class Account extends BaseModel {
   @column()
   public old_group: number
 
-  // @column.dateTime()
-  // public deleted_at?: DateTime | null
+  @hasMany(() => Character, {
+    foreignKey: 'account_id', // defaults to userId
+  })
+  public characters: HasMany<typeof Character>
 }

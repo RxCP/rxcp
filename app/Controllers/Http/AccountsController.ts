@@ -17,6 +17,23 @@ export default class AccountsController {
     return Account.query().paginate(page, limit)
   }
 
+  public async find({ params }: HttpContextContract) {
+    return {
+      data: await Account.find(params?.id),
+    }
+  }
+
+  public async getCharacters({ params }: HttpContextContract) {
+    const account = await Account.find(params?.id)
+    const characters = await account?.related('characters').query()
+    return {
+      data: characters,
+      meta: {
+        account_id: account?.account_id,
+      },
+    }
+  }
+
   /**
    * Create account
    * @param param
