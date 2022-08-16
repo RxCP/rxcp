@@ -39,6 +39,10 @@ Route.group(() => {
   Route.group(() => {
     // Users
     Route.get('users', 'UsersController.index')
+    // Roles
+    Route.get('roles', 'RolesController.index')
+    // Permissions
+    Route.get('permissions', 'PermissionsController.index')
     // Accounts
     Route.get('accounts', 'AccountsController.index')
     Route.get('accounts/:id', 'AccountsController.find')
