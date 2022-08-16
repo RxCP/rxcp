@@ -1,10 +1,8 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
-import { compose } from '@ioc:Adonis/Core/Helpers'
-import { SoftDeletes } from '@ioc:Adonis/Addons/LucidSoftDeletes'
 
 // The login table
-export default class Account extends compose(BaseModel, SoftDeletes) {
+export default class Account extends BaseModel {
   public static connection = 'ragnarok'
   public static table = 'login'
 
@@ -62,6 +60,6 @@ export default class Account extends compose(BaseModel, SoftDeletes) {
   @column()
   public old_group: number
 
-  @column.dateTime()
-  public deleted_at?: DateTime | null
+  // @column.dateTime()
+  // public deleted_at?: DateTime | null
 }
