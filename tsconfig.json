@@ -18,7 +18,8 @@
       "@japa/preset-adonis/build/adonis-typings",
       "@adonisjs/auth",
       "@adonisjs/lucid",
-      "adonis-lucid-soft-deletes"
+      "adonis-lucid-soft-deletes",
+      "@adonisjs/bouncer"
     ]
   }
 }

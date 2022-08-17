@@ -1,15 +1,12 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'permissions'
+  protected tableName = 'permission_role'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id')
-
-      table.string('action').notNullable().unique()
-      table.integer('created_by_id').nullable()
-      table.integer('updated_by_id').nullable()
+      table.integer('permission_id').unsigned().references('permissions.id')
+      table.integer('role_id').unsigned().references('roles.id')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

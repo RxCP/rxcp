@@ -20,10 +20,6 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
-
 Route.group(() => {
   // Auth
   Route.post('login', 'AuthController.login')
@@ -34,13 +30,16 @@ Route.group(() => {
       revoked: true,
     }
   })
+}).prefix('/api')
 
+Route.group(() => {
   // Authenticated routes
   Route.group(() => {
     // Users
     Route.get('users', 'UsersController.index')
     // Roles
     Route.get('roles', 'RolesController.index')
+    Route.get('roles/:id/permissions', 'RolesController.getPermissions')
     // Permissions
     Route.get('permissions', 'PermissionsController.index')
     // Accounts
