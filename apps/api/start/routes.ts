@@ -20,6 +20,10 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+Route.get('/', () => {
+  return {}
+})
+
 Route.group(() => {
   // Auth
   Route.post('login', 'AuthController.login')
