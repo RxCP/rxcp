@@ -1,5 +1,6 @@
 {
   "private": true,
+  "version": "1.0.0-alpha.0",
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -13,7 +14,6 @@
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
-    "prettier": "^2.5.1",
     "turbo": "latest"
   }
 }

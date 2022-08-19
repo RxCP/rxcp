@@ -20,8 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', () => {
-  return {}
+Route.get('/', ({ view }) => {
+  return view.render('home')
 })
 
 Route.group(() => {

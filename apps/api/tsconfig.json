@@ -19,7 +19,8 @@
       "@adonisjs/auth",
       "@adonisjs/lucid",
       "adonis-lucid-soft-deletes",
-      "@adonisjs/bouncer"
+      "@adonisjs/bouncer",
+      "@adonisjs/view"
     ]
   }
 }
