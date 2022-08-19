@@ -24,8 +24,9 @@ Route.get('/', ({ view }) => {
   return view.render('home')
 })
 
+// Global
 Route.group(() => {
-  // Auth
+  // Guest
   Route.post('login', 'AuthController.login')
   Route.post('register', 'AuthController.register')
   Route.post('logout', async ({ auth }) => {
@@ -34,13 +35,25 @@ Route.group(() => {
       revoked: true,
     }
   })
+
+  // Authenticated
+  Route.group(() => {
+    // Me
+    Route.get('me', ({ auth }) => {
+      return {
+        data: auth.use('api').user
+      }
+    });
+  }).middleware('auth')
 }).prefix('/api')
 
+// Admin
 Route.group(() => {
   // Authenticated routes
   Route.group(() => {
     // Users
     Route.get('users', 'UsersController.index')
+    Route.get('users/:id', 'UsersController.show')
     // Roles
     Route.get('roles', 'RolesController.index')
     Route.get('roles/:id/permissions', 'RolesController.getPermissions')

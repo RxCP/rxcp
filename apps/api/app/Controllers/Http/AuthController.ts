@@ -10,7 +10,9 @@ export default class AuthController {
     const password = request.input('password')
 
     try {
-      return await auth.use('api').attempt(email, password)
+      return await auth.use('api').attempt(email, password, {
+        expiresIn: '30mins'
+      })
     } catch {
       return response.unauthorized({
         errors: [
