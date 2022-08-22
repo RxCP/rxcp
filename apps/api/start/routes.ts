@@ -46,6 +46,7 @@ Route.group(() => {
     })
     Route.patch('me', 'UserController.patch')
     Route.put('me/update-email', 'UserController.updateEmail')
+    Route.put('me/change-password', 'UserController.changePass')
   }).middleware('auth')
 }).prefix('/api')
 
