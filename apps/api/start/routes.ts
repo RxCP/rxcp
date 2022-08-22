@@ -45,6 +45,7 @@ Route.group(() => {
       }
     })
     Route.patch('me', 'UserController.patch')
+    Route.put('me/update-email', 'UserController.updateEmail')
   }).middleware('auth')
 }).prefix('/api')
 

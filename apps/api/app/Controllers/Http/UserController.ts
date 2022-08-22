@@ -29,4 +29,32 @@ export default class UserController {
       })
     }
   }
+
+  public async updateEmail({ auth, request, response }: HttpContextContract) {
+    const newEmail = request.input('new_email')
+    const password = request.input('password')
+    const authEmail = auth.use('api').user?.email || ''
+
+    try {
+      // check user credentials before updating the email
+      const user = await auth.use('api').verifyCredentials(authEmail, password)
+      const res = await user
+        .merge({
+          email: newEmail,
+        })
+        .save()
+
+      return response.created({
+        data: res,
+      })
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
+  }
 }
