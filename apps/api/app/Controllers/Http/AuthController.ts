@@ -35,7 +35,7 @@ export default class AuthController {
       first_name: firstNameRules,
       last_name: lastNameRules,
       email: emailRules,
-      password: passwordRules,
+      password: passwordRules(),
     })
 
     // Validate

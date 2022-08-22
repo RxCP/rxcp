@@ -136,7 +136,7 @@ export default class AccountsController {
   private async validateRequest(request: RequestContract, isUpdate?: boolean) {
     const accountSchema = schema.create({
       user_id: isUpdate ? userIdUpdateRules(request.params()?.id) : userIdRules,
-      password: passwordRules,
+      password: passwordRules(),
       gender: genderRules,
       birthdate: birthdateRules,
     })

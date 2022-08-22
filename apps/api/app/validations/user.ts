@@ -7,8 +7,10 @@ export const emailRules = schema.string({ trim: true }, [
   rules.email(),
   rules.unique({ table: 'users', column: 'email' }),
 ])
-export const passwordRules = schema.string({ trim: true }, [
-  rules.minLength(6),
-  rules.maxLength(20),
-  rules.confirmed(),
-])
+export const passwordRules = (passConfirm = 'password_confirmation') => {
+  return schema.string({ trim: true }, [
+    rules.minLength(6),
+    rules.maxLength(20),
+    rules.confirmed(passConfirm),
+  ])
+}
