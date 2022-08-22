@@ -5,6 +5,7 @@
   "compilerOptions": {
     "outDir": "build",
     "rootDir": "./",
+    "baseUrl": "./",
     "sourceMap": true,
     "paths": {
       "App/*": ["./app/*"],
