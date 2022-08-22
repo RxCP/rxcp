@@ -41,9 +41,9 @@ Route.group(() => {
     // Me
     Route.get('me', ({ auth }) => {
       return {
-        data: auth.use('api').user
+        data: auth.use('api').user,
       }
-    });
+    })
   }).middleware('auth')
 }).prefix('/api')
 
