@@ -44,6 +44,7 @@ Route.group(() => {
         data: auth.use('api').user,
       }
     })
+    Route.patch('me', 'UserController.patch')
   }).middleware('auth')
 }).prefix('/api')
 
