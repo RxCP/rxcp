@@ -11,7 +11,7 @@ export default class AuthController {
 
     try {
       return await auth.use('api').attempt(email, password, {
-        expiresIn: '30mins'
+        expiresIn: '30mins',
       })
     } catch {
       return response.unauthorized({
