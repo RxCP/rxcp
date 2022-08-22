@@ -73,6 +73,9 @@ Route.group(() => {
     Route.get('characters', 'CharactersController.index')
     Route.get('characters/:id', 'CharactersController.find')
     Route.get('characters/:id/account', 'CharactersController.getAccount')
+    // Guilds
+    Route.get('guilds', 'GuildsController.index')
+    Route.get('guilds/:id', 'GuildsController.find')
   }).prefix('/api')
 })
   .prefix('/admin')
