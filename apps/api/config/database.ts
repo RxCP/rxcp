@@ -48,7 +48,7 @@ const databaseConfig: DatabaseConfig = {
       seeders: {
         paths: ['./database/seeders/MainSeeder'],
       },
-      healthCheck: false,
+      healthCheck: true,
       debug: false,
     },
     ragnarok: {
@@ -64,7 +64,7 @@ const databaseConfig: DatabaseConfig = {
         naturalSort: true,
         paths: ['./database/ragnarok/migrations'],
       },
-      healthCheck: false,
+      healthCheck: true,
       debug: false,
     },
   },
