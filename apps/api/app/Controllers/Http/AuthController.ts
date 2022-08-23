@@ -5,6 +5,9 @@ import User from 'App/Models/User'
 import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/validations/user'
 
 export default class AuthController {
+  /**
+   * Login user
+   */
   public async login({ auth, request, response }: HttpContextContract) {
     const email = request.input('email')
     const password = request.input('password')
@@ -24,6 +27,9 @@ export default class AuthController {
     }
   }
 
+  /**
+   * Register new user
+   */
   public async register({ auth, request, response }: HttpContextContract) {
     const firstName = request.input('first_name')
     const lastName = request.input('last_name')

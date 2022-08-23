@@ -8,12 +8,12 @@ export default class RolePolicy extends BasePolicy {
     }
   }
 
-  public async hasPermission(user: User, permission: string) {
+  public async permission(user: User, action: string = '') {
     const userPermissions = await user
       .related('roles')
       .query()
       .preload('permissions', (permissionQuery) => {
-        permissionQuery.where('action', permission)
+        permissionQuery.where('action', action)
       })
       .first()
 

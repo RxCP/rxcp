@@ -2,13 +2,23 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Role from 'App/Models/Role'
 
 export default class RolesController {
-  public async index({ request }: HttpContextContract) {
+  /**
+   * Role list
+   */
+  public async index({ request, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::roles.index')
+
     const page = request.input('page', 1)
     const limit = 10
     return Role.query().paginate(page, limit)
   }
 
-  public async getPermissions({ request, params }: HttpContextContract) {
+  /**
+   * Get all permissions under the role
+   */
+  public async getPermissions({ request, params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::roles.getPermissions')
+
     const page = request.input('page', 1)
     const limit = 10
     const role = await Role.find(params?.id)
