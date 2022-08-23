@@ -16,6 +16,12 @@ export default class extends BaseSeeder {
         email: 'player@rxcp.com',
         password: 'player',
       },
+      {
+        first_name: 'GM',
+        last_name: 'Smith',
+        email: 'gm@rxcp.com',
+        password: 'gamemaster',
+      },
     ])
   }
 }

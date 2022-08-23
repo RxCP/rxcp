@@ -11,35 +11,34 @@ import {
 import { passwordRules } from 'App/validations/user'
 
 export default class AccountsController {
-  public async index({ request }: HttpContextContract) {
+  /**
+   * Account list
+   */
+  public async index({ request, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.index')
+
     const page = request.input('page', 1)
     const limit = 10
     return Account.query().paginate(page, limit)
   }
 
-  public async find({ params }: HttpContextContract) {
+  /**
+   * Show account details
+   */
+  public async show({ params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.show')
+
     return {
       data: await Account.find(params?.id),
     }
   }
 
-  public async getCharacters({ params }: HttpContextContract) {
-    const account = await Account.find(params?.id)
-    const characters = await account?.related('characters').query()
-    return {
-      data: characters,
-      meta: {
-        account_id: account?.account_id,
-      },
-    }
-  }
-
   /**
    * Create account
-   * @param param
-   * @returns
    */
-  public async create({ auth, request, response }: HttpContextContract) {
+  public async create({ auth, request, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.create')
+
     const fields = this.getFormFields(request)
     const email = auth.use('api').user?.email
 
@@ -71,10 +70,10 @@ export default class AccountsController {
 
   /**
    * Updaate account
-   * @param param
-   * @returns
    */
-  public async update({ auth, request, response, params }: HttpContextContract) {
+  public async update({ auth, request, response, params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.update')
+
     const fields = this.getFormFields(request)
     const email = auth.use('api').user?.email
 
@@ -108,11 +107,11 @@ export default class AccountsController {
   }
 
   /**
-   * Soft delete an account
-   * @param param
-   * @returns
+   * Delete account
    */
-  public async destroy({ params, response }: HttpContextContract) {
+  public async destroy({ params, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.destroy')
+
     try {
       const account = await Account.findOrFail(params?.id)
       await account.delete()
@@ -129,9 +128,23 @@ export default class AccountsController {
   }
 
   /**
+   * Get all characters associated from the account
+   */
+  public async getCharacters({ params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.getCharacters')
+
+    const account = await Account.find(params?.id)
+    const characters = await account?.related('characters').query()
+    return {
+      data: characters,
+      meta: {
+        account_id: account?.account_id,
+      },
+    }
+  }
+
+  /**
    * Validaate request's inputs
-   * @param request
-   * @param isUpdate
    */
   private async validateRequest(request: RequestContract, isUpdate?: boolean) {
     const accountSchema = schema.create({
@@ -145,9 +158,7 @@ export default class AccountsController {
   }
 
   /**
-   *
-   * @param request
-   * @returns {object}
+   * Get all required  fields
    */
   private getFormFields(request: RequestContract) {
     const userId = request.input('user_id')

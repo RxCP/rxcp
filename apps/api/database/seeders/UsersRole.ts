@@ -12,6 +12,9 @@ export default class extends BaseSeeder {
     const player = await User.findBy('email', 'player@rxcp.com')
     const playerRole = await Role.findBy('code', 'PLAYER')
 
+    const gameMaster = await User.findBy('email', 'gm@rxcp.com')
+    const gameMasterRole = await Role.findBy('code', 'GAME_MASTER')
+
     await UsersRoles.createMany([
       {
         user_id: admin?.id,
@@ -20,6 +23,10 @@ export default class extends BaseSeeder {
       {
         user_id: player?.id,
         role_id: playerRole?.id,
+      },
+      {
+        user_id: gameMaster?.id,
+        role_id: gameMasterRole?.id,
       },
     ])
   }

@@ -5,7 +5,9 @@ export default class GuildsController {
   /**
    * Guild list
    */
-  public async index({ request }: HttpContextContract) {
+  public async index({ request, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::guilds.index')
+
     const page = request.input('page', 1)
     const limit = 10
     return Guild.query().paginate(page, limit)
@@ -14,7 +16,9 @@ export default class GuildsController {
   /**
    * Guild details
    */
-  public async find({ params }: HttpContextContract) {
+  public async show({ params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::guilds.show')
+
     return {
       data: await Guild.find(params?.id),
     }

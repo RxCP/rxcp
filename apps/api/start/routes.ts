@@ -64,18 +64,18 @@ Route.group(() => {
     Route.get('permissions', 'PermissionsController.index')
     // Accounts
     Route.get('accounts', 'AccountsController.index')
-    Route.get('accounts/:id', 'AccountsController.find')
+    Route.get('accounts/:id', 'AccountsController.show')
     Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
     Route.post('accounts', 'AccountsController.create')
     Route.put('accounts/:id', 'AccountsController.update')
     Route.delete('accounts/:id', 'AccountsController.destroy')
     // Characters
     Route.get('characters', 'CharactersController.index')
-    Route.get('characters/:id', 'CharactersController.find')
+    Route.get('characters/:id', 'CharactersController.show')
     Route.get('characters/:id/account', 'CharactersController.getAccount')
     // Guilds
     Route.get('guilds', 'GuildsController.index')
-    Route.get('guilds/:id', 'GuildsController.find')
+    Route.get('guilds/:id', 'GuildsController.show')
   }).prefix('/api')
 })
   .prefix('/admin')

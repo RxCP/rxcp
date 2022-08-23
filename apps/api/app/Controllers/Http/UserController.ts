@@ -4,6 +4,9 @@ import User from 'App/Models/User'
 import { emailRules, passwordRules } from 'App/validations/user'
 
 export default class UserController {
+  /**
+   * Update user info (for logged in user)
+   */
   public async patch({ auth, request, response }: HttpContextContract) {
     const firstName = request.input('first_name')
     const lastName = request.input('last_name')
@@ -32,6 +35,9 @@ export default class UserController {
     }
   }
 
+  /**
+   * Update email (for logged in user)
+   */
   public async updateEmail({ auth, request, response }: HttpContextContract) {
     const newEmail = request.input('new_email')
     const password = request.input('password')
@@ -66,6 +72,9 @@ export default class UserController {
     }
   }
 
+  /**
+   * Change password (for logged in user)
+   */
   public async changePass({ auth, request, response }: HttpContextContract) {
     const password = request.input('current_password')
     const newPass = request.input('new_password')
