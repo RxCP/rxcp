@@ -4,4 +4,7 @@
 
 ## Documentation
 
-API using Postman - https://documenter.getpostman.com/view/390924/VUjSGPdG
+API - https://documenter.getpostman.com/view/390924/VUjSGPdG
+
+## License
+Licensed under [The MIT License](https://opensource.org/licenses/MIT).
