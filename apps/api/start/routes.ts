@@ -25,7 +25,7 @@ Route.get('/', ({ view }) => {
   return view.render('home')
 })
 
-// Global
+// Global scope, both admin and client
 Route.group(() => {
   // Guest
   Route.post('login', 'AuthController.login')
@@ -35,6 +35,12 @@ Route.group(() => {
     return {
       revoked: true,
     }
+  })
+  // Health check
+  Route.get('health', async ({ response }) => {
+    const report = await HealthCheck.getReport()
+
+    return report.healthy ? response.ok(report) : response.badRequest(report)
   })
 
   // Authenticated
@@ -49,6 +55,13 @@ Route.group(() => {
     Route.put('me/update-email', 'UserController.updateEmail')
     Route.put('me/change-password', 'UserController.changePass')
   }).middleware('auth')
+}).prefix('/api')
+
+// Client
+Route.group(() => {
+  // Ragnarok server
+  Route.get('server', 'ServerController.index')
+  Route.get('server/info', 'ServerController.index')
 }).prefix('/api')
 
 // Admin
@@ -81,9 +94,3 @@ Route.group(() => {
 })
   .prefix('/admin')
   .middleware('auth')
-
-Route.get('health', async ({ response }) => {
-  const report = await HealthCheck.getReport()
-
-  return report.healthy ? response.ok(report) : response.badRequest(report)
-})
