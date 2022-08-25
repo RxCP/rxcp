@@ -1,6 +1,17 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import {
+  BaseModel,
+  beforeDelete,
+  beforeFetch,
+  beforeFind,
+  column,
+  hasMany,
+  HasMany,
+  ModelQueryBuilderContract,
+} from '@ioc:Adonis/Lucid/Orm'
 import Character from './Character'
+
+type AccountQuery = ModelQueryBuilderContract<typeof Account>
 
 // The login table
 export default class Account extends BaseModel {
@@ -62,7 +73,22 @@ export default class Account extends BaseModel {
   public old_group: number
 
   @hasMany(() => Character, {
-    foreignKey: 'account_id', // defaults to userId
+    foreignKey: 'account_id',
   })
   public characters: HasMany<typeof Character>
+
+  @beforeFetch()
+  public static withoutServerAccounts(query: AccountQuery) {
+    query.where('account_id', '!=', '1')
+  }
+
+  @beforeFind()
+  public static withoutServerAccount(query: AccountQuery) {
+    query.where('account_id', '!=', '1')
+  }
+
+  @beforeDelete()
+  public static async dontRemoveServerAccount(query: AccountQuery) {
+    query.where('account_id', '!=', '1')
+  }
 }
