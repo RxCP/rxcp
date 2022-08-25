@@ -48,6 +48,7 @@ importers:
       eslint-plugin-prettier: ^4.2.1
       luxon: ^3.0.1
       mysql: ^2.18.1
+      net: ^1.0.2
       phc-argon2: ^1.1.3
       pino-pretty: ^9.0.1
       proxy-addr: ^2.0.7
@@ -66,6 +67,7 @@ importers:
       adonis-lucid-soft-deletes: 1.4.3
       luxon: 3.0.1
       mysql: 2.18.1
+      net: 1.0.2
       phc-argon2: 1.1.3
       proxy-addr: 2.0.7
       reflect-metadata: 0.1.13
@@ -6170,6 +6172,10 @@ packages:
   /nested-error-stacks/2.1.1:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
+
+  /net/1.0.2:
+    resolution: {integrity: sha512-kbhcj2SVVR4caaVnGLJKmlk2+f+oLkjqdKeQlmUtz6nGzOpbcobwVIeSURNgraV/v3tlmGIX82OcPCl0K6RbHQ==}
+    dev: false
 
   /nlcst-to-string/2.0.4:
     resolution: {integrity: sha512-3x3jwTd6UPG7vi5k4GEzvxJ5rDA7hVUIRNHPblKuMVP9Z3xmlsd9cgLcpAMkc5uPOBna82EeshROFhsPkbnTZg==}
