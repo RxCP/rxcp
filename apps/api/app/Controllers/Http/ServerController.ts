@@ -1,4 +1,6 @@
 import Database from '@ioc:Adonis/Lucid/Database'
+import Setting from 'App/Models/Setting'
+import net from 'net'
 
 export default class ServerController {
   /**
@@ -12,6 +14,12 @@ export default class ServerController {
     const parties = await roCon.from('party').count('* as total')
     const zenies = await roCon.from('char').sum('zeny as total')
 
+    const serverStatus = {
+      login: await this.getServerStatus('server_login'),
+      char: await this.getServerStatus('server_char'),
+      map: await this.getServerStatus('server_map'),
+    }
+
     return {
       data: {
         info: {
@@ -22,11 +30,24 @@ export default class ServerController {
           total_zeny: zenies[0]?.total,
         },
         status: {
-          login: 'online',
-          char: 'online',
-          map: 'online',
+          login: (serverStatus.login && 'online') || 'offline',
+          char: (serverStatus.char && 'online') || 'offline',
+          map: (serverStatus.map && 'online') || 'offline',
         },
       },
     }
+  }
+
+  private async getServerStatus(settingName: string = '') {
+    let isOnline = false
+
+    const serverSettings = await Setting.query().select('value').where('name', settingName).first()
+    const serverValue = JSON.parse(serverSettings?.value || '{}')
+
+    net.connect(parseInt(serverValue?.port), serverValue?.host, () => {
+      isOnline = true
+    })
+
+    return isOnline
   }
 }
