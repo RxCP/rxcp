@@ -1,0 +1,48 @@
+version: 2.1
+
+jobs:
+  setup:
+    docker:
+      - image: znck/pnpm:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
+      - run:
+          name: Install
+          command: pnpm install --frozen-lockfile
+      - save_cache:
+          key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
+          paths:
+            - node_modules
+  build:
+    docker:
+      - image: znck/pnpm:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "pnpm-lock.yaml" }}
+      - run:
+          name: Build
+          command: |
+            pnpm run build
+            ls dist
+      - save_cache:
+          key: build-output-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - dist
+      - store_artifacts:
+          path: dist
+          destination: dist
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - setup
+      - build:
+          requires:
+            - setup
+      - test:
+          requires:
+            - setup
