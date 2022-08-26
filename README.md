@@ -11,7 +11,7 @@
 
 
 ## 💻 Technologies
-![Technologies](https://skillicons.dev/icons?i=mysql,nodejs,typescript,html,css,tailwindcss,astro)
+![Technologies](https://skillicons.dev/icons?i=redis,mysql,nodejs,typescript,html,css,tailwindcss,astro)
 
 Other: [AdonisJs](https://adonisjs.com/), [SolidJs](https://www.solidjs.com/).
 
