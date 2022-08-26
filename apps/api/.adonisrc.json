@@ -22,7 +22,8 @@
     "@adonisjs/lucid",
     "adonis-lucid-soft-deletes",
     "@adonisjs/bouncer",
-    "@adonisjs/view"
+    "@adonisjs/view",
+    "@adonisjs/redis"
   ],
   "aceProviders": ["@adonisjs/repl"],
   "tests": {
