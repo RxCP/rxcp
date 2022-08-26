@@ -21,7 +21,8 @@
       "@adonisjs/bouncer",
       "@adonisjs/view",
       "adonis-lucid-soft-deletes",
-      "@japa/preset-adonis/build/adonis-typings"
+      "@japa/preset-adonis/build/adonis-typings",
+      "@adonisjs/redis"
     ]
   }
 }

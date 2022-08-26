@@ -36,6 +36,7 @@ importers:
       '@adonisjs/bouncer': ^2.3.0
       '@adonisjs/core': ^5.8.6
       '@adonisjs/lucid': ^18.1.0
+      '@adonisjs/redis': ^7.3.1
       '@adonisjs/repl': ^3.1.11
       '@adonisjs/view': ^6.1.6
       '@japa/preset-adonis': ^1.1.0
@@ -58,10 +59,11 @@ importers:
       youch: ^3.2.0
       youch-terminal: ^2.1.4
     dependencies:
-      '@adonisjs/auth': 8.2.2_tv2ykgzchnmlzuojtyyb4dr4ti
+      '@adonisjs/auth': 8.2.2_23tfj4y5dolen2hpbqb22umqoi
       '@adonisjs/bouncer': 2.3.0_iepphxshwwvutkpxrmf2soqatm
       '@adonisjs/core': 5.8.6
       '@adonisjs/lucid': 18.1.0_j2vx5yhbb62y2muhu2wcexjrca
+      '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.6
       '@adonisjs/repl': 3.1.11_@adonisjs+core@5.8.6
       '@adonisjs/view': 6.1.6_@adonisjs+core@5.8.6
       adonis-lucid-soft-deletes: 1.4.3
@@ -145,7 +147,7 @@ packages:
       - supports-color
     dev: true
 
-  /@adonisjs/auth/8.2.2_tv2ykgzchnmlzuojtyyb4dr4ti:
+  /@adonisjs/auth/8.2.2_23tfj4y5dolen2hpbqb22umqoi:
     resolution: {integrity: sha512-XCfZhe6pm2ImeADr3IquzjDJfwmQxuh2d27AdTfEKvMfpDHVHMnFOFBizfz18Z1Nas/Gl7Lw00CsrnpCLNswmA==}
     peerDependencies:
       '@adonisjs/core': ^5.7.1
@@ -165,6 +167,7 @@ packages:
     dependencies:
       '@adonisjs/core': 5.8.6
       '@adonisjs/lucid': 18.1.0_j2vx5yhbb62y2muhu2wcexjrca
+      '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.6
       '@poppinss/hooks': 5.0.3
       '@poppinss/utils': 4.0.4
       luxon: 2.5.0
@@ -204,7 +207,7 @@ packages:
       '@adonisjs/view':
         optional: true
     dependencies:
-      '@adonisjs/auth': 8.2.2_tv2ykgzchnmlzuojtyyb4dr4ti
+      '@adonisjs/auth': 8.2.2_23tfj4y5dolen2hpbqb22umqoi
       '@adonisjs/core': 5.8.6
       '@adonisjs/view': 6.1.6_@adonisjs+core@5.8.6
       '@poppinss/utils': 4.0.4
@@ -372,6 +375,19 @@ packages:
       '@adonisjs/logger': 4.1.4
       '@poppinss/utils': 4.0.4
       jest-worker: 27.5.1
+
+  /@adonisjs/redis/7.3.1_@adonisjs+core@5.8.6:
+    resolution: {integrity: sha512-0bFn5Q9QqaMBXYYCTgChVmxShEDkNCCjTLmtgBopup0AmoyPTLQXZhW131FB2ww32WvRrX9QfEgRWm4JQiB8NQ==}
+    peerDependencies:
+      '@adonisjs/core': ^5.1.0
+    dependencies:
+      '@adonisjs/core': 5.8.6
+      '@poppinss/utils': 4.0.4
+      '@types/ioredis': 4.28.10
+      ioredis: 5.2.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /@adonisjs/repl/3.1.11_@adonisjs+core@5.8.6:
     resolution: {integrity: sha512-t4xN+G+fa/XeZ+7qHnFbTk1bri/4RIGdFDk1cq2SeZI3nfu3E8Ma62uQVc8U3AAroN51plzXVcUoQ/Iw8q1P+Q==}
@@ -940,6 +956,10 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
+  /@ioredis/commands/1.2.0:
+    resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
+    dev: false
+
   /@japa/api-client/1.4.0:
     resolution: {integrity: sha512-mew8VddNnh8hmBrQLE2XTFPdiZm2eS/Vai8IYvpzg2nArD2inEuTDBDN1rvv5g+O6zTorL8f3YVfNpstIL1cJw==}
     dependencies:
@@ -1402,6 +1422,12 @@ packages:
 
   /@types/he/1.1.2:
     resolution: {integrity: sha512-kSJPcLO1x+oolc0R89pUl2kozldQ/fVQ1C1p5mp8fPoLdF/ZcBvckaTC2M8xXh3GYendXvCpy5m/a2eSbfgNgw==}
+
+  /@types/ioredis/4.28.10:
+    resolution: {integrity: sha512-69LyhUgrXdgcNDv7ogs1qXZomnfOEnSmrmMFqKgt1XMJxmoOSG/u3wYy13yACIfKuMJ8IhKgHafDO3sx19zVQQ==}
+    dependencies:
+      '@types/node': 18.7.9
+    dev: false
 
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
@@ -2617,6 +2643,11 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
+  /cluster-key-slot/1.1.0:
+    resolution: {integrity: sha512-2Nii8p3RwAPiFwsnZvukotvow2rIHM+yQ6ZcBXGHdniadkYGZYiGmkHJIbZPIV9nfv7m/U1IPMVVcAhoWFeklw==}
+    engines: {node: '>=0.10.0'}
+    dev: false
+
   /co-compose/7.0.2:
     resolution: {integrity: sha512-F3qbdPIg5L+DP06y00vNYqqfx86+YetkQyN5g54pSeWgFlKHzqacNIkimzfc0hPezPaab1aVerdCQ3U8a3/TWw==}
 
@@ -2955,6 +2986,11 @@ packages:
 
   /delegates/1.0.0:
     resolution: {integrity: sha512-bd2L678uiWATM6m5Z1VzNCErI3jiGzt6HGY8OVICs40JQq/HALfbyNJmp0UDakEY4pMMaN0Ly5om/B1VI/+xfQ==}
+    dev: false
+
+  /denque/2.1.0:
+    resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
+    engines: {node: '>=0.10'}
     dev: false
 
   /depd/2.0.0:
@@ -4722,6 +4758,23 @@ packages:
     engines: {node: '>= 0.10'}
     dev: false
 
+  /ioredis/5.2.3:
+    resolution: {integrity: sha512-gQNcMF23/NpvjCaa1b5YycUyQJ9rBNH2xP94LWinNpodMWVUPP5Ai/xXANn/SM7gfIvI62B5CCvZxhg5pOgyMw==}
+    engines: {node: '>=12.22.0'}
+    dependencies:
+      '@ioredis/commands': 1.2.0
+      cluster-key-slot: 1.1.0
+      debug: 4.3.4
+      denque: 2.1.0
+      lodash.defaults: 4.2.0
+      lodash.isarguments: 3.1.0
+      redis-errors: 1.2.0
+      redis-parser: 3.0.0
+      standard-as-callback: 2.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /ipaddr.js/1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==}
     engines: {node: '>= 0.10'}
@@ -5333,6 +5386,10 @@ packages:
       p-locate: 5.0.0
     dev: true
 
+  /lodash.defaults/4.2.0:
+    resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
+    dev: false
+
   /lodash.flatten/4.4.0:
     resolution: {integrity: sha512-C5N2Z3DgnnKr0LOpv/hKCgKdb7ZZwafIrsesve6lmzvZIRZRGaZ/l6Q8+2W7NaT+ZwO3fFlSCzCzrDCFdJfZ4g==}
     dev: true
@@ -5340,6 +5397,10 @@ packages:
   /lodash.get/4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
     dev: true
+
+  /lodash.isarguments/3.1.0:
+    resolution: {integrity: sha512-chi4NHZlZqZD18a0imDHnZPrDeBbTtVN7GXMwuGdRH9qotxAjYs3aVLKc7zNOG9eddR5Ksd8rvFEBc9SsggPpg==}
+    dev: false
 
   /lodash.isequal/4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
@@ -7086,6 +7147,18 @@ packages:
       esprima: 4.0.1
     dev: true
 
+  /redis-errors/1.2.0:
+    resolution: {integrity: sha512-1qny3OExCf0UvUV/5wpYKf2YwPcOqXzkwKKSmKHiE6ZMQs5heeE/c8eXK+PNllPvmjgAbfnsbpkGZWy8cBpn9w==}
+    engines: {node: '>=4'}
+    dev: false
+
+  /redis-parser/3.0.0:
+    resolution: {integrity: sha512-DJnGAeenTdpMEH6uAJRK/uiyEIH9WVsUmoLwzudwGJUwZPp80PDBWPHXSAGNPwNvIXAbe7MSUB1zQFugFml66A==}
+    engines: {node: '>=4'}
+    dependencies:
+      redis-errors: 1.2.0
+    dev: false
+
   /reflect-metadata/0.1.13:
     resolution: {integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==}
     dev: false
@@ -7671,6 +7744,10 @@ packages:
       as-table: 1.0.55
       get-source: 2.0.12
     dev: true
+
+  /standard-as-callback/2.1.0:
+    resolution: {integrity: sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==}
+    dev: false
 
   /static-extend/0.1.2:
     resolution: {integrity: sha512-72E9+uLc27Mt718pMHt9VMNiAL4LMsmDbBva8mxWUCkT07fSzEGMYUCk0XWY6lp0j6RBAG4cJ3mWuZv2OE3s0g==}
