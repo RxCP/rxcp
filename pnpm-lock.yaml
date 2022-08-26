@@ -35,6 +35,7 @@ importers:
       '@adonisjs/auth': ^8.2.2
       '@adonisjs/bouncer': ^2.3.0
       '@adonisjs/core': ^5.8.6
+      '@adonisjs/limiter': ^1.0.1
       '@adonisjs/lucid': ^18.1.0
       '@adonisjs/redis': ^7.3.1
       '@adonisjs/repl': ^3.1.11
@@ -62,6 +63,7 @@ importers:
       '@adonisjs/auth': 8.2.2_23tfj4y5dolen2hpbqb22umqoi
       '@adonisjs/bouncer': 2.3.0_iepphxshwwvutkpxrmf2soqatm
       '@adonisjs/core': 5.8.6
+      '@adonisjs/limiter': 1.0.1_23tfj4y5dolen2hpbqb22umqoi
       '@adonisjs/lucid': 18.1.0_j2vx5yhbb62y2muhu2wcexjrca
       '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.6
       '@adonisjs/repl': 3.1.11_@adonisjs+core@5.8.6
@@ -327,6 +329,25 @@ packages:
   /@adonisjs/ioc-transformer/2.3.4:
     resolution: {integrity: sha512-ik1C7f0Hbqenw6S1Ty06B4pznGfpUH5bL2fiCYgwq+jKPw8CKdsTQKvYudS6Tj68Nr6Mpqow4RNbvFV/OC0mZg==}
     dev: true
+
+  /@adonisjs/limiter/1.0.1_23tfj4y5dolen2hpbqb22umqoi:
+    resolution: {integrity: sha512-xVhhYbZul3O7vRZtyjttQNw/uEdLbz/JLda+PyhJ0yH5xx0wYSG8rk2LYnDGmpBTNTGvM8eQX+LL4hzau7iC4w==}
+    peerDependencies:
+      '@adonisjs/core': ^5.8.0
+      '@adonisjs/lucid': ^18.1.0
+      '@adonisjs/redis': ^7.3.0
+    peerDependenciesMeta:
+      '@adonisjs/lucid':
+        optional: true
+      '@adonisjs/redis':
+        optional: true
+    dependencies:
+      '@adonisjs/core': 5.8.6
+      '@adonisjs/lucid': 18.1.0_j2vx5yhbb62y2muhu2wcexjrca
+      '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.6
+      '@poppinss/utils': 5.0.0
+      rate-limiter-flexible: 2.3.8
+    dev: false
 
   /@adonisjs/logger/4.1.4:
     resolution: {integrity: sha512-OEfve1bqv3IzRWPTKauJb0Gjq6GIrZhbl6alpFaKXMbHbK49ocgo+2Q/N2WAl58kj5VIt/4CE3q2EG44AHfhDA==}
@@ -7045,6 +7066,10 @@ packages:
   /range-parser/1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
     engines: {node: '>= 0.6'}
+
+  /rate-limiter-flexible/2.3.8:
+    resolution: {integrity: sha512-ENCiteaxQKSFhTPxNq3Trb2dtyVoO2/PyewCicUoRi/ewmNyPdW6nowSYGUZhSE0r7udmf6FaU+tOUIOmVUKGg==}
+    dev: false
 
   /raw-body/2.5.1:
     resolution: {integrity: sha512-qqJBtEyVgS0ZmPGdCFPWJ3FreoqvG4MVQln/kCgF7Olq95IbOp0/BWyMwbdtn4VTvkM8Y7khCQ2Xgk/tcrCXig==}

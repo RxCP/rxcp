@@ -36,12 +36,6 @@ Route.group(() => {
       revoked: true,
     }
   })
-  // Health check
-  Route.get('health', async ({ response }) => {
-    const report = await HealthCheck.getReport()
-
-    return report.healthy ? response.ok(report) : response.badRequest(report)
-  })
 
   // Authenticated
   Route.group(() => {
@@ -55,19 +49,29 @@ Route.group(() => {
     Route.put('me/update-email', 'UserController.updateEmail')
     Route.put('me/change-password', 'UserController.changePass')
   }).middleware('auth')
-}).prefix('/api')
+})
+  .prefix('/api')
+  .middleware('throttle:global')
 
 // Client
 Route.group(() => {
   // Ragnarok server
   Route.get('server', 'ServerController.index')
   Route.get('server/info', 'ServerController.index')
-}).prefix('/api')
+})
+  .prefix('/api')
+  .middleware('throttle:global')
 
 // Admin
 Route.group(() => {
   // Authenticated routes
   Route.group(() => {
+    // Health check
+    Route.get('health', async ({ response }) => {
+      const report = await HealthCheck.getReport()
+
+      return report.healthy ? response.ok(report) : response.badRequest(report)
+    })
     // Users
     Route.get('users', 'UsersController.index')
     Route.get('users/:id', 'UsersController.show')
@@ -94,3 +98,4 @@ Route.group(() => {
 })
   .prefix('/admin')
   .middleware('auth')
+  .middleware('throttle:global')
