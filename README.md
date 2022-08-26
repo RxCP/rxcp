@@ -1,6 +1,7 @@
-<h1 align="center">RxCP</h1>
-<h2 align="center">API and Admin dashboard for rAthena.</h2>
-<p align="center">The most advanced open-source Control Panel for rAthena servers.</p>
+<h1 align="center">Rx Control Panel (RXCP)</h1>
+<h2 align="center">API and Admin Dashboard.</h2>
+<p align="center">The most advanced open-source control panel for Ragnarok Online servers.</p>
+<p align="center">🚀 Fast - 🔒 Secured - 💖 Free</p>
 
 <p align="center">
   <img src="https://img.shields.io/github/workflow/status/RxCP/rxcp/CI?style=flat-square&logo=appveyor">
