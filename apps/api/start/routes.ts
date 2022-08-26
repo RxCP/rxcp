@@ -25,9 +25,11 @@ Route.get('/', ({ view }) => {
   return view.render('home')
 })
 
-// Global scope, both admin and client
+/**
+ * Global scope, both admin and client
+ */
 Route.group(() => {
-  // Guest
+  // Guest / Unauthenticated
   Route.post('login', 'AuthController.login')
   Route.post('register', 'AuthController.register')
   Route.post('logout', async ({ auth }) => {
@@ -39,12 +41,8 @@ Route.group(() => {
 
   // Authenticated
   Route.group(() => {
-    // Me
-    Route.get('me', ({ auth }) => {
-      return {
-        data: auth.use('api').user,
-      }
-    })
+    // Logged-in user
+    Route.get('me', 'UserController.index')
     Route.patch('me', 'UserController.patch')
     Route.put('me/update-email', 'UserController.updateEmail')
     Route.put('me/change-password', 'UserController.changePass')
@@ -53,7 +51,9 @@ Route.group(() => {
   .prefix('/api')
   .middleware('throttle:global')
 
-// Client
+/**
+ * Client
+ */
 Route.group(() => {
   // Ragnarok server
   Route.get('server', 'ServerController.index')
@@ -62,40 +62,39 @@ Route.group(() => {
   .prefix('/api')
   .middleware('throttle:global')
 
-// Admin
+/**
+ * Admin
+ */
 Route.group(() => {
-  // Authenticated routes
-  Route.group(() => {
-    // Health check
-    Route.get('health', async ({ response }) => {
-      const report = await HealthCheck.getReport()
+  // Health check
+  Route.get('health', async ({ response }) => {
+    const report = await HealthCheck.getReport()
+    return report.healthy ? response.ok(report) : response.badRequest(report)
+  })
 
-      return report.healthy ? response.ok(report) : response.badRequest(report)
-    })
-    // Users
-    Route.get('users', 'UsersController.index')
-    Route.get('users/:id', 'UsersController.show')
-    // Roles
-    Route.get('roles', 'RolesController.index')
-    Route.get('roles/:id/permissions', 'RolesController.getPermissions')
-    // Permissions
-    Route.get('permissions', 'PermissionsController.index')
-    // Accounts
-    Route.get('accounts', 'AccountsController.index')
-    Route.get('accounts/:id', 'AccountsController.show')
-    Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
-    Route.post('accounts', 'AccountsController.create')
-    Route.put('accounts/:id', 'AccountsController.update')
-    Route.delete('accounts/:id', 'AccountsController.destroy')
-    // Characters
-    Route.get('characters', 'CharactersController.index')
-    Route.get('characters/:id', 'CharactersController.show')
-    Route.get('characters/:id/account', 'CharactersController.getAccount')
-    // Guilds
-    Route.get('guilds', 'GuildsController.index')
-    Route.get('guilds/:id', 'GuildsController.show')
-  }).prefix('/api')
+  // Users
+  Route.get('users', 'UsersController.index')
+  Route.get('users/:id', 'UsersController.show')
+  // Roles
+  Route.get('roles', 'RolesController.index')
+  Route.get('roles/:id/permissions', 'RolesController.getPermissions')
+  // Permissions
+  Route.get('permissions', 'PermissionsController.index')
+  // Accounts
+  Route.get('accounts', 'AccountsController.index')
+  Route.get('accounts/:id', 'AccountsController.show')
+  Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
+  Route.post('accounts', 'AccountsController.create')
+  Route.put('accounts/:id', 'AccountsController.update')
+  Route.delete('accounts/:id', 'AccountsController.destroy')
+  // Characters
+  Route.get('characters', 'CharactersController.index')
+  Route.get('characters/:id', 'CharactersController.show')
+  Route.get('characters/:id/account', 'CharactersController.getAccount')
+  // Guilds
+  Route.get('guilds', 'GuildsController.index')
+  Route.get('guilds/:id', 'GuildsController.show')
 })
-  .prefix('/admin')
+  .prefix('/admin/api')
   .middleware('auth')
   .middleware('throttle:global')

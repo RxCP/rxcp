@@ -5,7 +5,16 @@ import { emailRules, passwordRules } from 'App/validations/user'
 
 export default class UserController {
   /**
-   * Update user info (for logged in user)
+   * Currently logged-in user details
+   */
+  public async index({ auth }: HttpContextContract) {
+    return {
+      data: auth.use('api').user,
+    }
+  }
+
+  /**
+   * Update user info (for logged-in user)
    */
   public async patch({ auth, request, response }: HttpContextContract) {
     const firstName = request.input('first_name')
@@ -36,7 +45,7 @@ export default class UserController {
   }
 
   /**
-   * Update email (for logged in user)
+   * Update email (for logged-in user)
    */
   public async updateEmail({ auth, request, response }: HttpContextContract) {
     const newEmail = request.input('new_email')
@@ -73,7 +82,7 @@ export default class UserController {
   }
 
   /**
-   * Change password (for logged in user)
+   * Change password (for logged-in user)
    */
   public async changePass({ auth, request, response }: HttpContextContract) {
     const password = request.input('current_password')
