@@ -3,6 +3,7 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import User from 'App/Models/User'
 import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/validations/user'
+import { Limiter } from '@adonisjs/limiter/build/services/index'
 
 export default class AuthController {
   /**
@@ -12,11 +13,26 @@ export default class AuthController {
     const email = request.input('email')
     const password = request.input('password')
 
+    const throttleKey = `login_${email}_${request.ip()}`
+
+    const limiter = Limiter.use({
+      requests: 10,
+      duration: '15 mins',
+      blockDuration: '30 mins',
+    })
+
+    if (await limiter.isBlocked(throttleKey)) {
+      return response.tooManyRequests('Login attempts exhausted. Please try after some time')
+    }
+
     try {
-      return await auth.use('api').attempt(email, password, {
+      const response = await auth.use('api').attempt(email, password, {
         expiresIn: '30mins',
       })
+      await limiter.delete(throttleKey)
+      return response
     } catch {
+      await limiter.increment(throttleKey)
       return response.unauthorized({
         errors: [
           {

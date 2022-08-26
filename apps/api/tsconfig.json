@@ -22,7 +22,8 @@
       "@adonisjs/view",
       "adonis-lucid-soft-deletes",
       "@japa/preset-adonis/build/adonis-typings",
-      "@adonisjs/redis"
+      "@adonisjs/redis",
+      "@adonisjs/limiter"
     ]
   }
 }

@@ -14,7 +14,7 @@
     "Database": "database",
     "Contracts": "contracts"
   },
-  "preloads": ["./start/routes", "./start/kernel", "./start/bouncer"],
+  "preloads": ["./start/routes", "./start/kernel", "./start/bouncer", "./start/limiter"],
   "providers": [
     "./providers/AppProvider",
     "@adonisjs/core",
@@ -23,7 +23,8 @@
     "adonis-lucid-soft-deletes",
     "@adonisjs/bouncer",
     "@adonisjs/view",
-    "@adonisjs/redis"
+    "@adonisjs/redis",
+    "@adonisjs/limiter"
   ],
   "aceProviders": ["@adonisjs/repl"],
   "tests": {
