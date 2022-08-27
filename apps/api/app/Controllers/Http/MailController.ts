@@ -8,7 +8,7 @@ export default class MailController {
     const email = request.input('email')
 
     try {
-      const res = await Mail.use('mailgun').send((message) => {
+      const res = await Mail.send((message) => {
         message.subject('RxCP - Test Email Connection')
         message.to(email)
         message.from('hello@rxcp.dev')

@@ -18,7 +18,7 @@ export default mailConfig({
   | a mailer
   |
   */
-  mailer: 'smtp',
+  mailer: 'mailgun',
 
   /*
   |--------------------------------------------------------------------------
