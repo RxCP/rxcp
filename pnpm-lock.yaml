@@ -48,6 +48,7 @@ importers:
       eslint-config-prettier: ^8.5.0
       eslint-plugin-adonis: ^2.1.0
       eslint-plugin-prettier: ^4.2.1
+      is-port-reachable: ^3.1.0
       luxon: ^3.0.1
       mysql: ^2.18.1
       net: ^1.0.2
@@ -69,6 +70,7 @@ importers:
       '@adonisjs/repl': 3.1.11_@adonisjs+core@5.8.6
       '@adonisjs/view': 6.1.6_@adonisjs+core@5.8.6
       adonis-lucid-soft-deletes: 1.4.3
+      is-port-reachable: 3.1.0
       luxon: 3.0.1
       mysql: 2.18.1
       net: 1.0.2
@@ -89,6 +91,15 @@ importers:
       typescript: 4.6.4
       youch: 3.2.0
       youch-terminal: 2.1.4
+
+  packages/port-checker:
+    specifiers:
+      net: ^1.0.2
+      typescript: ~4.8
+    dependencies:
+      net: 1.0.2
+    devDependencies:
+      typescript: 4.8.2
 
   packages/tsconfig:
     specifiers: {}
@@ -5015,6 +5026,11 @@ packages:
       isobject: 3.0.1
     dev: true
 
+  /is-port-reachable/3.1.0:
+    resolution: {integrity: sha512-vjc0SSRNZ32s9SbZBzGaiP6YVB+xglLShhgZD/FHMZUXBvQWaV9CtzgeVhjccFJrI6RAMV+LX7NYxueW/A8W5A==}
+    engines: {node: '>=8'}
+    dev: false
+
   /is-regex/1.1.4:
     resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
     engines: {node: '>= 0.4'}
@@ -8402,6 +8418,12 @@ packages:
 
   /typescript/4.6.4:
     resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
+  /typescript/4.8.2:
+    resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true

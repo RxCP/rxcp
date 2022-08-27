@@ -1,6 +1,6 @@
 import Database from '@ioc:Adonis/Lucid/Database'
 import Setting from 'App/Models/Setting'
-import net from 'net'
+import isPortReachable from 'is-port-reachable'
 
 export default class ServerController {
   /**
@@ -39,15 +39,9 @@ export default class ServerController {
   }
 
   private async getServerStatus(settingName: string = '') {
-    let isOnline = false
-
     const serverSettings = await Setting.query().select('value').where('name', settingName).first()
     const serverValue = JSON.parse(serverSettings?.value || '{}')
 
-    net.connect(parseInt(serverValue?.port), serverValue?.host, () => {
-      isOnline = true
-    })
-
-    return isOnline
+    return await isPortReachable(serverValue?.port, { host: serverValue?.host })
   }
 }
