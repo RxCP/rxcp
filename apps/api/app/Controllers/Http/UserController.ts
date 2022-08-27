@@ -1,5 +1,5 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { schema } from '@ioc:Adonis/Core/Validator'
+import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import User from 'App/Models/User'
 import { emailRules, passwordRules } from 'App/validations/user'
 
@@ -115,6 +115,28 @@ export default class UserController {
           },
         ],
       })
+    }
+  }
+
+  /**
+   * Reset password
+   */
+  public async resetPassword({ request }: HttpContextContract) {
+    const email = request.input('email')
+
+    const validationSchema = schema.create({
+      email: schema.string({ trim: true }, [rules.email()]),
+    })
+
+    await request.validate({ schema: validationSchema })
+    const user = await User.findBy('email', email)
+
+    if (user) {
+      // TODO send reset password email
+    }
+
+    return {
+      message: 'Email confirmation sent!',
     }
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
