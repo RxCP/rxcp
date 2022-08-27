@@ -1,5 +1,4 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import Database from '@ioc:Adonis/Lucid/Database'
 import User from 'App/Models/User'
 
 export default class UsersController {
@@ -8,8 +7,8 @@ export default class UsersController {
 
     const page = request.input('page', 1)
     const limit = 10
-    const users = await Database.from('users').paginate(page, limit)
-    return users
+    const users = await User.query().paginate(page, limit)
+    return users.serialize()
   }
 
   public async show({ params, bouncer }: HttpContextContract) {
