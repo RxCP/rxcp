@@ -1,4 +1,5 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Config from '@ioc:Adonis/Core/Config'
 
 import Mail from '@ioc:Adonis/Addons/Mail'
 
@@ -11,7 +12,7 @@ export default class MailController {
       const res = await Mail.send((message) => {
         message.subject('RxCP - Test Email Connection')
         message.to(email)
-        message.from('hello@rxcp.dev')
+        message.from(Config.get('mail.from'))
       })
       return res
     } catch (e) {

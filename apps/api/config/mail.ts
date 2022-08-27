@@ -18,7 +18,17 @@ export default mailConfig({
   | a mailer
   |
   */
-  mailer: 'mailgun',
+  mailer: Env.get('MAILER') || 'mailgun',
+
+  /*
+  |--------------------------------------------------------------------------
+  | Default from email address
+  |--------------------------------------------------------------------------
+  |
+  | This is the default from emaill address when sending an email
+  |
+  */
+  from: Env.get('MAILER_FROM') || 'hello@rxcp.dev',
 
   /*
   |--------------------------------------------------------------------------

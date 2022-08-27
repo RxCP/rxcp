@@ -25,6 +25,8 @@ export default Env.rules({
   REDIS_HOST: Env.schema.string({ format: 'host' }),
   REDIS_PORT: Env.schema.number(),
   REDIS_PASSWORD: Env.schema.string.optional(),
+  MAILER: Env.schema.enum(['mailgun', 'smtp'] as const),
+  MAILER_FROM: Env.schema.string(),
   SMTP_HOST: Env.schema.string({ format: 'host' }),
   SMTP_PORT: Env.schema.number(),
   SMTP_USERNAME: Env.schema.string(),
