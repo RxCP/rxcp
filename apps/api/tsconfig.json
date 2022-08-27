@@ -20,10 +20,11 @@
       "@adonisjs/lucid",
       "@adonisjs/bouncer",
       "@adonisjs/view",
-      "adonis-lucid-soft-deletes",
-      "@japa/preset-adonis/build/adonis-typings",
       "@adonisjs/redis",
-      "@adonisjs/limiter"
+      "@adonisjs/limiter",
+      "@adonisjs/mail",
+      "@japa/preset-adonis/build/adonis-typings",
+      "adonis-lucid-soft-deletes"
     ]
   }
 }

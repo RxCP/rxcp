@@ -5,7 +5,8 @@
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands",
     "@adonisjs/lucid/build/commands",
-    "@adonisjs/bouncer/build/commands"
+    "@adonisjs/bouncer/build/commands",
+    "@adonisjs/mail/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
@@ -24,7 +25,8 @@
     "@adonisjs/bouncer",
     "@adonisjs/view",
     "@adonisjs/redis",
-    "@adonisjs/limiter"
+    "@adonisjs/limiter",
+    "@adonisjs/mail"
   ],
   "aceProviders": ["@adonisjs/repl"],
   "tests": {
