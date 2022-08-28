@@ -57,6 +57,7 @@ importers:
       phc-argon2: ^1.1.3
       pino-pretty: ^9.0.1
       proxy-addr: ^2.0.7
+      rand-token: ^1.0.1
       reflect-metadata: ^0.1.13
       source-map-support: ^0.5.21
       typescript: ~4.6
@@ -79,6 +80,7 @@ importers:
       mysql: 2.18.1
       phc-argon2: 1.1.3
       proxy-addr: 2.0.7
+      rand-token: 1.0.1
       reflect-metadata: 0.1.13
       source-map-support: 0.5.21
     devDependencies:
@@ -7902,6 +7904,11 @@ packages:
   /quick-lru/5.1.1:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
+    dev: false
+
+  /rand-token/1.0.1:
+    resolution: {integrity: sha512-Zri5SfJmEzBJ3IexFdigvPSCamslJ7UjLkUn0tlgH7COJvaUr5V7FyUYgKifEMTw7gFO8ZLcWjcU+kq8akipzg==}
+    engines: {node: '>= 10'}
     dev: false
 
   /random-bytes/1.0.0:
