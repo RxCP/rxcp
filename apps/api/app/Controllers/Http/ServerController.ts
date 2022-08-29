@@ -1,6 +1,5 @@
 import Database from '@ioc:Adonis/Lucid/Database'
 import Server from 'App/Models/Server'
-import Setting from 'App/Models/Setting'
 import isPortReachable from 'is-port-reachable'
 
 export default class ServerController {
