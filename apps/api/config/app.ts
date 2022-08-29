@@ -29,6 +29,14 @@ export const appKey: string = Env.get('APP_KEY')
 
 /*
 |--------------------------------------------------------------------------
+| Admin Base URL
+|--------------------------------------------------------------------------
+| The URL of the admin which is the web app
+*/
+export const appAdminBaseUrl: string = Env.get('ADMIN_BASE_URL')
+
+/*
+|--------------------------------------------------------------------------
 | Http server configuration
 |--------------------------------------------------------------------------
 |

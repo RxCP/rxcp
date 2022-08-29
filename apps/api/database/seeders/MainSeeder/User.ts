@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
 import User from 'App/Models/User'
 

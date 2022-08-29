@@ -38,6 +38,8 @@ Route.group(() => {
       revoked: true,
     }
   })
+  Route.post('reset-password', 'UserController.resetPassword')
+  Route.post('verify-reset-password', 'UserController.verifyTokenResetPass')
 
   // Authenticated
   Route.group(() => {

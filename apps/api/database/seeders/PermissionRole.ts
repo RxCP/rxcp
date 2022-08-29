@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import Database from '@ioc:Adonis/Lucid/Database'
 import BaseSeeder from '@ioc:Adonis/Lucid/Seeder'
 import Permission from 'App/Models/Permission'

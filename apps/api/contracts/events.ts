@@ -1,3 +1,5 @@
+import User from 'App/Models/User'
+
 /**
  * Contract source: https://git.io/JfefG
  *
@@ -25,5 +27,7 @@ declare module '@ioc:Adonis/Core/Event' {
   | an instance of the the UserModel only.
   |
   */
-  interface EventsList {}
+  interface EventsList {
+    'user:reset-password': { user: User; token: string }
+  }
 }
