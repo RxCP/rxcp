@@ -1,6 +1,8 @@
 import Encryption from '@ioc:Adonis/Core/Encryption'
+import Event from '@ioc:Adonis/Core/Event'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema, rules } from '@ioc:Adonis/Core/Validator'
+import ForgotPassword from 'App/Mailers/ForgotPassword'
 import User from 'App/Models/User'
 import { emailRules, passwordRules } from 'App/validations/user'
 
@@ -138,6 +140,7 @@ export default class UserController {
     if (user) {
       user.resetPasswordToken = token
       await user.save()
+      Event.emit('user:reset-password', { user, token })
     }
 
     return {

@@ -28,7 +28,17 @@ export default mailConfig({
   | This is the default from emaill address when sending an email
   |
   */
-  from: Env.get('MAILER_FROM') || 'hello@rxcp.dev',
+  fromEmail: Env.get('MAILER_FROM_EMAIL') || 'support@rxcp.dev',
+
+  /*
+  |--------------------------------------------------------------------------
+  | Default from email address
+  |--------------------------------------------------------------------------
+  |
+  | This is the default from emaill address when sending an email
+  |
+  */
+  fromName: Env.get('MAILER_FROM_NAME') || 'RxCP Support',
 
   /*
   |--------------------------------------------------------------------------

@@ -3,9 +3,10 @@ import { BaseMailer, MessageContract } from '@ioc:Adonis/Addons/Mail'
 import View from '@ioc:Adonis/Core/View'
 import Config from '@ioc:Adonis/Core/Config'
 import User from 'App/Models/User'
+import { appAdminBaseUrl } from 'Config/app'
 
 export default class ForgotPassword extends BaseMailer {
-  constructor(private user: User) {
+  constructor(private user: User, private token: string) {
     super()
   }
 
@@ -28,13 +29,13 @@ export default class ForgotPassword extends BaseMailer {
   public async prepare(message: MessageContract) {
     const html = await View.render('emails/forgot_password', {
       firstName: this.user?.first_name || '{{ firstName }}',
-      resetPasswordLink: '#',
-      appName: 'RxCP',
+      resetPasswordLink: `${appAdminBaseUrl}/verify-password?token=${this.token}`,
+      appName: 'RxCP', // TODO get appName from server settings
     })
 
     message
-      .subject('Forgot Password')
-      .from(Config.get('mail.from'))
+      .subject('Reset Your Password')
+      .from(Config.get('mail.fromEmail'), Config.get('mail.fromName'))
       .to(this.user?.email || 'user@example.com')
       .html(mjml2html(html).html)
   }
