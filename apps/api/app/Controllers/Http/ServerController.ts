@@ -1,4 +1,5 @@
 import Database from '@ioc:Adonis/Lucid/Database'
+import Server from 'App/Models/Server'
 import Setting from 'App/Models/Setting'
 import isPortReachable from 'is-port-reachable'
 
@@ -8,16 +9,31 @@ export default class ServerController {
    */
   public async index() {
     const roCon = Database.connection('ragnarok')
+
+    // Get server info
     const accounts = await roCon.from('login').count('* as total')
     const characters = await roCon.from('char').count('* as total')
     const guilds = await roCon.from('guild').count('* as total')
     const parties = await roCon.from('party').count('* as total')
     const zenies = await roCon.from('char').sum('zeny as total')
 
-    const serverStatus = {
-      login: await this.getServerStatus('server_login'),
-      char: await this.getServerStatus('server_char'),
-      map: await this.getServerStatus('server_map'),
+    // Check server status
+    let serverStatus = {}
+    const serverSettings = await Server.query()
+      .where('id', 1)
+      .preload('settings', (settingsQuery) => {
+        settingsQuery.whereIn('name', ['login', 'char', 'map'])
+      })
+      .first()
+
+    for (const server of serverSettings?.settings || []) {
+      const serverValue = JSON.parse(server?.value || '{}')
+      serverStatus = {
+        ...serverStatus,
+        ...{
+          [server.name]: await this.getServerStatus(serverValue?.port, serverValue?.host),
+        },
+      }
     }
 
     return {
@@ -30,18 +46,13 @@ export default class ServerController {
           total_zeny: zenies[0]?.total,
         },
         status: {
-          login: (serverStatus.login && 'online') || 'offline',
-          char: (serverStatus.char && 'online') || 'offline',
-          map: (serverStatus.map && 'online') || 'offline',
+          ...serverStatus,
         },
       },
     }
   }
 
-  private async getServerStatus(settingName: string = '') {
-    const serverSettings = await Setting.query().select('value').where('name', settingName).first()
-    const serverValue = JSON.parse(serverSettings?.value || '{}')
-
-    return await isPortReachable(serverValue?.port, { host: serverValue?.host })
+  private async getServerStatus(port: number, host: string) {
+    return (await isPortReachable(port, { host })) ? 'online' : 'offline'
   }
 }

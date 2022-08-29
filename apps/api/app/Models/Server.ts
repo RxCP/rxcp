@@ -1,7 +1,10 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
+import Setting from './Setting'
 
 export default class Server extends BaseModel {
+  public static table = 'server'
+
   @column({ isPrimary: true })
   public id: number
 
@@ -16,4 +19,7 @@ export default class Server extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @manyToMany(() => Setting)
+  public settings: ManyToMany<typeof Setting>
 }

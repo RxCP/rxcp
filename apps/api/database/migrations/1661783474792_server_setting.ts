@@ -2,12 +2,14 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'permission_role'
+  protected tableName = 'server_setting'
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.integer('permission_id').unsigned().references('permissions.id')
-      table.integer('role_id').unsigned().references('roles.id')
+      table.increments('id').primary()
+      table.integer('server_id').unsigned().references('server.id')
+      table.integer('setting_id').unsigned().references('settings.id')
+      table.unique(['server_id', 'setting_id'])
     })
   }
 
