@@ -6,21 +6,21 @@ export default class extends BaseSeeder {
   public async run() {
     await Setting.createMany([
       {
-        name: 'server_login',
+        name: 'login',
         value: JSON.stringify({
           host: '127.0.0.1',
           port: '6900',
         }),
       },
       {
-        name: 'server_char',
+        name: 'char',
         value: JSON.stringify({
           host: '127.0.0.1',
           port: '6900',
         }),
       },
       {
-        name: 'server_map',
+        name: 'map',
         value: JSON.stringify({
           host: '127.0.0.1',
           port: '6900',
