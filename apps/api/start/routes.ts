@@ -30,16 +30,18 @@ Route.get('/', ({ view }) => {
  */
 Route.group(() => {
   // Guest / Unauthenticated
-  Route.post('login', 'AuthController.login')
-  Route.post('register', 'AuthController.register')
-  Route.post('logout', async ({ auth }) => {
-    await auth.use('api').revoke()
-    return {
-      revoked: true,
-    }
-  })
-  Route.post('reset-password', 'UserController.resetPassword')
-  Route.post('verify-reset-password', 'UserController.verifyTokenResetPass')
+  Route.group(() => {
+    Route.post('login', 'AuthController.login')
+    Route.post('register', 'AuthController.register')
+    Route.post('logout', async ({ auth }) => {
+      await auth.use('api').revoke()
+      return {
+        revoked: true,
+      }
+    })
+    Route.post('reset-password', 'UserController.resetPassword')
+    Route.post('verify-reset-password', 'UserController.verifyTokenResetPass')
+  }).middleware('throttle:10reqMin')
 
   // Authenticated
   Route.group(() => {
@@ -58,8 +60,8 @@ Route.group(() => {
  */
 Route.group(() => {
   // Ragnarok server
-  Route.get('server', 'ServerController.index')
-  Route.get('server/info', 'ServerController.index')
+  Route.get('server', 'ServerController.index').middleware('throttle:100reqMin')
+  Route.get('server/info', 'ServerController.index').middleware('throttle:100reqMin')
 })
   .prefix('/api')
   .middleware('throttle:global')
