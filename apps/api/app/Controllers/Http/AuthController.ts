@@ -47,10 +47,7 @@ export default class AuthController {
    * Register new user
    */
   public async register({ auth, request, response }: HttpContextContract) {
-    const firstName = request.input('first_name')
-    const lastName = request.input('last_name')
-    const email = request.input('email')
-    const password = request.input('password')
+    const payload = request.only(['first_name', 'last_name', 'email', 'password'])
 
     // Validation
     const postSchema = schema.create({
@@ -65,13 +62,13 @@ export default class AuthController {
 
     try {
       await User.create({
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        password,
+        first_name: payload.first_name,
+        last_name: payload.last_name,
+        email: payload.email,
+        password: payload.password,
       })
 
-      return await auth.use('api').attempt(email, password)
+      return await auth.use('api').attempt(payload.email, payload.password)
     } catch (e) {
       return response.badRequest({
         errors: [
