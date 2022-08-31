@@ -53,7 +53,7 @@ export default class AuthController {
     const registerSchema = schema.create({
       first_name: firstNameRules,
       last_name: lastNameRules,
-      email: emailRules,
+      email: emailRules(),
       password: passwordRules(),
     })
 
