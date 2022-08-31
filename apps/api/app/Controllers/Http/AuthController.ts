@@ -50,7 +50,7 @@ export default class AuthController {
     const payload = request.only(['first_name', 'last_name', 'email', 'password'])
 
     // Validation
-    const postSchema = schema.create({
+    const registerSchema = schema.create({
       first_name: firstNameRules,
       last_name: lastNameRules,
       email: emailRules,
@@ -58,7 +58,7 @@ export default class AuthController {
     })
 
     // Validate
-    await request.validate({ schema: postSchema })
+    await request.validate({ schema: registerSchema })
 
     try {
       await User.create({
