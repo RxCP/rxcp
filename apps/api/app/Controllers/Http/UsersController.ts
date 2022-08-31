@@ -114,8 +114,8 @@ export default class UsersController {
   /**
    * Delete user
    */
-  public async delete({ params, response, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.destroy')
+  public async destroy({ params, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.destroy')
 
     try {
       const user = await User.findOrFail(params?.id)
