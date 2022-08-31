@@ -161,16 +161,13 @@ export default class AccountsController {
    * Get all required  fields
    */
   private getFormFields(request: RequestContract) {
-    const userId = request.input('user_id')
-    const password = request.input('password')
-    const gender = request.input('gender')
-    const birthdate = request.input('birthdate')
+    const payload = request.only(['user_id', 'password', 'gender', 'birthdate'])
 
     return {
-      userId,
-      password,
-      gender,
-      birthdate,
+      userId: payload.user_id,
+      password: payload.password,
+      gender: payload.gender,
+      birthdate: payload.birthdate,
     }
   }
 }
