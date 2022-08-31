@@ -80,6 +80,9 @@ Route.group(() => {
   // Users
   Route.get('users', 'UsersController.index')
   Route.get('users/:id', 'UsersController.show')
+  Route.post('users', 'UsersController.create')
+  Route.put('users/:id', 'UsersController.update')
+  Route.delete('users/:id', 'UsersController.destroy')
   // Roles
   Route.get('roles', 'RolesController.index')
   Route.get('roles/:id/permissions', 'RolesController.getPermissions')

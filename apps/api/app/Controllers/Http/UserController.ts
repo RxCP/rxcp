@@ -55,7 +55,7 @@ export default class UserController {
     const authEmail = auth.use('api').user?.email || ''
 
     const changePassSchema = schema.create({
-      new_email: emailRules,
+      new_email: emailRules(),
     })
 
     await request.validate({ schema: changePassSchema })
