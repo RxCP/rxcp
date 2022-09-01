@@ -1,7 +1,9 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { RequestContract } from '@ioc:Adonis/Core/Request'
 import { schema } from '@ioc:Adonis/Core/Validator'
+import Database from '@ioc:Adonis/Lucid/Database'
 import Account from 'App/Models/Account'
+import User from 'App/Models/User'
 import {
   birthdateRules,
   genderRules,
@@ -36,22 +38,36 @@ export default class AccountsController {
   /**
    * Create account
    */
-  public async create({ auth, request, response, bouncer }: HttpContextContract) {
+  public async create({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.create')
+    const payload = request.only(['master_user_id', 'user_id', 'password', 'gender', 'birthdate'])
+    const user = await User.find(payload?.master_user_id)
 
-    const fields = this.getFormFields(request)
-    const email = auth.use('api').user?.email
+    if (!user) {
+      return response.badRequest({
+        errors: [
+          {
+            message: 'Invalid `master_user_id`',
+          },
+        ],
+      })
+    }
 
     // Validation
     await this.validateRequest(request, false)
 
     try {
       const account = await Account.create({
-        userid: fields.userId,
-        sex: fields.gender,
-        birthdate: fields.birthdate,
-        email,
-        user_pass: fields.password,
+        userid: payload?.user_id,
+        sex: payload.gender,
+        birthdate: payload.birthdate,
+        email: user?.email,
+        user_pass: payload.password,
+      })
+
+      await Database.table('users_accounts').returning('id').insert({
+        user_id: user?.id,
+        account_id: account?.account_id,
       })
 
       return response.created({
@@ -71,11 +87,27 @@ export default class AccountsController {
   /**
    * Update account
    */
-  public async update({ auth, request, response, params, bouncer }: HttpContextContract) {
+  public async update({ request, response, params, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.update')
+    const payload = request.only(['master_user_id', 'user_id', 'password', 'gender', 'birthdate'])
 
-    const fields = this.getFormFields(request)
-    const email = auth.use('api').user?.email
+    // Check If they own the account
+    const account = await Database.from('users_accounts')
+      .select('account_id')
+      .where('user_id', payload?.master_user_id)
+      .where('account_id', params?.id)
+
+    if (account && account.length <= 0) {
+      return response.badRequest({
+        errors: [
+          {
+            message: 'Invalid account!',
+          },
+        ],
+      })
+    }
+
+    const user = await User.find(payload?.master_user_id)
 
     // Validation
     await this.validateRequest(request, true)
@@ -84,11 +116,11 @@ export default class AccountsController {
       const account = await Account.findOrFail(params?.id)
       await account
         .merge({
-          userid: fields.userId,
-          sex: fields.gender,
-          birthdate: fields.birthdate,
-          email,
-          user_pass: fields.password,
+          userid: payload.user_id,
+          sex: payload.gender,
+          birthdate: payload.birthdate,
+          email: user?.email,
+          user_pass: payload.password,
         })
         .save()
 
@@ -113,8 +145,9 @@ export default class AccountsController {
     await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.destroy')
 
     try {
-      const account = await Account.findOrFail(params?.id)
-      await account.delete()
+      await Account.query().where('account_id', params?.id).delete()
+      await Database.from('users_accounts').select('id').where('account_id', params?.id).delete()
+
       return response.noContent()
     } catch (e) {
       return response.badRequest({
@@ -152,19 +185,5 @@ export default class AccountsController {
     })
 
     await request.validate({ schema: accountSchema })
-  }
-
-  /**
-   * Get all required  fields
-   */
-  private getFormFields(request: RequestContract) {
-    const payload = request.only(['user_id', 'password', 'gender', 'birthdate'])
-
-    return {
-      userId: payload.user_id,
-      password: payload.password,
-      gender: payload.gender,
-      birthdate: payload.birthdate,
-    }
   }
 }
