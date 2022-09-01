@@ -62,6 +62,15 @@ Route.group(() => {
   // Ragnarok server
   Route.get('server', 'ServerController.index').middleware('throttle:100reqMin')
   Route.get('server/info', 'ServerController.index').middleware('throttle:100reqMin')
+
+  Route.group(() => {
+    // Account
+    Route.get('accounts', 'AccountsController.index')
+    Route.get('accounts/:id', 'AccountsController.show')
+    Route.post('accounts', 'AccountsController.create')
+    Route.put('accounts/:id', 'AccountsController.update')
+    Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
+  }).middleware('auth')
 })
   .prefix('/api')
   .middleware('throttle:global')
@@ -75,33 +84,35 @@ Route.group(() => {
     const report = await HealthCheck.getReport()
     return report.healthy ? response.ok(report) : response.badRequest(report)
   })
-  Route.post('test-email-connection', 'MailController.testConnection')
 
-  // Users
-  Route.get('users', 'UsersController.index')
-  Route.get('users/:id', 'UsersController.show')
-  Route.post('users', 'UsersController.create')
-  Route.put('users/:id', 'UsersController.update')
-  Route.delete('users/:id', 'UsersController.destroy')
-  // Roles
-  Route.get('roles', 'RolesController.index')
-  Route.get('roles/:id/permissions', 'RolesController.getPermissions')
-  // Permissions
-  Route.get('permissions', 'PermissionsController.index')
-  // Accounts
-  Route.get('accounts', 'AccountsController.index')
-  Route.get('accounts/:id', 'AccountsController.show')
-  Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
-  Route.post('accounts', 'AccountsController.create')
-  Route.put('accounts/:id', 'AccountsController.update')
-  Route.delete('accounts/:id', 'AccountsController.destroy')
-  // Characters
-  Route.get('characters', 'CharactersController.index')
-  Route.get('characters/:id', 'CharactersController.show')
-  Route.get('characters/:id/account', 'CharactersController.getAccount')
-  // Guilds
-  Route.get('guilds', 'GuildsController.index')
-  Route.get('guilds/:id', 'GuildsController.show')
+  Route.group(() => {
+    Route.post('test-email-connection', 'MailController.testConnection')
+    // Users
+    Route.get('users', 'UsersController.index')
+    Route.get('users/:id', 'UsersController.show')
+    Route.post('users', 'UsersController.create')
+    Route.put('users/:id', 'UsersController.update')
+    Route.delete('users/:id', 'UsersController.destroy')
+    // Roles
+    Route.get('roles', 'RolesController.index')
+    Route.get('roles/:id/permissions', 'RolesController.getPermissions')
+    // Permissions
+    Route.get('permissions', 'PermissionsController.index')
+    // Accounts
+    Route.get('accounts', 'AccountsController.index')
+    Route.get('accounts/:id', 'AccountsController.show')
+    Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
+    Route.post('accounts', 'AccountsController.create')
+    Route.put('accounts/:id', 'AccountsController.update')
+    Route.delete('accounts/:id', 'AccountsController.destroy')
+    // Characters
+    Route.get('characters', 'CharactersController.index')
+    Route.get('characters/:id', 'CharactersController.show')
+    Route.get('characters/:id/account', 'CharactersController.getAccount')
+    // Guilds
+    Route.get('guilds', 'GuildsController.index')
+    Route.get('guilds/:id', 'GuildsController.show')
+  }).namespace('App/Controllers/Http/Admin')
 })
   .prefix('/admin/api')
   .middleware('auth')
