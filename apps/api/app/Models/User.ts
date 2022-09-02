@@ -43,8 +43,8 @@ export default class User extends compose(BaseModel, SoftDeletes) {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  @column.dateTime()
-  public deletedAt?: DateTime | null
+  @column.dateTime({ autoCreate: true })
+  public deleted_at?: DateTime | null
 
   @manyToMany(() => Role, {
     localKey: 'id',

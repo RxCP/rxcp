@@ -112,9 +112,9 @@ export default class UsersController {
   }
 
   /**
-   * Delete user
+   * Archive user
    */
-  public async destroy({ params, response, bouncer }: HttpContextContract) {
+  public async archive({ params, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.destroy')
 
     try {
@@ -130,5 +130,46 @@ export default class UsersController {
         ],
       })
     }
+  }
+
+  /**
+   * Restore user from archived
+   */
+  public async restore({ request, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.restore')
+    const payload = request.only(['user_id'])
+
+    try {
+      const user = await User.withTrashed().where('id', payload.user_id).firstOrFail()
+      await user.restore()
+      return user
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
+  }
+
+  /**
+   * Archived users
+   */
+  public async archived({ bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.archived')
+    return await User.onlyTrashed().exec()
+  }
+
+  /**
+   * Permanently delete user
+   */
+  public async delete({ params, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.delete')
+    const user = await User.findOrFail(params.id)
+    await user.forceDelete()
+
+    return response.noContent()
   }
 }
