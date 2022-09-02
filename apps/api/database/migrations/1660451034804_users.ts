@@ -15,6 +15,7 @@ export default class UsersSchema extends BaseSchema {
       table.string('confirmation_token').nullable()
       table.tinyint('confirmed').nullable()
       table.tinyint('blocked').nullable()
+      table.timestamp('deleted_at', { useTz: true }).nullable()
 
       /**
        * Uses timestampz for PostgreSQL and DATETIME2 for MSSQL

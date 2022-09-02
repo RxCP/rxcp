@@ -11,7 +11,8 @@ export default class UsersController {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.index')
 
     const page = request.input('page', 1)
-    const limit = 10
+    const limit = request.input('limit', 10)
+
     const users = await User.query().paginate(page, limit)
     return users.serialize()
   }
@@ -112,14 +113,70 @@ export default class UsersController {
   }
 
   /**
-   * Delete user
+   * Archive user
    */
-  public async destroy({ params, response, bouncer }: HttpContextContract) {
+  public async archive({ params, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.destroy')
 
     try {
       const user = await User.findOrFail(params?.id)
       await user.delete()
+      return response.noContent()
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
+  }
+
+  /**
+   * Restore user from archived
+   */
+  public async restore({ request, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.restore')
+    const payload = request.only(['user_id'])
+
+    try {
+      const user = await User.withTrashed().where('id', payload.user_id).firstOrFail()
+      await user.restore()
+      return user
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
+  }
+
+  /**
+   * Archived users
+   */
+  public async archived({ request, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.archived')
+
+    const page = request.input('page', 1)
+    const limit = request.input('limit', 10)
+
+    const users = await User.onlyTrashed().paginate(page, limit)
+    return users
+  }
+
+  /**
+   * Permanently delete user
+   */
+  public async delete({ params, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.delete')
+
+    try {
+      const user = await User.withTrashed().where('id', params.id).firstOrFail()
+      await user.forceDelete()
       return response.noContent()
     } catch (e) {
       return response.badRequest({
