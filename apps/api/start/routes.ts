@@ -86,16 +86,17 @@ Route.group(() => {
   })
 
   Route.group(() => {
+    // Email
     Route.post('test-email-connection', 'MailController.testConnection')
     // Users
     Route.get('users', 'UsersController.index')
+    Route.get('users/archived', 'UsersController.archived')
     Route.get('users/:id', 'UsersController.show')
     Route.post('users', 'UsersController.create')
+    Route.post('users/restore', 'UsersController.restore')
     Route.put('users/:id', 'UsersController.update')
     Route.delete('users/:id', 'UsersController.archive')
     Route.delete('users/:id/permanent', 'UsersController.delete')
-    Route.post('users/restore', 'UsersController.restore')
-    Route.get('users/archived', 'UsersController.archived')
     // Roles
     Route.get('roles', 'RolesController.index')
     Route.get('roles/:id/permissions', 'RolesController.getPermissions')

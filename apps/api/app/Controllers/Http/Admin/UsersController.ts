@@ -11,7 +11,8 @@ export default class UsersController {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.index')
 
     const page = request.input('page', 1)
-    const limit = 10
+    const limit = request.input('limit', 10)
+
     const users = await User.query().paginate(page, limit)
     return users.serialize()
   }
@@ -157,9 +158,14 @@ export default class UsersController {
   /**
    * Archived users
    */
-  public async archived({ bouncer }: HttpContextContract) {
+  public async archived({ request, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.archived')
-    return await User.onlyTrashed().exec()
+
+    const page = request.input('page', 1)
+    const limit = request.input('limit', 10)
+
+    const users = await User.onlyTrashed().paginate(page, limit)
+    return users
   }
 
   /**
@@ -167,9 +173,19 @@ export default class UsersController {
    */
   public async delete({ params, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.delete')
-    const user = await User.findOrFail(params.id)
-    await user.forceDelete()
 
-    return response.noContent()
+    try {
+      const user = await User.withTrashed().where('id', params.id).firstOrFail()
+      await user.forceDelete()
+      return response.noContent()
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
   }
 }
