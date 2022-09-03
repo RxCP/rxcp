@@ -24,7 +24,8 @@
       "@adonisjs/limiter",
       "@adonisjs/mail",
       "@japa/preset-adonis/build/adonis-typings",
-      "adonis-lucid-soft-deletes"
+      "adonis-lucid-soft-deletes",
+      "adonis-lucid-filter"
     ]
   }
 }
