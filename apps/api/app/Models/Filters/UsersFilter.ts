@@ -30,6 +30,26 @@ export default class UsersFilter extends BasePowerFilter {
     }
   }
 
+  public sort(sort: object | string) {
+    const orders = {
+      asc: 'asc',
+      desc: 'desc',
+    }
+
+    // single sort
+    // e.g ?sort=first_name
+    if (typeof sort === 'string') {
+      this.$query.orderBy(sort, 'asc')
+      return
+    }
+
+    // obj type
+    // e.g sort[asc]=first_name
+    for (const direction in sort) {
+      this.$query.orderBy(sort[direction], orders[direction] || 'asc')
+    }
+  }
+
   /**
    * Produced a valid DB queries based from the query params
    *

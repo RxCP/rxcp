@@ -13,7 +13,8 @@ export default class UsersController {
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
 
-    return await User.query().filter(request.qs()).paginate(page, limit)
+    const users = await User.query().filter(request.qs()).paginate(page, limit)
+    return users.serialize()
   }
 
   /**
