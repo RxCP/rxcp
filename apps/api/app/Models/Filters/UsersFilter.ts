@@ -90,26 +90,26 @@ export default class UsersFilter extends BasePowerFilter {
     type: string = 'and',
     query: ModelQueryBuilderContract<typeof Users, Users>
   ): void {
-    const operators = this.operators[operator]
+    const validOperator = this.operators[operator]
 
-    if (!operators) {
+    if (!validOperator) {
       throw new Error(`'Invalid operator: ${operator}`)
     }
 
     if (operator === 'like') {
       if (type === 'or') {
-        query.orWhere(fieldName, operators[operator], `%${value}%`)
+        query.orWhere(fieldName, validOperator, `%${value}%`)
         return
       }
-      query.where(fieldName, operators[operator], `%${value}%`)
+      query.where(fieldName, validOperator, `%${value}%`)
       return
     }
 
     if (type === 'or') {
-      query.orWhere(fieldName, operators[operator], value)
+      query.orWhere(fieldName, validOperator, value)
       return
     }
 
-    query.where(fieldName, operators[operator], value)
+    query.where(fieldName, validOperator, value)
   }
 }
