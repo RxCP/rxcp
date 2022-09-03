@@ -44,6 +44,7 @@ importers:
       '@japa/preset-adonis': ^1.1.0
       '@japa/runner': ^2.0.9
       '@types/mjml': ^4.7.0
+      adonis-lucid-filter: ^4.1.0
       adonis-lucid-soft-deletes: ^1.4.3
       adonis-preset-ts: ^2.1.0
       eslint: ^8.21.0
@@ -73,6 +74,7 @@ importers:
       '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.6
       '@adonisjs/repl': 3.1.11_@adonisjs+core@5.8.6
       '@adonisjs/view': 6.1.6_@adonisjs+core@5.8.6
+      adonis-lucid-filter: 4.1.0
       adonis-lucid-soft-deletes: 1.4.3
       is-port-reachable: 3.1.0
       luxon: 3.0.1
@@ -1919,6 +1921,12 @@ packages:
     resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  /adonis-lucid-filter/4.1.0:
+    resolution: {integrity: sha512-G1GRFL0CJxRbr5lR09GyVska0Bkq8jGY1gV2CCE8+J4MIiiv/7ujqnHyeirVQ94dKw1BkPmt292pYoHyAz+8uw==}
+    dependencies:
+      type-fest: 2.18.1
+    dev: false
 
   /adonis-lucid-soft-deletes/1.4.3:
     resolution: {integrity: sha512-q+Qdf3PMM4EbaNUPHCAcH6GDE7jcI6ZiX0MEIU4Uec7z6h313US3fXWn/lBYCjFS31rAGP8F5JAgnaytGVQy+g==}
@@ -9264,7 +9272,6 @@ packages:
   /type-fest/2.18.1:
     resolution: {integrity: sha512-UKCINsd4qiATXD6OIlnQw9t1ux/n2ld+Nl0kzPbCONhCaUIS/BhJbNw14w6584HCQWf3frBK8vmWnGZq/sbPHQ==}
     engines: {node: '>=12.20'}
-    dev: true
 
   /type-is/1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}

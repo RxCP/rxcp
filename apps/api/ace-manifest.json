@@ -567,6 +567,23 @@
       ],
       "aliases": [],
       "flags": []
+    },
+    "make:filter": {
+      "settings": {},
+      "commandPath": "adonis-lucid-filter/build/commands/MakeModelFilter",
+      "commandName": "make:filter",
+      "description": "Make a new Lucid filter",
+      "args": [
+        {
+          "type": "string",
+          "propertyName": "name",
+          "name": "name",
+          "required": true,
+          "description": "Name of the filter class"
+        }
+      ],
+      "aliases": [],
+      "flags": []
     }
   },
   "aliases": {}

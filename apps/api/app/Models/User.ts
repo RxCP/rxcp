@@ -3,10 +3,14 @@ import Hash from '@ioc:Adonis/Core/Hash'
 import { column, beforeSave, BaseModel, manyToMany, ManyToMany } from '@ioc:Adonis/Lucid/Orm'
 import { compose } from '@ioc:Adonis/Core/Helpers'
 import { SoftDeletes } from '@ioc:Adonis/Addons/LucidSoftDeletes'
+import { Filterable } from '@ioc:Adonis/Addons/LucidFilter'
 import Role from './Role'
 import Account from './Account'
+import UsersFilter from './Filters/UsersFilter'
 
-export default class User extends compose(BaseModel, SoftDeletes) {
+export default class User extends compose(BaseModel, Filterable, SoftDeletes) {
+  public static $filter = () => UsersFilter
+
   @column({ isPrimary: true })
   public id: number
 

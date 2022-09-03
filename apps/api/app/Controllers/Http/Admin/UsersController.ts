@@ -13,8 +13,7 @@ export default class UsersController {
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
 
-    const users = await User.query().paginate(page, limit)
-    return users.serialize()
+    return await User.query().filter(request.qs()).paginate(page, limit)
   }
 
   /**
@@ -164,8 +163,7 @@ export default class UsersController {
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
 
-    const users = await User.onlyTrashed().paginate(page, limit)
-    return users
+    return await User.query().onlyTrashed().filter(request.qs()).paginate(page, limit)
   }
 
   /**

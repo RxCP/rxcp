@@ -6,7 +6,8 @@
     "@adonisjs/repl/build/commands",
     "@adonisjs/lucid/build/commands",
     "@adonisjs/bouncer/build/commands",
-    "@adonisjs/mail/build/commands"
+    "@adonisjs/mail/build/commands",
+    "adonis-lucid-filter/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
@@ -28,6 +29,7 @@
     "@adonisjs/auth",
     "@adonisjs/lucid",
     "adonis-lucid-soft-deletes",
+    "adonis-lucid-filter",
     "@adonisjs/bouncer",
     "@adonisjs/view",
     "@adonisjs/redis",
