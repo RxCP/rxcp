@@ -22,6 +22,7 @@ export default Env.rules({
   ADMIN_BASE_URL: Env.schema.string(),
   DRIVE_DISK: Env.schema.enum(['local'] as const),
   NODE_ENV: Env.schema.enum(['development', 'production', 'test'] as const),
+  MYSQL_DB_DEBUG: Env.schema.boolean(),
   REDIS_CONNECTION: Env.schema.enum(['local'] as const),
   REDIS_HOST: Env.schema.string({ format: 'host' }),
   REDIS_PORT: Env.schema.number(),

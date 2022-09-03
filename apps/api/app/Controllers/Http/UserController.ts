@@ -3,7 +3,7 @@ import Event from '@ioc:Adonis/Core/Event'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import User from 'App/Models/User'
-import { emailRules, passwordRules } from 'App/validations/user'
+import { emailRules, passwordRules } from 'App/Validations/user'
 
 export default class UserController {
   /**

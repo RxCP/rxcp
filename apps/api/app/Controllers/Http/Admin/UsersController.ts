@@ -1,7 +1,7 @@
 import { schema } from '@ioc:Adonis/Core/Validator'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
-import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/validations/user'
+import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/Validations/user'
 
 export default class UsersController {
   /**
@@ -13,7 +13,8 @@ export default class UsersController {
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
 
-    return await User.query().filter(request.qs()).paginate(page, limit)
+    const users = await User.query().filter(request.qs()).paginate(page, limit)
+    return users.serialize()
   }
 
   /**

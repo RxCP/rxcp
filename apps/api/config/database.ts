@@ -49,7 +49,7 @@ const databaseConfig: DatabaseConfig = {
         paths: ['./database/seeders/MainSeeder'],
       },
       healthCheck: true,
-      debug: false,
+      debug: Env.get('MYSQL_DB_DEBUG', false),
     },
     ragnarok: {
       client: 'mysql',
@@ -65,7 +65,7 @@ const databaseConfig: DatabaseConfig = {
         paths: ['./database/ragnarok/migrations'],
       },
       healthCheck: true,
-      debug: false,
+      debug: Env.get('MYSQL_DB_DEBUG', false),
     },
   },
 }

@@ -2,7 +2,7 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 import User from 'App/Models/User'
-import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/validations/user'
+import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/Validations/user'
 import { Limiter } from '@adonisjs/limiter/build/services/index'
 
 export default class AuthController {

@@ -7,8 +7,8 @@ import {
   genderRules,
   userIdRules,
   userIdUpdateRules,
-} from 'App/validations/account'
-import { passwordRules } from 'App/validations/user'
+} from 'App/Validations/account'
+import { passwordRules } from 'App/Validations/user'
 
 export default class AccountsController {
   /**
