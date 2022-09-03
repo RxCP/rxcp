@@ -2,19 +2,25 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/Validations/user'
+import cacheData from 'App/Services/cacheData'
+import Redis from '@ioc:Adonis/Addons/Redis'
 
 export default class UsersController {
   /**
    * Users list
    */
-  public async index({ request, bouncer }: HttpContextContract) {
+  public async index({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.index')
 
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
+    const requestQs = request.qs()
+    const qs = JSON.stringify(requestQs)
+    const cacheKey = qs !== '{}' ? `users:${qs}` : 'users:'
 
-    const users = await User.query().filter(request.qs()).paginate(page, limit)
-    return users.serialize()
+    return await cacheData(cacheKey)(response)(async () => {
+      return await User.query().filter(requestQs).paginate(page, limit)
+    })
   }
 
   /**
@@ -186,5 +192,29 @@ export default class UsersController {
         ],
       })
     }
+  }
+
+  /**
+   * Clear users cache
+   */
+  public async clearCache({ bouncer, response }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.clearCache')
+
+    const stream = Redis.scanStream({ match: 'users:*', count: 100 })
+    let pipeline = Redis.pipeline()
+
+    stream.on('data', (keys) => {
+      stream.pause()
+
+      for (const key of keys) {
+        pipeline.del(key)
+      }
+
+      pipeline.exec(() => {
+        stream.resume()
+      })
+    })
+
+    return response.noContent()
   }
 }
