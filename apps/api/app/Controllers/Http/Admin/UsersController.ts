@@ -26,11 +26,15 @@ export default class UsersController {
   /**
    *User details
    */
-  public async show({ params, bouncer }: HttpContextContract) {
+  public async show({ params, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.show')
 
+    const data = await cacheData(`user:${params?.id}`)(response)(async () => {
+      return await User.find(params?.id)
+    })
+
     return {
-      data: await User.find(params?.id),
+      data,
     }
   }
 
@@ -195,9 +199,20 @@ export default class UsersController {
   }
 
   /**
+   * Clear one user cache
+   */
+  public async clearOneCache({ response, params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.clearCache')
+    console.log(`user:${params?.id}`)
+    await Redis.del(`user:${params?.id}`)
+
+    return response.noContent()
+  }
+
+  /**
    * Clear users cache
    */
-  public async clearCache({ bouncer, response }: HttpContextContract) {
+  public async clearAllCache({ bouncer, response }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.clearCache')
 
     const stream = Redis.scanStream({ match: 'users:*', count: 100 })

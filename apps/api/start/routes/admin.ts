@@ -21,9 +21,10 @@ Route.group(() => {
     Route.post('users', 'UsersController.create')
     Route.post('users/restore', 'UsersController.restore')
     Route.put('users/:id', 'UsersController.update')
-    Route.delete('users/cache', 'UsersController.clearCache')
     Route.delete('users/:id', 'UsersController.archive')
     Route.delete('users/:id/permanent', 'UsersController.delete')
+    Route.delete('cache/users', 'UsersController.clearAllCache')
+    Route.delete('cache/users/:id', 'UsersController.clearOneCache')
     // Roles
     Route.get('roles', 'RolesController.index')
     Route.get('roles/:id/permissions', 'RolesController.getPermissions')
