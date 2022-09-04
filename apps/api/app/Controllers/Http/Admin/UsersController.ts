@@ -11,7 +11,6 @@ export default class UsersController {
    */
   public async index({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.index')
-
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
     const requestQs = request.qs()
@@ -203,7 +202,6 @@ export default class UsersController {
    */
   public async clearOneCache({ response, params, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.clearCache')
-    console.log(`user:${params?.id}`)
     await Redis.del(`user:${params?.id}`)
 
     return response.noContent()
