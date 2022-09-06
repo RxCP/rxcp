@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./apps/admin/public/images/logo.png" width="100">
+</p>
 <h1 align="center">Rx Control Panel (RXCP)</h1>
 <h2 align="center">API and Admin Dashboard.</h2>
 <p align="center">Powerful open-source headless control panel for Ragnarok Online servers.</p>
