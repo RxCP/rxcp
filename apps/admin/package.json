@@ -3,21 +3,34 @@
   "version": "1.0.0-alpha",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --experimental-integrations",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "analysis": "windicss-analysis"
   },
   "devDependencies": {
-    "@astrojs/solid-js": "^1.0.0",
-    "astro": "^1.0.6",
-    "prettier-plugin-astro": "^0.5.0",
-    "solid-js": "^1.4.3"
+    "@astrojs/solid-js": "^1.1.0",
+    "@iconify-json/tabler": "^1.1.30",
+    "@unocss/preset-icons": "^0.45.18",
+    "@unocss/preset-web-fonts": "^0.45.18",
+    "@unocss/transformer-attributify-jsx": "^0.45.18",
+    "@unocss/astro": "^0.45.18",
+    "@unocss/preset-attributify": "^0.45.18",
+    "@unocss/preset-uno": "^0.45.18",
+    "@unocss/preset-wind": "^0.45.18",
+    "@unocss/reset": "^0.45.18",
+    "astro": "^1.1.5",
+    "eslint": "^8.23.0",
+    "eslint-plugin-solid": "^0.7.1",
+    "prettier-plugin-astro": "^0.5.4",
+    "solid-js": "^1.5.3",
+    "windicss-analysis": "^0.3.5"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^1.0.0"
+    "unocss": "^0.45.18"
   },
   "engines": {
     "node": "16.x.x",
