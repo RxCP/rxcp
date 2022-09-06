@@ -1,6 +1,6 @@
 import type { Component, JSX } from "solid-js";
 
-type ParentProps<P = {}> = P & { to?: string, text: string };
+type ParentProps<P = {}> = P & { to?: string; text: string };
 type ParentComponent<P = {}> = Component<ParentProps<P>>;
 
 export const HeaderPageTitle: ParentComponent = ({ to, text }) => {

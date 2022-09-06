@@ -4,9 +4,5 @@ type ParentProps<P = {}> = P & { children?: JSX.Element };
 type ParentComponent<P = {}> = Component<ParentProps<P>>;
 
 export const MainContent: ParentComponent = ({ children }) => {
-  return (
-    <div class="dark:bg-slate-800 rounded p-4">
-      {children}
-    </div>
-  );
+  return <div class="dark:bg-slate-800 rounded dark:p-4">{children}</div>;
 };

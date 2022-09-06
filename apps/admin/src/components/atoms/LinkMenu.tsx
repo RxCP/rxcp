@@ -7,7 +7,10 @@ export const LinkMenu: MenuItemSidebarComponent = (props) => {
   return (
     <a
       href="#"
-      class="flex items-center py-2 px-4 text-sm font-normal text-slate-900 rounded dark:text-slate-300 hover:bg-gray-100 dark:hover:bg-slate-800/50"
+      class="flex items-center
+        py-2 px-4 rounded
+        text-sm font-normal text-slate-900
+        dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-800/50"
     >
       {props.children}
     </a>
