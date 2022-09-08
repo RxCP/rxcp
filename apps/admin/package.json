@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@astrojs/svelte": "^1.0.0",
+    "@astrojs/turbolinks": "^0.1.4",
     "@iconify-json/tabler": "^1.1.31",
     "@unocss/preset-attributify": "^0.45.18",
     "@unocss/preset-icons": "^0.45.18",
