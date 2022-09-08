@@ -8,6 +8,8 @@ import presetAttributify from '@unocss/preset-attributify';
 import presetIcons from '@unocss/preset-icons';
 import presetUno from '@unocss/preset-uno';
 
+import turbolinks from '@astrojs/turbolinks';
+
 // https://astro.build/config
 export default defineConfig({
   server: { port: 8080 },
@@ -39,5 +41,6 @@ export default defineConfig({
       ],
     }),
     svelte(),
+    turbolinks()
   ],
 });

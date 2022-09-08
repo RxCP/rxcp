@@ -17,6 +17,7 @@ importers:
   apps/admin:
     specifiers:
       '@astrojs/svelte': ^1.0.0
+      '@astrojs/turbolinks': ^0.1.4
       '@iconify-json/tabler': ^1.1.31
       '@unocss/preset-attributify': ^0.45.18
       '@unocss/preset-icons': ^0.45.18
@@ -38,6 +39,7 @@ importers:
       unocss: 0.45.18
     devDependencies:
       '@astrojs/svelte': 1.0.0_svelte@3.50.0
+      '@astrojs/turbolinks': 0.1.4
       '@iconify-json/tabler': 1.1.31
       '@unocss/preset-attributify': 0.45.18
       '@unocss/preset-icons': 0.45.18
@@ -707,6 +709,13 @@ packages:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
+
+  /@astrojs/turbolinks/0.1.4:
+    resolution: {integrity: sha512-p6CBacV+wHGtRlfRJ1kSu+mxHm5sFe3oN71WQ3kkDEU00x6KwWC7C+Ok3NLI7EZXHdBs4SglXJdZeY7vLfmk+g==}
+    deprecated: This integration is no longer maintained.
+    dependencies:
+      turbolinks: 5.2.0
+    dev: true
 
   /@astrojs/webapi/1.0.0:
     resolution: {integrity: sha512-+klQ75oQbRdAMEbvAgrKE14hxh6GVHsQWZE4j/eJ2qhnvMSu7pw13MVQtFaAV96+pUkcYSjwWd1k+Oxoxkuo3g==}
@@ -9344,6 +9353,10 @@ packages:
       turbo-windows-32: 1.4.6
       turbo-windows-64: 1.4.6
       turbo-windows-arm64: 1.4.6
+    dev: true
+
+  /turbolinks/5.2.0:
+    resolution: {integrity: sha512-pMiez3tyBo6uRHFNNZoYMmrES/IaGgMhQQM+VFF36keryjb5ms0XkVpmKHkfW/4Vy96qiGW3K9bz0tF5sK9bBw==}
     dev: true
 
   /type-check/0.4.0:
