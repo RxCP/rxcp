@@ -1,14 +1,14 @@
 <script>
-import LinkMenu from "@components/atoms/LinkMenu.svelte";
-import IconText from "@components/molecules/IconText.svelte";
-import SidebarInner from "./SidebarInner.svelte";
-import SidebarLogo from "./SidebarLogo.svelte";
-import SidebarMenu from "./SidebarMenu.svelte";
-import SidebarMenuItem from "./SidebarMenuItem.svelte";
-import SidebarTitle from "./SidebarTitle.svelte";
-import SidebarWrapper from "./SidebarWrapper.svelte";
-
+  import LinkMenu from '@components/atoms/LinkMenu.svelte';
+  import IconText from '@components/molecules/IconText.svelte';
+  import SidebarInner from './SidebarInner.svelte';
+  import SidebarLogo from './SidebarLogo.svelte';
+  import SidebarMenu from './SidebarMenu.svelte';
+  import SidebarMenuItem from './SidebarMenuItem.svelte';
+  import SidebarTitle from './SidebarTitle.svelte';
+  import SidebarWrapper from './SidebarWrapper.svelte';
 </script>
+
 <SidebarWrapper>
   <SidebarInner>
     <SidebarLogo />
@@ -18,10 +18,7 @@ import SidebarWrapper from "./SidebarWrapper.svelte";
       </SidebarMenuItem>
       <SidebarMenuItem>
         <LinkMenu to="/admin/dashboard">
-          <IconText
-            text="Dashboard"
-            iconClass="i-tabler-layout-dashboard"
-          />
+          <IconText text="Dashboard" iconClass="i-tabler-layout-dashboard" />
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
@@ -36,10 +33,7 @@ import SidebarWrapper from "./SidebarWrapper.svelte";
       </SidebarMenuItem>
       <SidebarMenuItem>
         <LinkMenu to="#">
-          <IconText
-            text="Guilds"
-            iconClass="i-tabler-building-skyscraper"
-          />
+          <IconText text="Guilds" iconClass="i-tabler-building-skyscraper" />
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>

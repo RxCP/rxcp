@@ -1,6 +1,6 @@
 <script>
-	export let to;
-	export let text;
+  export let to;
+  export let text;
 </script>
 
 <a href={to} class="dark:text-gray-500">

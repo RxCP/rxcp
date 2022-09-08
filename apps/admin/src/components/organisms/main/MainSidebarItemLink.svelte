@@ -1,6 +1,6 @@
 <script>
-	export let to;
-	export let text;
+  export let to;
+  export let text;
 </script>
 
 <li>

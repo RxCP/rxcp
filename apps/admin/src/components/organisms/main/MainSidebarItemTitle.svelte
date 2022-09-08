@@ -1,6 +1,6 @@
 <script>
-	export let className;
-	export let text;
+  export let className;
+  export let text;
 </script>
 
 <li>

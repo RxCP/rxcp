@@ -1,9 +1,9 @@
 <script>
-import Button from "@components/atoms/buttons/Button.svelte";
-import FormCheckbox from "@components/atoms/forms/FormCheckbox.svelte";
-import FormInput from "@components/atoms/forms/FormInput.svelte";
-import FormLabel from "@components/atoms/forms/FormLabel.svelte";
-import Link from "@components/atoms/links/Link.svelte";
+  import Button from '@components/atoms/buttons/Button.svelte';
+  import FormCheckbox from '@components/atoms/forms/FormCheckbox.svelte';
+  import FormInput from '@components/atoms/forms/FormInput.svelte';
+  import FormLabel from '@components/atoms/forms/FormLabel.svelte';
+  import Link from '@components/atoms/links/Link.svelte';
 </script>
 
 <form>

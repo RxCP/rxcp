@@ -1,6 +1,6 @@
 <script>
-	export let htmlFor;
-	export let text;
+  export let htmlFor;
+  export let text;
 </script>
 
 <label

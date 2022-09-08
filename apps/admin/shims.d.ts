@@ -1,6 +1,6 @@
-import type { AttributifyNames } from "@unocss/preset-attributify";
+import type { AttributifyNames } from '@unocss/preset-attributify';
 
-type Prefix = "un:";
+type Prefix = 'un:';
 
 declare global {
   namespace svelte.JSX {

@@ -1,9 +1,9 @@
 <script>
-	export let type;
+  export let type;
 </script>
 
 <button
-  type={type}
+  {type}
   un:bg="blue-700"
   class="block text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300
     font-medium rounded text-sm w-full px-5 py-2.5 text-center dark:focus:ring-blue-800"

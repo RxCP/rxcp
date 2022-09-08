@@ -1,5 +1,5 @@
 <script>
-	export let to;
+  export let to;
 </script>
 
 <a
