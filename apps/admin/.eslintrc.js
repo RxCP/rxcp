@@ -1,5 +1,16 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["solid"],
-  "extends": ["eslint:recommended", "plugin:solid/typescript"]
+  "plugins": [
+    "svelte3",
+    '@typescript-eslint'
+  ],
+  "overrides": [
+    {
+      files: ['*.svelte'],
+      processor: 'svelte3/svelte3'
+    }
+  ],
+  "settings": {
+    'svelte3/typescript': true, // load TypeScript as peer dependency
+  }
 }
