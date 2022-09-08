@@ -1,43 +1,43 @@
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 
-import solidJs from "@astrojs/solid-js";
+import svelte from '@astrojs/svelte';
 
-import Unocss from "unocss/astro";
-import presetWebFonts from "@unocss/preset-web-fonts";
-import presetWind from "@unocss/preset-wind";
-import presetAttributify from "@unocss/preset-attributify";
-import presetIcons from "@unocss/preset-icons";
+import uno from 'astro-uno';
+import presetWebFonts from '@unocss/preset-web-fonts';
+import presetAttributify from '@unocss/preset-attributify';
+import presetIcons from '@unocss/preset-icons';
+import presetUno from '@unocss/preset-uno';
 
 // https://astro.build/config
 export default defineConfig({
   server: { port: 8080 },
   integrations: [
-    Unocss({
+    uno({
       presets: [
-        presetWind(),
+        presetUno(),
         presetIcons(),
         presetWebFonts({
-          provider: "google",
+          provider: 'google',
           fonts: {
             sans: [
               {
-                name: "Inter",
-                weights: ["400", "500", "700"],
+                name: 'Inter',
+                weights: ['400', '500', '700'],
                 italic: true,
               },
               {
-                name: "sans-serif",
-                provider: "none",
+                name: 'sans-serif',
+                provider: 'none',
               },
             ],
           },
         }),
         presetAttributify({
-          prefix: "un:",
+          prefix: 'un:',
           prefixedOnly: true,
         }),
       ],
     }),
-    solidJs(),
+    svelte(),
   ],
 });

@@ -1,17 +1,18 @@
 ---
-import { UserNav } from "../components/atoms/UserNav";
-import { Sidebar } from "../components/organisms/sidebar/Sidebar";
-import { SiteWrapper } from "@components/organisms/SiteWrapper"
-import { Main } from "@components/organisms/main/Main"
-import { MainSidebar } from "@components/organisms/main/MainSidebar"
-import { MainInner } from "@components/organisms/main/MainInner"
-import { MainContentWrapper } from "@components/organisms/main/MainContentWrapper"
-import { Header } from "@components/organisms/header/Header"
-import { MainContent } from "@components/organisms/main/MainContent"
-import { HeaderPageTitle } from "@components/organisms/header/HeaderPageTitle"
-import { MainSidebarMenu } from "@components/organisms/main/MainSidebarMenu"
-import { MainSidebarItemTitle } from "@components/organisms/main/MainSidebarItemTitle"
-import { MainSidebarItemLink } from "@components/organisms/main/MainSidebarItemLink"
+import UserNav from '../components/molecules/UserNav.svelte';
+import Sidebar from '../components/organisms/sidebar/Sidebar.svelte';
+import SiteWrapper from '@components/organisms/SiteWrapper.svelte';
+import Main from '@components/organisms/main/Main.svelte';
+import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
+import MainInner from '@components/organisms/main/MainInner.svelte';
+import MainContentWrapper from '@components/organisms/main/MainContentWrapper.svelte';
+import Header from '@components/organisms/header/Header.svelte';
+import MainContent from '@components/organisms/main/MainContent.svelte';
+import HeaderPageTitle from '@components/organisms/header/HeaderPageTitle.svelte';
+import MainSidebarMenu from '@components/organisms/main/MainSidebarMenu.svelte';
+import MainSidebarItemTitle from '@components/organisms/main/MainSidebarItemTitle.svelte';
+import MainSidebarItemLink from '@components/organisms/main/MainSidebarItemLink.svelte';
+import Html from './Html.astro';
 
 export interface Props {
   title: string;
@@ -20,42 +21,35 @@ export interface Props {
 const { title } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="dark h-full">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title} - RxCP</title>
-  </head>
-  <body class="bg-gray-100 dark:bg-slate-900 dark:text-zinc-200 font-sans h-full">
-    <SiteWrapper>
-      <Sidebar/>
-      <Main>
-        <MainInner>
-          <MainSidebar>
-            <MainSidebarMenu>
-              <MainSidebarItemTitle text="Server Settings" />
-              <MainSidebarItemLink to="#" text="Overview" />
-              <MainSidebarItemTitle text="Administration Panel" className="mt-4" />
-              <MainSidebarItemLink to="#" text="Users" />
-              <MainSidebarItemLink to="#" text="Roles" />
-            </MainSidebarMenu>
-          </MainSidebar>
-          <MainContentWrapper>
-            <Header>
-              <HeaderPageTitle to="#" text="Settings" />
-              <div data-com="UserNav" class="flex ml-auto space-x-3">
-                <UserNav />
-              </div>
-            </Header>
-            <MainContent>
-              <slot />
-            </MainContent>
-          </MainContentWrapper>
-        </MainInner>
-      </Main>
-    </SiteWrapper>
-  </body>
-</html>
+<Html title={title}>
+  <SiteWrapper>
+    <Sidebar />
+    <Main>
+      <MainInner>
+        <MainSidebar>
+          <MainSidebarMenu>
+            <MainSidebarItemTitle text="Server Settings" />
+            <MainSidebarItemLink to="#" text="Overview" />
+            <MainSidebarItemTitle
+              text="Administration Panel"
+              className="mt-4"
+            />
+            <MainSidebarItemLink to="#" text="Users" />
+            <MainSidebarItemLink to="#" text="Roles" />
+          </MainSidebarMenu>
+        </MainSidebar>
+        <MainContentWrapper>
+          <Header>
+            <HeaderPageTitle to="#" text="Settings" />
+            <div data-com="UserNav" class="flex ml-auto space-x-3">
+              <UserNav />
+            </div>
+          </Header>
+          <MainContent>
+            <slot />
+          </MainContent>
+        </MainContentWrapper>
+      </MainInner>
+    </Main>
+  </SiteWrapper>
+</Html>

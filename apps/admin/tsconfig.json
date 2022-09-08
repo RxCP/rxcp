@@ -15,9 +15,6 @@
     "strict": true,
     // Error when a value import is only used as a type.
     "importsNotUsedAsValues": "error",
-    // SolidJs
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
     // https://docs.astro.build/en/guides/aliases/
     "baseUrl": ".",
     "paths": {

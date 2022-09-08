@@ -1,12 +1,9 @@
-import type {
-  AttributifyAttributes,
-  AttributifyNames,
-} from "@unocss/preset-attributify";
+import type { AttributifyNames } from '@unocss/preset-attributify';
 
-type Prefix = "un:";
+type Prefix = 'un:';
 
-declare module "solid-js" {
-  namespace JSX {
+declare global {
+  namespace svelte.JSX {
     interface HTMLAttributes<T>
       extends Partial<Record<AttributifyNames<Prefix>, string>> {}
   }
