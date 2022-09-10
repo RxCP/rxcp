@@ -1,19 +1,21 @@
-import { defineConfig } from 'astro/config';
+import { clientPlugin, defineConfig } from '@vitebook/client/node';
+import { svelteMarkdownPlugin } from '@vitebook/markdown-svelte/node';
+import {
+  defaultThemePlugin,
+  DefaultThemeConfig,
+} from '@vitebook/theme-default/node';
 
-import svelte from '@astrojs/svelte';
-
-import uno from 'astro-uno';
+import Unocss from '@unocss/vite'
+import { extractorSvelte } from '@unocss/core'
 import presetWebFonts from '@unocss/preset-web-fonts';
 import presetAttributify from '@unocss/preset-attributify';
 import presetIcons from '@unocss/preset-icons';
 import presetUno from '@unocss/preset-uno';
-import { extractorSvelte } from '@unocss/core'
 
-// https://astro.build/config
-export default defineConfig({
-  server: { port: 8080 },
-  integrations: [
-    uno({
+export default defineConfig<DefaultThemeConfig>({
+  include: ['src/**/*.md', 'src/**/*.story.svelte'],
+  plugins: [
+    Unocss({
       extractors: [extractorSvelte],
       presets: [
         presetUno(),
@@ -40,6 +42,13 @@ export default defineConfig({
         }),
       ],
     }),
-    svelte(),
+    svelteMarkdownPlugin(),
+    clientPlugin({ appFile: 'App.svelte' }),
+    defaultThemePlugin(),
   ],
+  site: {
+    title: 'RxCP UI',
+    description: 'RxCP UI',
+    theme: {},
+  },
 });

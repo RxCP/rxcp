@@ -8,7 +8,7 @@
 />
 <!-- <div
   id="userDropdown"
-  class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 block"
+  class="z-10 un-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 block"
   data-popper-reference-hidden=""
   data-popper-escaped=""
   data-popper-placement="bottom-start"
