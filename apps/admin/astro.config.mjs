@@ -33,7 +33,7 @@ export default defineConfig({
           },
         }),
         presetAttributify({
-          prefix: 'un:',
+          prefix: 'un-',
           prefixedOnly: true,
         }),
       ],
