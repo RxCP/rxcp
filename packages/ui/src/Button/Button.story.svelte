@@ -3,7 +3,7 @@
 
   export const __pageMeta: PageMeta = {
     title: 'Button',
-    description: 'My awesome button.',
+    description: '',
   };
 </script>
 
@@ -18,10 +18,11 @@
 
   let text : string = 'Primary Button';
   let disabled : boolean = false;
+  let isLoading : boolean = false;
 </script>
 
 <Variant name="Default" description="The default button.">
-  <Button {disabled} on:click={eventCallback}>{text}</Button>
+  <Button {disabled} {isLoading} on:click={eventCallback}>{text}</Button>
 </Variant>
 
 <Variant
@@ -34,16 +35,21 @@
     disabled = false;
   }}
 >
-  <Button {disabled}>{text}</Button>
+  <Button {disabled} {isLoading}>{text}</Button>
 </Variant>
 
 <ControlsAddon>
+<div class="vbk-controls">
   <label>
     text <input type="text" bind:value={text} />
   </label>
-  <label style="margin-top: 24px;">
+  <label>
     Disabled <input type="checkbox" bind:checked={disabled} />
   </label>
+  <label>
+    isLoading <input type="checkbox" bind:checked={isLoading} />
+  </label>
+</div>
 </ControlsAddon>
 
 <EventsAddon />

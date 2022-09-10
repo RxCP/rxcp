@@ -5,8 +5,8 @@ import {
   DefaultThemeConfig,
 } from '@vitebook/theme-default/node';
 
-import Unocss from '@unocss/vite'
-import { extractorSvelte } from '@unocss/core'
+import Unocss from '@unocss/vite';
+import { extractorSvelte } from '@unocss/core';
 import presetWebFonts from '@unocss/preset-web-fonts';
 import presetAttributify from '@unocss/preset-attributify';
 import presetIcons from '@unocss/preset-icons';
