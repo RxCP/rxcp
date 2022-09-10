@@ -39,15 +39,17 @@
 </Variant>
 
 <ControlsAddon>
+<div class="vbk-controls">
   <label>
     text <input type="text" bind:value={text} />
   </label>
-  <label style="margin-top: 24px;">
+  <label>
     Disabled <input type="checkbox" bind:checked={disabled} />
   </label>
-  <label style="margin-top: 24px;">
+  <label>
     isLoading <input type="checkbox" bind:checked={isLoading} />
   </label>
+</div>
 </ControlsAddon>
 
 <EventsAddon />

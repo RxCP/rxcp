@@ -1,0 +1,9 @@
+.vbk-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.vbk-controls > label {
+  margin-bottom: 20px;
+}
+
