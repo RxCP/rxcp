@@ -16,12 +16,12 @@
   } from '@vitebook/client/addons';
   import Button from './Button.svelte';
 
-  let title : string = 'Click Me';
+  let text : string = 'Primary Button';
   let disabled : boolean = false;
 </script>
 
 <Variant name="Default" description="The default button.">
-  <Button {disabled} on:click={eventCallback}>{title}</Button>
+  <Button {disabled} on:click={eventCallback}>{text}</Button>
 </Variant>
 
 <Variant
@@ -34,12 +34,12 @@
     disabled = false;
   }}
 >
-  <Button {disabled}>{title}</Button>
+  <Button {disabled}>{text}</Button>
 </Variant>
 
 <ControlsAddon>
   <label>
-    Title <input type="text" bind:value={title} />
+    text <input type="text" bind:value={text} />
   </label>
   <label style="margin-top: 24px;">
     Disabled <input type="checkbox" bind:checked={disabled} />
