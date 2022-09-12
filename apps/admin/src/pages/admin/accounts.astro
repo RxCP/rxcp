@@ -1,9 +1,26 @@
 ---
+import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
+import MainSidebarItemLink from '@components/organisms/main/MainSidebarItemLink.svelte';
+import MainSidebarItemTitle from '@components/organisms/main/MainSidebarItemTitle.svelte';
+import MainSidebarMenu from '@components/organisms/main/MainSidebarMenu.svelte';
 import Layout from '../../layouts/Dashboard.astro';
 ---
 
-<Layout title="Dashboard">
+<Layout title="Accounts">
   <section>
     <h1 class="text-4xl font-medium">Accounts</h1>
   </section>
+
+  <MainSidebar slot="sidebar">
+    <MainSidebarMenu>
+      <MainSidebarItemTitle text="Server Settings" />
+      <MainSidebarItemLink to="#" text="Overview" />
+      <MainSidebarItemTitle
+        text="Administration Panel"
+        className="mt-4"
+      />
+      <MainSidebarItemLink to="#" text="Users" />
+      <MainSidebarItemLink to="#" text="Roles" />
+    </MainSidebarMenu>
+  </MainSidebar>
 </Layout>

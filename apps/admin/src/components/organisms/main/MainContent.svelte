@@ -1,3 +1,3 @@
-<div class="dark:bg-slate-800 rounded dark:p-4">
+<div class="bg-gray-50 dark:bg-slate-800 rounded p-4">
   <slot />
 </div>

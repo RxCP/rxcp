@@ -2,6 +2,13 @@
 import Html from '../layouts/Html.astro';
 import PrimaryLogo from '@components/atoms/logo/PrimaryLogo.svelte';
 import LoginForm from '@components/organisms/forms/LoginForm.svelte';
+
+import { getUser, redirectUser } from '@astro-auth/core';
+
+const user = getUser({ client: Astro });
+if (user) {
+  return redirectUser('/admin/dashboard');
+}
 ---
 
 <Html title="Login">
@@ -14,7 +21,7 @@ import LoginForm from '@components/organisms/forms/LoginForm.svelte';
       un-bg="white dark:slate-800"
       class="mx-auto w-[400px] p-10 shadow-lg rounded"
     >
-      <LoginForm />
+      <LoginForm client:load />
     </div>
   </div>
 </Html>
