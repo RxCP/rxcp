@@ -14,6 +14,7 @@
   "devDependencies": {
     "@astrojs/svelte": "^1.0.0",
     "@iconify-json/tabler": "^1.1.31",
+    "@popperjs/core": "^2.11.6",
     "@unocss/core": "^0.45.18",
     "@unocss/preset-attributify": "^0.45.18",
     "@unocss/preset-icons": "^0.45.18",
@@ -28,11 +29,15 @@
     "prettier-plugin-astro": "^0.5.4",
     "svelte": "^3.46.4",
     "ui": "*",
+    "unocss": "^0.45.18",
     "windicss-analysis": "^0.3.5"
   },
   "dependencies": {
-    "astro": "^1.1.6",
-    "unocss": "^0.45.18"
+    "@astro-auth/client": "^1.0.5",
+    "@astro-auth/core": "^1.0.12",
+    "@astro-auth/providers": "^1.0.6",
+    "@astrojs/node": "^1.0.1",
+    "astro": "^1.2.1"
   },
   "engines": {
     "node": "16.x.x",

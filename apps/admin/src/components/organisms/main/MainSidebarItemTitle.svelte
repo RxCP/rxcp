@@ -1,6 +1,6 @@
-<script>
-  export let className;
-  export let text;
+<script lang="ts">
+  export let className : string = '';
+  export let text : string;
 </script>
 
 <li>
