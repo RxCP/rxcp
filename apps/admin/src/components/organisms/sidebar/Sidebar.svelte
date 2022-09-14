@@ -86,27 +86,27 @@
         <SidebarTitle title="Plugins" className="mt-4" />
       </SidebarMenuItem>
       <SidebarMenuItem>
-        <LinkMenu to="/admin/cms">
+        <LinkMenu to="/admin/plugins/cms">
           <SidebarIconText text="CMS" iconClass="i-tabler-note" />
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
-        <LinkMenu to="/admin/vote">
+        <LinkMenu to="/admin/plugins/vote">
           <SidebarIconText text="Vote4Points" iconClass="i-tabler-pencil" />
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
-        <LinkMenu to="/admin/shop">
+        <LinkMenu to="/admin/plugins/shop">
           <SidebarIconText text="Shop" iconClass="i-tabler-shopping-cart" />
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
-        <LinkMenu to="/admin/tickets">
+        <LinkMenu to="/admin/plugins/tickets">
           <SidebarIconText text="Tickets" iconClass="i-tabler-ticket" />
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
-        <LinkMenu to="/admin/system">
+        <LinkMenu to="/admin/plugins/system">
           <SidebarIconText
             text="System"
             iconClass="i-tabler-heart-rate-monitor"
