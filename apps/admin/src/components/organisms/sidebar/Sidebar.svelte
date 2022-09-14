@@ -68,8 +68,8 @@
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
-        <LinkMenu to="/admin/rangkins">
-          <SidebarIconText text="Rangkings" iconClass="i-tabler-chart-bar" />
+        <LinkMenu to="/admin/rankings">
+          <SidebarIconText text="Rankings" iconClass="i-tabler-chart-bar" />
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
