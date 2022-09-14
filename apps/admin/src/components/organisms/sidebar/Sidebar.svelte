@@ -106,6 +106,14 @@
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
+        <LinkMenu to="/admin/system">
+          <SidebarIconText
+            text="System"
+            iconClass="i-tabler-heart-rate-monitor"
+          />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
         <SidebarTitle title="General" className="mt-4" />
       </SidebarMenuItem>
       <SidebarMenuItem>
