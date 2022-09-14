@@ -18,13 +18,15 @@
 </p>
 
 ## 💻 Technologies
-![Technologies](https://skillicons.dev/icons?i=redis,mysql,nodejs,typescript,html,css,tailwindcss,astro)
 
-Other: [AdonisJs](https://adonisjs.com/), [SolidJs](https://www.solidjs.com/).
+![Technologies](https://skillicons.dev/icons?i=redis,mysql,nodejs,typescript,html,css,astro,svelte)
 
+Other: [AdonisJs](https://adonisjs.com/), [UnoCSS](https://github.com/unocss/unocss).
 
 ## 📘 Documentation
+
 API - https://documenter.getpostman.com/view/390924/VUjSGPdG
 
 ## 📄 License
+
 Licensed under [The MIT License](https://opensource.org/licenses/MIT).
