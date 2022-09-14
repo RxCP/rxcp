@@ -1,7 +1,6 @@
 ---
 import UserNav from '@components/molecules/userNav/UserNav.svelte';
 import Sidebar from '@components/organisms/sidebar/Sidebar.svelte';
-import SiteWrapper from '@components/organisms/SiteWrapper.svelte';
 import Main from '@components/organisms/main/Main.svelte';
 import MainInner from '@components/organisms/main/MainInner.svelte';
 import MainContentWrapper from '@components/organisms/main/MainContentWrapper.svelte';
@@ -21,23 +20,21 @@ const user = auth(Astro);
 ---
 
 <Html title={title}>
-  <SiteWrapper>
-    <Sidebar />
-    <Main>
-      <MainInner>
-        <slot name="sidebar" />
-        <MainContentWrapper>
-          <Header>
-            <HeaderPageTitle text={title} />
-            <div class="flex ml-auto space-x-3">
-              {user && <UserNav user={user} client:load />}
-            </div>
-          </Header>
-          <MainContent>
-            <slot />
-          </MainContent>
-        </MainContentWrapper>
-      </MainInner>
-    </Main>
-  </SiteWrapper>
+  <Sidebar client:load />
+  <Main>
+    <MainInner>
+      <slot name="sidebar" />
+      <MainContentWrapper>
+        <Header>
+          <HeaderPageTitle text={title} />
+          <div class="flex ml-auto space-x-3">
+            {user && <UserNav user={user} client:load />}
+          </div>
+        </Header>
+        <MainContent>
+          <slot />
+        </MainContent>
+      </MainContentWrapper>
+    </MainInner>
+  </Main>
 </Html>

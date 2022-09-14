@@ -30,6 +30,7 @@
     "svelte": "^3.46.4",
     "ui": "*",
     "unocss": "^0.45.18",
+    "unocss-preset-scrollbar": "^0.2.1",
     "windicss-analysis": "^0.3.5"
   },
   "dependencies": {

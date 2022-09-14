@@ -20,7 +20,7 @@
     // Dropdown
     button?.addEventListener('click', showMenu);
     navPopper = createPopper(button, dropdown, {
-      placement: 'bottom-start',
+      placement: 'bottom-end',
       modifiers: [
         {
           name: 'offset',

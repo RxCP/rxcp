@@ -1,3 +1,3 @@
-<main class="basis-0 flex-grow-[999] min-h-lg">
+<main class="lg:ml-[123px] xl:ml-[300px]">
   <slot />
 </main>
