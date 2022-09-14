@@ -68,6 +68,52 @@
         </LinkMenu>
       </SidebarMenuItem>
       <SidebarMenuItem>
+        <LinkMenu to="/admin/rankings">
+          <SidebarIconText text="Rankings" iconClass="i-tabler-chart-bar" />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <LinkMenu to="/admin/vending">
+          <SidebarIconText text="Vending" iconClass="i-tabler-zoom-money" />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <LinkMenu to="/admin/database">
+          <SidebarIconText text="Database" iconClass="i-tabler-database" />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <SidebarTitle title="Plugins" className="mt-4" />
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <LinkMenu to="/admin/cms">
+          <SidebarIconText text="CMS" iconClass="i-tabler-note" />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <LinkMenu to="/admin/vote">
+          <SidebarIconText text="Vote4Points" iconClass="i-tabler-pencil" />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <LinkMenu to="/admin/shop">
+          <SidebarIconText text="Shop" iconClass="i-tabler-shopping-cart" />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <LinkMenu to="/admin/tickets">
+          <SidebarIconText text="Tickets" iconClass="i-tabler-ticket" />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
+        <LinkMenu to="/admin/system">
+          <SidebarIconText
+            text="System"
+            iconClass="i-tabler-heart-rate-monitor"
+          />
+        </LinkMenu>
+      </SidebarMenuItem>
+      <SidebarMenuItem>
         <SidebarTitle title="General" className="mt-4" />
       </SidebarMenuItem>
       <SidebarMenuItem>
