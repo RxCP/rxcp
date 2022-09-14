@@ -11,9 +11,19 @@ if (!user) {
 ---
 
 <Layout title="Dashboard">
+  <section class="mb-8">
+    <h1 class="text-3xl font-bold">
+      Hi, {user.first_name}
+      <small class="block text-base font-medium">Welcome back!</small>
+    </h1>
+  </section>
   <div class="space-y-8">
     <section class="grid grid-cols-2 lg:grid-cols-5 gap-4">
-      <CardWrapper class="p-4 rounded lt-lg:col-span-2">
+      <div
+        un-bg="gray-50 dark:stone-800"
+        un-border="~ slate-200 dark:stone-700"
+        class="p-4 rounded lt-lg:col-span-2"
+      >
         <h2 class="font-bold">Server Status</h2>
         <ul class="mt-4 space-y-2">
           <li
@@ -57,7 +67,7 @@ if (!user) {
             </span>
           </li>
         </ul>
-      </CardWrapper>
+      </div>
       <CardTotalNumber label="Users" number={20} />
       <CardTotalNumber label="Accounts" number={20} />
       <CardTotalNumber label="Characters" number={20} />
