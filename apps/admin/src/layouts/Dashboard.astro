@@ -7,6 +7,7 @@ import MainContentWrapper from '@components/organisms/main/MainContentWrapper.sv
 import Header from '@components/organisms/header/Header.svelte';
 import MainContent from '@components/organisms/main/MainContent.svelte';
 import HeaderPageTitle from '@components/organisms/header/HeaderPageTitle.svelte';
+import ButtonToggleTheme from '@components/atoms/buttons/ButtonToggleTheme.svelte';
 import Html from './Html.astro';
 import { auth } from 'src/util/auth';
 
@@ -27,7 +28,9 @@ const user = auth(Astro);
       <MainContentWrapper>
         <Header>
           <HeaderPageTitle text={title} />
+
           <div class="flex ml-auto space-x-3">
+            <ButtonToggleTheme className="mr-6" client:load />
             {user && <UserNav user={user} client:load />}
           </div>
         </Header>
