@@ -39,6 +39,7 @@ importers:
       svelte: ^3.46.4
       ui: '*'
       unocss: ^0.45.18
+      unocss-preset-scrollbar: ^0.2.1
       windicss-analysis: ^0.3.5
     dependencies:
       '@astro-auth/client': 1.0.5_biqbaboplfbrettd7655fr4n2y
@@ -65,6 +66,7 @@ importers:
       svelte: 3.50.1
       ui: link:../../packages/ui
       unocss: 0.45.18_vite@3.1.0
+      unocss-preset-scrollbar: 0.2.1_unocss@0.45.18
       windicss-analysis: 0.3.5
 
   apps/api:
@@ -2618,6 +2620,10 @@ packages:
       unconfig: 0.3.6
     dev: true
 
+  /@unocss/core/0.31.17:
+    resolution: {integrity: sha512-DJ3Uk2ePVXvV1qQmgoLK44aqB6f0s+naOEvouI97nzVXDZgxDQPBxIPB/L4vvE4U+gQxEiHwwE3gJ75iPqVzXw==}
+    dev: true
+
   /@unocss/core/0.45.18:
     resolution: {integrity: sha512-506GHQX8/TpKNZ96k4ujSWp5SpcsZZnwwTg9NcLf7M3y5BXEwv0dE7Jfz7eJiFm2G+RYEgrXwYk7y7dFF8evxA==}
     dev: true
@@ -2643,6 +2649,12 @@ packages:
       ohmyfetch: 0.4.18
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@unocss/preset-mini/0.31.17:
+    resolution: {integrity: sha512-gVgMTOKLt3O1ym348QIBmR5sS9W0Ozkk5xelhH6e0VXcpg0dXDPDrl4hFErMy4x6IB86yyJG6Dz5JhcwQB13Ig==}
+    dependencies:
+      '@unocss/core': 0.31.17
     dev: true
 
   /@unocss/preset-mini/0.45.18:
@@ -11219,6 +11231,15 @@ packages:
   /universalify/2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
+
+  /unocss-preset-scrollbar/0.2.1_unocss@0.45.18:
+    resolution: {integrity: sha512-7ubHdOaUwr7xBn1glPpICNNsM2SZGjvWK5uRPNiQYsrZ9YFjsCGHk9x5S2R8pTkuMDQeiaSa/UQbYhjC8Fra5g==}
+    peerDependencies:
+      unocss: '>= 0.31.13 < 1'
+    dependencies:
+      '@unocss/preset-mini': 0.31.17
+      unocss: 0.45.18_vite@3.1.0
+    dev: true
 
   /unocss/0.45.18_vite@3.1.0:
     resolution: {integrity: sha512-VDUrLzKwCIAipTCIqS9gpuEPJu7RkzGMJV0+u9zSrg1+9Cjmag4ABkmQdiWK+j/qUgeQ1YEs7OkGSeD0lMEUzA==}

@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 
+import { presetScrollbar } from 'unocss-preset-scrollbar';
 import svelte from '@astrojs/svelte';
 
 import uno from 'astro-uno';
@@ -18,6 +19,11 @@ export default defineConfig({
   server: { port: 8080 },
   integrations: [
     uno({
+      theme: {
+        fontSize: {
+          xs: '0.625rem',
+        },
+      },
       extractors: [extractorSvelte],
       presets: [
         presetUno(),
@@ -42,6 +48,7 @@ export default defineConfig({
           prefix: 'un-',
           prefixedOnly: true,
         }),
+        presetScrollbar(),
       ],
     }),
     svelte(),

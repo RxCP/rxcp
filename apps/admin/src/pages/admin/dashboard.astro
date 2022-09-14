@@ -1,5 +1,7 @@
 ---
 import { getUser, redirectUser } from '@astro-auth/core';
+import CardTotalNumber from '@components/molecules/card/CardTotalNumber.svelte';
+import CardWrapper from '@components/molecules/card/cardWrapper.svelte';
 import Layout from '../../layouts/Dashboard.astro';
 
 const user = getUser({ client: Astro });
@@ -9,7 +11,75 @@ if (!user) {
 ---
 
 <Layout title="Dashboard">
-  <section>
-    <h1 class="text-4xl font-medium">Dashboard</h1>
+  <section class="mb-8">
+    <h1 class="text-3xl font-bold">
+      Hi, {user.first_name}
+      <small class="block text-base font-medium">Welcome back!</small>
+    </h1>
   </section>
+  <div class="space-y-8">
+    <section class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+      <div
+        un-bg="stone-200 dark:stone-800"
+        un-border="~ slate-300 dark:stone-700"
+        class="p-4 rounded lt-lg:col-span-2"
+      >
+        <h2 class="font-bold">Server Status</h2>
+        <ul class="mt-4 space-y-2">
+          <li
+            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+          >
+            Login
+            <span
+              class="uppercase text-xs px-2 py-1 bg-green-700 rounded-full text-white"
+            >
+              Online
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+          >
+            Character
+            <span
+              class="uppercase text-xs px-2 py-1 bg-green-700 rounded-full text-white"
+            >
+              Online
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+          >
+            Map
+            <span
+              class="uppercase text-xs px-2 py-1 bg-green-700 rounded-full text-white"
+            >
+              Online
+            </span>
+          </li>
+          <li
+            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+          >
+            Players Online
+            <span
+              class="uppercase text-xs px-2 py-1 bg-slate-600 rounded-full text-white"
+            >
+              100
+            </span>
+          </li>
+        </ul>
+      </div>
+      <CardTotalNumber label="Users" number={20} />
+      <CardTotalNumber label="Accounts" number={20} />
+      <CardTotalNumber label="Characters" number={20} />
+      <CardTotalNumber label="Guilds" number={20} />
+    </section>
+    <section class="grid lg:grid-cols-2 gap-4">
+      <CardWrapper class="p-4 rounded">
+        <h2 class="font-bold">New Users</h2>
+      </CardWrapper>
+      <CardWrapper class="p-4 rounded">
+        <h2 class="font-bold">New Accounts</h2>
+      </CardWrapper>
+    </section>
+  </div>
 </Layout>

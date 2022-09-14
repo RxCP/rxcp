@@ -12,14 +12,14 @@ if (user) {
 ---
 
 <Html title="Login">
-  <div class="flex items-center flex-col justify-center h-full">
+  <div class="flex items-center flex-col justify-center h-full px-4">
     <div class="text-center mb-6">
       <PrimaryLogo width={80} />
       <h1 class="text-2xl font-bold mt-4">Sign In</h1>
     </div>
     <div
       un-bg="white dark:slate-800"
-      class="mx-auto w-[400px] p-10 shadow-lg rounded"
+      class="mx-auto mx-4 w-full max-w-[400px] p-6 md:p-10 shadow-lg rounded"
     >
       <LoginForm client:load />
     </div>
