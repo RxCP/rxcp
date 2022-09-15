@@ -8,13 +8,13 @@
   import { signIn } from '@astro-auth/client';
 
   let errors = '';
-  let isSubmitting = false
+  let isSubmitting = false;
 
   async function onSubmit(e: Event) {
     const target = e.target as HTMLFormElement;
     const formData = new FormData(target);
 
-    isSubmitting = true
+    isSubmitting = true;
 
     const response = await signIn({
       callbackURL: '/admin/dashboard',
@@ -29,7 +29,7 @@
       errors = 'Invalid email or password';
     }
 
-    isSubmitting = false
+    isSubmitting = false;
   }
 </script>
 
@@ -46,12 +46,16 @@
     <FormLabel htmlFor="password" text="Password" />
     <FormInput id="password" type="password" name="password" />
   </div>
-  <div class="flex items-start justify-between mb-6">
+  <div
+    class="flex flex-col space-y-4 md:space-y-0 md:flex-row items-start justify-between mb-6"
+  >
     <div class="flex items-center space-x-2">
       <FormCheckbox id="remember" />
       <FormLabel htmlFor="remember" text="Remember me" />
     </div>
-    <Link to="/forgot-password">Forgot your password?</Link>
+    <Link to="/forgot-password" className="lt-md:text-right lt-md:w-full"
+      >Forgot your password?</Link
+    >
   </div>
   <Button type="submit" isLoading={isSubmitting}>Sign In</Button>
 </form>
