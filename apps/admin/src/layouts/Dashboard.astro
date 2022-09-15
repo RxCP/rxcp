@@ -8,6 +8,7 @@ import Header from '@components/organisms/header/Header.svelte';
 import MainContent from '@components/organisms/main/MainContent.svelte';
 import HeaderPageTitle from '@components/organisms/header/HeaderPageTitle.svelte';
 import ButtonToggleTheme from '@components/atoms/buttons/ButtonToggleTheme.svelte';
+import ButtonToggleSidebar from '@components/atoms/buttons/ButtonToggleSidebar.svelte';
 import Html from './Html.astro';
 import { auth } from 'src/util/auth';
 
@@ -25,7 +26,8 @@ const user = auth(Astro);
   <Main>
     <MainInner>
       <slot name="sidebar" />
-      <MainContentWrapper>
+      <MainContentWrapper hasSidebar={Astro.slots.has('sidebar')}>
+        <ButtonToggleSidebar client:load />
         <Header>
           <HeaderPageTitle text={title} />
 
