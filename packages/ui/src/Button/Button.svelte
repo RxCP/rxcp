@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let type: string = 'button';
+  type buttonType = 'button' | 'reset' | 'submit' | null | undefined;
+
+  export let type: buttonType = 'button';
   export let disabled: boolean = false;
   export let isLoading: boolean = false;
 </script>
@@ -7,14 +9,15 @@
 <button
   {type}
   {disabled}
+  class:hover:bg-blue-800={!disabled}
   class:bg-blue-700={!disabled}
   class:bg-blue-400={disabled}
-  class="block text-white hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-blue-400
+  class="block text-white focus:ring-2 focus:outline-none focus:ring-blue-400
     font-medium rounded text-sm w-full px-5 py-2.5 text-center"
 >
   {#if isLoading}
     <svg
-      class="inline-block animate-spin -mt-1 mr-3 h-4.5 w-4.5 text-white"
+      class="inline-block animate-spin -mt-1 h-4.5 w-4.5 text-white"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
