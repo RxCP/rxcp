@@ -12,7 +12,9 @@ if (user) {
 ---
 
 <Html title="Login">
-  <div class="flex items-center flex-col justify-center h-full px-4">
+  <div
+    class="login-wrapper flex items-center flex-col justify-center h-screen px-4 lt-lg:pb-8 min-h-md"
+  >
     <div class="text-center mb-6">
       <PrimaryLogo width={80} />
       <h1 class="text-2xl font-bold mt-4">Sign In</h1>
@@ -25,3 +27,15 @@ if (user) {
     </div>
   </div>
 </Html>
+
+<style>
+  .login-wrapper {
+    margin-top: 2rem;
+  }
+
+  @media screen and (min-height: 640px) {
+    .login-wrapper {
+      margin-top: -40px;
+    }
+  }
+</style>
