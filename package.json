@@ -12,10 +12,9 @@
     "format": "turbo run format"
   },
   "devDependencies": {
-    "eslint": "^8.23.0",
-    "eslint-config-custom": "*",
-    "turbo": "latest",
-    "prettier": "^2.7.1"
+    "eslint": "^8.23.1",
+    "prettier": "^2.7.1",
+    "turbo": "latest"
   },
   "engines": {
     "node": "16.x.x",
