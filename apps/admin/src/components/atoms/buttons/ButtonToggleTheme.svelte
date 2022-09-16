@@ -9,10 +9,12 @@
 
     if (isDarkTheme) {
       html.classList.remove('dark');
+      localStorage.theme = 'light';
       return;
     }
 
     html.classList.add('dark');
+    localStorage.theme = 'dark';
   }
 </script>
 
@@ -24,6 +26,6 @@
   <div
     class:i-tabler-sun={!isDarkTheme}
     class:i-tabler-moon={isDarkTheme}
-    class="text-3xl"
+    class="text-2xl"
   />
 </button>

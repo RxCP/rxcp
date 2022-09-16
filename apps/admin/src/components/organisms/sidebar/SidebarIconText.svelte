@@ -4,6 +4,6 @@
 
 <IconText
   {...$$restProps}
-  textClass="text-xl lg:text-base lg:hidden xl:inline-block font-medium"
+  textClass="text-lg lg:text-sm lg:hidden xl:inline-block"
   sizeClass="text-2xl lg:text-xl"
 />

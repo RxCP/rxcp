@@ -5,5 +5,5 @@
   export let text: string;
 </script>
 
-<div class="{iconClass} {sizeClass} text-blue-400" />
+<div class="{iconClass} {sizeClass} text-blue-500" />
 <span class="ml-3 {textClass}">{text}</span>

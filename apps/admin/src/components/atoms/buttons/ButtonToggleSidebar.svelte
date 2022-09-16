@@ -1,27 +1,31 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
 
   onMount(() => {
-    const button = document.getElementById('toggleSidebarButton');
-    const sidebar = document.getElementById('contentSidebar');
-    const sidebarButtonClose = sidebar.querySelector('[data-close]');
+    const button: HTMLElement | null = document.getElementById(
+      'toggleSidebarButton',
+    );
+    const sidebar: HTMLElement | null =
+      document.getElementById('contentSidebar');
+    const sidebarButtonClose: HTMLElement | null | undefined =
+      sidebar?.querySelector('[data-close]');
 
     const toggleClass = 'left-0';
 
-    button.addEventListener('click', handleShowSidebar);
-    sidebarButtonClose.addEventListener('click', handleShowSidebar);
+    button?.addEventListener('click', handleShowSidebar);
+    sidebarButtonClose?.addEventListener('click', handleShowSidebar);
 
     function handleShowSidebar() {
-      if (sidebar.classList.contains(toggleClass)) {
-        sidebar.classList.remove(toggleClass);
+      if (sidebar?.classList.contains(toggleClass)) {
+        sidebar?.classList.remove(toggleClass);
       } else {
-        sidebar.classList.add(toggleClass);
+        sidebar?.classList.add(toggleClass);
       }
     }
 
     return () => {
-      button.removeEventListener('click', handleShowSidebar);
-      sidebarButtonClose.removeEventListener('click', handleShowSidebar);
+      button?.removeEventListener('click', handleShowSidebar);
+      sidebarButtonClose?.removeEventListener('click', handleShowSidebar);
     };
   });
 </script>
