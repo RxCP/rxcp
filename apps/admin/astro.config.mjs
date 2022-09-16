@@ -24,6 +24,10 @@ export default defineConfig({
           xs: '0.625rem',
         },
       },
+      shortcuts: {
+        'app-scrollbar':
+          'scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-slate-200 dark:scrollbar-thumb-color-slate-800',
+      },
       extractors: [extractorSvelte],
       presets: [
         presetUno(),
