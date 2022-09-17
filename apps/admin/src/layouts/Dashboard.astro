@@ -19,8 +19,9 @@ export interface Props {
 const { title } = Astro.props as Props;
 
 const user = auth(Astro);
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+const pathname: string = new URL(Astro.request.url).pathname;
+const currentPath: string = pathname.slice(1);
+const hasSidebar: boolean = Astro.slots.has('sidebar');
 ---
 
 <Html title={title}>
@@ -28,8 +29,8 @@ const currentPath = pathname.slice(1);
   <Main>
     <MainInner>
       <slot name="sidebar" />
-      <MainContentWrapper hasSidebar={Astro.slots.has('sidebar')}>
-        <ButtonToggleSidebar client:load />
+      <MainContentWrapper hasSidebar={hasSidebar}>
+        {hasSidebar && <ButtonToggleSidebar client:load />}
         <Header>
           <HeaderPageTitle text={title} />
 
