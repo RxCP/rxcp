@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import LinkMenu from '@components/atoms/LinkMenu.svelte';
   import PrimaryLogo from '@components/atoms/logo/PrimaryLogo.svelte';
@@ -13,18 +13,93 @@
   import NavbarMobile from '../navbar/NavbarMobile.svelte';
   import SidebarIconText from './SidebarIconText.svelte';
 
-  let primaryMenu;
-  const toggleClass = 'lt-lg:hidden';
+  type MenuItem = {
+    url: string;
+    text: string;
+    iconClass: string;
+  };
+
+  type Menu = {
+    ragnarok: MenuItem[];
+    plugins: MenuItem[];
+  };
+
+  export let currentPath: string = '';
+
+  let primaryMenu: HTMLElement | null;
+  const toggleClass: string = 'lt-lg:hidden';
+
+  const menu: Menu = {
+    ragnarok: [
+      {
+        url: '/admin/dashboard',
+        text: 'Dashboard',
+        iconClass: 'i-tabler-layout-dashboard',
+      },
+      {
+        url: '/admin/accounts',
+        text: 'Accounts',
+        iconClass: 'i-tabler-user',
+      },
+      {
+        url: '/admin/characters',
+        text: 'Characters',
+        iconClass: 'i-tabler-building-skyscraper',
+      },
+      {
+        url: '/admin/rankings',
+        text: 'Rankings',
+        iconClass: 'i-tabler-chart-bar',
+      },
+      {
+        url: '/admin/vending',
+        text: 'Vending',
+        iconClass: 'i-tabler-zoom-money',
+      },
+      {
+        url: '/admin/database',
+        text: 'Database',
+        iconClass: 'i-tabler-database',
+      },
+    ],
+    plugins: [
+      {
+        url: '/admin/plugins/cms',
+        text: 'CMS',
+        iconClass: 'i-tabler-note',
+      },
+      {
+        url: '/admin/plugins/vote',
+        text: 'Vote4Points',
+        iconClass: 'i-tabler-pencil',
+      },
+      {
+        url: '/admin/plugins/shop',
+        text: 'Shop',
+        iconClass: 'i-tabler-shopping-cart',
+      },
+      {
+        url: '/admin/plugins/tickets',
+        text: 'Tickets',
+        iconClass: 'i-tabler-ticket',
+      },
+      {
+        url: '/admin/plugins/system',
+        text: 'System',
+        iconClass: 'i-tabler-heart-rate-monitor',
+      },
+    ],
+  };
 
   onMount(() => {
     primaryMenu = document.getElementById('primaryMenu');
   });
 
   function handleToggleMenu() {
-    if (primaryMenu.classList.contains(toggleClass)) {
-      primaryMenu.classList.remove(toggleClass);
+    if (primaryMenu?.classList.contains(toggleClass)) {
+      primaryMenu?.classList.remove(toggleClass);
     } else {
-      primaryMenu.classList.add(toggleClass);
+      primaryMenu?.classList.add(toggleClass);
     }
   }
 </script>
@@ -41,78 +116,35 @@
       <SidebarMenuItem>
         <SidebarTitle title="Ragnarok" />
       </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/dashboard">
-          <SidebarIconText
-            text="Dashboard"
-            iconClass="i-tabler-layout-dashboard"
-          />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/accounts">
-          <SidebarIconText text="Accounts" iconClass="i-tabler-user" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/characters">
-          <SidebarIconText text="Characters" iconClass="i-tabler-users" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/guilds">
-          <SidebarIconText
-            text="Guilds"
-            iconClass="i-tabler-building-skyscraper"
-          />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/rankings">
-          <SidebarIconText text="Rankings" iconClass="i-tabler-chart-bar" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/vending">
-          <SidebarIconText text="Vending" iconClass="i-tabler-zoom-money" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/database">
-          <SidebarIconText text="Database" iconClass="i-tabler-database" />
-        </LinkMenu>
-      </SidebarMenuItem>
+      {#each menu.ragnarok as menuItem}
+        <SidebarMenuItem>
+          <LinkMenu
+            to={menuItem.url}
+            isActive={`/${currentPath}` === menuItem.url}
+          >
+            <SidebarIconText
+              text={menuItem.text}
+              iconClass={menuItem.iconClass}
+            />
+          </LinkMenu>
+        </SidebarMenuItem>
+      {/each}
       <SidebarMenuItem>
         <SidebarTitle title="Plugins" className="mt-4" />
       </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/plugins/cms">
-          <SidebarIconText text="CMS" iconClass="i-tabler-note" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/plugins/vote">
-          <SidebarIconText text="Vote4Points" iconClass="i-tabler-pencil" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/plugins/shop">
-          <SidebarIconText text="Shop" iconClass="i-tabler-shopping-cart" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/plugins/tickets">
-          <SidebarIconText text="Tickets" iconClass="i-tabler-ticket" />
-        </LinkMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <LinkMenu to="/admin/plugins/system">
-          <SidebarIconText
-            text="System"
-            iconClass="i-tabler-heart-rate-monitor"
-          />
-        </LinkMenu>
-      </SidebarMenuItem>
+      {#each menu.plugins as menuItem}
+        <SidebarMenuItem>
+          <LinkMenu
+            to={menuItem.url}
+            isActive={`/${currentPath}` === menuItem.url}
+          >
+            <SidebarIconText
+              text={menuItem.text}
+              iconClass={menuItem.iconClass}
+            />
+          </LinkMenu>
+        </SidebarMenuItem>
+      {/each}
       <SidebarMenuItem>
         <SidebarTitle title="General" className="mt-4" />
       </SidebarMenuItem>
