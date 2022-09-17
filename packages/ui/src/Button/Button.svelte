@@ -1,19 +1,61 @@
 <script lang="ts">
-  type buttonType = 'button' | 'reset' | 'submit' | null | undefined;
+  import setcolorClass from '../util/setcolorClass';
+  import type {
+    buttonColor,
+    buttonSize,
+    buttonType,
+    buttonVariant,
+  } from './ButtonTypes';
 
   export let type: buttonType = 'button';
-  export let disabled: boolean = false;
+  export let size: buttonSize = 'md';
+  export let variant: buttonVariant = 'solid';
+  export let color: buttonColor = 'primary';
+  export let isDisabled: boolean = false;
   export let isLoading: boolean = false;
+  export let isBlock: boolean = false;
+
+  const colorClass = {
+    solid: {
+      primary: {
+        base: 'text-white',
+        default: 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-300',
+        disabled: 'bg-blue-300 cursor-not-allowed',
+      },
+      secondary: {
+        base: 'text-white',
+        default: 'bg-slate-600 hover:bg-slate-700 focus:ring-blue-300',
+        disabled: 'bg-slate-300 cursor-not-allowed',
+      },
+    },
+    ghost: {
+      primary: {
+        default: 'hover:bg-slate-100 hover:dark:bg-blue-600/10',
+        disabled: 'opacity-30 cursor-not-allowed',
+      },
+      secondary: {
+        default: 'hover:bg-gray-100 hover:dark:bg-gray-600/10',
+        disabled: 'opacity-30 cursor-not-allowed',
+      },
+    },
+  };
+
+  const sizeClass = {
+    xs: 'py-2 px-3 text-xs',
+    sm: 'py-2 px-3 text-sm',
+    md: 'px-5 py-2.5 text-sm',
+    lg: 'py-3 px-5 text-base',
+  };
+
+  $: variantClass = setcolorClass(colorClass, variant, color, isDisabled);
 </script>
 
 <button
   {type}
-  {disabled}
-  class:hover:bg-blue-800={!disabled}
-  class:bg-blue-700={!disabled}
-  class:bg-blue-400={disabled}
-  class="block text-white focus:ring-2 focus:outline-none focus:ring-blue-400
-    font-medium rounded text-sm w-full px-5 py-2.5 text-center"
+  disabled={isDisabled}
+  class:w-full={isBlock}
+  class="block focus:ring-2 focus:outline-none
+    font-medium rounded text-center {variantClass} {sizeClass[size]}"
 >
   {#if isLoading}
     <svg
