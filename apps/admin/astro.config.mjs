@@ -8,6 +8,7 @@ import presetWebFonts from '@unocss/preset-web-fonts';
 import presetAttributify from '@unocss/preset-attributify';
 import presetIcons from '@unocss/preset-icons';
 import presetUno from '@unocss/preset-uno';
+import transformerVariantGroup from '@unocss/transformer-variant-group';
 import { extractorSvelte } from '@unocss/core';
 
 import node from '@astrojs/node';
@@ -54,6 +55,7 @@ export default defineConfig({
         }),
         presetScrollbar(),
       ],
+      transformers: [transformerVariantGroup()],
     }),
     svelte(),
   ],

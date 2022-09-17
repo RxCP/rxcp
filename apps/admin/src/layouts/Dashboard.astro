@@ -19,10 +19,12 @@ export interface Props {
 const { title } = Astro.props as Props;
 
 const user = auth(Astro);
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
 ---
 
 <Html title={title}>
-  <Sidebar client:load />
+  <Sidebar client:load currentPath={currentPath} />
   <Main>
     <MainInner>
       <slot name="sidebar" />
