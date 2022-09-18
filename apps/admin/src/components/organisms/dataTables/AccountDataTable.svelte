@@ -52,7 +52,7 @@
         <TheadCol>ID</TheadCol>
         <TheadCol>User ID</TheadCol>
         <TheadCol>Email</TheadCol>
-        <TheadCol>Group ID</TheadCol>
+        <TheadCol>Group</TheadCol>
         <TheadCol class="w-4.5" innerClass="justify-center">Action</TheadCol>
       </Row>
     </Thead>
@@ -61,8 +61,8 @@
         <BodyRow>
           <BodyCol colspan={5}>
             <div class="animate-pulse space-y-3">
-              <div class="h-4 dark:bg-slate-700 rounded" />
-              <div class="h-4 w-1/2 dark:bg-slate-700 rounded" />
+              <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded" />
+              <div class="h-4 w-1/2 bg-slate-200 dark:bg-slate-700 rounded" />
             </div>
           </BodyCol>
         </BodyRow>
