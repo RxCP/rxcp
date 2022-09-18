@@ -26,9 +26,7 @@ export default class AuthController {
     }
 
     try {
-      const response = await auth.use('api').attempt(email, password, {
-        expiresIn: '1 hour',
-      })
+      const response = await auth.use('api').attempt(email, password)
       await limiter.delete(throttleKey)
       return response
     } catch {
