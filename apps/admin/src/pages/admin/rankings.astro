@@ -1,5 +1,17 @@
 ---
+import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
+import MainSidebarItemLink from '@components/organisms/main/MainSidebarItemLink.svelte';
+import MainSidebarItemTitle from '@components/organisms/main/MainSidebarItemTitle.svelte';
+import MainSidebarMenu from '@components/organisms/main/MainSidebarMenu.svelte';
 import Layout from '@layouts/Dashboard.astro';
 ---
 
-<Layout title="Rankings" />
+<Layout title="Rankings">
+  <MainSidebar slot="sidebar">
+    <MainSidebarMenu>
+      <MainSidebarItemTitle text="Rankings" />
+      <MainSidebarItemLink to="#" text="Character" />
+      <MainSidebarItemLink to="#" text="Guild" />
+    </MainSidebarMenu>
+  </MainSidebar>
+</Layout>

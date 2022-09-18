@@ -28,7 +28,13 @@ export const all = AstroAuth({
             },
           );
           const user = await fetchUser.json();
-          return { ...user.data, ...{ accessToken: login.token } };
+          return {
+            ...user.data,
+            ...{
+              accessToken: login.token,
+              tokenExpiresAt: user.expires_at,
+            },
+          };
         }
 
         return null;

@@ -20,7 +20,7 @@ export default class AccountsController {
     await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.index')
 
     const page = request.input('page', 1)
-    const limit = 10
+    const limit = request.input('limit', 10)
     return Account.query().paginate(page, limit)
   }
 

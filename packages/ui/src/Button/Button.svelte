@@ -11,6 +11,7 @@
   export let size: buttonSize = 'md';
   export let variant: buttonVariant = 'solid';
   export let color: buttonColor = 'primary';
+  export let href: string = '';
   export let isDisabled: boolean = false;
   export let isLoading: boolean = false;
   export let isBlock: boolean = false;
@@ -18,14 +19,28 @@
   const colorClass = {
     solid: {
       primary: {
-        base: 'text-white',
+        base: 'text-white border border-transparent',
         default: 'bg-blue-600 hover:bg-blue-700 focus:ring-blue-300',
         disabled: 'bg-blue-300 cursor-not-allowed',
       },
       secondary: {
-        base: 'text-white',
+        base: 'text-white border border-transparent',
         default: 'bg-slate-600 hover:bg-slate-700 focus:ring-blue-300',
         disabled: 'bg-slate-300 cursor-not-allowed',
+      },
+    },
+    outline: {
+      primary: {
+        base: 'text-blue-600',
+        default:
+          'bg-transparent border border-blue-600 hover:bg-blue-700 hover:text-white',
+      },
+      secondary: {
+        base: 'bg-transparent',
+        default:
+          'text-slate-600 border border-slate-600 hover:bg-slate-700 hover:text-white',
+        disabled:
+          'cursor-not-allowed text-slate-600/50 border border-slate-600/20',
       },
     },
     ghost: {
@@ -48,14 +63,18 @@
   };
 
   $: variantClass = setcolorClass(colorClass, variant, color, isDisabled);
+  $: as = href ? 'a' : 'button';
 </script>
 
-<button
+<svelte:element
+  this={as}
   {type}
+  {href}
   disabled={isDisabled}
   class:w-full={isBlock}
   class="block focus:ring-2 focus:outline-none
     font-medium rounded text-center {variantClass} {sizeClass[size]}"
+  on:click
 >
   {#if isLoading}
     <svg
@@ -81,4 +100,4 @@
   {:else}
     <slot />
   {/if}
-</button>
+</svelte:element>
