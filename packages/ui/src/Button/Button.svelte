@@ -34,6 +34,8 @@
         base: 'text-blue-600',
         default:
           'bg-transparent border border-blue-600 hover:bg-blue-700 hover:text-white',
+        disabled:
+          'cursor-not-allowed text-blue-600/50 border border-blue-600/20',
       },
       secondary: {
         base: 'bg-transparent',
