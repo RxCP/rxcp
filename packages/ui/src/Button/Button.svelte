@@ -40,7 +40,7 @@
       secondary: {
         base: 'bg-transparent',
         default:
-          'text-slate-600 border border-slate-600 hover:bg-slate-700 hover:text-white',
+          'text-slate-600 border border-slate-400 dark:border-slate-600 hover:bg-slate-700 hover:text-white',
         disabled:
           'cursor-not-allowed text-slate-600/50 border border-slate-600/20',
       },
