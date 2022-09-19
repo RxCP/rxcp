@@ -6,13 +6,15 @@
   export let value: string | number = '';
   export let name: string = '';
 
+  let className = $$props.class;
+
   const handleInput = (e: Event) => {
     const target = e.target as HTMLInputElement;
     value = target.value;
   };
 </script>
 
-<div class="relative">
+<div class="relative {className}">
   {#if iconClass}
     <div
       class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"

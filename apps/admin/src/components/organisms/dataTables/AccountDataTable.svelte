@@ -40,11 +40,12 @@
   });
 </script>
 
-<div class="mb-4 flex space-x-4 w-96">
+<div class="mb-4 flex space-x-4 ">
   <FormInput
     iconClass="i-tabler-search"
     id="searchAccounts"
     placeholder="Search..."
+    class="w-60 focus-within:w-96 transition-all duration-300"
   />
   <Button size="sm">
     <span class="block text-lg i-tabler-filter" />
