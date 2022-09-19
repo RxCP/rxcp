@@ -54,43 +54,51 @@
   }
 </script>
 
-<div class="flex items-center justify-between pb-8">
-  <div class="flex items-center space-x-2">
-    <select
-      id="countries"
-      class="dark:bg-slate-700 border border-slate-400 dark:border-slate-600 text-slate-400 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      bind:value={currentNumPerPage}
-      on:change={setCurrent(current)}
-    >
-      {#each numPerPageOptions as option}
-        <option value={option}>{option}</option>
-      {/each}
-    </select>
-    <label
-      for="countries"
-      class="flex-none block text-sm font-medium text-current"
-    >
-      per page
-    </label>
-  </div>
-  <div class="text-current">{current}-{per_page} of {num_items} results</div>
-  <div class="flex space-x-1">
-    <PaginationButton
-      isDisabled={current <= 1}
-      on:click={() => current > 1 && setCurrent(current - 1)}
-    >
-      <div class="i-tabler-arrow-left" />
-    </PaginationButton>
-    {#each arr_pages as i}
-      <PaginationButton isActive={i == current} on:click={() => setCurrent(i)}>
-        {i}
+<div class="dark:bg-slate-800 fixed w-full bottom-0 left-0 shadow">
+  <div
+    class="flex flex-col md:flex-row items-center justify-between lg:ml-[113px] xl:ml-[265px] p-4"
+  >
+    <div class="hidden md:flex items-center space-x-2 mb-4 md:mb-0">
+      <select
+        class="dark:bg-slate-700 border border-slate-400 dark:border-slate-600 text-slate-400 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        bind:value={currentNumPerPage}
+        on:change={setCurrent(current)}
+      >
+        {#each numPerPageOptions as option}
+          <option value={option}>{option}</option>
+        {/each}
+      </select>
+      <label
+        for="countries"
+        class="flex-none block text-sm font-medium text-current"
+      >
+        per page
+      </label>
+    </div>
+    <div class="flex items-center space-x-1">
+      <div class="text-current mr-8 hidden md:block">
+        {current}-{per_page} of {num_items} results
+      </div>
+      <PaginationButton
+        isDisabled={current <= 1}
+        on:click={() => current > 1 && setCurrent(current - 1)}
+      >
+        <div class="i-tabler-arrow-left" />
       </PaginationButton>
-    {/each}
-    <PaginationButton
-      isDisabled={current >= num_pages}
-      on:click={() => current < num_pages && setCurrent(current + 1)}
-    >
-      <div class="i-tabler-arrow-right" />
-    </PaginationButton>
+      {#each arr_pages as i}
+        <PaginationButton
+          isActive={i == current}
+          on:click={() => setCurrent(i)}
+        >
+          {i}
+        </PaginationButton>
+      {/each}
+      <PaginationButton
+        isDisabled={current >= num_pages}
+        on:click={() => current < num_pages && setCurrent(current + 1)}
+      >
+        <div class="i-tabler-arrow-right" />
+      </PaginationButton>
+    </div>
   </div>
 </div>

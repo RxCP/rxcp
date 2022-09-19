@@ -45,13 +45,13 @@
     iconClass="i-tabler-search"
     id="searchAccounts"
     placeholder="Search..."
-    class="w-60 focus-within:w-96 transition-all duration-300"
+    class="w-60 md:focus-within:w-96 transition-all duration-300"
   />
   <Button size="sm">
     <span class="block text-lg i-tabler-filter" />
   </Button>
 </div>
-<div class="mb-4 overflow-x-auto relative rounded">
+<div class="mb-4 overflow-x-auto relative rounded pb-[80px]">
   <Table>
     <Thead>
       <Row>
