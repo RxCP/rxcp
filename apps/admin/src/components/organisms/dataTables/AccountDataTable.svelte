@@ -19,7 +19,8 @@
 
   async function changePage(evt) {
     isLoading = true;
-    currentPage = evt.detail;
+    currentPage = evt.detail.current;
+    itemsPerPage = evt.detail.perPage;
     const response = await fetch(
       `/api/accounts?limit=${itemsPerPage}&page=${evt.detail}`,
     );
@@ -40,7 +41,11 @@
 </script>
 
 <div class="mb-4 flex space-x-4 w-96">
-  <FormInput id="searchAccounts" placeholder="Search" />
+  <FormInput
+    iconClass="i-tabler-search"
+    id="searchAccounts"
+    placeholder="Search..."
+  />
   <Button size="sm">
     <span class="block text-lg i-tabler-filter" />
   </Button>
@@ -49,7 +54,7 @@
   <Table>
     <Thead>
       <Row>
-        <TheadCol>ID</TheadCol>
+        <TheadCol class="w-8">ID</TheadCol>
         <TheadCol>User ID</TheadCol>
         <TheadCol>Email</TheadCol>
         <TheadCol>Group</TheadCol>
@@ -60,7 +65,7 @@
       {#if isLoading}
         <BodyRow>
           <BodyCol colspan={5}>
-            <div class="animate-pulse space-y-3">
+            <div class="animate-pulse space-y-3 py-4">
               <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded" />
               <div class="h-4 w-1/2 bg-slate-200 dark:bg-slate-700 rounded" />
             </div>
@@ -72,7 +77,7 @@
             <BodyCol>{account.account_id}</BodyCol>
             <BodyCol>{account.userid}</BodyCol>
             <BodyCol>{account.email}</BodyCol>
-            <BodyCol>{account.group_id}</BodyCol>
+            <BodyCol>{account.group_id === 99 ? 'Admin' : 'Player'}</BodyCol>
             <BodyCol>
               <div class="flex">
                 <Button size="sm" variant="ghost">
