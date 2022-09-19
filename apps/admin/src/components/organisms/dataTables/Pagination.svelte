@@ -54,7 +54,7 @@
   }
 </script>
 
-<div class="dark:bg-slate-800 fixed w-full bottom-0 left-0 shadow">
+<div class="bg-white dark:bg-slate-800 fixed w-full bottom-0 left-0 shadow">
   <div
     class="flex flex-col md:flex-row items-center justify-between lg:ml-[113px] xl:ml-[265px] p-4"
   >

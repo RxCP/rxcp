@@ -51,7 +51,7 @@
     <span class="block text-lg i-tabler-filter" />
   </Button>
 </div>
-<div class="mb-4 overflow-x-auto relative rounded pb-[80px]">
+<div class="app-scrollbar mb-4 overflow-x-auto relative rounded">
   <Table>
     <Thead>
       <Row>
@@ -97,7 +97,7 @@
 </div>
 
 {#if data && data.length >= 1}
-  <div class="text-slate-500">
+  <div class="text-slate-500 pt-[80px]">
     <Pagination
       current={currentPage}
       num_items={totalItems}
