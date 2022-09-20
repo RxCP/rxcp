@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+  import stickyHeader from 'js-sticky-table-headers';
   import Table from '@components/organisms/tables/Table.svelte';
   import Thead from '@components/organisms/tables/TableHead.svelte';
   import Row from '@components/organisms/tables/TableRow.svelte';
@@ -7,7 +9,6 @@
   import BodyRow from '@components/organisms/tables/TableBodyRow.svelte';
   import BodyCol from '@components/organisms/tables/TableBodyCol.svelte';
   import Button from 'ui/src/Button/Button.svelte';
-  import { onMount } from 'svelte';
   import FormInput from '@components/atoms/forms/FormInput.svelte';
   import Pagination from './Pagination.svelte';
 
@@ -37,6 +38,8 @@
     data = accounts.data;
     totalItems = accounts.meta.total;
     isLoading = false;
+
+    stickyHeader(document.querySelector('main .app-scrollbar.h-screen'));
   });
 </script>
 
@@ -51,7 +54,7 @@
     <span class="block text-lg i-tabler-filter" />
   </Button>
 </div>
-<div class="app-scrollbar mb-4 overflow-x-auto relative rounded">
+<div class="app-scrollbar mb-4 relative rounded datatable">
   <Table>
     <Thead>
       <Row>
@@ -83,9 +86,6 @@
               <div class="flex">
                 <Button size="sm" variant="ghost">
                   <div class="i-tabler-edit text-lg" />
-                </Button>
-                <Button size="sm" variant="ghost">
-                  <div class="i-tabler-trash text-lg" />
                 </Button>
               </div>
             </BodyCol>

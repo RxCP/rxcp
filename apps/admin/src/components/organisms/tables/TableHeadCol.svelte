@@ -4,7 +4,11 @@
   let className: string = $$props.class || '';
 </script>
 
-<th scope="col" class="py-4 px-6 {className}">
+<th
+  scope="col"
+  un-bg="slate-100 dark:blue-900/80"
+  class="py-4 px-6 {className}"
+>
   <div class="flex items-center {innerClass}">
     <slot />
     <a href="#"

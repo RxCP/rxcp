@@ -1,11 +1,10 @@
 ---
 import AccountDataTable from '@components/organisms/dataTables/AccountDataTable.svelte';
 import Layout from '@layouts/Dashboard.astro';
-import { getUser } from '@astro-auth/core';
 ---
 
 <Layout title="Accounts">
   <section>
-    <AccountDataTable client:load />
+    <AccountDataTable client:only="svelte" />
   </section>
 </Layout>
