@@ -57,5 +57,5 @@
       >Forgot your password?</Link
     >
   </div>
-  <Button type="submit" isLoading={isSubmitting}>Sign In</Button>
+  <Button type="submit" isLoading={isSubmitting} isBlock>Sign In</Button>
 </form>

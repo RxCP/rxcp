@@ -16,7 +16,7 @@ export default class AccountsController {
    */
   public async index({ request, auth, response }: HttpContextContract) {
     const page = request.input('page', 1)
-    const limit = 10
+    const limit = request.input('limit', 10)
     const authId = auth.use('api').user?.id || ''
 
     try {

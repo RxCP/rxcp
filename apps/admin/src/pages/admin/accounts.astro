@@ -1,22 +1,10 @@
 ---
-import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
-import MainSidebarItemLink from '@components/organisms/main/MainSidebarItemLink.svelte';
-import MainSidebarItemTitle from '@components/organisms/main/MainSidebarItemTitle.svelte';
-import MainSidebarMenu from '@components/organisms/main/MainSidebarMenu.svelte';
+import AccountDataTable from '@components/organisms/dataTables/AccountDataTable.svelte';
 import Layout from '@layouts/Dashboard.astro';
 ---
 
 <Layout title="Accounts">
   <section>
-    <!-- content here  -->
+    <AccountDataTable client:only="svelte" />
   </section>
-  <MainSidebar slot="sidebar">
-    <MainSidebarMenu>
-      <MainSidebarItemTitle text="Server Settings" />
-      <MainSidebarItemLink to="#" text="Overview" />
-      <MainSidebarItemTitle text="Administration Panel" className="mt-4" />
-      <MainSidebarItemLink to="#" text="Users" />
-      <MainSidebarItemLink to="#" text="Roles" />
-    </MainSidebarMenu>
-  </MainSidebar>
 </Layout>

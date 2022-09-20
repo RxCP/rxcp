@@ -29,6 +29,18 @@
   </Button>
 </Variant>
 
+<Variant name="Outline" description="The outline button.">
+  <Button
+    variant="outline"
+    {color}
+    {isDisabled}
+    {isLoading}
+    on:click={eventCallback}
+  >
+    {text}
+  </Button>
+</Variant>
+
 <Variant name="Ghost" description="The ghost button.">
   <Button
     variant="ghost"
