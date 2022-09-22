@@ -1,7 +1,7 @@
 <script lang="ts">
   export let innerClass: string = '';
 
-  let className: string = $$props.class || '';
+  let className: string = $$props.class || '';;
 </script>
 
 <th

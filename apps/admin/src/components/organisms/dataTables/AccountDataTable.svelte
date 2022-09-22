@@ -1,108 +1,76 @@
-<script>
-  import { onMount } from 'svelte';
-  import stickyHeader from 'js-sticky-table-headers';
-  import Table from '@components/organisms/tables/Table.svelte';
-  import Thead from '@components/organisms/tables/TableHead.svelte';
-  import Row from '@components/organisms/tables/TableRow.svelte';
-  import TheadCol from '@components/organisms/tables/TableHeadCol.svelte';
-  import Body from '@components/organisms/tables/TableBody.svelte';
-  import BodyRow from '@components/organisms/tables/TableBodyRow.svelte';
-  import BodyCol from '@components/organisms/tables/TableBodyCol.svelte';
+<script lang="ts">
   import Button from 'ui/src/Button/Button.svelte';
-  import FormInput from '@components/atoms/forms/FormInput.svelte';
-  import Pagination from './Pagination.svelte';
+  import DataTable from './DataTable.svelte';
+  import type { PageEvent, Rows, SettersEvent } from './dataTableTypes';
 
-  let data = [];
-  let isLoading = true;
-  let currentPage = 1;
-  let itemsPerPage = 5;
-  let totalItems = 0; // base from the response
-
-  async function changePage(evt) {
-    isLoading = true;
-    currentPage = evt.detail.current;
-    itemsPerPage = evt.detail.perPage;
-    const response = await fetch(
-      `/api/accounts?limit=${itemsPerPage}&page=${evt.detail}`,
-    );
-    const accounts = await response.json();
-    data = accounts.data;
-    isLoading = false;
-  }
-
-  onMount(async () => {
+  async function fetchAccounts(itemsPerPage: number, currentPage: number) {
     const response = await fetch(
       `/api/accounts?limit=${itemsPerPage}&page=${currentPage}`,
     );
-    const accounts = await response.json();
-    data = accounts.data;
-    totalItems = accounts.meta.total;
-    isLoading = false;
+    return await response.json();
+  }
 
-    stickyHeader(document.querySelector('main .app-scrollbar.h-screen'));
-  });
+  async function setRows<T extends SettersEvent>(
+    event: CustomEvent<T>,
+    itemsPerPage: number = 5,
+    currentPage: number = 1,
+    isSetTotalItems: boolean = false,
+  ): Promise<void> {
+    const accounts = await fetchAccounts(itemsPerPage, currentPage);
+    event.detail.setData(accounts.data);
+    event.detail.setLoading(false);
+
+    if (isSetTotalItems) {
+      event.detail.setTotalItems?.(accounts.meta.total);
+    }
+  }
+
+  async function handleDatatableOnMount(event: CustomEvent<PageEvent>) {
+    const itemsPerPage = event.detail.itemsPerPage;
+    const currentPage = event.detail.currentPage;
+    await setRows<PageEvent>(event, itemsPerPage, currentPage, true);
+  }
+
+  async function handleDatatableChangePage(event: CustomEvent<PageEvent>) {
+    const itemsPerPage = event.detail.itemsPerPage;
+    const currentPage = event.detail.currentPage;
+    await setRows<PageEvent>(event, itemsPerPage, currentPage);
+  }
+
+  async function handleDatatableChangeLimit(event: CustomEvent<PageEvent>) {
+    const itemsPerPage = event.detail.itemsPerPage;
+    await setRows<PageEvent>(event, itemsPerPage, 1); // always set current page to 1 for limit
+  }
 </script>
 
-<div class="mb-4 flex space-x-4 ">
-  <FormInput
-    iconClass="i-tabler-search"
-    id="searchAccounts"
-    placeholder="Search..."
-    class="w-60 md:focus-within:w-96 transition-all duration-300"
-  />
-  <Button size="sm">
-    <span class="block text-lg i-tabler-filter" />
-  </Button>
-</div>
-<div class="app-scrollbar mb-4 relative rounded datatable">
-  <Table>
-    <Thead>
-      <Row>
-        <TheadCol class="w-8">ID</TheadCol>
-        <TheadCol>User ID</TheadCol>
-        <TheadCol>Email</TheadCol>
-        <TheadCol>Group</TheadCol>
-        <TheadCol class="w-4.5" innerClass="justify-center">Action</TheadCol>
-      </Row>
-    </Thead>
-    <Body>
-      {#if isLoading}
-        <BodyRow>
-          <BodyCol colspan={5}>
-            <div class="animate-pulse space-y-3 py-4">
-              <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded" />
-              <div class="h-4 w-1/2 bg-slate-200 dark:bg-slate-700 rounded" />
-            </div>
-          </BodyCol>
-        </BodyRow>
-      {:else}
-        {#each data as account}
-          <BodyRow>
-            <BodyCol>{account.account_id}</BodyCol>
-            <BodyCol>{account.userid}</BodyCol>
-            <BodyCol>{account.email}</BodyCol>
-            <BodyCol>{account.group_id === 99 ? 'Admin' : 'Player'}</BodyCol>
-            <BodyCol>
-              <div class="flex">
-                <Button size="sm" variant="ghost">
-                  <div class="i-tabler-edit text-lg" />
-                </Button>
-              </div>
-            </BodyCol>
-          </BodyRow>
-        {/each}
-      {/if}
-    </Body>
-  </Table>
-</div>
-
-{#if data && data.length >= 1}
-  <div class="text-slate-500 pt-[80px]">
-    <Pagination
-      current={currentPage}
-      num_items={totalItems}
-      per_page={itemsPerPage}
-      on:navigate={changePage}
-    />
-  </div>
-{/if}
+<DataTable
+  headers={[
+    { key: 'account_id', value: 'Account ID', className: 'w-36' },
+    { key: 'userid', value: 'User ID' },
+    { key: 'email', value: 'Email' },
+    { key: 'group_id', value: 'Group' },
+    {
+      key: 'action',
+      value: 'Action',
+      className: 'w-4.5',
+      innerClassName: 'justify-center',
+    },
+  ]}
+  on:mounted={handleDatatableOnMount}
+  on:changePage={handleDatatableChangePage}
+  on:changeLimit={handleDatatableChangeLimit}
+>
+  <svelte:fragment slot="cell" let:row let:cell let:cellValue>
+    {#if cell.key === 'action'}
+      <div class="flex">
+        <Button size="sm" variant="ghost">
+          <div class="i-tabler-edit text-lg" />
+        </Button>
+      </div>
+    {:else if cell.key === 'group_id'}
+      {cellValue === 99 ? 'Admin' : 'Player'}
+    {:else}
+      {cellValue}
+    {/if}
+  </svelte:fragment>
+</DataTable>

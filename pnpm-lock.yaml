@@ -34,7 +34,7 @@ importers:
       astro-uno: ^0.2.1
       eslint: ^8.23.1
       eslint-plugin-svelte3: ^4.0.0
-      js-sticky-table-headers: 1.0.0-alpha.4
+      js-sticky-table-headers: 1.0.0-alpha.7
       prettier: ^2.7.1
       prettier-plugin-astro: ^0.5.4
       svelte: ^3.50.1
@@ -64,7 +64,7 @@ importers:
       astro-uno: 0.2.1_astro@1.2.5+unocss@0.45.21
       eslint: 8.23.1
       eslint-plugin-svelte3: 4.0.0_rhh4tpcyg7zwtq6pdnkzw5gxma
-      js-sticky-table-headers: 1.0.0-alpha.4
+      js-sticky-table-headers: 1.0.0-alpha.7
       prettier: 2.7.1
       prettier-plugin-astro: 0.5.4
       svelte: 3.50.1
@@ -6651,8 +6651,8 @@ packages:
     resolution: {integrity: sha512-gF1cRrHhIzNfToc802P800N8PpXS+evLLXfsVpowqmAFR9uwbi89WvXg2QspOmXL8QL86J4T1EpFu+yUkwJY3Q==}
     dev: false
 
-  /js-sticky-table-headers/1.0.0-alpha.4:
-    resolution: {integrity: sha512-JKZIip/fh/pvajZJudMsvra7JVRRS8qycwitjmxTzJUb6v5/+3xvUgexIa6cMuoBti8Xka86MwsUXW3NeNZouw==}
+  /js-sticky-table-headers/1.0.0-alpha.7:
+    resolution: {integrity: sha512-9+Wr8PyhPINxzfJLIwR2l8PFhFt1hB0WpiYiSymYqHAdQjcsC2VB3gEbGkTDd7+RLDRxGV1jYS0TYwG9F19g1g==}
     dev: true
 
   /js-stringify/1.0.2:
