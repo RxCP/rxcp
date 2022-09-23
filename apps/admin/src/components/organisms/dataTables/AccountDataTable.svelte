@@ -16,6 +16,7 @@
     currentPage: number = 1,
     isSetTotalItems: boolean = false,
   ): Promise<void> {
+    event.detail.setLoading(true);
     const accounts = await fetchAccounts(itemsPerPage, currentPage);
     event.detail.setData(accounts.data);
     event.detail.setLoading(false);

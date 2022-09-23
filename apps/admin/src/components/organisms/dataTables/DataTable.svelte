@@ -14,7 +14,7 @@
   import Pagination from './Pagination.svelte';
   import type { HeaderItem, PageEvent, Rows } from './dataTableTypes';
 
-  export let isLoading: boolean = false;
+  export let isLoading: boolean = true;
   export let itemsPerPage: number = 5;
   export let headers: HeaderItem[] = [];
 
@@ -101,7 +101,7 @@
     <Body>
       {#if isLoading}
         <BodyRow>
-          <BodyCol colspan={rows.length}>
+          <BodyCol colspan={headers.length}>
             <div class="animate-pulse space-y-3 py-4">
               <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded" />
               <div class="h-4 w-1/2 bg-slate-200 dark:bg-slate-700 rounded" />
