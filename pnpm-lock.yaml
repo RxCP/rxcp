@@ -21,6 +21,7 @@ importers:
       '@astrojs/svelte': ^1.0.0
       '@iconify-json/tabler': ^1.1.34
       '@popperjs/core': ^2.11.6
+      '@types/lodash-es': ^4.17.6
       '@unocss/core': ^0.45.21
       '@unocss/preset-attributify': ^0.45.21
       '@unocss/preset-icons': ^0.45.21
@@ -35,8 +36,10 @@ importers:
       eslint: ^8.23.1
       eslint-plugin-svelte3: ^4.0.0
       js-sticky-table-headers: 1.0.0-alpha.7
+      lodash-es: ^4.17.21
       prettier: ^2.7.1
       prettier-plugin-astro: ^0.5.4
+      qs: ^6.11.0
       svelte: ^3.50.1
       ui: '*'
       unocss: ^0.45.21
@@ -53,6 +56,7 @@ importers:
       '@astrojs/svelte': 1.0.0_6yjc2gcp6m62prvwhp2pfb665a
       '@iconify-json/tabler': 1.1.34
       '@popperjs/core': 2.11.6
+      '@types/lodash-es': 4.17.6
       '@unocss/core': 0.45.21
       '@unocss/preset-attributify': 0.45.21
       '@unocss/preset-icons': 0.45.21
@@ -65,8 +69,10 @@ importers:
       eslint: 8.23.1
       eslint-plugin-svelte3: 4.0.0_rhh4tpcyg7zwtq6pdnkzw5gxma
       js-sticky-table-headers: 1.0.0-alpha.7
+      lodash-es: 4.17.21
       prettier: 2.7.1
       prettier-plugin-astro: 0.5.4
+      qs: 6.11.0
       svelte: 3.50.1
       ui: link:../../packages/ui
       unocss: 0.45.21_vite@3.1.1
@@ -2183,6 +2189,16 @@ packages:
 
   /@types/linkify-it/3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
+    dev: true
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.185
+    dev: true
+
+  /@types/lodash/4.14.185:
+    resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
     dev: true
 
   /@types/lru-cache/5.1.1:
@@ -6977,6 +6993,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: true
 
   /lodash.defaults/4.2.0:
     resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}

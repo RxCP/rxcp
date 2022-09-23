@@ -17,3 +17,7 @@ export interface PageEvent extends SettersEvent {
   itemsPerPage: number;
   currentPage: number;
 }
+
+export interface SearchEvent extends PageEvent {
+  searchText: string;
+}

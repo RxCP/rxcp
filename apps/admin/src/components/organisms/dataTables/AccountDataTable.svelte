@@ -1,7 +1,8 @@
 <script lang="ts">
+  import qs from 'qs';
   import Button from 'ui/src/Button/Button.svelte';
   import DataTable from './DataTable.svelte';
-  import type { PageEvent, Rows, SettersEvent } from './dataTableTypes';
+  import type { PageEvent, SearchEvent, SettersEvent } from './dataTableTypes';
 
   async function fetchAccounts(itemsPerPage: number, currentPage: number) {
     const response = await fetch(
@@ -42,6 +43,41 @@
     const itemsPerPage = event.detail.itemsPerPage;
     await setRows<PageEvent>(event, itemsPerPage, 1); // always set current page to 1 for limit
   }
+
+  async function handleDatatableSearch(event: CustomEvent<SearchEvent>) {
+    const itemsPerPage = event.detail.itemsPerPage;
+    const searchText = event.detail.searchText;
+
+    event.detail.setLoading(true);
+
+    const query = {
+      or: [
+        {
+          userid: {
+            like: searchText,
+          },
+          email: {
+            like: searchText,
+          },
+        },
+      ],
+    };
+
+    const stringifiedQuery = qs.stringify(
+      {
+        where: query,
+      },
+      { addQueryPrefix: true },
+    );
+
+    const response = await fetch(
+      `/api/accounts?limit=${itemsPerPage}&${stringifiedQuery}`,
+    );
+
+    const accounts = await response.json();
+    event.detail.setData(accounts.data);
+    event.detail.setLoading(false);
+  }
 </script>
 
 <DataTable
@@ -60,6 +96,7 @@
   on:mounted={handleDatatableOnMount}
   on:changePage={handleDatatableChangePage}
   on:changeLimit={handleDatatableChangeLimit}
+  on:search={handleDatatableSearch}
 >
   <svelte:fragment slot="cell" let:row let:cell let:cellValue>
     {#if cell.key === 'action'}

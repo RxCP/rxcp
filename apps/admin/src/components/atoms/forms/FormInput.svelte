@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
   export let type: string = 'text';
   export let id: string;
   export let iconClass: string = '';
@@ -8,9 +10,12 @@
 
   let className = $$props.class;
 
+  const dispatch = createEventDispatcher();
+
   const handleInput = (e: Event) => {
     const target = e.target as HTMLInputElement;
     value = target.value;
+    dispatch('input', { value });
   };
 </script>
 
@@ -31,7 +36,8 @@
     {value}
     {placeholder}
     {name}
-    on:input={handleInput}
     required
+    on:input={handleInput}
+    on:change
   />
 </div>

@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import stickyHeader from 'js-sticky-table-headers';
   import { createEventDispatcher } from 'svelte';
+  import { debounce } from 'lodash-es';
   import Button from 'ui/src/Button/Button.svelte';
   import Table from '@components/organisms/tables/Table.svelte';
   import Thead from '@components/organisms/tables/TableHead.svelte';
@@ -12,7 +13,12 @@
   import BodyCol from '@components/organisms/tables/TableBodyCol.svelte';
   import FormInput from '@components/atoms/forms/FormInput.svelte';
   import Pagination from './Pagination.svelte';
-  import type { HeaderItem, PageEvent, Rows } from './dataTableTypes';
+  import type {
+    HeaderItem,
+    PageEvent,
+    SearchEvent,
+    Rows,
+  } from './dataTableTypes';
 
   export let isLoading: boolean = true;
   export let itemsPerPage: number = 5;
@@ -22,11 +28,25 @@
     mounted: PageEvent;
     changePage: PageEvent;
     changeLimit: PageEvent;
+    search: SearchEvent;
   }>();
 
   let rows: Rows = [];
   let currentPage: number = 1;
   let totalItems: number = 0;
+  let searchText = '';
+
+  const handleInputSearchChange = debounce(({ detail }: CustomEvent): void => {
+    searchText = detail.value;
+    dispatch('search', {
+      setLoading,
+      setData,
+      setTotalItems,
+      itemsPerPage,
+      currentPage,
+      searchText,
+    });
+  }, 300);
 
   function setLoading(value: boolean): void {
     isLoading = value;
@@ -82,6 +102,7 @@
     id="searchAccounts"
     placeholder="Search..."
     class="w-60 md:focus-within:w-96 transition-all duration-300"
+    on:input={handleInputSearchChange}
   />
   <Button size="sm">
     <span class="block text-lg i-tabler-filter" />
