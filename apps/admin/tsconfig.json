@@ -15,6 +15,8 @@
     "strict": true,
     // Error when a value import is only used as a type.
     "importsNotUsedAsValues": "error",
+    // Enable for qs module types to work
+    "allowSyntheticDefaultImports": true,
     // https://docs.astro.build/en/guides/aliases/
     "baseUrl": ".",
     "paths": {
