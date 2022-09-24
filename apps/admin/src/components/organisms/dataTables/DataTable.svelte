@@ -22,7 +22,7 @@
   import Popper from '@components/molecules/popper/Popper.svelte';
 
   export let isLoading: boolean = true;
-  export let itemsPerPage: number = 5;
+  export let itemsPerPage: number = 10;
   export let headers: HeaderItem[] = [];
   export let filters: Record<string, string>[] = [];
 
@@ -184,7 +184,7 @@
         {/each}
       {:else}
         <BodyRow>
-          <BodyCol colspan={5}>
+          <BodyCol colspan={headers.length}>
             <p class="text-center min-h-xs flex items-center justify-center">
               No results found.
             </p>
