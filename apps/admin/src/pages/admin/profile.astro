@@ -1,5 +1,58 @@
 ---
+import { getUser, redirectUser } from '@astro-auth/core';
+import Avatar from '@components/atoms/avatar/Avatar.svelte';
+import FormInput from '@components/atoms/forms/FormInput.svelte';
+import FormLabel from '@components/atoms/forms/FormLabel.svelte';
+import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
+import MainSidebarItemLink from '@components/organisms/main/MainSidebarItemLink.svelte';
+import MainSidebarItemTitle from '@components/organisms/main/MainSidebarItemTitle.svelte';
+import MainSidebarMenu from '@components/organisms/main/MainSidebarMenu.svelte';
 import Layout from '@layouts/Dashboard.astro';
+import Button from 'ui/src/Button/Button.svelte';
+
+const user = getUser({ client: Astro });
+if (!user) {
+  return redirectUser('/login');
+}
 ---
 
-<Layout title="Profile" />
+<Layout title="Profile">
+  <div class="grid grid-cols-4 gap-8 items-start">
+    <div class="flex justify-center">
+      <Avatar name={user.first_name} size="xl" />
+    </div>
+    <div class="col-span-2">
+      <h2>{user.role}</h2>
+      <div class="grid grid-cols-1 gap-4 mb-8">
+        <div class="space-y-2">
+          <FormLabel htmlFor="first_name" text="First name" />
+          <FormInput
+            id="first_name"
+            name="first_name"
+            value={user.first_name}
+          />
+        </div>
+        <div class="space-y-2">
+          <FormLabel htmlFor="last_name" text="Last name" />
+          <FormInput id="last_name" name="last_name" value={user.last_name} />
+        </div>
+        <div class="space-y-2">
+          <FormLabel htmlFor="email" text="Email address" />
+          <FormInput id="email" name="email" value={user.email} disabled />
+        </div>
+      </div>
+      <div class="space-y-2 flex place-items-end">
+        <Button type="submit">Save</Button>
+      </div>
+    </div>
+  </div>
+
+  <MainSidebar slot="sidebar">
+    <MainSidebarMenu>
+      <MainSidebarItemTitle text="Profile" />
+      <MainSidebarItemLink to="#" text="Information" />
+      <MainSidebarItemLink to="#" text="Change Email" />
+      <MainSidebarItemLink to="#" text="Change Password" />
+    </MainSidebarMenu>
+  </MainSidebar>
+</Layout>
