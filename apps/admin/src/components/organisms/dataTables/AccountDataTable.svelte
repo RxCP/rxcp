@@ -86,12 +86,19 @@
     { key: 'userid', value: 'User ID' },
     { key: 'email', value: 'Email' },
     { key: 'group_id', value: 'Group' },
+    { key: 'last_ip', value: 'Last IP' },
     {
       key: 'action',
       value: 'Action',
       className: 'w-4.5',
       innerClassName: 'justify-center',
     },
+  ]}
+  filters={[
+    { key: 'account_id', label: 'Account ID' },
+    { key: 'userid', label: 'User ID' },
+    { key: 'email', label: 'Email' },
+    { key: 'group_id', label: 'Group' },
   ]}
   on:mounted={handleDatatableOnMount}
   on:changePage={handleDatatableChangePage}

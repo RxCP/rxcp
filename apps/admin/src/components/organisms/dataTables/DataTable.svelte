@@ -19,10 +19,12 @@
     SearchEvent,
     Rows,
   } from './dataTableTypes';
+  import Popper from '@components/molecules/popper/Popper.svelte';
 
   export let isLoading: boolean = true;
   export let itemsPerPage: number = 5;
   export let headers: HeaderItem[] = [];
+  export let filters: Record<string, string>[] = [];
 
   const dispatch = createEventDispatcher<{
     mounted: PageEvent;
@@ -34,7 +36,8 @@
   let rows: Rows = [];
   let currentPage: number = 1;
   let totalItems: number = 0;
-  let searchText = '';
+  let searchText: string = '';
+  let filterBy: string[] = filters.map((item) => item.key);
 
   const handleInputSearchChange = debounce(({ detail }: CustomEvent): void => {
     searchText = detail.value;
@@ -104,9 +107,40 @@
     class="w-60 md:focus-within:w-96 transition-all duration-300"
     on:input={handleInputSearchChange}
   />
-  <Button size="sm">
-    <span class="block text-lg i-tabler-filter" />
-  </Button>
+
+  {#if filters && filters.length}
+    <Popper element="span" class="flex" placement="bottom-start">
+      <Button size="sm">
+        <span class="block text-lg i-tabler-filter" />
+      </Button>
+      <div
+        slot="popup"
+        class="z-10 w-48 rounded divide-y shadow dark:shadow-slate-700 bg-white dark:bg-gray-800"
+      >
+        <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200">
+          {#each filters as filter (filter.key)}
+            <li>
+              <div
+                class="flex items-center p-2 rounded hover:bg-slate-100 dark:hover:bg-slate-700"
+              >
+                <label
+                  class="cursor-pointer w-full text-sm font-medium text-gray-900 rounded dark:text-gray-300"
+                >
+                  <input
+                    type="checkbox"
+                    value={filter.key}
+                    bind:group={filterBy}
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-slate-800 focus:ring-2 dark:bg-slate-700 dark:border-slate-600"
+                  />
+                  <span class="ml-2 inline-block">{filter.label}</span>
+                </label>
+              </div>
+            </li>
+          {/each}
+        </ul>
+      </div>
+    </Popper>
+  {/if}
 </div>
 <div class="app-scrollbar mb-4 relative rounded datatable">
   <Table>
