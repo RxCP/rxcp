@@ -46,11 +46,15 @@
   function setCurrent(i) {
     if (isNaN(i)) return;
     current = i;
-    dispatch('navigate', { current, perPage: currentNumPerPage });
+    dispatch('navigate', { currentPage: current, perPage: currentNumPerPage });
   }
 
   function setArrPages() {
     arr_pages = buildArr(current, num_pages);
+  }
+
+  function handlePerPageChange() {
+    dispatch('perPageChange', { currentPage: current, perPage: currentNumPerPage });
   }
 </script>
 
@@ -62,7 +66,7 @@
       <select
         class="dark:bg-slate-700 border border-slate-400 dark:border-slate-600 text-slate-400 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         bind:value={currentNumPerPage}
-        on:change={setCurrent(current)}
+        on:change={handlePerPageChange}
       >
         {#each numPerPageOptions as option}
           <option value={option}>{option}</option>

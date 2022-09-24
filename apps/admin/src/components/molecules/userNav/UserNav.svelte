@@ -40,13 +40,13 @@
       }
 
       isNavShow = !isNavShow;
-
-      return () => {
-        button.removeEventListener('click', showMenu);
-        navPopper.destroy();
-        navPopper = null;
-      };
     }
+
+    return () => {
+      button.removeEventListener('click', showMenu);
+      navPopper.destroy();
+      navPopper = null;
+    };
   });
 </script>
 
