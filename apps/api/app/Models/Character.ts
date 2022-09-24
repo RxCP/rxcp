@@ -1,4 +1,5 @@
-import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column, computed } from '@ioc:Adonis/Lucid/Orm'
+import Config from '@ioc:Adonis/Core/Config'
 import Account from './Account'
 
 export default class Character extends BaseModel {
@@ -196,6 +197,11 @@ export default class Character extends BaseModel {
 
   @column()
   public show_equip: number
+
+  @computed()
+  public get class_name() {
+    return Config.get('ragnarok.jobs')[this.class] || ''
+  }
 
   @belongsTo(() => Account, {
     foreignKey: 'account_id',

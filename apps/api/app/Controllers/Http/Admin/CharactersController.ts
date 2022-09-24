@@ -10,7 +10,11 @@ export default class CharactersController {
 
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
-    return Character.query().paginate(page, limit)
+    return Character.query()
+      .preload('account', (query) => {
+        query.select(['account_id', 'userid'])
+      })
+      .paginate(page, limit)
   }
 
   /**

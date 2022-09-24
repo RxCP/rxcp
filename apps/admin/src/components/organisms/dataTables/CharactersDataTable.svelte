@@ -82,10 +82,10 @@
 
 <DataTable
   headers={[
-    { key: 'char_id', value: 'Character ID' },
-    { key: 'account_id', value: 'Account ID' },
+    { key: 'char_id', value: 'Character ID', className: 'w-40' },
+    { key: 'account_id', value: 'Account' },
     { key: 'name', value: 'Name' },
-    { key: 'class', value: 'Class' },
+    { key: 'class_name', value: 'Class' },
     { key: 'base_level', value: 'Base Level' },
     { key: 'job_level', value: 'Job Level' },
     { key: 'last_login', value: 'Last login' },
@@ -98,6 +98,8 @@
   <svelte:fragment slot="cell" let:row let:cell let:cellValue>
     {#if cell.key === 'last_login'}
       {format(parseISO(cellValue), 'MM/dd/yyyy p')}
+    {:else if cell.key === 'account_id'}
+      {row.account.userid}
     {:else}
       {cellValue}
     {/if}

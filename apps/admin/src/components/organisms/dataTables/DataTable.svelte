@@ -22,7 +22,7 @@
   import Popper from '@components/molecules/popper/Popper.svelte';
 
   export let isLoading: boolean = true;
-  export let itemsPerPage: number = 5;
+  export let itemsPerPage: number = 10;
   export let headers: HeaderItem[] = [];
   export let filters: Record<string, string>[] = [];
 
