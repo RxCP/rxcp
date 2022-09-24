@@ -184,7 +184,7 @@
         {/each}
       {:else}
         <BodyRow>
-          <BodyCol colspan={5}>
+          <BodyCol colspan={headers.length}>
             <p class="text-center min-h-xs flex items-center justify-center">
               No results found.
             </p>

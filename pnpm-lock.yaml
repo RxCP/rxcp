@@ -34,6 +34,7 @@ importers:
       astro: ^1.2.5
       astro-spa: ^1.3.9
       astro-uno: ^0.2.1
+      date-fns: ^2.29.3
       eslint: ^8.23.1
       eslint-plugin-svelte3: ^4.0.0
       js-sticky-table-headers: 1.0.0-alpha.7
@@ -53,6 +54,7 @@ importers:
       '@astrojs/node': 1.0.1
       astro: 1.2.5
       astro-spa: 1.3.9
+      date-fns: 2.29.3
     devDependencies:
       '@astrojs/svelte': 1.0.0_6yjc2gcp6m62prvwhp2pfb665a
       '@iconify-json/tabler': 1.1.34
@@ -4058,6 +4060,11 @@ packages:
   /data-uri-to-buffer/4.0.0:
     resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
     engines: {node: '>= 12'}
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
+    dev: false
 
   /dateformat/4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}

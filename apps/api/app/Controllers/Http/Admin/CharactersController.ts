@@ -9,7 +9,7 @@ export default class CharactersController {
     await bouncer.with('RolePolicy').authorize('permission', 'api::characters.index')
 
     const page = request.input('page', 1)
-    const limit = 10
+    const limit = request.input('limit', 10)
     return Character.query().paginate(page, limit)
   }
 

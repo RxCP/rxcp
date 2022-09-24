@@ -1,5 +1,10 @@
 ---
+import CharactersDataTable from '@components/organisms/dataTables/CharactersDataTable.svelte';
 import Layout from '@layouts/Dashboard.astro';
 ---
 
-<Layout title="Characters" />
+<Layout title="Characters">
+  <section>
+    <CharactersDataTable client:only="svelte" />
+  </section>
+</Layout>
