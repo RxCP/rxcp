@@ -10,6 +10,7 @@ import HeaderPageTitle from '@components/organisms/header/HeaderPageTitle.svelte
 import ButtonToggleTheme from '@components/atoms/buttons/ButtonToggleTheme.svelte';
 import ButtonToggleSidebar from '@components/atoms/buttons/ButtonToggleSidebar.svelte';
 import Html from './Html.astro';
+import { currentPath } from '@store/url';
 import { auth } from 'src/util/auth';
 
 export interface Props {
@@ -20,12 +21,14 @@ const { title } = Astro.props as Props;
 
 const user = auth(Astro);
 const pathname: string = new URL(Astro.request.url).pathname;
-const currentPath: string = pathname.slice(1);
 const hasSidebar: boolean = Astro.slots.has('sidebar');
+
+// Save current path to store
+currentPath.set(`/${pathname.slice(1)}`);
 ---
 
 <Html title={title}>
-  <Sidebar client:load currentPath={currentPath} />
+  <Sidebar />
   <Main>
     <MainInner>
       <slot name="sidebar" />

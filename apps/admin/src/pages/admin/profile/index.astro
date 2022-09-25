@@ -1,14 +1,12 @@
 ---
 import { getUser, redirectUser } from '@astro-auth/core';
+import ProfileSidebarMenu from '@components/organisms/profile/ProfileSidebarMenu.svelte';
+import Layout from '@layouts/Dashboard.astro';
 import Avatar from '@components/atoms/avatar/Avatar.svelte';
 import FormInput from '@components/atoms/forms/FormInput.svelte';
 import FormLabel from '@components/atoms/forms/FormLabel.svelte';
-import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
-import MainSidebarItemLink from '@components/organisms/main/MainSidebarItemLink.svelte';
-import MainSidebarItemTitle from '@components/organisms/main/MainSidebarItemTitle.svelte';
-import MainSidebarMenu from '@components/organisms/main/MainSidebarMenu.svelte';
-import Layout from '@layouts/Dashboard.astro';
 import Button from 'ui/src/Button/Button.svelte';
+import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
 
 const user = getUser({ client: Astro });
 if (!user) {
@@ -48,11 +46,6 @@ if (!user) {
   </div>
 
   <MainSidebar slot="sidebar">
-    <MainSidebarMenu>
-      <MainSidebarItemTitle text="Profile" />
-      <MainSidebarItemLink to="#" text="Information" />
-      <MainSidebarItemLink to="#" text="Change Email" />
-      <MainSidebarItemLink to="#" text="Change Password" />
-    </MainSidebarMenu>
+    <ProfileSidebarMenu />
   </MainSidebar>
 </Layout>
