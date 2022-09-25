@@ -1,9 +1,8 @@
 import type { APIContext } from 'astro';
-import { getUser } from '@astro-auth/core';
+import { apiToken } from '@store/auth';
 
 export async function get({ params, request }: APIContext) {
   let searchparams = new URL(request.url).searchParams;
-  const user = getUser({ server: request });
   const res = await fetch(
     `${
       import.meta.env.PUBLIC_API_URL
@@ -11,7 +10,7 @@ export async function get({ params, request }: APIContext) {
     {
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${user.accessToken}`,
+        Authorization: `Bearer ${apiToken.get()}`,
       },
     },
   );

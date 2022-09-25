@@ -1,5 +1,6 @@
 import AstroAuth from '@astro-auth/core';
 import { CredentialProvider } from '@astro-auth/providers';
+import { apiToken, user as userAuth } from '@store/auth';
 
 export const all = AstroAuth({
   authProviders: [
@@ -28,13 +29,12 @@ export const all = AstroAuth({
             },
           );
           const user = await fetchUser.json();
-          return {
-            ...user.data,
-            ...{
-              accessToken: login.token,
-              tokenExpiresAt: user.expires_at,
-            },
-          };
+
+          // Save data to store (server)
+          apiToken.set(login.token);
+          userAuth.set(user.data);
+
+          return user.data;
         }
 
         return null;
