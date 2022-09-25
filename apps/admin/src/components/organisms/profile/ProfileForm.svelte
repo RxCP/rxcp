@@ -1,11 +1,16 @@
 <script lang="ts">
+  import type { AuthUser } from '@store/auth';
+  import { user as userAuth } from '@store/auth';
+  import { useUser } from '@astro-auth/client';
   import FormInput from '@components/atoms/forms/FormInput.svelte';
   import FormLabel from '@components/atoms/forms/FormLabel.svelte';
-  import type { AuthUser } from '@store/auth';
   import Button from 'ui/src/Button/Button.svelte';
+  import Alert from 'ui/src/Alert/Alert.svelte';
 
   export let user: AuthUser | Record<string, string> = {};
+
   let isSubmitting: boolean = false;
+  let error: string = '';
 
   async function handleFormSubmit(e: Event) {
     const target = e.target as HTMLFormElement;
@@ -15,14 +20,29 @@
 
     isSubmitting = true;
 
-    await fetch('/api/me', {
+    const response = await fetch('/api/me', {
       method: 'PATCH',
       body: JSON.stringify(Object.fromEntries(formData.entries())),
     });
 
+    const user = await useUser();
+
+    if (!response.ok) {
+      error = 'Invalid data';
+      isSubmitting = false;
+      return;
+    }
+
+    // Refresh user data (client side)
+    userAuth.set(user);
+
     isSubmitting = false;
   }
 </script>
+
+{#if error}
+  <Alert status="error">{error}</Alert>
+{/if}
 
 <form on:submit|preventDefault={handleFormSubmit}>
   <div class="grid grid-cols-1 gap-4 mb-8">

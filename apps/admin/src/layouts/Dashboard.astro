@@ -40,7 +40,7 @@ currentPath.set(`/${pathname.slice(1)}`);
 
           <div class="flex ml-auto space-x-3">
             <ButtonToggleTheme className="mr-6" client:load />
-            {authUser && <UserNav user={authUser} client:load />}
+            {authUser && <UserNav client:load />}
           </div>
         </Header>
         <MainContent>

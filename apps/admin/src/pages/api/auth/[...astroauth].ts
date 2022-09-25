@@ -41,4 +41,13 @@ export const all = AstroAuth({
       },
     }),
   ],
+  hooks: {
+    account: async () => {
+      const res = await fetch(`${import.meta.env.ASTROAUTH_URL}/api/me`);
+      const userRes = await res.json();
+      // Update userAuth (server side)
+      userAuth.set(userRes.data);
+      return userRes.data;
+    },
+  },
 });

@@ -3,7 +3,7 @@ import { user as authUser } from '@store/auth';
 import ProfileSidebarMenu from '@components/organisms/profile/ProfileSidebarMenu.svelte';
 import ProfileForm from '@components/organisms/profile/ProfileForm.svelte';
 import Layout from '@layouts/Dashboard.astro';
-import Avatar from '@components/atoms/avatar/Avatar.svelte';
+import AuthUserAvatar from '@components/atoms/avatar/AuthUserAvatar.svelte';
 import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
 
 const user = authUser.get();
@@ -16,10 +16,10 @@ if (!user) {
 <Layout title="Profile">
   <div class="grid grid-cols-4 gap-8 items-start">
     <div class="flex justify-center">
-      {user && <Avatar name={user?.first_name || ''} size="xl" />}
+      {user && <AuthUserAvatar size="xl" client:load />}
     </div>
     <div class="col-span-2">
-      {user && <ProfileForm client:load user={user} />}
+      {user && <ProfileForm user={user} client:load />}
     </div>
   </div>
 

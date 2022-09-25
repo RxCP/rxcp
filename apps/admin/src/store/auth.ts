@@ -9,6 +9,7 @@ export interface AuthUser {
   accessToken?: string;
 }
 
+// So we could update the user info w/o refreshing the entire page
 export const user = map<AuthUser>({});
 
 // Expose only on server side
