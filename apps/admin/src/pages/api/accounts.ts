@@ -3,7 +3,7 @@ import { apiToken } from '@store/auth';
 
 export async function get({ params, request }: APIContext) {
   let searchparams = new URL(request.url).searchParams;
-  const res = await fetch(
+  return await fetch(
     `${
       import.meta.env.PUBLIC_API_URL
     }/admin/api/accounts?${searchparams.toString()}`,
@@ -14,7 +14,4 @@ export async function get({ params, request }: APIContext) {
       },
     },
   );
-  return {
-    body: JSON.stringify(await res.json()),
-  };
 }

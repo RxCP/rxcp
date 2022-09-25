@@ -25,14 +25,13 @@
       body: JSON.stringify(Object.fromEntries(formData.entries())),
     });
 
-    const user = await useUser();
-
     if (!response.ok) {
       error = 'Invalid data';
       isSubmitting = false;
       return;
     }
 
+    const user = await useUser();
     // Refresh user data (client side)
     userAuth.set(user);
 
