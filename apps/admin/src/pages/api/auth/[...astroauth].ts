@@ -45,6 +45,10 @@ export const all = AstroAuth({
     account: async () => {
       const res = await fetch(`${import.meta.env.ASTROAUTH_URL}/api/me`);
       const userRes = await res.json();
+      if (!res.ok) {
+        userAuth.set({});
+        return null;
+      }
       // Update userAuth (server side)
       userAuth.set(userRes.data);
       return userRes.data;
