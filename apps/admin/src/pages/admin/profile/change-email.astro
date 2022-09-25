@@ -1,0 +1,11 @@
+---
+import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
+import ProfileSidebarMenu from '@components/organisms/profile/ProfileSidebarMenu.svelte';
+import Layout from '@layouts/Dashboard.astro';
+---
+
+<Layout title="Change Email Address">
+  <MainSidebar slot="sidebar">
+    <ProfileSidebarMenu />
+  </MainSidebar>
+</Layout>

@@ -9,7 +9,9 @@ import MainContent from '@components/organisms/main/MainContent.svelte';
 import HeaderPageTitle from '@components/organisms/header/HeaderPageTitle.svelte';
 import ButtonToggleTheme from '@components/atoms/buttons/ButtonToggleTheme.svelte';
 import ButtonToggleSidebar from '@components/atoms/buttons/ButtonToggleSidebar.svelte';
+import AuthStore from '@components/storeUtil/AuthStore.svelte';
 import Html from './Html.astro';
+import { currentPath } from '@store/url';
 import { auth } from 'src/util/auth';
 
 export interface Props {
@@ -18,14 +20,16 @@ export interface Props {
 
 const { title } = Astro.props as Props;
 
-const user = auth(Astro);
+const authUser = auth(Astro);
 const pathname: string = new URL(Astro.request.url).pathname;
-const currentPath: string = pathname.slice(1);
 const hasSidebar: boolean = Astro.slots.has('sidebar');
+
+// Save current path to store
+currentPath.set(`/${pathname.slice(1)}`);
 ---
 
 <Html title={title}>
-  <Sidebar client:load currentPath={currentPath} />
+  <Sidebar />
   <Main>
     <MainInner>
       <slot name="sidebar" />
@@ -36,7 +40,7 @@ const hasSidebar: boolean = Astro.slots.has('sidebar');
 
           <div class="flex ml-auto space-x-3">
             <ButtonToggleTheme className="mr-6" client:load />
-            {user && <UserNav user={user} client:load />}
+            {authUser && <UserNav client:load />}
           </div>
         </Header>
         <MainContent>
@@ -45,4 +49,6 @@ const hasSidebar: boolean = Astro.slots.has('sidebar');
       </MainContentWrapper>
     </MainInner>
   </Main>
+
+  <AuthStore user={authUser} client:load />
 </Html>

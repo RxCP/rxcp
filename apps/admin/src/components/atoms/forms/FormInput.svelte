@@ -7,8 +7,12 @@
   export let placeholder: string = '';
   export let value: string | number = '';
   export let name: string = '';
+  export let inputClass: string = '';
 
   let className = $$props.class;
+  // all props are for input except for class. This will be on the parent
+  // input class has inputClass props
+  delete $$restProps['class'];
 
   const dispatch = createEventDispatcher();
 
@@ -30,12 +34,15 @@
   <input
     {type}
     {id}
-    class:pl-10={iconClass}
-    class="border border-gray-300 text-gray-900 text-sm rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 outline-none dark:border-slate-700 dark:placeholder-gray-400 dark:text-slate-300 dark:focus:ring-blue-800 dark:focus:border-blue-800"
     un-bg="gray-50 dark:slate-900"
+    un-border="~ gray-300 dark:slate-700"
+    un-text="gray-900 dark:slate-300 sm"
+    class:pl-10={iconClass}
+    class="{inputClass} rounded block w-full p-2.5 outline-none dark:placeholder-gray-400 disabled:(opacity-75 cursor-not-allowed text-opacity-75)  focus:(outline-none ring-blue-500 border-blue-500 dark:ring-blue-800 dark:border-blue-800)"
     {value}
     {placeholder}
     {name}
+    {...$$restProps}
     required
     on:input={handleInput}
     on:change

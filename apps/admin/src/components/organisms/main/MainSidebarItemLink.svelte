@@ -1,14 +1,18 @@
-<script>
-  export let to;
-  export let text;
+<script lang="ts">
+  export let to: string;
+  export let text: string;
+  export let isActive: boolean = false;
 </script>
 
 <li>
   <a
     href={to}
-    class="block text-gray-600
-      dark:text-slate-400 border-l border-transparent hover:border-blue-500 hover:bg-slate-100 dark:hover:bg-slate-800/50
-      py-2 px-4 text-sm"
+    un-bg="hover:slate-200 dark:hover:slate-800/50"
+    un-text="gray-600 dark:slate-400 sm"
+    un-border="l hover:blue-500"
+    class="block {isActive
+      ? 'border-blue-500 bg-slate-200 dark:bg-slate-800/50'
+      : 'border-transparent'} py-2 px-4"
   >
     {text}
   </a>

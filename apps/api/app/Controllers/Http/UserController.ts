@@ -3,7 +3,7 @@ import Event from '@ioc:Adonis/Core/Event'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import User from 'App/Models/User'
-import { emailRules, passwordRules } from 'App/Validations/user'
+import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/Validations/user'
 
 export default class UserController {
   /**
@@ -22,6 +22,13 @@ export default class UserController {
     const firstName = request.input('first_name')
     const lastName = request.input('last_name')
     const userId = auth.use('api').user?.id
+
+    const updateProfileSchema = schema.create({
+      first_name: firstNameRules,
+      last_name: lastNameRules,
+    })
+
+    await request.validate({ schema: updateProfileSchema })
 
     try {
       const user = await User.findOrFail(userId)

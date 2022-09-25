@@ -1,5 +1,5 @@
 <script>
-  import Avatar from '@components/atoms/avatar/Avatar.svelte';
+  import AuthUserAvatar from '@components/atoms/avatar/AuthUserAvatar.svelte';
   import { createPopper } from '@popperjs/core';
   import { onMount } from 'svelte';
   import SignoutMenu from './SignoutMenu.svelte';
@@ -7,8 +7,7 @@
   import UserInfo from './UserInfo.svelte';
   import UserMenu from './UserMenu.svelte';
   import UserMenuItem from './UserMenuItem.svelte';
-
-  export let user = null;
+  import { user } from '@store/auth';
 
   let isNavShow = false;
   let navPopper = null;
@@ -51,11 +50,11 @@
 </script>
 
 <div>
-  <Avatar name={user.first_name} />
+  <AuthUserAvatar />
   <UserDropdown id="userNavDropdown">
     <UserInfo
-      name={`${user.first_name} ${user.last_name}`}
-      email={user.email}
+      name={`${$user.first_name} ${$user.last_name}`}
+      email={$user.email}
     />
     <UserMenu>
       <UserMenuItem to="/admin/profile" text="Profile" />

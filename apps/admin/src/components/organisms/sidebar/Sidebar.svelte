@@ -12,6 +12,7 @@
   import SidebarWrapper from './SidebarWrapper.svelte';
   import NavbarMobile from '../navbar/NavbarMobile.svelte';
   import SidebarIconText from './SidebarIconText.svelte';
+  import { currentPath } from '@store/url';
 
   type MenuItem = {
     url: string;
@@ -23,8 +24,6 @@
     ragnarok: MenuItem[];
     plugins: MenuItem[];
   };
-
-  export let currentPath: string = '';
 
   let primaryMenu: HTMLElement | null;
   const toggleClass: string = 'lt-lg:hidden';
@@ -93,6 +92,7 @@
 
   onMount(() => {
     primaryMenu = document.getElementById('primaryMenu');
+    console.log($currentPath);
   });
 
   function handleToggleMenu() {
@@ -118,10 +118,7 @@
       </SidebarMenuItem>
       {#each menu.ragnarok as menuItem}
         <SidebarMenuItem>
-          <LinkMenu
-            to={menuItem.url}
-            isActive={`/${currentPath}` === menuItem.url}
-          >
+          <LinkMenu to={menuItem.url} isActive={$currentPath === menuItem.url}>
             <SidebarIconText
               text={menuItem.text}
               iconClass={menuItem.iconClass}
@@ -134,10 +131,7 @@
       </SidebarMenuItem>
       {#each menu.plugins as menuItem}
         <SidebarMenuItem>
-          <LinkMenu
-            to={menuItem.url}
-            isActive={`/${currentPath}` === menuItem.url}
-          >
+          <LinkMenu to={menuItem.url} isActive={$currentPath === menuItem.url}>
             <SidebarIconText
               text={menuItem.text}
               iconClass={menuItem.iconClass}

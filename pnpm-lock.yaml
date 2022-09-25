@@ -39,6 +39,7 @@ importers:
       eslint-plugin-svelte3: ^4.0.0
       js-sticky-table-headers: 1.0.0-alpha.7
       lodash-es: ^4.17.21
+      nanostores: ^0.7.0
       prettier: ^2.7.1
       prettier-plugin-astro: ^0.5.4
       qs: ^6.11.0
@@ -55,6 +56,7 @@ importers:
       astro: 1.2.5
       astro-spa: 1.3.9
       date-fns: 2.29.3
+      nanostores: 0.7.0
     devDependencies:
       '@astrojs/svelte': 1.0.0_6yjc2gcp6m62prvwhp2pfb665a
       '@iconify-json/tabler': 1.1.34
@@ -8298,6 +8300,11 @@ packages:
   /nanostores/0.5.13:
     resolution: {integrity: sha512-UxC2eZsCbbcHZ1Z/hwFQ1C4gy8Tkhzskvmu6wOsAhOMAOd72HmVX1Nxs96DSDUcd7V1x0IdRtsl+zAm7rg7slA==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    dev: false
+
+  /nanostores/0.7.0:
+    resolution: {integrity: sha512-y+ma9MVXuPzXKEXaRYW/iL/xG/HtMwB8fmFcMfUqt5fCNR/na2kDubbZGV4furUMTgmxfySJs0cQjORWhaPDyA==}
+    engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     dev: false
 
   /natural-compare/1.4.0:
