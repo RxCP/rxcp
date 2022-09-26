@@ -1,9 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import LinkMenu from '@components/atoms/LinkMenu.svelte';
-  import PrimaryLogo from '@components/atoms/logo/PrimaryLogo.svelte';
-  import MenuToggleButton from '@components/atoms/buttons/ButtonToggle.svelte';
-  import SidebarButtonClose from '@components/atoms/buttons/ButtonX.svelte';
+  import LinkMenu from '@pattern/atoms/LinkMenu.svelte';
+  import PrimaryLogo from '@pattern/atoms/logo/PrimaryLogo.svelte';
+  import MenuToggleButton from '@pattern/atoms/buttons/ButtonToggle.svelte';
+  import SidebarButtonClose from '@pattern/atoms/buttons/ButtonX.svelte';
   import SidebarInner from './SidebarInner.svelte';
   import SidebarLogo from './SidebarLogo.svelte';
   import SidebarMenu from './SidebarMenu.svelte';

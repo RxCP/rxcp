@@ -1,5 +1,5 @@
 <script>
-  import PrimaryLogo from '@components/atoms/logo/PrimaryLogo.svelte';
+  import PrimaryLogo from '@pattern/atoms/logo/PrimaryLogo.svelte';
 </script>
 
 <div

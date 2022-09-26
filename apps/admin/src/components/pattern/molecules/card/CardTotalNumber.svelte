@@ -1,5 +1,5 @@
 <script lang="ts">
-  import CardWrapper from '../card/cardWrapper.svelte';
+  import CardWrapper from './cardWrapper.svelte';
 
   export let number: number;
   export let label: string;

@@ -1,7 +1,7 @@
 <script>
-  import MainSidebarItemLink from '@components/organisms/main/MainSidebarItemLink.svelte';
-  import MainSidebarItemTitle from '@components/organisms/main/MainSidebarItemTitle.svelte';
-  import MainSidebarMenu from '@components/organisms/main/MainSidebarMenu.svelte';
+  import MainSidebarItemLink from '@pattern/organisms/main/MainSidebarItemLink.svelte';
+  import MainSidebarItemTitle from '@pattern/organisms/main/MainSidebarItemTitle.svelte';
+  import MainSidebarMenu from '@pattern/organisms/main/MainSidebarMenu.svelte';
   import { currentPath } from '@store/url';
 
   let menu = [
