@@ -1,8 +1,8 @@
 ---
 import { getUser, redirectUser } from '@astro-auth/core';
-import CardTotalNumber from '@components/molecules/card/CardTotalNumber.svelte';
-import CardWrapper from '@components/molecules/card/cardWrapper.svelte';
-import Layout from '../../layouts/Dashboard.astro';
+import CardTotalNumber from '@pattern/molecules/card/CardTotalNumber.svelte';
+import CardWrapper from '@pattern/molecules/card/cardWrapper.svelte';
+import Layout from '@layouts/Dashboard.astro';
 
 const user = getUser({ client: Astro });
 if (!user) {

@@ -3,8 +3,8 @@ import { user as authUser } from '@store/auth';
 import ProfileSidebarMenu from '@components/profile/ProfileSidebarMenu.svelte';
 import ProfileForm from '@components/profile/ProfileForm.svelte';
 import Layout from '@layouts/Dashboard.astro';
-import AuthUserAvatar from '@components/atoms/avatar/AuthUserAvatar.svelte';
-import MainSidebar from '@components/organisms/main/MainSidebar.svelte';
+import AuthUserAvatar from '@pattern/atoms/avatar/AuthUserAvatar.svelte';
+import MainSidebar from '@pattern/organisms/main/MainSidebar.svelte';
 
 const user = authUser.get();
 

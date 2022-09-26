@@ -1,5 +1,5 @@
 <script>
-  import IconText from '@components/molecules/IconText.svelte';
+  import IconText from '@pattern/molecules/IconText.svelte';
 </script>
 
 <IconText

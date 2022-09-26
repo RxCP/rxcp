@@ -1,8 +1,8 @@
 <script>
   import Button from 'ui/src/Button/Button.svelte';
-  import FormInput from '@components/atoms/forms/FormInput.svelte';
-  import FormLabel from '@components/atoms/forms/FormLabel.svelte';
-  import Link from '@components/atoms/links/Link.svelte';
+  import FormInput from '@pattern/atoms/forms/FormInput.svelte';
+  import FormLabel from '@pattern/atoms/forms/FormLabel.svelte';
+  import Link from '@pattern/atoms/links/Link.svelte';
 </script>
 
 <form>

@@ -4,14 +4,14 @@
   import { createEventDispatcher } from 'svelte';
   import { debounce } from 'lodash-es';
   import Button from 'ui/src/Button/Button.svelte';
-  import Table from '@components/organisms/tables/Table.svelte';
-  import Thead from '@components/organisms/tables/TableHead.svelte';
-  import Row from '@components/organisms/tables/TableRow.svelte';
-  import TheadCol from '@components/organisms/tables/TableHeadCol.svelte';
-  import Body from '@components/organisms/tables/TableBody.svelte';
-  import BodyRow from '@components/organisms/tables/TableBodyRow.svelte';
-  import BodyCol from '@components/organisms/tables/TableBodyCol.svelte';
-  import FormInput from '@components/atoms/forms/FormInput.svelte';
+  import Table from '@pattern/organisms/tables/Table.svelte';
+  import Thead from '@pattern/organisms/tables/TableHead.svelte';
+  import Row from '@pattern/organisms/tables/TableRow.svelte';
+  import TheadCol from '@pattern/organisms/tables/TableHeadCol.svelte';
+  import Body from '@pattern/organisms/tables/TableBody.svelte';
+  import BodyRow from '@pattern/organisms/tables/TableBodyRow.svelte';
+  import BodyCol from '@pattern/organisms/tables/TableBodyCol.svelte';
+  import FormInput from '@pattern/atoms/forms/FormInput.svelte';
   import Pagination from './Pagination.svelte';
   import type {
     HeaderItem,
@@ -19,7 +19,7 @@
     SearchEvent,
     Rows,
   } from './dataTableTypes';
-  import Popper from '@components/molecules/popper/Popper.svelte';
+  import Popper from '@pattern/molecules/popper/Popper.svelte';
 
   export let isLoading: boolean = true;
   export let itemsPerPage: number = 10;

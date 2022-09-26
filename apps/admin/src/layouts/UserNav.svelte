@@ -1,5 +1,5 @@
 <script>
-  import AuthUserAvatar from '@components/atoms/avatar/AuthUserAvatar.svelte';
+  import AuthUserAvatar from '@pattern/atoms/avatar/AuthUserAvatar.svelte';
   import { createPopper } from '@popperjs/core';
   import { onMount } from 'svelte';
   import SignoutMenu from './SignoutMenu.svelte';

@@ -1,8 +1,12 @@
 <script lang="ts">
   import qs from 'qs';
   import { format, parseISO } from 'date-fns';
-  import DataTable from './DataTable.svelte';
-  import type { PageEvent, SearchEvent, SettersEvent } from './dataTableTypes';
+  import DataTable from '@pattern/organisms/dataTables/DataTable.svelte';
+  import type {
+    PageEvent,
+    SearchEvent,
+    SettersEvent,
+  } from '@pattern/organisms/dataTables/dataTableTypes';
 
   async function fetchAccounts(itemsPerPage: number, currentPage: number) {
     const response = await fetch(
