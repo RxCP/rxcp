@@ -46,7 +46,6 @@ importers:
       qs: 6.11.0
       rxcp-ui: workspace:^0.0.1
       svelte: 3.50.1
-      ui: '*'
       unocss: 0.45.25
       unocss-preset-scrollbar: 0.2.1
       windicss-analysis: 0.3.5
@@ -82,9 +81,8 @@ importers:
       prettier: 2.7.1
       prettier-plugin-astro: 0.5.4
       qs: 6.11.0
-      rxcp-ui: link:../../packages/rxcp-ui copy
+      rxcp-ui: link:../../packages/rxcp-ui
       svelte: 3.50.1
-      ui: 0.2.4
       unocss: 0.45.25_vite@3.1.3
       unocss-preset-scrollbar: 0.2.1_unocss@0.45.25
       windicss-analysis: 0.3.5
@@ -161,40 +159,6 @@ importers:
       youch-terminal: 2.1.5
 
   packages/rxcp-ui:
-    specifiers:
-      '@histoire/plugin-svelte': ^0.10.0
-      '@iconify-json/tabler': 1.1.36
-      '@sveltejs/vite-plugin-svelte': ^1.0.1
-      '@unocss/core': 0.45.25
-      '@unocss/preset-attributify': 0.45.25
-      '@unocss/preset-icons': 0.45.25
-      '@unocss/preset-uno': 0.45.25
-      '@unocss/preset-web-fonts': 0.45.25
-      '@unocss/preset-wind': 0.45.25
-      '@unocss/reset': 0.45.25
-      '@unocss/vite': 0.45.25
-      histoire: ^0.10.0
-      svelte: ^3.49.0
-      svelte-preprocess: ^4.10.7
-      vite: ^3.0.5
-    devDependencies:
-      '@histoire/plugin-svelte': 0.10.7_6jboj4ojh7boejalwp7lfq2n64
-      '@iconify-json/tabler': 1.1.36
-      '@sveltejs/vite-plugin-svelte': 1.0.8_svelte@3.50.1+vite@3.1.3
-      '@unocss/core': 0.45.25
-      '@unocss/preset-attributify': 0.45.25
-      '@unocss/preset-icons': 0.45.25
-      '@unocss/preset-uno': 0.45.25
-      '@unocss/preset-web-fonts': 0.45.25
-      '@unocss/preset-wind': 0.45.25
-      '@unocss/reset': 0.45.25
-      '@unocss/vite': 0.45.25_vite@3.1.3
-      histoire: 0.10.7_vite@3.1.3
-      svelte: 3.50.1
-      svelte-preprocess: 4.10.7_svelte@3.50.1
-      vite: 3.1.3
-
-  packages/rxcp-ui copy:
     specifiers:
       '@histoire/plugin-svelte': ^0.10.0
       '@iconify-json/tabler': 1.1.36
@@ -9568,10 +9532,6 @@ packages:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
 
-  /std/0.1.40:
-    resolution: {integrity: sha512-wUf57hkDGCoVShrhPA8Q7lAg2Qosk+FaMlECmAsr1A4/rL2NRXFHQGBcgMUFKVkPEemJFW9gzjCQisRty14ohg==}
-    dev: true
-
   /string-width/4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
     engines: {node: '>=8'}
@@ -10212,12 +10172,6 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
     dev: false
-
-  /ui/0.2.4:
-    resolution: {integrity: sha512-se2D+frb/i6JwFc7j72IEa0JADF8lfgc6ivOigaYkXHOuZRBtWe8R7UZ2YiXcbJ1dYNsjq40dn39rlNRxmVdPw==}
-    dependencies:
-      std: 0.1.40
-    dev: true
 
   /uid-safe/2.1.5:
     resolution: {integrity: sha512-KPHm4VL5dDXKz01UuEd88Df+KzynaohSL9fBh096KWAxSKZQDI2uBrVqtvRM4rwrIrRRKsdLNML/lnaaVSRioA==}
