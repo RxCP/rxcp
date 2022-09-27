@@ -1,5 +1,5 @@
 <script>
-  import Button from 'ui/src/Button/Button.svelte';
+  import Button from 'rxcp-ui/src/Button/Button.svelte';
 
   export let href = '';
   export let isActive = false;

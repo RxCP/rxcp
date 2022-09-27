@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Button from 'ui/src/Button/Button.svelte';
-  import Alert from 'ui/src/Alert/Alert.svelte';
+  import Button from 'rxcp-ui/src/Button/Button.svelte';
+  import Alert from 'rxcp-ui/src/Alert/Alert.svelte';
   import FormCheckbox from '@pattern/atoms/forms/FormCheckbox.svelte';
   import FormInput from '@pattern/atoms/forms/FormInput.svelte';
   import FormLabel from '@pattern/atoms/forms/FormLabel.svelte';
