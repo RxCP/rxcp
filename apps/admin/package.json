@@ -28,7 +28,6 @@
     "astro-uno": "0.2.1",
     "eslint": "8.24.0",
     "eslint-plugin-svelte3": "4.0.0",
-    "histoire": "^0.10.7",
     "js-sticky-table-headers": "1.0.0-alpha.8",
     "lodash-es": "4.17.21",
     "prettier": "2.7.1",
@@ -36,7 +35,6 @@
     "qs": "6.11.0",
     "rxcp-ui": "workspace:^0.0.1",
     "svelte": "3.50.1",
-    "ui": "*",
     "unocss": "0.45.25",
     "unocss-preset-scrollbar": "0.2.1",
     "windicss-analysis": "0.3.5"
