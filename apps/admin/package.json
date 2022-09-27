@@ -28,7 +28,7 @@
     "astro-uno": "0.2.1",
     "eslint": "8.24.0",
     "eslint-plugin-svelte3": "4.0.0",
-    "js-sticky-table-headers": "1.0.0-alpha.7",
+    "js-sticky-table-headers": "1.0.0-alpha.8",
     "lodash-es": "4.17.21",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.5.4",
