@@ -67,7 +67,7 @@
     "@adonisjs/view": "6.2.0",
     "adonis-lucid-filter": "4.1.0",
     "adonis-lucid-soft-deletes": "1.4.3",
-    "is-port-reachable": "3.1.0",
+    "is-port-reachable": "4.0.0",
     "luxon": "3.0.4",
     "mjml": "4.13.0",
     "mysql": "2.18.1",
