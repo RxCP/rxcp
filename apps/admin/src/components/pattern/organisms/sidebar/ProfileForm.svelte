@@ -4,8 +4,8 @@
   import { useUser } from '@astro-auth/client';
   import FormInput from '@pattern/atoms/forms/FormInput.svelte';
   import FormLabel from '@pattern/atoms/forms/FormLabel.svelte';
-  import Button from 'ui/src/Button/Button.svelte';
-  import Alert from 'ui/src/Alert/Alert.svelte';
+  import Button from 'rxcp-ui/src/Button/Button.svelte';
+  import Alert from 'rxcp-ui/src/Alert/Alert.svelte';
 
   export let user: AuthUser | Record<string, string> = {};
 

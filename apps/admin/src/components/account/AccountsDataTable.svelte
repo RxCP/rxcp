@@ -1,6 +1,6 @@
 <script lang="ts">
   import qs from 'qs';
-  import Button from 'ui/src/Button/Button.svelte';
+  import Button from 'rxcp-ui/src/Button/Button.svelte';
   import DataTable from '@pattern/organisms/dataTables/DataTable.svelte';
   import type {
     PageEvent,
