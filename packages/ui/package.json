@@ -11,7 +11,7 @@
     "format:prettier": "npm run lint:prettier -- --write"
   },
   "devDependencies": {
-    "@iconify-json/tabler": "1.1.36",
+    "@iconify-json/tabler": "1.1.37",
     "@sveltejs/package": "1.0.0-next.5",
     "@sveltejs/vite-plugin-svelte": "1.0.8",
     "@typescript-eslint/eslint-plugin": "5.38.1",
