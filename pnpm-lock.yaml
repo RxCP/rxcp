@@ -30,7 +30,7 @@ importers:
       '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
-      '@unocss/transformer-variant-group': 0.45.25
+      '@unocss/transformer-variant-group': 0.45.26
       astro: 1.3.1
       astro-spa: 1.3.9
       astro-uno: 0.2.1
@@ -70,7 +70,7 @@ importers:
       '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
-      '@unocss/transformer-variant-group': 0.45.25
+      '@unocss/transformer-variant-group': 0.45.26
       astro-uno: 0.2.1_astro@1.3.1+unocss@0.45.25
       eslint: 8.24.0
       eslint-plugin-svelte3: 4.0.0_snydkosur25h6rjxszquwacaua
@@ -2745,6 +2745,12 @@ packages:
     resolution: {integrity: sha512-COVO68dkM+3MYFIviKUdJNiNlNPGEhovCrtv3jEPPr96xf1boNNSBnHByP4zb4d6n2pAlfUEa81lmF65YmYrmA==}
     dependencies:
       '@unocss/core': 0.45.25
+    dev: true
+
+  /@unocss/transformer-variant-group/0.45.26:
+    resolution: {integrity: sha512-MUManbGNe1q5/dm4QLW1SbegeH/06ZbYyREfJEy7U5Ze5Npe67a1eZ4EA4b6el5Y8Bd+wpJ4xj1D+fxC6NVWJQ==}
+    dependencies:
+      '@unocss/core': 0.45.26
     dev: true
 
   /@unocss/vite/0.45.25_vite@3.1.4:
