@@ -21,7 +21,7 @@
     "@unocss/preset-uno": "0.45.26",
     "@unocss/preset-web-fonts": "0.45.26",
     "@unocss/preset-wind": "0.45.26",
-    "@unocss/reset": "0.45.25",
+    "@unocss/reset": "0.45.26",
     "@unocss/vite": "0.45.25",
     "@vitebook/client": "0.100.5",
     "@vitebook/core": "0.100.5",
