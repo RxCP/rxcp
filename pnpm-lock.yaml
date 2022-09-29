@@ -25,7 +25,7 @@ importers:
       '@types/qs': 6.9.7
       '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.26
-      '@unocss/preset-icons': 0.45.25
+      '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
@@ -65,7 +65,7 @@ importers:
       '@types/qs': 6.9.7
       '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.26
-      '@unocss/preset-icons': 0.45.25
+      '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
@@ -167,7 +167,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.38.1
       '@typescript-eslint/parser': 5.38.1
       '@unocss/preset-attributify': 0.45.26
-      '@unocss/preset-icons': 0.45.25
+      '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
@@ -189,7 +189,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.38.1_c7qepppml3d4ahu5cnfwqe6ltq
       '@typescript-eslint/parser': 5.38.1_ypn2ylkkyfa5i233caldtndbqa
       '@unocss/preset-attributify': 0.45.26
-      '@unocss/preset-icons': 0.45.25
+      '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
@@ -2618,6 +2618,16 @@ packages:
     dependencies:
       '@iconify/utils': 2.0.0
       '@unocss/core': 0.45.25
+      ohmyfetch: 0.4.19
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@unocss/preset-icons/0.45.26:
+    resolution: {integrity: sha512-PL2Fi6KGYZAY9vNyEC+EBDqSYaiXEuUaTkPOaCVrEsig0E5DOm62A5FmJ/0vHmNSXEOVqV17jiDKp+fNM/h61g==}
+    dependencies:
+      '@iconify/utils': 2.0.0
+      '@unocss/core': 0.45.26
       ohmyfetch: 0.4.19
     transitivePeerDependencies:
       - supports-color
