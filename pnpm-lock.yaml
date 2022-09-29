@@ -24,7 +24,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
       '@unocss/core': 0.45.26
-      '@unocss/preset-attributify': 0.45.25
+      '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.25
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
@@ -64,7 +64,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
       '@unocss/core': 0.45.26
-      '@unocss/preset-attributify': 0.45.25
+      '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.25
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
@@ -166,7 +166,7 @@ importers:
       '@sveltejs/vite-plugin-svelte': 1.0.8
       '@typescript-eslint/eslint-plugin': 5.38.1
       '@typescript-eslint/parser': 5.38.1
-      '@unocss/preset-attributify': 0.45.25
+      '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.25
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
@@ -188,7 +188,7 @@ importers:
       '@sveltejs/vite-plugin-svelte': 1.0.8_svelte@3.50.1+vite@3.1.4
       '@typescript-eslint/eslint-plugin': 5.38.1_c7qepppml3d4ahu5cnfwqe6ltq
       '@typescript-eslint/parser': 5.38.1_ypn2ylkkyfa5i233caldtndbqa
-      '@unocss/preset-attributify': 0.45.25
+      '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.25
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
@@ -2605,6 +2605,12 @@ packages:
     resolution: {integrity: sha512-Bj/q/bHPC61893d8iB7WjN5Km/JI4U1OF62PhdJfOjdXcRfPDNgpup2J/HnbeZyDDRsig5fLC9WSbpsgKW1+hA==}
     dependencies:
       '@unocss/core': 0.45.25
+    dev: true
+
+  /@unocss/preset-attributify/0.45.26:
+    resolution: {integrity: sha512-+BA27/d+IEJtt/P7+fHUl/OYJNhSVBoCRxIO6JiQhEw36n821UMVd9CdnfxPBEBIaS2fXQvNF4yO5jnr4Wj5Qw==}
+    dependencies:
+      '@unocss/core': 0.45.26
     dev: true
 
   /@unocss/preset-icons/0.45.25:
