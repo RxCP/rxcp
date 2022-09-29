@@ -34,7 +34,7 @@
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.5.4",
     "qs": "6.11.0",
-    "rxcp-ui": "workspace:^0.0.1",
+    "rxcp-ui": "*",
     "svelte": "3.50.1",
     "unocss": "0.45.25",
     "unocss-preset-scrollbar": "0.2.1",
