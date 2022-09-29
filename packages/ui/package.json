@@ -18,7 +18,7 @@
     "@typescript-eslint/parser": "5.38.1",
     "@unocss/preset-attributify": "0.45.26",
     "@unocss/preset-icons": "0.45.26",
-    "@unocss/preset-uno": "0.45.25",
+    "@unocss/preset-uno": "0.45.26",
     "@unocss/preset-web-fonts": "0.45.25",
     "@unocss/preset-wind": "0.45.25",
     "@unocss/reset": "0.45.25",
