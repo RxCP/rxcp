@@ -35,7 +35,7 @@
     "qs": "6.11.0",
     "svelte": "3.50.1",
     "ui": "*",
-    "unocss": "0.45.25",
+    "unocss": "0.45.26",
     "unocss-preset-scrollbar": "0.2.1",
     "windicss-analysis": "0.3.5"
   },
