@@ -1,5 +1,5 @@
 <script>
-  import Button from 'ui/src/Button/Button.svelte';
+  import Button from 'rxcp-ui/src/Button/Button.svelte';
   import FormInput from '@pattern/atoms/forms/FormInput.svelte';
   import FormLabel from '@pattern/atoms/forms/FormLabel.svelte';
   import Link from '@pattern/atoms/links/Link.svelte';

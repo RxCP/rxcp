@@ -3,7 +3,7 @@
   import stickyHeader from 'js-sticky-table-headers';
   import { createEventDispatcher } from 'svelte';
   import { debounce } from 'lodash-es';
-  import Button from 'ui/src/Button/Button.svelte';
+  import Button from 'rxcp-ui/src/Button/Button.svelte';
   import Table from '@pattern/organisms/tables/Table.svelte';
   import Thead from '@pattern/organisms/tables/TableHead.svelte';
   import Row from '@pattern/organisms/tables/TableRow.svelte';

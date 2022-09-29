@@ -1,0 +1,29 @@
+{
+  "name": "rxcp-ui",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "story:dev": "histoire dev --port 6006",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview --port 6006",
+    "clean": "git clean -fXd"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@histoire/plugin-svelte": "^0.10.0",
+    "@iconify-json/tabler": "1.1.36",
+    "@sveltejs/vite-plugin-svelte": "^1.0.1",
+    "@unocss/core": "0.45.25",
+    "@unocss/preset-attributify": "0.45.25",
+    "@unocss/preset-icons": "0.45.25",
+    "@unocss/preset-uno": "0.45.25",
+    "@unocss/preset-web-fonts": "0.45.25",
+    "@unocss/preset-wind": "0.45.25",
+    "@unocss/reset": "0.45.25",
+    "@unocss/vite": "0.45.25",
+    "histoire": "^0.10.0",
+    "svelte": "^3.49.0",
+    "svelte-preprocess": "^4.10.7",
+    "vite": "^3.0.5"
+  }
+}
