@@ -161,7 +161,7 @@ importers:
   packages/rxcp-ui:
     specifiers:
       '@histoire/plugin-svelte': 0.10.7
-      '@iconify-json/tabler': 1.1.36
+      '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.8
       '@unocss/core': 0.45.25
       '@unocss/preset-attributify': 0.45.25
@@ -177,7 +177,7 @@ importers:
       vite: 3.1.4
     devDependencies:
       '@histoire/plugin-svelte': 0.10.7_gdrwpsoly7wyobdnn2t55gt5ra
-      '@iconify-json/tabler': 1.1.36
+      '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.8_svelte@3.50.1+vite@3.1.4
       '@unocss/core': 0.45.25
       '@unocss/preset-attributify': 0.45.25
@@ -1501,12 +1501,6 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
-    dev: true
-
-  /@iconify-json/tabler/1.1.36:
-    resolution: {integrity: sha512-I34Lihg0qM0jC4093JuzjUCPmZpRDk5TyAD2JNAbWrBnwQINdGpvzkct4QJwRlkp2KJCQBNeM4S9PSptol8u5A==}
-    dependencies:
-      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify-json/tabler/1.1.37:
