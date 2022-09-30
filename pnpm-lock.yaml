@@ -42,7 +42,7 @@ importers:
       lodash-es: 4.17.21
       nanostores: 0.7.0
       prettier: 2.7.1
-      prettier-plugin-astro: 0.5.4
+      prettier-plugin-astro: 0.5.5
       qs: 6.11.0
       rxcp-ui: '*'
       svelte: 3.50.1
@@ -79,7 +79,7 @@ importers:
       js-sticky-table-headers: 1.0.0-alpha.8
       lodash-es: 4.17.21
       prettier: 2.7.1
-      prettier-plugin-astro: 0.5.4
+      prettier-plugin-astro: 0.5.5
       qs: 6.11.0
       rxcp-ui: link:../../packages/rxcp-ui
       svelte: 3.50.1
@@ -723,7 +723,7 @@ packages:
       '@vscode/emmet-helper': 2.8.4
       events: 3.3.0
       prettier: 2.7.1
-      prettier-plugin-astro: 0.5.4
+      prettier-plugin-astro: 0.5.5
       source-map: 0.7.4
       vscode-css-languageservice: 6.1.1
       vscode-html-languageservice: 5.0.2
@@ -8799,8 +8799,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier-plugin-astro/0.5.4:
-    resolution: {integrity: sha512-ILs/WgUYtKBOn3Zh217/PwjCFtUWEKQjcCFJDevri0hGEBwEnnda9aqSLL0/nhCOmQn/UE7M9zLQvThu970ZHw==}
+  /prettier-plugin-astro/0.5.5:
+    resolution: {integrity: sha512-tEJiPjTB1eVT5Czcbkj9GoRG/oMewOnG9x737p/hJUD5QXJmn7LiYFM2dKkX0i4A1fhhsGfXT+uqsAXcw2r8JQ==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
       '@astrojs/compiler': 0.23.5
