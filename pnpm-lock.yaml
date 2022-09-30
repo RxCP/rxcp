@@ -167,7 +167,7 @@ importers:
       '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.26
-      '@unocss/preset-web-fonts': 0.45.25
+      '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.25
       '@unocss/reset': 0.45.25
       '@unocss/vite': 0.45.25
@@ -183,7 +183,7 @@ importers:
       '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.26
-      '@unocss/preset-web-fonts': 0.45.25
+      '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.25
       '@unocss/reset': 0.45.25
       '@unocss/vite': 0.45.25_vite@3.1.4
@@ -2590,14 +2590,6 @@ packages:
       '@unocss/core': 0.45.26
       '@unocss/preset-mini': 0.45.26
       '@unocss/preset-wind': 0.45.26
-    dev: true
-
-  /@unocss/preset-web-fonts/0.45.25:
-    resolution: {integrity: sha512-8DTYHtYfmapW2i5HVK8zpX9Npq+DGBtXpBqT4K7We3nbaxoMuOZHKwixFfzw0mXqYcr3BjjwJjmDdMi4GhIKWA==}
-    dependencies:
-      '@unocss/core': 0.45.25
-      ohmyfetch: 0.4.19
-      pathe: 0.3.8
     dev: true
 
   /@unocss/preset-web-fonts/0.45.26:
