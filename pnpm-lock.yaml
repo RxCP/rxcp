@@ -18,7 +18,7 @@ importers:
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
       '@astrojs/node': 1.0.1
-      '@astrojs/svelte': 1.0.0
+      '@astrojs/svelte': 1.0.1
       '@iconify-json/tabler': 1.1.37
       '@iconify/json': 2.1.114
       '@popperjs/core': 2.11.6
@@ -59,7 +59,7 @@ importers:
       date-fns: 2.29.3
       nanostores: 0.7.0
     devDependencies:
-      '@astrojs/svelte': 1.0.0_lhgpsu5urlub6gyyhfs6yzzuru
+      '@astrojs/svelte': 1.0.1_sgkosb6ucymqij5hfisvlwihyy
       '@iconify-json/tabler': 1.1.37
       '@iconify/json': 2.1.114
       '@popperjs/core': 2.11.6
@@ -786,8 +786,8 @@ packages:
     dependencies:
       prismjs: 1.29.0
 
-  /@astrojs/svelte/1.0.0_lhgpsu5urlub6gyyhfs6yzzuru:
-    resolution: {integrity: sha512-WmvcEe86j/3wL2xWURo1Kxtgh+s0CVys2j7xQboHr0ZeH9TBlkQuacAT8mWccD1/MikhDVqL/1hnF/n+vRKuGw==}
+  /@astrojs/svelte/1.0.1_sgkosb6ucymqij5hfisvlwihyy:
+    resolution: {integrity: sha512-br0yikJvfYuf12aN1XoPuog141Dz/DWC2P+OZrgfjkNpqFBUnDqwIcJPFwFJ7Cwfg3jjzNs94+P/QhaihryGnA==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
       svelte: ^3.46.4
@@ -797,7 +797,6 @@ packages:
       svelte: 3.50.1
       svelte-preprocess: 4.10.7_mqg47ujq5waba2eqhz2rgwk7we
       svelte2tsx: 0.5.19_qy6w2iv5hnh55blsjuu7uihyzm
-      vite: 3.1.4
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -810,9 +809,9 @@ packages:
       - stylus
       - sugarss
       - supports-color
-      - terser
       - ts-node
       - typescript
+      - vite
     dev: true
 
   /@astrojs/telemetry/1.0.0:
