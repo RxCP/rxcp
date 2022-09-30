@@ -163,7 +163,7 @@ importers:
       '@histoire/plugin-svelte': 0.10.7
       '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.8
-      '@unocss/core': 0.45.25
+      '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.25
       '@unocss/preset-icons': 0.45.25
       '@unocss/preset-uno': 0.45.25
@@ -179,7 +179,7 @@ importers:
       '@histoire/plugin-svelte': 0.10.7_gdrwpsoly7wyobdnn2t55gt5ra
       '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.8_svelte@3.50.1+vite@3.1.4
-      '@unocss/core': 0.45.25
+      '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.25
       '@unocss/preset-icons': 0.45.25
       '@unocss/preset-uno': 0.45.25
