@@ -20,7 +20,7 @@
     "@unocss/preset-web-fonts": "0.45.26",
     "@unocss/preset-wind": "0.45.26",
     "@unocss/reset": "0.45.26",
-    "@unocss/vite": "0.45.25",
+    "@unocss/vite": "0.45.26",
     "histoire": "0.10.7",
     "svelte": "3.50.1",
     "svelte-preprocess": "4.10.7",
