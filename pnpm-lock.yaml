@@ -165,7 +165,7 @@ importers:
       '@sveltejs/vite-plugin-svelte': 1.0.8
       '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.26
-      '@unocss/preset-icons': 0.45.25
+      '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
@@ -181,7 +181,7 @@ importers:
       '@sveltejs/vite-plugin-svelte': 1.0.8_svelte@3.50.1+vite@3.1.4
       '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.26
-      '@unocss/preset-icons': 0.45.25
+      '@unocss/preset-icons': 0.45.26
       '@unocss/preset-uno': 0.45.25
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
@@ -2542,16 +2542,6 @@ packages:
     resolution: {integrity: sha512-+BA27/d+IEJtt/P7+fHUl/OYJNhSVBoCRxIO6JiQhEw36n821UMVd9CdnfxPBEBIaS2fXQvNF4yO5jnr4Wj5Qw==}
     dependencies:
       '@unocss/core': 0.45.26
-    dev: true
-
-  /@unocss/preset-icons/0.45.25:
-    resolution: {integrity: sha512-eXtgFnkt7R9s7Xd/x/Zh7qvI0HWI024/z5CdRqGSlPAP9M+hxcCN6GPA60AY/RMrQhK2B04bepZPlMm+eXlz/Q==}
-    dependencies:
-      '@iconify/utils': 2.0.0
-      '@unocss/core': 0.45.25
-      ohmyfetch: 0.4.19
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@unocss/preset-icons/0.45.26:
