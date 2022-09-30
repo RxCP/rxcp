@@ -166,7 +166,7 @@ importers:
       '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.26
-      '@unocss/preset-uno': 0.45.25
+      '@unocss/preset-uno': 0.45.26
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
       '@unocss/reset': 0.45.25
@@ -182,7 +182,7 @@ importers:
       '@unocss/core': 0.45.26
       '@unocss/preset-attributify': 0.45.26
       '@unocss/preset-icons': 0.45.26
-      '@unocss/preset-uno': 0.45.25
+      '@unocss/preset-uno': 0.45.26
       '@unocss/preset-web-fonts': 0.45.25
       '@unocss/preset-wind': 0.45.25
       '@unocss/reset': 0.45.25
@@ -2582,15 +2582,6 @@ packages:
     resolution: {integrity: sha512-HBkox5t1AKQ3SwMbvDhHDaWBOsP3Z1RW67oyVpEgipZHL5SYN9YwGkveaj6J0SJDJMtYRwFkKD5Zvd4KvnzSfQ==}
     dependencies:
       '@unocss/core': 0.45.26
-    dev: true
-
-  /@unocss/preset-uno/0.45.25:
-    resolution: {integrity: sha512-E7FI3VbDHFKtUtAj0tjGIcHl7rrTDZqMyXCvARBrIPFK6qlf/slXIrp974joxpUtJ2/L7BrJzCyEJYmprUmzkA==}
-    dependencies:
-      '@unocss/core': 0.45.25
-      '@unocss/preset-mini': 0.45.25
-      '@unocss/preset-wind': 0.45.25
-      pathe: 0.3.8
     dev: true
 
   /@unocss/preset-uno/0.45.26:
