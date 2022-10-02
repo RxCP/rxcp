@@ -46,7 +46,7 @@ importers:
       qs: 6.11.0
       rxcp-ui: '*'
       svelte: 3.50.1
-      svelte-french-toast: ^1.0.3
+      svelte-french-toast: 1.0.3
       unocss: 0.45.26
       unocss-preset-scrollbar: 0.2.1
       windicss-analysis: 0.3.5
