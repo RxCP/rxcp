@@ -4,6 +4,7 @@ import PrimaryLogo from '@pattern/atoms/logo/PrimaryLogo.svelte';
 import LoginForm from '@pattern/organisms/forms/LoginForm.svelte';
 
 import { getUser, redirectUser } from '@astro-auth/core';
+import Toaster from '@components/pattern/atoms/toaster/Toaster.svelte';
 
 const user = getUser({ client: Astro });
 if (user) {
@@ -11,6 +12,7 @@ if (user) {
 }
 ---
 
+<Toaster client:load />
 <Html title="Login">
   <div
     class="login-wrapper flex items-center flex-col justify-center h-screen px-4 lt-lg:pb-8 min-h-md"

@@ -1,17 +1,15 @@
 <script lang="ts">
   import type { AuthUser } from '@store/auth';
   import { user as userAuth } from '@store/auth';
-  import toast, { Toaster } from 'svelte-french-toast';
+  import toast from 'svelte-french-toast';
   import { useUser } from '@astro-auth/client';
   import FormInput from '@pattern/atoms/forms/FormInput.svelte';
   import FormLabel from '@pattern/atoms/forms/FormLabel.svelte';
   import Button from 'rxcp-ui/src/Button/Button.svelte';
-  import Alert from 'rxcp-ui/src/Alert/Alert.svelte';
 
   export let user: AuthUser | Record<string, string> = {};
 
   let isSubmitting: boolean = false;
-  let error: string = '';
 
   async function handleFormSubmit(e: Event) {
     const target = e.target as HTMLFormElement;

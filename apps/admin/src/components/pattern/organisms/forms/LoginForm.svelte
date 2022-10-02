@@ -1,4 +1,5 @@
 <script lang="ts">
+  import toast from 'svelte-french-toast';
   import Button from 'rxcp-ui/src/Button/Button.svelte';
   import Alert from 'rxcp-ui/src/Alert/Alert.svelte';
   import FormCheckbox from '@pattern/atoms/forms/FormCheckbox.svelte';
@@ -7,7 +8,6 @@
   import Link from '@pattern/atoms/links/Link.svelte';
   import { signIn } from '@astro-auth/client';
 
-  let errors = '';
   let isSubmitting = false;
 
   async function onSubmit(e: Event) {
@@ -26,16 +26,12 @@
     });
 
     if ('error' in response) {
-      errors = 'Invalid email or password';
+      toast.error('Incorrect email or password');
     }
 
     isSubmitting = false;
   }
 </script>
-
-{#if errors}
-  <Alert status="error">{errors}</Alert>
-{/if}
 
 <form on:submit|preventDefault={onSubmit}>
   <div class="mb-6 space-y-2">
