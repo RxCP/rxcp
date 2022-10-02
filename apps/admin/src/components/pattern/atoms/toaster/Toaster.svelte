@@ -3,4 +3,4 @@
   import { Toaster } from 'svelte-french-toast';
 </script>
 
-<Toaster />
+<Toaster toastOptions={{ style: 'border-radius: 0.25rem;' }} />
