@@ -10,6 +10,7 @@ import HeaderPageTitle from '@pattern/organisms/header/HeaderPageTitle.svelte';
 import ButtonToggleTheme from '@pattern/atoms/buttons/ButtonToggleTheme.svelte';
 import ButtonToggleSidebar from '@pattern/atoms/buttons/ButtonToggleSidebar.svelte';
 import AuthStore from '@components/storeUtil/AuthStore.svelte';
+import Toaster from '@pattern/atoms/toaster/Toaster.svelte';
 import Html from './Html.astro';
 import { currentPath } from '@store/url';
 import { auth } from 'src/util/auth';
@@ -28,6 +29,7 @@ const hasSidebar: boolean = Astro.slots.has('sidebar');
 currentPath.set(`/${pathname.slice(1)}`);
 ---
 
+<Toaster client:load />
 <Html title={title}>
   <Sidebar />
   <Main>
