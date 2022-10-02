@@ -4,14 +4,14 @@
   import PrimaryLogo from '@pattern/atoms/logo/PrimaryLogo.svelte';
   import MenuToggleButton from '@pattern/atoms/buttons/ButtonToggle.svelte';
   import SidebarButtonClose from '@pattern/atoms/buttons/ButtonX.svelte';
-  import SidebarInner from './SidebarInner.svelte';
-  import SidebarLogo from './SidebarLogo.svelte';
-  import SidebarMenu from './SidebarMenu.svelte';
-  import SidebarMenuItem from './SidebarMenuItem.svelte';
-  import SidebarTitle from './SidebarTitle.svelte';
-  import SidebarWrapper from './SidebarWrapper.svelte';
-  import NavbarMobile from '../navbar/NavbarMobile.svelte';
-  import SidebarIconText from './SidebarIconText.svelte';
+  import SidebarInner from '@pattern/organisms/sidebar/SidebarInner.svelte';
+  import SidebarLogo from '@pattern/organisms/sidebar/SidebarLogo.svelte';
+  import SidebarMenu from '@pattern/organisms/sidebar/SidebarMenu.svelte';
+  import SidebarMenuItem from '@pattern/organisms/sidebar/SidebarMenuItem.svelte';
+  import SidebarTitle from '@pattern/organisms/sidebar/SidebarTitle.svelte';
+  import SidebarWrapper from '@pattern/organisms/sidebar/SidebarWrapper.svelte';
+  import NavbarMobile from '@pattern/organisms/navbar/NavbarMobile.svelte';
+  import SidebarIconText from '@pattern/organisms/sidebar/SidebarIconText.svelte';
   import { currentPath } from '@store/url';
 
   type MenuItem = {
@@ -36,6 +36,11 @@
         iconClass: 'i-tabler-layout-dashboard',
       },
       {
+        url: '/admin/users',
+        text: 'Users',
+        iconClass: 'i-tabler-user-circle',
+      },
+      {
         url: '/admin/accounts',
         text: 'Accounts',
         iconClass: 'i-tabler-user',
@@ -43,6 +48,11 @@
       {
         url: '/admin/characters',
         text: 'Characters',
+        iconClass: 'i-tabler-users',
+      },
+      {
+        url: '/admin/guilds',
+        text: 'Guilds',
         iconClass: 'i-tabler-building-skyscraper',
       },
       {
