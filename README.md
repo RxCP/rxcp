@@ -27,6 +27,14 @@ Other: [AdonisJs](https://adonisjs.com/), [UnoCSS](https://github.com/unocss/uno
 
 API - https://documenter.getpostman.com/view/390924/VUjSGPdG
 
+## 👷‍ Contributing
+
+We're open to all community contributions, just make a pull request!
+
+Please fork the repo and create a pull request if you have a suggestion. You can also simply open an issue and choose "Feature Request" to give us some feedback.
+
+> For detailed instructions please refer to [CONTRIBUTING.md](CONTRIBUTING.md)
+
 ## 📄 License
 
 Licensed under [The MIT License](https://opensource.org/licenses/MIT).
