@@ -162,7 +162,7 @@ importers:
 
   packages/rxcp-ui:
     specifiers:
-      '@histoire/plugin-svelte': 0.10.7
+      '@histoire/plugin-svelte': 0.11.0
       '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.8
       '@unocss/core': 0.45.26
@@ -173,12 +173,12 @@ importers:
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
       '@unocss/vite': 0.45.26
-      histoire: 0.10.7
+      histoire: 0.11.0
       svelte: 3.50.1
       svelte-preprocess: 4.10.7
       vite: 3.1.4
     devDependencies:
-      '@histoire/plugin-svelte': 0.10.7_gdrwpsoly7wyobdnn2t55gt5ra
+      '@histoire/plugin-svelte': 0.11.0_l5wggtkoxjkphptaine6mq4iyi
       '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.8_svelte@3.50.1+vite@3.1.4
       '@unocss/core': 0.45.26
@@ -189,7 +189,7 @@ importers:
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
       '@unocss/vite': 0.45.26_vite@3.1.4
-      histoire: 0.10.7_vite@3.1.4
+      histoire: 0.11.0_vite@3.1.4
       svelte: 3.50.1
       svelte-preprocess: 4.10.7_svelte@3.50.1
       vite: 3.1.4
@@ -1430,12 +1430,12 @@ packages:
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     dev: false
 
-  /@histoire/app/0.10.7_vite@3.1.4:
-    resolution: {integrity: sha512-EqVOjpDwhpO3UB3wXzEUbuOhUA5SIQ0KuxD34URDtE/o1Jp/qaG2yYuXGQ9b/ynBn84kNpz/Av6zOOG7s1GbyA==}
+  /@histoire/app/0.11.0_vite@3.1.4:
+    resolution: {integrity: sha512-9HRHoZ2DE0pAg5BOR2stJmLYvxh/S76JNoYpi6tLptIvpfUuixD9Pg/ncvIgBLivIp1dWGHz3TDIPzsDAND2iQ==}
     dependencies:
-      '@histoire/controls': 0.10.7
-      '@histoire/shared': 0.10.7_vite@3.1.4
-      '@histoire/vendors': 0.10.7
+      '@histoire/controls': 0.11.0
+      '@histoire/shared': 0.11.0_vite@3.1.4
+      '@histoire/vendors': 0.11.0
       '@types/flexsearch': 0.7.3
       flexsearch: 0.7.21
       shiki: 0.10.1
@@ -1443,29 +1443,29 @@ packages:
       - vite
     dev: true
 
-  /@histoire/controls/0.10.7:
-    resolution: {integrity: sha512-sWrAzYoshKB5xlCKCkP+2ASjlOanoaxjVfRWumwfGtZD3vnDP22Our47A3BoDBbJiDTs0npqGZt5rX5vVZZlCg==}
+  /@histoire/controls/0.11.0:
+    resolution: {integrity: sha512-qlCAY1FCqclGn9h4rZ9lDx4CmF5n8dA1xoNietXLDMLrKS68S6UTDphbWNgxf6YM+B3gYflLz4xzeVT9NWMXrg==}
     dependencies:
-      '@histoire/vendors': 0.10.7
+      '@histoire/vendors': 0.11.0
     dev: true
 
-  /@histoire/plugin-svelte/0.10.7_gdrwpsoly7wyobdnn2t55gt5ra:
-    resolution: {integrity: sha512-ynaEDp/rYBDg7Hd0a3EdMmfO15z23SlQYNd4e/OrIlsW0t9pO/iNbKB3jYNjrW2tZ/c0tdVAUQFYIARmGKbMEQ==}
+  /@histoire/plugin-svelte/0.11.0_l5wggtkoxjkphptaine6mq4iyi:
+    resolution: {integrity: sha512-i2deE/F37nWZreeAB4QMbJc6rNdQjXwPXkV2DLv2KgeklY5ZtUPc9nHFvdaDN5tuAe3nTYCpQwTOq7Q7K9ayyQ==}
     peerDependencies:
-      histoire: ^0.10.7
+      histoire: ^0.11.0
       svelte: ^3.0.0
     dependencies:
-      '@histoire/controls': 0.10.7
-      '@histoire/shared': 0.10.7_vite@3.1.4
-      '@histoire/vendors': 0.10.7
-      histoire: 0.10.7_vite@3.1.4
+      '@histoire/controls': 0.11.0
+      '@histoire/shared': 0.11.0_vite@3.1.4
+      '@histoire/vendors': 0.11.0
+      histoire: 0.11.0_vite@3.1.4
       svelte: 3.50.1
     transitivePeerDependencies:
       - vite
     dev: true
 
-  /@histoire/shared/0.10.7_vite@3.1.4:
-    resolution: {integrity: sha512-0MVCaATlD3BCtlJ2f3xgIE3RZQpOBJ/1ZiQupwtpY2V3tNHd2TMPr5tCvwkAm3ka4DVyRooRUD4DZ8SHJMJClw==}
+  /@histoire/shared/0.11.0_vite@3.1.4:
+    resolution: {integrity: sha512-JITNAfgCfQZ7jSeVtjXBVvjCJ75BUI/u3AJPD1mCk9xWQVgmlAut4vH/wdcWFov33Rtfp5BoplaklJuhMvmifA==}
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0
     dependencies:
@@ -1477,8 +1477,8 @@ packages:
       vite: 3.1.4
     dev: true
 
-  /@histoire/vendors/0.10.7:
-    resolution: {integrity: sha512-nkZDw3XrNigIU0w5vez0eGxWJFODy6pw/WGmWUWeY3hDFCuVk2Z4ubtpZiBjjj7h3rbb5KYqobX1IAY7L8sJSA==}
+  /@histoire/vendors/0.11.0:
+    resolution: {integrity: sha512-mDmkTId0m16PiE7xA90lRgxe/m86u434n4a/NkMlg3QQfv1el3Iws1UL+I/mOX0a8V0isuL/Vd5ZfHCKNjpugg==}
     dev: true
 
   /@humanwhocodes/config-array/0.10.5:
@@ -3366,11 +3366,6 @@ packages:
     dependencies:
       ansicolors: 0.3.2
       redeyed: 2.1.1
-    dev: true
-
-  /case/1.6.3:
-    resolution: {integrity: sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==}
-    engines: {node: '>= 0.8.0'}
     dev: true
 
   /caseless/0.12.0:
@@ -5793,20 +5788,20 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /histoire/0.10.7_vite@3.1.4:
-    resolution: {integrity: sha512-VcdUE197bxb+pAlRbKg8fUvYo6kDeXlQW/R/pwi53Br0BvbIwPwMh0buEuY0XP9D12zLTwkW8J2WEoAnHyCSWw==}
+  /histoire/0.11.0_vite@3.1.4:
+    resolution: {integrity: sha512-kRuExeTiJRFS+WatzA5Vk4UPv2GdJOoBGAQX47qTSG/pzrrMxr+2EQVYRLm0ruCzReSQZeS1afA9OeraL2bBwA==}
     hasBin: true
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0
     dependencies:
-      '@histoire/app': 0.10.7_vite@3.1.4
-      '@histoire/controls': 0.10.7
-      '@histoire/shared': 0.10.7_vite@3.1.4
-      '@histoire/vendors': 0.10.7
+      '@histoire/app': 0.11.0_vite@3.1.4
+      '@histoire/controls': 0.11.0
+      '@histoire/shared': 0.11.0_vite@3.1.4
+      '@histoire/vendors': 0.11.0
       '@types/flexsearch': 0.7.3
       '@types/markdown-it': 12.2.3
       birpc: 0.1.1
-      case: 1.6.3
+      change-case: 4.1.2
       chokidar: 3.5.3
       connect: 3.7.0
       defu: 6.1.0
@@ -5816,6 +5811,7 @@ packages:
       globby: 13.1.2
       gray-matter: 4.0.3
       happy-dom: 2.55.0
+      jiti: 1.16.0
       markdown-it: 12.3.2
       markdown-it-anchor: 8.6.5_2zb4u3vubltivolgu556vv4aom
       markdown-it-attrs: 4.1.4_markdown-it@12.3.2
@@ -5829,7 +5825,7 @@ packages:
       sirv: 2.0.2
       tinypool: 0.1.3
       vite: 3.1.4
-      vite-node: 0.22.1
+      vite-node: 0.23.4
     transitivePeerDependencies:
       - encoding
       - less
@@ -10546,8 +10542,8 @@ packages:
       unist-util-stringify-position: 3.0.2
       vfile-message: 3.1.2
 
-  /vite-node/0.22.1:
-    resolution: {integrity: sha512-odNMaOD4N62qESLvFSqoNf2t60ftIFHKgHNupa2cojbF2u2yB1ssluOfq5X0lZcTPx2HBzFbwa6h9m78ujEbUw==}
+  /vite-node/0.23.4:
+    resolution: {integrity: sha512-8VuDGwTWIvwPYcbw8ZycMlwAwqCmqZfLdFrDK75+o+6bWYpede58k6AAXN9ioU+icW82V4u1MzkxLVhhIoQ9xA==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     dependencies:
