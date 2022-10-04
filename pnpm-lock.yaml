@@ -32,7 +32,7 @@ importers:
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
       '@unocss/transformer-variant-group': 0.45.26
-      astro: 1.4.2
+      astro: 1.4.4
       astro-spa: 1.3.9
       astro-uno: 0.2.1
       date-fns: 2.29.3
@@ -55,7 +55,7 @@ importers:
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
       '@astrojs/node': 1.1.0
-      astro: 1.4.2
+      astro: 1.4.4
       astro-spa: 1.3.9
       date-fns: 2.29.3
       nanostores: 0.7.0
@@ -75,7 +75,7 @@ importers:
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
       '@unocss/transformer-variant-group': 0.45.26
-      astro-uno: 0.2.1_astro@1.4.2+unocss@0.45.26
+      astro-uno: 0.2.1_astro@1.4.4+unocss@0.45.26
       eslint: 8.24.0
       eslint-plugin-svelte3: 4.0.0_snydkosur25h6rjxszquwacaua
       js-sticky-table-headers: 1.0.0-alpha.8
@@ -3007,18 +3007,18 @@ packages:
     resolution: {integrity: sha512-VmXMUsKNHA1gjJYq/SO5EqRAmqifOhBOpOAaXnlH5skgTy0tq9fwANJhh1LJpaahPBGqXAaoIw6Gdq/SBRz9Ww==}
     dev: false
 
-  /astro-uno/0.2.1_astro@1.4.2+unocss@0.45.26:
+  /astro-uno/0.2.1_astro@1.4.4+unocss@0.45.26:
     resolution: {integrity: sha512-lkcMLt0eS18eFf7GGGcfHQco3HW6OugSf1/xItTyuFhIVv3ClGzZ0xBVCRPexh6gQwhOK1OYKCF3TOgVARui2A==}
     peerDependencies:
       astro: ^1.0.0-beta.42
       unocss: '*'
     dependencies:
-      astro: 1.4.2
+      astro: 1.4.4
       unocss: 0.45.26_vite@3.1.4
     dev: true
 
-  /astro/1.4.2:
-    resolution: {integrity: sha512-v6GxDQoy8edDEJHopPeQg3TY9ghiJhx/n5mWpXdczPIvft3av6GhDn9yNnEKn6u0vHG9eX0sQxNCwXDlZMExAw==}
+  /astro/1.4.4:
+    resolution: {integrity: sha512-vxuHJ8C/3/NDau6EDUvi83JFDBK5Ylmo6VGAsUkdnutpGw77I4NoapoN56ANmU54ucYiu+x0apEPQvesY6GZiQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
