@@ -10,7 +10,7 @@
   },
   "type": "module",
   "devDependencies": {
-    "@histoire/plugin-svelte": "0.11.0",
+    "@histoire/plugin-svelte": "0.11.2",
     "@iconify-json/tabler": "1.1.37",
     "@sveltejs/vite-plugin-svelte": "1.0.8",
     "@unocss/core": "0.45.26",
