@@ -1,5 +1,7 @@
 <script lang="ts">
   import qs from 'qs';
+  import toast from 'svelte-french-toast';
+  import { until } from '@open-draft/until'
   import Button from 'rxcp-ui/src/Button/Button.svelte';
   import DataTable from '@pattern/organisms/dataTables/DataTable.svelte';
   import type {
@@ -9,10 +11,16 @@
   } from '@pattern/organisms/dataTables/dataTableTypes';
 
   async function fetchAccounts(itemsPerPage: number, currentPage: number) {
-    const response = await fetch(
+    const { error, data } = await until(() => fetch(
       `/api/accounts?limit=${itemsPerPage}&page=${currentPage}`,
-    );
-    return await response.json();
+    ))
+
+    if (error) {
+      toast.error(error.message);
+      return
+    }
+
+    return data?.json();
   }
 
   async function setRows<T extends SettersEvent>(
