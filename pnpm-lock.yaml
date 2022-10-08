@@ -28,7 +28,7 @@ importers:
       '@unocss/core': 0.45.28
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
-      '@unocss/preset-uno': 0.45.26
+      '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
@@ -72,7 +72,7 @@ importers:
       '@unocss/core': 0.45.28
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
-      '@unocss/preset-uno': 0.45.26
+      '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
@@ -170,7 +170,7 @@ importers:
       '@unocss/core': 0.45.28
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
-      '@unocss/preset-uno': 0.45.26
+      '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
@@ -186,7 +186,7 @@ importers:
       '@unocss/core': 0.45.28
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
-      '@unocss/preset-uno': 0.45.26
+      '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
       '@unocss/preset-wind': 0.45.26
       '@unocss/reset': 0.45.26
@@ -2588,6 +2588,12 @@ packages:
       '@unocss/core': 0.45.26
     dev: true
 
+  /@unocss/preset-mini/0.45.28:
+    resolution: {integrity: sha512-LRGzO2kYgzR3iOD7avOsC7W7Sa5fuO9iYovwm5ZOxPsfk6Zvl6jVHDuDdndXpWeyJwpWXRDP1ytNd4OuQMAGNw==}
+    dependencies:
+      '@unocss/core': 0.45.28
+    dev: true
+
   /@unocss/preset-tagify/0.45.26:
     resolution: {integrity: sha512-4zhdD/EKW5BYsiKO8PQdUXU4I5riJNM9ykEyhESFaCM6/+3a8GRvrnON57cRuiqX5LvJeXfbtGXQCOdMGEIi4Q==}
     dependencies:
@@ -2608,6 +2614,14 @@ packages:
       '@unocss/preset-wind': 0.45.26
     dev: true
 
+  /@unocss/preset-uno/0.45.28:
+    resolution: {integrity: sha512-Xv0cXWpaWImx/LENb//+9N+5BG2qWG+0E98qY79H89Eyyd1L99oBa4USQ0ec4Oz0CP3wekSzxtNdNHfzD257+A==}
+    dependencies:
+      '@unocss/core': 0.45.28
+      '@unocss/preset-mini': 0.45.28
+      '@unocss/preset-wind': 0.45.28
+    dev: true
+
   /@unocss/preset-web-fonts/0.45.26:
     resolution: {integrity: sha512-6J3VjrYcYGwVDzdcKE0NYQhvuXkS/Fo54ZlEWScVOSygvBYOEsObo+6Vs9Q1yMbVuVnNrt3R38/KMQFqPEWXKw==}
     dependencies:
@@ -2620,6 +2634,13 @@ packages:
     dependencies:
       '@unocss/core': 0.45.26
       '@unocss/preset-mini': 0.45.26
+    dev: true
+
+  /@unocss/preset-wind/0.45.28:
+    resolution: {integrity: sha512-AFZ58ZVg5y/8qE5iFFe0fo26IRgA+OiezNa9iEFx0YUt9C9P7CPv0FgV9V5mAaZQPq/1v4Eg+ts4mAbKfWneUQ==}
+    dependencies:
+      '@unocss/core': 0.45.28
+      '@unocss/preset-mini': 0.45.28
     dev: true
 
   /@unocss/reset/0.45.26:
