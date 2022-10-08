@@ -30,7 +30,7 @@ importers:
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
-      '@unocss/preset-wind': 0.45.26
+      '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/transformer-variant-group': 0.45.26
       astro: 1.4.6
@@ -74,7 +74,7 @@ importers:
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
-      '@unocss/preset-wind': 0.45.26
+      '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/transformer-variant-group': 0.45.26
       astro-uno: 0.2.1_astro@1.4.6+unocss@0.45.26
@@ -172,7 +172,7 @@ importers:
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
-      '@unocss/preset-wind': 0.45.26
+      '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/vite': 0.45.26
       histoire: 0.11.2
@@ -188,7 +188,7 @@ importers:
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.26
-      '@unocss/preset-wind': 0.45.26
+      '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/vite': 0.45.26_vite@3.1.6
       histoire: 0.11.2_vite@3.1.6
