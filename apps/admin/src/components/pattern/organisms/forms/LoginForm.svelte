@@ -13,6 +13,8 @@
     const target = e.target as HTMLFormElement;
     const formData = new FormData(target);
 
+    if (isSubmitting) return
+
     isSubmitting = true;
 
     const response = await signIn({
