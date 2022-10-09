@@ -98,7 +98,7 @@ importers:
       '@adonisjs/bouncer': 2.3.0
       '@adonisjs/core': 5.8.7
       '@adonisjs/limiter': 1.0.1
-      '@adonisjs/lucid': 18.1.1
+      '@adonisjs/lucid': 18.2.0
       '@adonisjs/mail': 8.1.2
       '@adonisjs/redis': 7.3.1
       '@adonisjs/repl': 3.1.11
@@ -127,11 +127,11 @@ importers:
       youch: 3.2.2
       youch-terminal: 2.1.5
     dependencies:
-      '@adonisjs/auth': 8.2.2_6mn6dezzxc7gwn4h6p4fdgyg44
+      '@adonisjs/auth': 8.2.2_flxjexi2bvl4mcwf66at6y3yyy
       '@adonisjs/bouncer': 2.3.0_5zsxdrruj7uhc47wcgnhsosuc4
       '@adonisjs/core': 5.8.7
-      '@adonisjs/limiter': 1.0.1_ai43hetqqxxfqcvf2jadsequsu
-      '@adonisjs/lucid': 18.1.1_p24fdpx737zvigiw7wujnhbona
+      '@adonisjs/limiter': 1.0.1_xkzl4arze5ldxi7nh2nuncfbc4
+      '@adonisjs/lucid': 18.2.0_p24fdpx737zvigiw7wujnhbona
       '@adonisjs/mail': 8.1.2_cgctusbh3nlqfxepray2x24qii
       '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.7
       '@adonisjs/repl': 3.1.11_@adonisjs+core@5.8.7
@@ -255,7 +255,7 @@ packages:
       - supports-color
     dev: true
 
-  /@adonisjs/auth/8.2.2_6mn6dezzxc7gwn4h6p4fdgyg44:
+  /@adonisjs/auth/8.2.2_flxjexi2bvl4mcwf66at6y3yyy:
     resolution: {integrity: sha512-XCfZhe6pm2ImeADr3IquzjDJfwmQxuh2d27AdTfEKvMfpDHVHMnFOFBizfz18Z1Nas/Gl7Lw00CsrnpCLNswmA==}
     peerDependencies:
       '@adonisjs/core': ^5.7.1
@@ -274,7 +274,7 @@ packages:
         optional: true
     dependencies:
       '@adonisjs/core': 5.8.7
-      '@adonisjs/lucid': 18.1.1_p24fdpx737zvigiw7wujnhbona
+      '@adonisjs/lucid': 18.2.0_p24fdpx737zvigiw7wujnhbona
       '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.7
       '@poppinss/hooks': 5.0.3_dcp26hjfxbju2etdd3namxtgxu
       '@poppinss/utils': 4.0.4
@@ -315,7 +315,7 @@ packages:
       '@adonisjs/view':
         optional: true
     dependencies:
-      '@adonisjs/auth': 8.2.2_6mn6dezzxc7gwn4h6p4fdgyg44
+      '@adonisjs/auth': 8.2.2_flxjexi2bvl4mcwf66at6y3yyy
       '@adonisjs/core': 5.8.7
       '@adonisjs/view': 6.2.0_@adonisjs+core@5.8.7
       '@poppinss/utils': 4.0.4
@@ -436,7 +436,7 @@ packages:
     resolution: {integrity: sha512-ik1C7f0Hbqenw6S1Ty06B4pznGfpUH5bL2fiCYgwq+jKPw8CKdsTQKvYudS6Tj68Nr6Mpqow4RNbvFV/OC0mZg==}
     dev: true
 
-  /@adonisjs/limiter/1.0.1_ai43hetqqxxfqcvf2jadsequsu:
+  /@adonisjs/limiter/1.0.1_xkzl4arze5ldxi7nh2nuncfbc4:
     resolution: {integrity: sha512-xVhhYbZul3O7vRZtyjttQNw/uEdLbz/JLda+PyhJ0yH5xx0wYSG8rk2LYnDGmpBTNTGvM8eQX+LL4hzau7iC4w==}
     peerDependencies:
       '@adonisjs/core': ^5.8.0
@@ -449,7 +449,7 @@ packages:
         optional: true
     dependencies:
       '@adonisjs/core': 5.8.7
-      '@adonisjs/lucid': 18.1.1_p24fdpx737zvigiw7wujnhbona
+      '@adonisjs/lucid': 18.2.0_p24fdpx737zvigiw7wujnhbona
       '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.7
       '@poppinss/utils': 5.0.0
       rate-limiter-flexible: 2.3.11
@@ -463,8 +463,8 @@ packages:
       abstract-logging: 2.0.1
       pino: 6.14.0
 
-  /@adonisjs/lucid/18.1.1_p24fdpx737zvigiw7wujnhbona:
-    resolution: {integrity: sha512-muGbRawOp14Uiuos0WAGCi/WapTfVov5YNpPb3AnIdgqvJQ5c886WVHO08gOcvuocTaNsnFoNCnc8E+/KD8lKQ==}
+  /@adonisjs/lucid/18.2.0_p24fdpx737zvigiw7wujnhbona:
+    resolution: {integrity: sha512-lF6+euwM5sOvpaUy+de+lfMKWjzpRFCvTbko+36bOz9IbUilQtnO3pzPNf7uTj5XUalFTICpVAzw8b8beQtb3g==}
     peerDependencies:
       '@adonisjs/core': ^5.1.0
     dependencies:
