@@ -29,7 +29,7 @@ importers:
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
-      '@unocss/preset-web-fonts': 0.45.26
+      '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/transformer-variant-group': 0.45.26
@@ -73,7 +73,7 @@ importers:
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
-      '@unocss/preset-web-fonts': 0.45.26
+      '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/transformer-variant-group': 0.45.26
@@ -171,7 +171,7 @@ importers:
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
-      '@unocss/preset-web-fonts': 0.45.26
+      '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/vite': 0.45.26
@@ -187,7 +187,7 @@ importers:
       '@unocss/preset-attributify': 0.45.28
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
-      '@unocss/preset-web-fonts': 0.45.26
+      '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.26
       '@unocss/vite': 0.45.26_vite@3.1.6
@@ -2626,6 +2626,13 @@ packages:
     resolution: {integrity: sha512-6J3VjrYcYGwVDzdcKE0NYQhvuXkS/Fo54ZlEWScVOSygvBYOEsObo+6Vs9Q1yMbVuVnNrt3R38/KMQFqPEWXKw==}
     dependencies:
       '@unocss/core': 0.45.26
+      ohmyfetch: 0.4.19
+    dev: true
+
+  /@unocss/preset-web-fonts/0.45.28:
+    resolution: {integrity: sha512-YTBQzCbSa24ylBfk9vSAWqGesv+uI4NAPuqwwJCRFY+HztHzJtfURKgRJXgm6z+j2s+lPeIyzZfZ41anokfxxQ==}
+    dependencies:
+      '@unocss/core': 0.45.28
       ohmyfetch: 0.4.19
     dev: true
 
