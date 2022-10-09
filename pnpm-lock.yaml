@@ -26,7 +26,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
       '@unocss/core': 0.45.29
-      '@unocss/preset-attributify': 0.45.28
+      '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.28
@@ -70,7 +70,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
       '@unocss/core': 0.45.29
-      '@unocss/preset-attributify': 0.45.28
+      '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.28
@@ -168,7 +168,7 @@ importers:
       '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.9
       '@unocss/core': 0.45.29
-      '@unocss/preset-attributify': 0.45.28
+      '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.28
@@ -184,7 +184,7 @@ importers:
       '@iconify-json/tabler': 1.1.37
       '@sveltejs/vite-plugin-svelte': 1.0.9_svelte@3.50.1+vite@3.1.6
       '@unocss/core': 0.45.29
-      '@unocss/preset-attributify': 0.45.28
+      '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.28
       '@unocss/preset-uno': 0.45.28
       '@unocss/preset-web-fonts': 0.45.28
@@ -2569,10 +2569,10 @@ packages:
       '@unocss/core': 0.45.26
     dev: true
 
-  /@unocss/preset-attributify/0.45.28:
-    resolution: {integrity: sha512-Ws0YLoN+hTp1l9AWptATkocb8Z0D3tC47Hw5oJIznquJ4LXWndZIs+eESpgOTYA3mzANvtd7wjYZRas7VX7ZOA==}
+  /@unocss/preset-attributify/0.45.29:
+    resolution: {integrity: sha512-qRJsY7Ik/J5mSfO8fDCeIY/SlsA39j+id9duYeutiiHw2kcvDKVjapvFzgmC2KZZe/LWliPTPiYKqE+chtPxmQ==}
     dependencies:
-      '@unocss/core': 0.45.28
+      '@unocss/core': 0.45.29
     dev: true
 
   /@unocss/preset-icons/0.45.26:
