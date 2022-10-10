@@ -31,7 +31,7 @@ importers:
       '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
-      '@unocss/reset': 0.45.28
+      '@unocss/reset': 0.45.29
       '@unocss/transformer-variant-group': 0.45.28
       astro: 1.4.6
       astro-spa: 1.3.9
@@ -75,7 +75,7 @@ importers:
       '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
-      '@unocss/reset': 0.45.28
+      '@unocss/reset': 0.45.29
       '@unocss/transformer-variant-group': 0.45.28
       astro-uno: 0.2.1_astro@1.4.6+unocss@0.45.29
       eslint: 8.25.0
@@ -173,7 +173,7 @@ importers:
       '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
-      '@unocss/reset': 0.45.28
+      '@unocss/reset': 0.45.29
       '@unocss/vite': 0.45.28
       histoire: 0.11.2
       svelte: 3.50.1
@@ -189,7 +189,7 @@ importers:
       '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
-      '@unocss/reset': 0.45.28
+      '@unocss/reset': 0.45.29
       '@unocss/vite': 0.45.28_vite@3.1.6
       histoire: 0.11.2_vite@3.1.6
       svelte: 3.50.1
@@ -2639,10 +2639,6 @@ packages:
     dependencies:
       '@unocss/core': 0.45.29
       '@unocss/preset-mini': 0.45.29
-    dev: true
-
-  /@unocss/reset/0.45.28:
-    resolution: {integrity: sha512-OX45rv77YSUuj8g7lKTiDUN6cYSBNUxV9uzuFxKE5SctBYPEG1Aj2sZ8X/jk7v+421+LFY2Jidjs+XrhnLwFAA==}
     dev: true
 
   /@unocss/reset/0.45.29:

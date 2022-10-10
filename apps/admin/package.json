@@ -24,7 +24,7 @@
     "@unocss/preset-uno": "0.45.29",
     "@unocss/preset-web-fonts": "0.45.28",
     "@unocss/preset-wind": "0.45.28",
-    "@unocss/reset": "0.45.28",
+    "@unocss/reset": "0.45.29",
     "@unocss/transformer-variant-group": "0.45.28",
     "astro-uno": "0.2.1",
     "eslint": "8.25.0",
