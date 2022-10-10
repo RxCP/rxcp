@@ -32,7 +32,7 @@ importers:
       '@unocss/preset-web-fonts': 0.45.29
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.29
-      '@unocss/transformer-variant-group': 0.45.28
+      '@unocss/transformer-variant-group': 0.45.29
       astro: 1.4.6
       astro-spa: 1.3.9
       astro-uno: 0.2.1
@@ -76,7 +76,7 @@ importers:
       '@unocss/preset-web-fonts': 0.45.29
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.29
-      '@unocss/transformer-variant-group': 0.45.28
+      '@unocss/transformer-variant-group': 0.45.29
       astro-uno: 0.2.1_astro@1.4.6+unocss@0.45.29
       eslint: 8.25.0
       eslint-plugin-svelte3: 4.0.0_ewm5tizlamtmyawlmiruh4iq3i
@@ -2670,12 +2670,6 @@ packages:
     dependencies:
       '@unocss/core': 0.45.29
       css-tree: 2.2.1
-    dev: true
-
-  /@unocss/transformer-variant-group/0.45.28:
-    resolution: {integrity: sha512-RccssmySHSpi7tuZN/oJea0glzfxPa60/ytO/et17b3dXe0o0rzbwZnjujfLUZ1J5TIZejcfXAvHcXlM1/RYag==}
-    dependencies:
-      '@unocss/core': 0.45.28
     dev: true
 
   /@unocss/transformer-variant-group/0.45.29:
