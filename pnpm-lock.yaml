@@ -20,7 +20,7 @@ importers:
       '@astrojs/node': 1.1.0
       '@astrojs/svelte': 1.0.1
       '@iconify-json/tabler': 1.1.37
-      '@iconify/json': 2.1.119
+      '@iconify/json': 2.1.120
       '@open-draft/until': 2.0.0
       '@popperjs/core': 2.11.6
       '@types/lodash-es': 4.17.6
@@ -65,7 +65,7 @@ importers:
     devDependencies:
       '@astrojs/svelte': 1.0.1_k2yyvj6jrducjeqyondsxchk4u
       '@iconify-json/tabler': 1.1.37
-      '@iconify/json': 2.1.119
+      '@iconify/json': 2.1.120
       '@popperjs/core': 2.11.6
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
@@ -1509,11 +1509,11 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify/json/2.1.119:
-    resolution: {integrity: sha512-cWQ1c7mEizqyvL5+IhQLtW59tqaIy8TFSOtVn7fun2IDhtrLxkNcyaJe9rkzIC3KF8/HYADIraSHb+M81y2YqQ==}
+  /@iconify/json/2.1.120:
+    resolution: {integrity: sha512-4/i5iXtfi3ARkylcZcCD0elC2qWo7CIa5caeeTGLx06yblqDQEzIfgclVc7FJJkktKEUJHftQhRlwGOr9cMINQ==}
     dependencies:
       '@iconify/types': 2.0.0
-      pathe: 0.3.8
+      pathe: 0.3.9
     dev: true
 
   /@iconify/types/2.0.0:
@@ -8594,10 +8594,6 @@ packages:
 
   /pathe/0.2.0:
     resolution: {integrity: sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==}
-    dev: true
-
-  /pathe/0.3.8:
-    resolution: {integrity: sha512-c71n61F1skhj/jzZe+fWE9XDoTYjWbUwIKVwFftZ5IOgiX44BVkTkD+/803YDgR50tqeO4eXWxLyVHBLWQAD1g==}
     dev: true
 
   /pathe/0.3.9:
