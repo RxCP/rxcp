@@ -2578,12 +2578,6 @@ packages:
       '@unocss/core': 0.45.29
     dev: true
 
-  /@unocss/preset-attributify/0.45.29:
-    resolution: {integrity: sha512-qRJsY7Ik/J5mSfO8fDCeIY/SlsA39j+id9duYeutiiHw2kcvDKVjapvFzgmC2KZZe/LWliPTPiYKqE+chtPxmQ==}
-    dependencies:
-      '@unocss/core': 0.45.29
-    dev: true
-
   /@unocss/preset-icons/0.45.28:
     resolution: {integrity: sha512-0/Sa/ZU0XrV/YmTAJEvcvI39oI5CvCZSS3cFRUznvYZ1mWo1MYI9XH6q2eASMlWe4dMfoEFWvPw+FZA+20KYwA==}
     dependencies:
