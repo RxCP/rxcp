@@ -28,7 +28,7 @@ importers:
       '@unocss/core': 0.45.29
       '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.29
-      '@unocss/preset-uno': 0.45.28
+      '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.28
@@ -72,7 +72,7 @@ importers:
       '@unocss/core': 0.45.29
       '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.29
-      '@unocss/preset-uno': 0.45.28
+      '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.28
@@ -170,7 +170,7 @@ importers:
       '@unocss/core': 0.45.29
       '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.29
-      '@unocss/preset-uno': 0.45.28
+      '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.28
@@ -186,7 +186,7 @@ importers:
       '@unocss/core': 0.45.29
       '@unocss/preset-attributify': 0.45.29
       '@unocss/preset-icons': 0.45.29
-      '@unocss/preset-uno': 0.45.28
+      '@unocss/preset-uno': 0.45.29
       '@unocss/preset-web-fonts': 0.45.28
       '@unocss/preset-wind': 0.45.28
       '@unocss/reset': 0.45.28
@@ -2603,14 +2603,6 @@ packages:
     resolution: {integrity: sha512-YCgaZPa06K8AMnwCw1VQtpL+ZbtP2MrQ8rPwmZwRrGMtLMv3S/oPBl6YnF56pZCOPFJa+IUWAfTDz4ff92edGg==}
     dependencies:
       '@unocss/core': 0.45.29
-    dev: true
-
-  /@unocss/preset-uno/0.45.28:
-    resolution: {integrity: sha512-Xv0cXWpaWImx/LENb//+9N+5BG2qWG+0E98qY79H89Eyyd1L99oBa4USQ0ec4Oz0CP3wekSzxtNdNHfzD257+A==}
-    dependencies:
-      '@unocss/core': 0.45.28
-      '@unocss/preset-mini': 0.45.28
-      '@unocss/preset-wind': 0.45.28
     dev: true
 
   /@unocss/preset-uno/0.45.29:
