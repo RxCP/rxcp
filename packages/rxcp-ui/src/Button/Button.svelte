@@ -12,6 +12,7 @@
   export let variant: buttonVariant = 'solid';
   export let color: buttonColor = 'primary';
   export let href: string = '';
+  export let title: string = '';
   export let isDisabled: boolean = false;
   export let isLoading: boolean = false;
   export let isBlock: boolean = false;
@@ -72,10 +73,11 @@
   this={as}
   {type}
   {href}
-  disabled={isDisabled}
   class:w-full={isBlock}
   class="block focus:ring-2 focus:outline-none
     font-medium rounded text-center {variantClass} {sizeClass[size]}"
+  disabled={isDisabled}
+  {title}
   on:click
 >
   {#if isLoading}

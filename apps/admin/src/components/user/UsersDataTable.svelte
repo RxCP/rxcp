@@ -12,7 +12,7 @@
 
   async function fetchAccounts(itemsPerPage: number, currentPage: number) {
     const { error, data } = await until(() => fetch(
-      `/api/accounts?limit=${itemsPerPage}&page=${currentPage}`,
+      `/api/users?limit=${itemsPerPage}&page=${currentPage}`,
     ))
 
     if (error) {
@@ -65,13 +65,20 @@
     const query = {
       or: [
         {
-          userid: {
-            like: searchText,
-          },
           email: {
             like: searchText,
           },
         },
+        {
+          first_name: {
+            like: searchText,
+          }
+        },
+        {
+          last_name: {
+            like: searchText,
+          },
+        }
       ],
     };
 
@@ -84,7 +91,7 @@
     );
 
     const response = await fetch(
-      `/api/accounts${stringifiedQuery}`,
+      `/api/users${stringifiedQuery}`,
     );
 
     const accounts = await response.json();
@@ -95,23 +102,16 @@
 
 <DataTable
   headers={[
-    { key: 'account_id', value: 'Account ID', className: 'w-36' },
-    { key: 'userid', value: 'User ID' },
     { key: 'email', value: 'Email' },
-    { key: 'group_id', value: 'Group' },
-    { key: 'last_ip', value: 'Last IP' },
+    { key: 'first_name', value: 'First Name' },
+    { key: 'last_name', value: 'Last Name' },
+    { key: 'created_at', value: 'Registered Date' },
     {
       key: 'action',
       value: 'Action',
       className: 'w-4.5',
       innerClassName: 'justify-center',
     },
-  ]}
-  filters={[
-    { key: 'account_id', label: 'Account ID' },
-    { key: 'userid', label: 'User ID' },
-    { key: 'email', label: 'Email' },
-    { key: 'group_id', label: 'Group' },
   ]}
   on:mounted={handleDatatableOnMount}
   on:changePage={handleDatatableChangePage}
@@ -121,12 +121,10 @@
   <svelte:fragment slot="cell" let:row let:cell let:cellValue>
     {#if cell.key === 'action'}
       <div class="flex">
-        <Button size="sm" variant="ghost">
-          <div class="i-tabler-edit text-lg" />
+        <Button size="sm" variant="ghost" title="View">
+          <div class="i-tabler-eye text-lg" />
         </Button>
       </div>
-    {:else if cell.key === 'group_id'}
-      {cellValue === 99 ? 'Admin' : 'Player'}
     {:else}
       {cellValue}
     {/if}

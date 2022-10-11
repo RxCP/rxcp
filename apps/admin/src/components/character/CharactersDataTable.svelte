@@ -77,13 +77,14 @@
 
     const stringifiedQuery = qs.stringify(
       {
+        limit: itemsPerPage,
         where: query,
       },
       { addQueryPrefix: true },
     );
 
     const response = await fetch(
-      `/api/characters?limit=${itemsPerPage}&${stringifiedQuery}`,
+      `/api/characters${stringifiedQuery}`,
     );
 
     const accounts = await response.json();
