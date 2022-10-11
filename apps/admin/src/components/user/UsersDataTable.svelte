@@ -90,12 +90,17 @@
       { addQueryPrefix: true },
     );
 
-    const response = await fetch(
+    const { error, data } = await until(() => fetch(
       `/api/users${stringifiedQuery}`,
-    );
+    ))
 
-    const accounts = await response.json();
-    event.detail.setData(accounts.data);
+    if (error) {
+      toast.error(error.message);
+      return
+    }
+
+    const accounts = await data?.json();
+    event.detail.setData(accounts?.data);
     event.detail.setLoading(false);
   }
 </script>
