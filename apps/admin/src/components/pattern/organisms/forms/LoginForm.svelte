@@ -46,10 +46,10 @@
   <div
     class="flex flex-col space-y-4 md:space-y-0 md:flex-row items-start justify-between mb-6"
   >
-    <div class="flex items-center space-x-2">
+    <!-- <div class="flex items-center space-x-2">
       <FormCheckbox id="remember" checked />
       <FormLabel htmlFor="remember" text="Remember me" />
-    </div>
+    </div> -->
     <Link to="/forgot-password" className="lt-md:text-right lt-md:w-full"
       >Forgot your password?</Link
     >
