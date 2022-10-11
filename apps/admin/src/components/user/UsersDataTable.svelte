@@ -9,10 +9,11 @@
     SearchEvent,
     SettersEvent,
   } from '@pattern/organisms/dataTables/dataTableTypes';
+  import { get } from '../../util/fetch'
 
   async function fetchAccounts(itemsPerPage: number, currentPage: number) {
-    const { error, data } = await until(() => fetch(
-      `/api/users?limit=${itemsPerPage}&page=${currentPage}`,
+    const { error, data } = await until(() => get(
+      `/api/users?limit=${itemsPerPage}&page=${currentPage}`
     ))
 
     if (error) {
@@ -20,7 +21,7 @@
       return
     }
 
-    return data?.json();
+    return data || [];
   }
 
   async function setRows<T extends SettersEvent>(
@@ -31,11 +32,11 @@
   ): Promise<void> {
     event.detail.setLoading(true);
     const accounts = await fetchAccounts(itemsPerPage, currentPage);
-    event.detail.setData(accounts.data);
+    event.detail.setData(accounts?.data);
     event.detail.setLoading(false);
 
     if (isSetTotalItems) {
-      event.detail.setTotalItems?.(accounts.meta.total);
+      event.detail.setTotalItems?.(accounts?.meta?.total);
     }
   }
 
@@ -90,8 +91,8 @@
       { addQueryPrefix: true },
     );
 
-    const { error, data } = await until(() => fetch(
-      `/api/users${stringifiedQuery}`,
+    const { error, data } = await until(() => get(
+      `/api/users${stringifiedQuery}`
     ))
 
     if (error) {
@@ -99,7 +100,7 @@
       return
     }
 
-    const accounts = await data?.json();
+    const accounts = data;
     event.detail.setData(accounts?.data);
     event.detail.setLoading(false);
   }
