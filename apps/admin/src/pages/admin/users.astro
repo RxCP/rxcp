@@ -1,5 +1,16 @@
 ---
+import { getUser, redirectUser } from '@astro-auth/core';
+import UsersDataTable from '@components/user/UsersDataTable.svelte';
 import Layout from '@layouts/Dashboard.astro';
+
+const user = getUser({ client: Astro });
+if (!user) {
+  return redirectUser('/login');
+}
 ---
 
-<Layout title="Users" />
+<Layout title="Users">
+  <section>
+    <UsersDataTable client:load />
+  </section>
+</Layout>
