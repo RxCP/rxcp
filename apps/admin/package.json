@@ -12,7 +12,7 @@
     "analysis": "windicss-analysis"
   },
   "devDependencies": {
-    "@astrojs/svelte": "1.0.1",
+    "@astrojs/svelte": "1.0.2",
     "@iconify-json/tabler": "1.1.38",
     "@iconify/json": "2.1.121",
     "@popperjs/core": "2.11.6",

@@ -18,7 +18,7 @@ importers:
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
       '@astrojs/node': 1.1.0
-      '@astrojs/svelte': 1.0.1
+      '@astrojs/svelte': 1.0.2
       '@iconify-json/tabler': 1.1.38
       '@iconify/json': 2.1.121
       '@open-draft/until': 2.0.0
@@ -63,7 +63,7 @@ importers:
       nanostores: 0.7.0
       svelte-french-toast: 1.0.3_svelte@3.51.0
     devDependencies:
-      '@astrojs/svelte': 1.0.1_fyeeum33i6p2v4cis2fqmojgeq
+      '@astrojs/svelte': 1.0.2_fyeeum33i6p2v4cis2fqmojgeq
       '@iconify-json/tabler': 1.1.38
       '@iconify/json': 2.1.121
       '@popperjs/core': 2.11.6
@@ -792,8 +792,8 @@ packages:
     dependencies:
       prismjs: 1.29.0
 
-  /@astrojs/svelte/1.0.1_fyeeum33i6p2v4cis2fqmojgeq:
-    resolution: {integrity: sha512-br0yikJvfYuf12aN1XoPuog141Dz/DWC2P+OZrgfjkNpqFBUnDqwIcJPFwFJ7Cwfg3jjzNs94+P/QhaihryGnA==}
+  /@astrojs/svelte/1.0.2_fyeeum33i6p2v4cis2fqmojgeq:
+    resolution: {integrity: sha512-cC3Pn475mOJdDM5IKMJ75hlah7jTWdVPkD7gUx+7ouJ/V9Q8H5OTmne+xG8zk2MquAHBL/ksmUS2pSzI9ByZkw==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
       svelte: ^3.46.4
