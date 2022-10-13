@@ -9,7 +9,7 @@
     SearchEvent,
     SettersEvent,
   } from '@pattern/organisms/dataTables/dataTableTypes';
-  import { get } from '../../util/fetch'
+  import { get } from '@util/fetch'
 
   async function fetchAccounts(itemsPerPage: number, currentPage: number) {
     const { error, data } = await until(() => get(

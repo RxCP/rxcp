@@ -24,7 +24,8 @@
       "@pattern/*": ["src/components/pattern/*"],
       "@layouts/*": ["src/layouts/*"],
       "@assets/*": ["src/assets/*"],
-      "@store/*": ["src/store/*"]
+      "@store/*": ["src/store/*"],
+      "@util/*": ["src/util/*"],
     }
   }
 }
