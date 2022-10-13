@@ -102,7 +102,6 @@
 
   onMount(() => {
     primaryMenu = document.getElementById('primaryMenu');
-    console.log($currentPath);
   });
 
   function handleToggleMenu() {

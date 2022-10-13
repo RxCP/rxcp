@@ -10,9 +10,10 @@ import HeaderPageTitle from '@pattern/organisms/header/HeaderPageTitle.svelte';
 import ButtonToggleTheme from '@pattern/atoms/buttons/ButtonToggleTheme.svelte';
 import ButtonToggleSidebar from '@pattern/atoms/buttons/ButtonToggleSidebar.svelte';
 import AuthStore from '@components/storeUtil/AuthStore.svelte';
+import UrlStore from '@components/storeUtil/UrlStore.svelte';
 import Toaster from '@pattern/atoms/toaster/Toaster.svelte';
 import Html from './Html.astro';
-import { currentPath } from '@store/url';
+import { currentPath, queryParams } from '@store/url';
 import { auth } from 'src/util/auth';
 
 export interface Props {
@@ -24,11 +25,18 @@ const { title } = Astro.props as Props;
 const authUser = auth(Astro);
 const pathname: string = new URL(Astro.request.url).pathname;
 const hasSidebar: boolean = Astro.slots.has('sidebar');
+const currentUrl = `/${pathname.slice(1)}`
 
-// Save current path to store
-currentPath.set(`/${pathname.slice(1)}`);
+// Query params
+const urlSearchParams = new URL(Astro.request.url).searchParams;
+const params = Object.fromEntries(urlSearchParams.entries());
+
+// Save data to store
+currentPath.set(currentUrl);
+queryParams.set(params)
 ---
-
+<AuthStore user={authUser} client:load />
+<UrlStore currentUrl={currentUrl} queryParams={params} client:load />
 <Toaster client:load />
 <Html title={title}>
   <Sidebar />
@@ -51,6 +59,4 @@ currentPath.set(`/${pathname.slice(1)}`);
       </MainContentWrapper>
     </MainInner>
   </Main>
-
-  <AuthStore user={authUser} client:load />
 </Html>

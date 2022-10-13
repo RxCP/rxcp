@@ -20,6 +20,7 @@
     Rows,
   } from './dataTableTypes';
   import Popper from '@pattern/molecules/popper/Popper.svelte';
+  import { currentPath, queryParams } from '@store/url';
 
   export let isLoading: boolean = true;
   export let itemsPerPage: number = 10;
@@ -38,6 +39,10 @@
   let totalItems: number = 0;
   let searchText: string = '';
   let filterBy: string[] = filters.map((item) => item.key);
+
+  $: () => {
+     console.log('onMount', $queryParams?.page)
+  }
 
   const handleInputSearchChange = debounce(({ detail }: CustomEvent): void => {
     searchText = detail.value;
@@ -64,6 +69,13 @@
   }
 
   onMount(() => {
+    // check for URL first
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+
+    currentPage = parseInt(params?.page) || currentPage
+    history.pushState({}, '', `${$currentPath}?page=${currentPage}`);
+
     dispatch('mounted', {
       setLoading,
       setData,
@@ -80,6 +92,7 @@
 
   async function changePage(event: CustomEvent) {
     currentPage = event.detail.currentPage;
+    history.pushState({}, '', `${$currentPath}?page=${currentPage}`);
     dispatch('changePage', {
       setLoading,
       setData,
