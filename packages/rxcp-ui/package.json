@@ -22,7 +22,7 @@
     "@unocss/reset": "0.45.29",
     "@unocss/vite": "0.45.28",
     "histoire": "0.11.5",
-    "svelte": "3.51.0",
+    "svelte": "3.52.0",
     "svelte-preprocess": "4.10.7",
     "vite": "3.1.8"
   }
