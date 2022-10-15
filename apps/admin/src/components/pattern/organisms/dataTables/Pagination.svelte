@@ -10,7 +10,7 @@
 
   let arr_pages = [];
   const numPerPageOptions = [5, 10, 20, 50];
-  let currentNumPerPage = numPerPageOptions[0];
+  let currentNumPerPage = per_page;
 
   $: num_pages = Math.ceil(num_items / per_page);
 
