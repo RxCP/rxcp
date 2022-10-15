@@ -74,7 +74,8 @@
     const params = Object.fromEntries(urlSearchParams.entries());
 
     currentPage = parseInt(params?.page) || currentPage
-    history.pushState({}, '', `${$currentPath}?page=${currentPage}`);
+    itemsPerPage = parseInt(params?.limit) || itemsPerPage
+    history.pushState({}, '', `${$currentPath}?page=${currentPage}&limit=${itemsPerPage}`);
 
     dispatch('mounted', {
       setLoading,
@@ -92,7 +93,7 @@
 
   async function changePage(event: CustomEvent) {
     currentPage = event.detail.currentPage;
-    history.pushState({}, '', `${$currentPath}?page=${currentPage}`);
+    history.pushState({}, '', `${$currentPath}?page=${currentPage}&limit=${itemsPerPage}`);
     dispatch('changePage', {
       setLoading,
       setData,
@@ -103,6 +104,7 @@
 
   async function changeLimit(event: CustomEvent) {
     itemsPerPage = event.detail.perPage;
+    history.pushState({}, '', `${$currentPath}?page=${currentPage}&limit=${itemsPerPage}`);
     dispatch('changeLimit', {
       setLoading,
       setData,
