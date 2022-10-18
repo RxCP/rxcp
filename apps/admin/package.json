@@ -21,7 +21,7 @@
     "@unocss/core": "0.45.29",
     "@unocss/preset-attributify": "0.45.29",
     "@unocss/preset-icons": "0.45.29",
-    "@unocss/preset-uno": "0.45.29",
+    "@unocss/preset-uno": "0.45.30",
     "@unocss/preset-web-fonts": "0.45.29",
     "@unocss/preset-wind": "0.45.29",
     "@unocss/reset": "0.45.29",
