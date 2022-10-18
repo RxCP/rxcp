@@ -18,7 +18,7 @@
     "@unocss/preset-icons": "0.45.29",
     "@unocss/preset-uno": "0.45.29",
     "@unocss/preset-web-fonts": "0.45.29",
-    "@unocss/preset-wind": "0.45.29",
+    "@unocss/preset-wind": "0.45.30",
     "@unocss/reset": "0.45.29",
     "@unocss/vite": "0.45.29",
     "histoire": "0.11.5",
