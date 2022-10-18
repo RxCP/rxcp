@@ -32,7 +32,7 @@
     "js-sticky-table-headers": "1.0.0-alpha.8",
     "lodash-es": "4.17.21",
     "prettier": "2.7.1",
-    "prettier-plugin-astro": "0.5.5",
+    "prettier-plugin-astro": "0.6.0",
     "qs": "6.11.0",
     "rxcp-ui": "*",
     "svelte": "3.52.0",
