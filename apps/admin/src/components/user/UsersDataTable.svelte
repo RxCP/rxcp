@@ -25,9 +25,9 @@
   }
 
   let modal : Modal | null = null;
-  let selectedUser: UserInterface | {} = {}
+  let selectedUser: UserInterface;
 
-  function handleViewUser(user : object) {
+  function handleViewUser(user : UserInterface) {
     selectedUser = user
     modal?.show()
   }
@@ -164,11 +164,11 @@
 
 <Modal id="user-view" title="User" on:dialog={handleDialog}>
   <span slot=title>Edit User</span>
-  {#if selectedUser}
+  {#if selectedUser && Object.keys(selectedUser).length >= 1 }
   <div class="grid grid-cols-1 gap-4">
     <div class="space-y-2">
       <FormLabel htmlFor="first_name" text="First name" />
-      <FormInput id="first_name" name="first_name" value={selectedUser.first_name} readonly />
+      <FormInput id="first_name" name="first_name" value={selectedUser.first_name } readonly />
     </div>
     <div class="space-y-2">
       <FormLabel htmlFor="last_name" text="Last name" />
