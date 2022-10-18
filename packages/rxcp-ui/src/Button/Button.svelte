@@ -78,6 +78,7 @@
     font-medium rounded text-center {variantClass} {sizeClass[size]}"
   disabled={isDisabled}
   {title}
+  {...$$restProps}
   on:click
 >
   {#if isLoading}
