@@ -13,21 +13,19 @@
   import Modal from '@pattern/organisms/modal/Modal.svelte';
   import FormLabel from '@components/pattern/atoms/forms/FormLabel.svelte';
   import FormInput from '@components/pattern/atoms/forms/FormInput.svelte';
+  import searchQuery from './searchQuery'
+  import type { ModalTypes } from '@pattern/organisms/modal/ModalTypes'
 
-  type Modal = {
-    show: () => void
-  }
-
-  type UserInterface = {
+  interface User {
     first_name: string
     last_name: string
     email: string
   }
 
-  let modal : Modal | null = null;
-  let selectedUser: UserInterface;
+  let modal : ModalTypes | null = null;
+  let selectedUser: User | Record<string, any>;
 
-  function handleViewUser(user : UserInterface) {
+  function handleViewUser(user : User | Record<string, any>) {
     selectedUser = user
     modal?.show()
   }
@@ -88,26 +86,7 @@
 
     event.detail.setLoading(true);
 
-    const query = {
-      or: [
-        {
-          email: {
-            like: searchText,
-          },
-        },
-        {
-          first_name: {
-            like: searchText,
-          }
-        },
-        {
-          last_name: {
-            like: searchText,
-          },
-        }
-      ],
-    };
-
+    const query = searchQuery(searchText);
     const stringifiedQuery = qs.stringify(
       {
         limit: itemsPerPage,
