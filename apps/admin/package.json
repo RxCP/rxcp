@@ -14,7 +14,7 @@
   "devDependencies": {
     "@astrojs/svelte": "1.0.2",
     "@iconify-json/tabler": "1.1.40",
-    "@iconify/json": "2.1.123",
+    "@iconify/json": "2.1.124",
     "@popperjs/core": "2.11.6",
     "@types/lodash-es": "4.17.6",
     "@types/qs": "6.9.7",
