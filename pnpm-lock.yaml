@@ -94,7 +94,7 @@ importers:
   apps/api:
     specifiers:
       '@adonisjs/assembler': 5.9.3
-      '@adonisjs/auth': 8.2.2
+      '@adonisjs/auth': 8.2.3
       '@adonisjs/bouncer': 2.3.0
       '@adonisjs/core': 5.8.8
       '@adonisjs/limiter': 1.0.1
@@ -127,8 +127,8 @@ importers:
       youch: 3.2.2
       youch-terminal: 2.1.5
     dependencies:
-      '@adonisjs/auth': 8.2.2_3mm4psepkv7y7uaibir2gkhhny
-      '@adonisjs/bouncer': 2.3.0_7tqlvaxqruu2v5s6jovskcw3u4
+      '@adonisjs/auth': 8.2.3_3mm4psepkv7y7uaibir2gkhhny
+      '@adonisjs/bouncer': 2.3.0_4w6yqw7qxnl56jmpd6lmnopjji
       '@adonisjs/core': 5.8.8
       '@adonisjs/limiter': 1.0.1_wol4ynnfcx65ta7nal7gl4si5y
       '@adonisjs/lucid': 18.2.0_p2fk2ygrbtmamy7p7f7befpfvi
@@ -255,8 +255,8 @@ packages:
       - supports-color
     dev: true
 
-  /@adonisjs/auth/8.2.2_3mm4psepkv7y7uaibir2gkhhny:
-    resolution: {integrity: sha512-XCfZhe6pm2ImeADr3IquzjDJfwmQxuh2d27AdTfEKvMfpDHVHMnFOFBizfz18Z1Nas/Gl7Lw00CsrnpCLNswmA==}
+  /@adonisjs/auth/8.2.3_3mm4psepkv7y7uaibir2gkhhny:
+    resolution: {integrity: sha512-js9e8AHEsNC/8MGvho6MgL+uXr8SlhTg9MJJDWQBBiqsKkT7+H7NMP/pLbuSzYaaf40t2u/OXfq6wXuIC5ZYvw==}
     peerDependencies:
       '@adonisjs/core': ^5.7.1
       '@adonisjs/i18n': ^1.5.0
@@ -277,8 +277,8 @@ packages:
       '@adonisjs/lucid': 18.2.0_p2fk2ygrbtmamy7p7f7befpfvi
       '@adonisjs/redis': 7.3.1_@adonisjs+core@5.8.8
       '@poppinss/hooks': 5.0.3_dcp26hjfxbju2etdd3namxtgxu
-      '@poppinss/utils': 4.0.4
-      luxon: 2.5.0
+      '@poppinss/utils': 5.0.0
+      luxon: 3.0.4
     transitivePeerDependencies:
       - '@adonisjs/application'
     dev: false
@@ -303,7 +303,7 @@ packages:
       media-typer: 1.1.0
       slash: 3.0.0
 
-  /@adonisjs/bouncer/2.3.0_7tqlvaxqruu2v5s6jovskcw3u4:
+  /@adonisjs/bouncer/2.3.0_4w6yqw7qxnl56jmpd6lmnopjji:
     resolution: {integrity: sha512-wJTIgIkDXtUyeCJGX/iV/EdrLQAuIU0YSwl8Lxn7hcYec9VbsMJ5aYIXeSNtOqECNqVm7KFdzyJiOEij9Luoqg==}
     peerDependencies:
       '@adonisjs/auth': ^8.0.0
@@ -315,7 +315,7 @@ packages:
       '@adonisjs/view':
         optional: true
     dependencies:
-      '@adonisjs/auth': 8.2.2_3mm4psepkv7y7uaibir2gkhhny
+      '@adonisjs/auth': 8.2.3_3mm4psepkv7y7uaibir2gkhhny
       '@adonisjs/core': 5.8.8
       '@adonisjs/view': 6.2.0_@adonisjs+core@5.8.8
       '@poppinss/utils': 4.0.4
@@ -7047,11 +7047,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
-
-  /luxon/2.5.0:
-    resolution: {integrity: sha512-IDkEPB80Rb6gCAU+FEib0t4FeJ4uVOuX1CQ9GsvU3O+JAGIgu0J7sf1OarXKaKDygTZIoJyU6YdZzTFRu+YR0A==}
-    engines: {node: '>=12'}
-    dev: false
 
   /luxon/3.0.4:
     resolution: {integrity: sha512-aV48rGUwP/Vydn8HT+5cdr26YYQiUZ42NM6ToMoaGKwYfWbfLeRkEu1wXWMHBZT6+KyLfcbbtVcoQFCbbPjKlw==}
