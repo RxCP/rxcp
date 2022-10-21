@@ -1,7 +1,7 @@
 <script lang="ts">
   import qs from 'qs';
   import toast from 'svelte-french-toast';
-  import { until } from '@open-draft/until'
+  import { until } from '@open-draft/until';
   import Button from 'rxcp-ui/src/Button/Button.svelte';
   import DataTable from '@pattern/organisms/dataTables/DataTable.svelte';
   import type {
@@ -9,7 +9,30 @@
     SearchEvent,
     SettersEvent,
   } from '@pattern/organisms/dataTables/dataTableTypes';
-  import { get } from '@util/fetch'
+  import { get } from '@util/fetch';
+  import Modal from '@pattern/organisms/modal/Modal.svelte';
+  import FormLabel from '@components/pattern/atoms/forms/FormLabel.svelte';
+  import FormInput from '@components/pattern/atoms/forms/FormInput.svelte';
+  import searchQuery from './searchQuery'
+  import type { ModalTypes } from '@pattern/organisms/modal/ModalTypes'
+
+  interface User {
+    first_name: string
+    last_name: string
+    email: string
+  }
+
+  let modal : ModalTypes | null = null;
+  let selectedUser: User | Record<string, any>;
+
+  function handleViewUser(user : User | Record<string, any>) {
+    selectedUser = user
+    modal?.show()
+  }
+
+  function handleDialog(event: CustomEvent) {
+    modal = event.detail.dialog
+  }
 
   async function fetchAccounts(itemsPerPage: number, currentPage: number) {
     const { error, data } = await until(() => get(
@@ -63,26 +86,7 @@
 
     event.detail.setLoading(true);
 
-    const query = {
-      or: [
-        {
-          email: {
-            like: searchText,
-          },
-        },
-        {
-          first_name: {
-            like: searchText,
-          }
-        },
-        {
-          last_name: {
-            like: searchText,
-          },
-        }
-      ],
-    };
-
+    const query = searchQuery(searchText);
     const stringifiedQuery = qs.stringify(
       {
         limit: itemsPerPage,
@@ -127,7 +131,7 @@
   <svelte:fragment slot="cell" let:row let:cell let:cellValue>
     {#if cell.key === 'action'}
       <div class="flex">
-        <Button size="sm" variant="ghost" title="View">
+        <Button size="sm" variant="ghost" title="View" on:click={() => handleViewUser(row)}>
           <div class="i-tabler-eye text-lg" />
         </Button>
       </div>
@@ -136,3 +140,23 @@
     {/if}
   </svelte:fragment>
 </DataTable>
+
+<Modal id="user-view" title="User" on:dialog={handleDialog}>
+  <span slot=title>User details</span>
+  {#if selectedUser && Object.keys(selectedUser).length >= 1 }
+  <div class="grid grid-cols-1 gap-4">
+    <div class="space-y-2">
+      <FormLabel htmlFor="first_name" text="First name" />
+      <FormInput id="first_name" name="first_name" value={selectedUser.first_name } readonly />
+    </div>
+    <div class="space-y-2">
+      <FormLabel htmlFor="last_name" text="Last name" />
+      <FormInput id="last_name" name="last_name" value={selectedUser.last_name} readonly/>
+    </div>
+    <div class="space-y-2">
+      <FormLabel htmlFor="email" text="Email" />
+      <FormInput id="email" name="email" value={selectedUser.email} readonly/>
+    </div>
+  </div>
+  {/if}
+</Modal>
