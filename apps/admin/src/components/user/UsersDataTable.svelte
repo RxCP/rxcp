@@ -142,7 +142,7 @@
 </DataTable>
 
 <Modal id="user-view" title="User" on:dialog={handleDialog}>
-  <span slot=title>Edit User</span>
+  <span slot=title>User details</span>
   {#if selectedUser && Object.keys(selectedUser).length >= 1 }
   <div class="grid grid-cols-1 gap-4">
     <div class="space-y-2">
