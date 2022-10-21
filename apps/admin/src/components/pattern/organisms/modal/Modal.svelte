@@ -22,7 +22,7 @@
   aria-labelledby="user-details"
   aria-hidden="true"
 >
-  <div class="fixed inset-0 overlay bg-slate-600/60 dark:bg-slate-600/80" data-a11y-dialog-hide></div>
+  <div class="fixed inset-0 overlay bg-slate-600/60 dark:bg-slate-800/80" data-a11y-dialog-hide></div>
   <div class="content bg-white rounded dark:bg-slate-900 m-auto relative" role="document">
     <div class="flex items-start px-6 py-4">
       <h1 id="user-details" class="font-bold text-lg mr-3">
