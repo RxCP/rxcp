@@ -36,10 +36,11 @@ currentPath.set(currentUrl);
 queryParams.set(params);
 ---
 
-<AuthStore user={authUser} client:load />
-<UrlStore currentUrl={currentUrl} queryParams={params} client:load />
-<Toaster client:load />
 <Html title={title}>
+  <AuthStore user={authUser} client:load />
+  <UrlStore currentUrl={currentUrl} queryParams={params} client:load />
+  <Toaster client:load />
+
   <Sidebar />
   <Main>
     <MainInner>
