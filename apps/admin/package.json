@@ -54,7 +54,7 @@
     "svelte-french-toast": "1.0.3"
   },
   "engines": {
-    "node": "16.x.x",
+    "node": "18.x",
     "npm": "8.x.x"
   }
 }
