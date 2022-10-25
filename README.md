@@ -24,7 +24,7 @@
 Other: [AdonisJs](https://adonisjs.com/), [UnoCSS](https://github.com/unocss/unocss).
 
 ## 📘 Documentation
-- [Developement Setup](https://github.com/RxCP/rxcp/wiki)
+- [Developement Setup](https://github.com/RxCP/rxcp/wiki/Development-Setup-&-Installation)
 - Production Setup (Coming Soon)
 - [API](https://documenter.getpostman.com/view/390924/VUjSGPdG)
 
