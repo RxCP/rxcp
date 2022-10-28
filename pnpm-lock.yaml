@@ -17,7 +17,7 @@ importers:
       '@astro-auth/client': 1.0.5
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
-      '@astrojs/node': 2.0.1
+      '@astrojs/node': 2.0.2
       '@astrojs/svelte': 1.0.2
       '@iconify-json/tabler': 1.1.43
       '@iconify/json': 2.1.127
@@ -56,7 +56,7 @@ importers:
       '@astro-auth/client': 1.0.5_biqbaboplfbrettd7655fr4n2y
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
-      '@astrojs/node': 2.0.1
+      '@astrojs/node': 2.0.2
       '@open-draft/until': 2.0.0
       a11y-dialog: 7.5.2
       astro: 1.5.2
@@ -782,8 +782,8 @@ packages:
       uvu: 0.5.6
       vfile-message: 3.1.2
 
-  /@astrojs/node/2.0.1:
-    resolution: {integrity: sha512-OJD4edLr7l10TjJ8bsx9VCCMkvFPFSYyLCI0HpD651iJZZWSn1zlp5ik0J5kArWgwFDEdSxtL7Dt8kM3/naN6A==}
+  /@astrojs/node/2.0.2:
+    resolution: {integrity: sha512-po6YZ+jecEXg2bo27hvi9hWppSCtR7zWJl/AwR4bcFWeUOcZKJcfv6LT4BQzzIsOjMbS3lIxZ4mgT2seYNLU9Q==}
     dependencies:
       '@astrojs/webapi': 1.1.0
       send: 0.18.0
