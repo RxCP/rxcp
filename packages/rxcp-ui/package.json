@@ -11,7 +11,7 @@
   "type": "module",
   "devDependencies": {
     "@histoire/plugin-svelte": "0.11.5",
-    "@iconify-json/tabler": "1.1.42",
+    "@iconify-json/tabler": "1.1.43",
     "@sveltejs/vite-plugin-svelte": "1.1.0",
     "@unocss/core": "0.46.1",
     "@unocss/preset-attributify": "0.46.1",
