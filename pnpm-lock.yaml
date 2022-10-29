@@ -44,7 +44,7 @@ importers:
       lodash-es: 4.17.21
       nanostores: 0.7.0
       prettier: 2.7.1
-      prettier-plugin-astro: 0.6.0
+      prettier-plugin-astro: 0.7.0
       qs: 6.11.0
       rxcp-ui: '*'
       svelte: 3.52.0
@@ -85,7 +85,7 @@ importers:
       js-sticky-table-headers: 1.0.0-alpha.8
       lodash-es: 4.17.21
       prettier: 2.7.1
-      prettier-plugin-astro: 0.6.0
+      prettier-plugin-astro: 0.7.0
       qs: 6.11.0
       rxcp-ui: link:../../packages/rxcp-ui
       svelte: 3.52.0
@@ -719,12 +719,12 @@ packages:
   /@astrojs/compiler/0.23.5:
     resolution: {integrity: sha512-vBMPy9ok4iLapSyCCT1qsZ9dK7LkVFl9mObtLEmWiec9myGHS9h2kQY2xzPeFNJiWXUf9O6tSyQpQTy5As/p3g==}
 
-  /@astrojs/compiler/0.27.2:
-    resolution: {integrity: sha512-VG4X87cUkcmT40HqEwShQzUgl0VSnVTszobbmnhAOkHzdoWMxhwAm61A2o5fEsv6eEK8M0lW/fGwkSofYM5GcQ==}
-    dev: true
-
   /@astrojs/compiler/0.28.1:
     resolution: {integrity: sha512-rcuQs5kcT6OshfJxXkZ2Tn61V4/5UAmvZKma/qmNhpAdBkGk6J/1gJ/Gxa2sAS6WNUjUyVo5BRrdsNGW36qkoQ==}
+
+  /@astrojs/compiler/0.29.5:
+    resolution: {integrity: sha512-XpSJyBO6ha5mGqsD71ie83SOcv3p7zKq6qzngyeLKhccCXtf9Zn/4tGbi/Iq4YmkRBNCjLEkF0wZMYWY+eJYAA==}
+    dev: true
 
   /@astrojs/language-server/0.26.2:
     resolution: {integrity: sha512-9nkfdd6CMXLDIJojnwbYu5XrYfOI+g63JlktOlpFCwFjFNpm1u0e/+pXXmj6Zs+PkSTo0kV1UM77dRKRS5OC1Q==}
@@ -8863,11 +8863,11 @@ packages:
       sass-formatter: 0.7.5
       synckit: 0.7.3
 
-  /prettier-plugin-astro/0.6.0:
-    resolution: {integrity: sha512-xU67TzyGi1u/pwVbEh55AwoOfcOpsh9BtD2MpUAEVrViAcdrBDcmA9VN0edLgla7f2NYu8ntGakxTSrSNFv1mQ==}
+  /prettier-plugin-astro/0.7.0:
+    resolution: {integrity: sha512-ehCUx7MqHWvkHwUmxxAWLsL35pFaCTM5YXQ8xjG/1W6dY2yBhvEks+2aCfjeI5zmMrZNCXkiMQtpznSlLSLrxw==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
-      '@astrojs/compiler': 0.27.2
+      '@astrojs/compiler': 0.29.5
       prettier: 2.7.1
       sass-formatter: 0.7.5
       synckit: 0.8.4
