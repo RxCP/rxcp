@@ -21,7 +21,7 @@
     "@unocss/preset-wind": "0.46.1",
     "@unocss/reset": "0.46.1",
     "@unocss/vite": "0.46.1",
-    "histoire": "0.11.5",
+    "histoire": "0.11.6",
     "svelte": "3.52.0",
     "svelte-preprocess": "4.10.7",
     "vite": "3.2.1"
