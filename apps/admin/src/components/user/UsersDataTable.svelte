@@ -145,7 +145,7 @@
       </span>
     {:else if cell.key === 'roles' }
       {#each cellValue as role }
-        <span class="px-2 py-1 dark:bg-slate-900 rounded">{ role.name }</span>
+        <span class="px-2 py-1 bg-gray-200 dark:bg-slate-900 rounded">{ role.name }</span>
       {/each}
     {:else}
       {cellValue}
@@ -176,7 +176,7 @@
     <div class="space-y-2">
       <FormLabel htmlFor="role" text="Roles" />
       {#each selectedUser.roles as role }
-        <span class="px-2 py-1 dark:bg-slate-800 rounded inline-block text-sm">{ role.name }</span>
+        <span class="px-2 py-1 bg-gray-200 dark:bg-slate-800 rounded inline-block text-sm">{ role.name }</span>
       {/each}
     </div>
   </div>
