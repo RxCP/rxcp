@@ -177,12 +177,12 @@ importers:
       '@unocss/preset-wind': 0.46.1
       '@unocss/reset': 0.46.1
       '@unocss/vite': 0.46.1
-      histoire: 0.11.5
+      histoire: 0.11.6
       svelte: 3.52.0
       svelte-preprocess: 4.10.7
       vite: 3.2.1
     devDependencies:
-      '@histoire/plugin-svelte': 0.11.6_6ok4exwgbppudjaw5virvv5dz4
+      '@histoire/plugin-svelte': 0.11.6_6mxx7sk2gndimnjm6xyqqm7xva
       '@iconify-json/tabler': 1.1.43
       '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.52.0+vite@3.2.1
       '@unocss/core': 0.46.1
@@ -193,7 +193,7 @@ importers:
       '@unocss/preset-wind': 0.46.1
       '@unocss/reset': 0.46.1
       '@unocss/vite': 0.46.1_vite@3.2.1
-      histoire: 0.11.5_vite@3.2.1
+      histoire: 0.11.6_vite@3.2.1
       svelte: 3.52.0
       svelte-preprocess: 4.10.7_svelte@3.52.0
       vite: 3.2.1
@@ -1497,8 +1497,8 @@ packages:
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     dev: false
 
-  /@histoire/app/0.11.5_vite@3.2.1:
-    resolution: {integrity: sha512-qkcesIiJat7bjw7Tz5olFq1JTGOP5tVV5+ZO8UCkZsrgf+eadfLPMYNs7X6XUUTwsh4pZlUoQpwqTjau0CUa8A==}
+  /@histoire/app/0.11.6_vite@3.2.1:
+    resolution: {integrity: sha512-TtWcMCZTFmHutyx+RcwAXAPc2CxDAgr5mwgB2CtRYwDC3VrM/aRqWHbZtxMjKrCbq08UXLzO1d+3VXy6Y9SvPA==}
     dependencies:
       '@histoire/controls': 0.11.6
       '@histoire/shared': 0.11.6_vite@3.2.1
@@ -1508,19 +1508,6 @@ packages:
       shiki: 0.10.1
     transitivePeerDependencies:
       - vite
-    dev: true
-
-  /@histoire/controls/0.11.5:
-    resolution: {integrity: sha512-DwSHDRcAoGpgAyTcjcwPfL+yybY3q5HJITDL8Y6MWkG1blQMKcwukZhEv9WDGp6QxABrZzsSKuamKJdXRLpE5w==}
-    dependencies:
-      '@codemirror/commands': 6.1.1
-      '@codemirror/lang-json': 6.0.0
-      '@codemirror/language': 6.2.1
-      '@codemirror/lint': 6.0.0
-      '@codemirror/state': 6.1.2
-      '@codemirror/theme-one-dark': 6.1.0
-      '@codemirror/view': 6.3.0
-      '@histoire/vendors': 0.11.6
     dev: true
 
   /@histoire/controls/0.11.6:
@@ -1536,7 +1523,7 @@ packages:
       '@histoire/vendors': 0.11.6
     dev: true
 
-  /@histoire/plugin-svelte/0.11.6_6ok4exwgbppudjaw5virvv5dz4:
+  /@histoire/plugin-svelte/0.11.6_6mxx7sk2gndimnjm6xyqqm7xva:
     resolution: {integrity: sha512-a7Qbjr4sz72PyT7fMBygksmrconWBrLWf60AfzMd1DJG1+3le+YnL9ju60AzIYEz6/HyOh1RLYAEc6SWtoRjtQ==}
     peerDependencies:
       histoire: ^0.11.6
@@ -1545,23 +1532,10 @@ packages:
       '@histoire/controls': 0.11.6
       '@histoire/shared': 0.11.6_vite@3.2.1
       '@histoire/vendors': 0.11.6
-      histoire: 0.11.5_vite@3.2.1
+      histoire: 0.11.6_vite@3.2.1
       svelte: 3.52.0
     transitivePeerDependencies:
       - vite
-    dev: true
-
-  /@histoire/shared/0.11.5_vite@3.2.1:
-    resolution: {integrity: sha512-vB52GhgzRLuCSPlG0dufKIUAybVHhaZC6AWaGndjlvebo4pQwgeh89oUchDx2rT1fkhisqSVD/iq8/zQpCTAfw==}
-    peerDependencies:
-      vite: ^2.9.0 || ^3.0.0
-    dependencies:
-      '@types/fs-extra': 9.0.13
-      '@types/markdown-it': 12.2.3
-      chokidar: 3.5.3
-      pathe: 0.2.0
-      picocolors: 1.0.0
-      vite: 3.2.1
     dev: true
 
   /@histoire/shared/0.11.6_vite@3.2.1:
@@ -1575,10 +1549,6 @@ packages:
       pathe: 0.2.0
       picocolors: 1.0.0
       vite: 3.2.1
-    dev: true
-
-  /@histoire/vendors/0.11.5:
-    resolution: {integrity: sha512-Nqvm9CMHKIQM3fHdvI8Wj3GMRkBglI1fmTvtvfWBFIHfE/C4LD5cAC7SDxvJZi/IFm9RRzq9sOW/1fAazIbfAw==}
     dev: true
 
   /@histoire/vendors/0.11.6:
@@ -5969,16 +5939,16 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /histoire/0.11.5_vite@3.2.1:
-    resolution: {integrity: sha512-+27sEYAd45g8LUbnsJZHbnNrXsIV9CMoT7S+Mb6OiCTOKFCOUVO96XwRRPtSLDbmcouIsc4VVcqsLCJX7ol/9w==}
+  /histoire/0.11.6_vite@3.2.1:
+    resolution: {integrity: sha512-e8q2xjOoRPjwsePzYolWoOztrqI5hPkE2HxjbMNyRYUI2JdHmwuj6pI+lKoJRckIrwi9hCMuLQCPzzm8Ocdplg==}
     hasBin: true
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0
     dependencies:
-      '@histoire/app': 0.11.5_vite@3.2.1
-      '@histoire/controls': 0.11.5
-      '@histoire/shared': 0.11.5_vite@3.2.1
-      '@histoire/vendors': 0.11.5
+      '@histoire/app': 0.11.6_vite@3.2.1
+      '@histoire/controls': 0.11.6
+      '@histoire/shared': 0.11.6_vite@3.2.1
+      '@histoire/vendors': 0.11.6
       '@types/flexsearch': 0.7.3
       '@types/markdown-it': 12.2.3
       birpc: 0.1.1
