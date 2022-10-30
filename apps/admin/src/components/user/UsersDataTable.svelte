@@ -145,7 +145,7 @@
       </span>
     {:else if cell.key === 'roles' }
       {#each cellValue as role }
-        <span class="px-2 py-1 bg-gray-200 dark:bg-slate-900 rounded">{ role.name }</span>
+        <span class="px-2 py-1 bg-gray-200 dark:bg-slate-900 rounded inline-block">{ role.name }</span>
       {/each}
     {:else}
       {cellValue}
