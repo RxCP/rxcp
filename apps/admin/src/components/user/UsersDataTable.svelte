@@ -156,7 +156,7 @@
 <Modal id="user-view" title="User" on:dialog={handleDialog}>
   <span slot=title>User details</span>
   {#if selectedUser && Object.keys(selectedUser).length >= 1 }
-  <div class="grid grid-cols-1 gap-4">
+  <div class="grid grid-cols-1 gap-6">
     <div class="space-y-2">
       <FormLabel htmlFor="first_name" text="First name" />
       <FormInput id="first_name" name="first_name" value={selectedUser.first_name } readonly />
@@ -174,9 +174,9 @@
       <FormInput id="created_at" name="created_at" value={format(parseISO(selectedUser.created_at), 'MM/dd/yyyy')} readonly/>
     </div>
     <div class="space-y-2">
-      <FormLabel htmlFor="role" text="Role" />
+      <FormLabel htmlFor="role" text="Roles" />
       {#each selectedUser.roles as role }
-        <span class="px-2 py-1 dark:bg-slate-800 rounded inline-block">{ role.name }</span>
+        <span class="px-2 py-1 dark:bg-slate-800 rounded inline-block text-sm">{ role.name }</span>
       {/each}
     </div>
   </div>

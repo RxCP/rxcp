@@ -49,11 +49,8 @@
 .dialog[aria-hidden='true'] {
   display: none;
 }
-.overlay {
-  animation: fade-in 200ms both;
-}
+
 .content {
-  animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
   max-width: 90%;
   width: 800px;
 }
