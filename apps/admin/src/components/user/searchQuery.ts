@@ -1,4 +1,4 @@
-export default function(searchText : string) {
+export default function (searchText: string) {
   return {
     or: [
       {
@@ -9,13 +9,13 @@ export default function(searchText : string) {
       {
         first_name: {
           like: searchText,
-        }
+        },
       },
       {
         last_name: {
           like: searchText,
         },
-      }
+      },
     ],
-  }
-};
+  };
+}
