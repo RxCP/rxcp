@@ -48,3 +48,9 @@
     on:change
   />
 </div>
+
+<style>
+  input[type="text"][readonly] {
+    cursor: not-allowed;
+  }
+</style>

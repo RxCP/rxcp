@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { format, parseISO } from 'date-fns';
   import qs from 'qs';
   import toast from 'svelte-french-toast';
   import { until } from '@open-draft/until';
@@ -20,6 +21,8 @@
     first_name: string
     last_name: string
     email: string
+    created_at: string
+    roles: []
   }
 
   let modal : ModalTypes | null = null;
@@ -115,6 +118,7 @@
     { key: 'email', value: 'Email' },
     { key: 'first_name', value: 'First Name' },
     { key: 'last_name', value: 'Last Name' },
+    { key: 'roles', value: 'Roles' },
     { key: 'created_at', value: 'Registered Date' },
     {
       key: 'action',
@@ -135,6 +139,14 @@
           <div class="i-tabler-eye text-lg" />
         </Button>
       </div>
+    {:else if cell.key === 'created_at' }
+      <span>
+        {format(parseISO(cellValue), 'MM/dd/yyyy')}
+      </span>
+    {:else if cell.key === 'roles' }
+      {#each cellValue as role }
+        <span class="px-2 py-1 bg-gray-200 dark:bg-slate-900 rounded inline-block">{ role.name }</span>
+      {/each}
     {:else}
       {cellValue}
     {/if}
@@ -144,7 +156,7 @@
 <Modal id="user-view" title="User" on:dialog={handleDialog}>
   <span slot=title>User details</span>
   {#if selectedUser && Object.keys(selectedUser).length >= 1 }
-  <div class="grid grid-cols-1 gap-4">
+  <div class="grid grid-cols-1 gap-6">
     <div class="space-y-2">
       <FormLabel htmlFor="first_name" text="First name" />
       <FormInput id="first_name" name="first_name" value={selectedUser.first_name } readonly />
@@ -156,6 +168,16 @@
     <div class="space-y-2">
       <FormLabel htmlFor="email" text="Email" />
       <FormInput id="email" name="email" value={selectedUser.email} readonly/>
+    </div>
+    <div class="space-y-2">
+      <FormLabel htmlFor="created_at" text="Registered Date" />
+      <FormInput id="created_at" name="created_at" value={format(parseISO(selectedUser.created_at), 'MM/dd/yyyy')} readonly/>
+    </div>
+    <div class="space-y-2">
+      <FormLabel htmlFor="role" text="Roles" />
+      {#each selectedUser.roles as role }
+        <span class="px-2 py-1 bg-gray-200 dark:bg-slate-800 rounded inline-block text-sm">{ role.name }</span>
+      {/each}
     </div>
   </div>
   {/if}
