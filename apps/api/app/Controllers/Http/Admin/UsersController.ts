@@ -18,7 +18,9 @@ export default class UsersController {
     const cacheKey = qs !== '{}' ? `users:${qs}` : 'users:'
 
     return await cacheData(cacheKey)(response)(async () => {
-      return await User.query().filter(requestQs).paginate(page, limit)
+      return await User.query().preload('roles', (query) => {
+        query.select('name')
+      }).filter(requestQs).paginate(page, limit)
     })
   }
 
