@@ -2,17 +2,25 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Product from 'App/Models/Shop/Product'
 import { descriptionRules, slugRules, statusRules, titleRules } from 'App/Validations/product'
+import cacheData from 'App/Services/cacheData'
 
 export default class ProductsController {
   /**
    * Product list
    */
-  public async index({ request, bouncer }: HttpContextContract) {
+  public async index({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.index')
-
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
-    return Product.query().paginate(page, limit)
+    const requestQs = request.qs()
+    const qs = JSON.stringify(requestQs)
+    const cacheKey = qs !== '{}' ? `products:${qs}` : 'products:'
+
+    return await cacheData(cacheKey)(response)(async () => {
+      return await Product.query()
+        .filter(requestQs)
+        .paginate(page, limit)
+    })
   }
 
   /**
