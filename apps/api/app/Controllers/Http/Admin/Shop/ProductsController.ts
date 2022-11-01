@@ -70,8 +70,8 @@ export default class ProductsController {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.archive')
 
     try {
-      const user = await Product.findOrFail(params?.id)
-      await user.delete()
+      const product = await Product.findOrFail(params?.id)
+      await product.delete()
       return response.noContent()
     } catch (e) {
       return response.badRequest({
@@ -94,5 +94,27 @@ export default class ProductsController {
     const limit = request.input('limit', 10)
 
     return await Product.query().onlyTrashed().filter(request.qs()).paginate(page, limit)
+  }
+
+  /**
+   * Restore product from archived
+   */
+   public async restore({ request, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.restore')
+    const payload = request.only(['product_id'])
+
+    try {
+      const product = await Product.withTrashed().where('id', payload.product_id).firstOrFail()
+      await product.restore()
+      return product
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
   }
 }

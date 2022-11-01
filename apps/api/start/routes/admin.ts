@@ -49,6 +49,7 @@ Route.group(() => {
     Route.get('products/archived', 'Shop/ProductsController.archived')
     Route.get('products/:id', 'Shop/ProductsController.show')
     Route.post('products', 'Shop/ProductsController.create')
+    Route.post('products/restore', 'Shop/ProductsController.restore')
     Route.delete('products/:id', 'Shop/ProductsController.archive')
   }).namespace('App/Controllers/Http/Admin')
 })
