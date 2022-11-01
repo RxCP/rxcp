@@ -11,6 +11,8 @@ export default class extends BaseSeeder {
       { action: 'api::accounts.delete' },
       { action: 'api::characters.index' },
       { action: 'api::guilds.index' },
+      { action: 'api::shop::product.index' },
+      { action: 'api::shop::product.create' },
     ])
   }
 }
