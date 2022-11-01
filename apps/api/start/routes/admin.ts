@@ -46,8 +46,10 @@ Route.group(() => {
     Route.get('guilds/:id', 'GuildsController.show')
     // Shop
     Route.get('products', 'Shop/ProductsController.index')
-    Route.post('products', 'Shop/ProductsController.create')
+    Route.get('products/archived', 'Shop/ProductsController.archived')
     Route.get('products/:id', 'Shop/ProductsController.show')
+    Route.post('products', 'Shop/ProductsController.create')
+    Route.delete('products/:id', 'Shop/ProductsController.archive')
   }).namespace('App/Controllers/Http/Admin')
 })
   .prefix('/admin/api')

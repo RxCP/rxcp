@@ -12,7 +12,10 @@ export default class extends BaseSeeder {
       { action: 'api::characters.index' },
       { action: 'api::guilds.index' },
       { action: 'api::shop::product.index' },
+      { action: 'api::shop::product.show' },
       { action: 'api::shop::product.create' },
+      { action: 'api::shop::product.archive' },
+      { action: 'api::shop::product.archived' },
     ])
   }
 }

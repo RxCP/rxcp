@@ -18,7 +18,7 @@ export default class ProductsController {
   /**
    * Show product details
    */
-   public async show({ params, bouncer }: HttpContextContract) {
+  public async show({ params, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.show')
 
     return {
@@ -29,10 +29,10 @@ export default class ProductsController {
   /**
    * Create Product
    */
-   public async create({ request, response, bouncer }: HttpContextContract) {
+  public async create({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.create')
     const payload = request.only(['title', 'description', 'slug', 'status'])
-    
+
     // Validation
     const createProductSchema = schema.create({
       title: titleRules,
@@ -61,5 +61,38 @@ export default class ProductsController {
         ],
       })
     }
-   }
+  }
+
+  /**
+   * Archive product
+   */
+  public async archive({ params, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.archive')
+
+    try {
+      const user = await Product.findOrFail(params?.id)
+      await user.delete()
+      return response.noContent()
+    } catch (e) {
+      return response.badRequest({
+        errors: [
+          {
+            message: e.toString(),
+          },
+        ],
+      })
+    }
+  }
+
+  /**
+   * Archived products
+   */
+  public async archived({ request, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.archived')
+
+    const page = request.input('page', 1)
+    const limit = request.input('limit', 10)
+
+    return await Product.query().onlyTrashed().filter(request.qs()).paginate(page, limit)
+  }
 }
