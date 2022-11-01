@@ -22,7 +22,7 @@
     "@unocss/preset-attributify": "0.46.1",
     "@unocss/preset-icons": "0.46.1",
     "@unocss/preset-uno": "0.46.1",
-    "@unocss/preset-web-fonts": "0.46.1",
+    "@unocss/preset-web-fonts": "0.46.2",
     "@unocss/preset-wind": "0.46.1",
     "@unocss/reset": "0.46.1",
     "@unocss/transformer-variant-group": "0.46.1",
