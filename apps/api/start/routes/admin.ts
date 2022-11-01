@@ -47,6 +47,7 @@ Route.group(() => {
     // Shop
     Route.get('products', 'Shop/ProductsController.index')
     Route.post('products', 'Shop/ProductsController.create')
+    Route.get('products/:id', 'Shop/ProductsController.show')
   }).namespace('App/Controllers/Http/Admin')
 })
   .prefix('/admin/api')

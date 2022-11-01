@@ -16,7 +16,18 @@ export default class ProductsController {
   }
 
   /**
-   * Create account
+   * Show product details
+   */
+   public async show({ params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.show')
+
+    return {
+      data: await Product.find(params?.id),
+    }
+  }
+
+  /**
+   * Create Product
    */
    public async create({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.create')
