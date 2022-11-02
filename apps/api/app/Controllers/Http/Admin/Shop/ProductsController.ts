@@ -2,9 +2,11 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Product from 'App/Models/Shop/Product'
 import { descriptionRules, slugRules, statusRules, titleRules } from 'App/Validations/product'
-import cacheData from 'App/Services/cacheData'
+import cacheData, { purgeCache } from 'App/Services/cacheData'
 
 export default class ProductsController {
+  private cachePrefix = 'products'
+
   /**
    * Product list
    */
@@ -14,7 +16,7 @@ export default class ProductsController {
     const limit = request.input('limit', 10)
     const requestQs = request.qs()
     const qs = JSON.stringify(requestQs)
-    const cacheKey = qs !== '{}' ? `products:${qs}` : 'products:'
+    const cacheKey = qs !== '{}' ? `${this.cachePrefix}:${qs}` : this.cachePrefix
 
     return await cacheData(cacheKey)(response)(async () => {
       return await Product.query().filter(requestQs).paginate(page, limit)
@@ -27,7 +29,7 @@ export default class ProductsController {
   public async show({ params, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.show')
 
-    const data = await cacheData(`products:${params?.id}`)(response)(async () => {
+    const data = await cacheData(`${this.cachePrefix}:${params?.id}`)(response)(async () => {
       return await Product.find(params?.id)
     })
 
@@ -60,6 +62,8 @@ export default class ProductsController {
         slug: payload.slug,
         status: payload.status,
       })
+
+      await this.purgeCache()
 
       return product
     } catch (e) {
@@ -126,5 +130,12 @@ export default class ProductsController {
         ],
       })
     }
+  }
+
+  /**
+   * Clear cache
+   */
+   private async purgeCache(id?: string) {
+    purgeCache(id && `${this.cachePrefix}:${id}`)
   }
 }
