@@ -31,15 +31,22 @@ function cacheData(key: string, duration: number = 86400) {
 }
 
 /**
- * Purge cache
+ * Purge single cache
  */
-export async function purgeCache(key?: string) {
+export async function purgeSingleCache(key?: string) {
   if (key) {
     await Redis.del(key)
     return
   }
+}
 
-  const stream = Redis.scanStream({ match: 'users:*', count: 100 })
+/**
+ * Purge all cache
+ * @param match String - e.g 'users:*'
+ */
+export async function purgeCache(match?: string) {
+  console.log(match)
+  const stream = Redis.scanStream({ match, count: 100 })
   let pipeline = Redis.pipeline()
 
   stream.on('data', (keys) => {
