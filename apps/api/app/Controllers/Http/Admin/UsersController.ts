@@ -2,8 +2,7 @@ import { schema } from '@ioc:Adonis/Core/Validator'
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/Validations/user'
-import cacheData from 'App/Services/cacheData'
-import Redis from '@ioc:Adonis/Addons/Redis'
+import cacheData, { purgeCache } from 'App/Services/cacheData'
 
 export default class UsersController {
   /**
@@ -250,24 +249,6 @@ export default class UsersController {
    * Clear cache
    */
   private async purgeCache(id?: string) {
-    if (id) {
-      await Redis.del(`user:${id}`)
-      return
-    }
-
-    const stream = Redis.scanStream({ match: 'users:*', count: 100 })
-    let pipeline = Redis.pipeline()
-
-    stream.on('data', (keys) => {
-      stream.pause()
-
-      for (const key of keys) {
-        pipeline.del(key)
-      }
-
-      pipeline.exec(() => {
-        stream.resume()
-      })
-    })
+    purgeCache(id && `user:${id}`)
   }
 }
