@@ -30,4 +30,29 @@ function cacheData(key: string, duration: number = 86400) {
   }
 }
 
+/**
+ * Purge cache
+ */
+export async function purgeCache(key?: string) {
+  if (key) {
+    await Redis.del(key)
+    return
+  }
+
+  const stream = Redis.scanStream({ match: 'users:*', count: 100 })
+  let pipeline = Redis.pipeline()
+
+  stream.on('data', (keys) => {
+    stream.pause()
+
+    for (const key of keys) {
+      pipeline.del(key)
+    }
+
+    pipeline.exec(() => {
+      stream.resume()
+    })
+  })
+}
+
 export default cacheData
