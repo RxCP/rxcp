@@ -67,6 +67,9 @@ export default class UsersController {
         password: payload.password,
       })
 
+      // clear cache
+      await this.purgeCache()
+
       return user
     } catch (e) {
       return response.badRequest({
@@ -114,6 +117,9 @@ export default class UsersController {
         })
         .save()
 
+      // clear cache
+      await this.purgeCache()
+
       return results
     } catch (e) {
       return response.badRequest({
@@ -135,6 +141,10 @@ export default class UsersController {
     try {
       const user = await User.findOrFail(params?.id)
       await user.delete()
+
+      // clear cache
+      await this.purgeCache()
+
       return response.noContent()
     } catch (e) {
       return response.badRequest({
@@ -157,6 +167,10 @@ export default class UsersController {
     try {
       const user = await User.withTrashed().where('id', payload.user_id).firstOrFail()
       await user.restore()
+
+      // clear cache
+      await this.purgeCache()
+
       return user
     } catch (e) {
       return response.badRequest({
@@ -172,13 +186,18 @@ export default class UsersController {
   /**
    * Archived users
    */
-  public async archived({ request, bouncer }: HttpContextContract) {
+  public async archived({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.archived')
 
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
+    const requestQs = request.qs()
+    const qs = JSON.stringify(requestQs)
+    const cacheKey = qs !== '{}' ? `users_archived:${qs}` : 'users_archived:'
 
-    return await User.query().onlyTrashed().filter(request.qs()).paginate(page, limit)
+    return await cacheData(cacheKey)(response)(async () => {
+      return await User.query().onlyTrashed().filter(requestQs).paginate(page, limit)
+    })
   }
 
   /**
@@ -190,6 +209,10 @@ export default class UsersController {
     try {
       const user = await User.withTrashed().where('id', params.id).firstOrFail()
       await user.forceDelete()
+
+      // clear cache
+      await this.purgeCache()
+
       return response.noContent()
     } catch (e) {
       return response.badRequest({
@@ -207,7 +230,7 @@ export default class UsersController {
    */
   public async clearOneCache({ response, params, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.clearCache')
-    await Redis.del(`user:${params?.id}`)
+    await this.purgeCache(params?.id)
 
     return response.noContent()
   }
@@ -217,6 +240,20 @@ export default class UsersController {
    */
   public async clearAllCache({ bouncer, response }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.clearCache')
+
+    this.purgeCache()
+
+    return response.noContent()
+  }
+
+  /**
+   * Clear cache
+   */
+  private async purgeCache(id?: string) {
+    if (id) {
+      await Redis.del(`user:${id}`)
+      return
+    }
 
     const stream = Redis.scanStream({ match: 'users:*', count: 100 })
     let pipeline = Redis.pipeline()
@@ -232,7 +269,5 @@ export default class UsersController {
         stream.resume()
       })
     })
-
-    return response.noContent()
   }
 }

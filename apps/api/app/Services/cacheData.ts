@@ -5,10 +5,18 @@ function cacheData(key: string, duration: number = 86400) {
   return (response: ResponseContract) => {
     return async (cb: Function) => {
       let data = {}
-      let usersCache = await Redis.get(key)
-      if (!usersCache) {
+      const usersCache = await Redis.get(key)
+      const usersCacheObj = JSON.parse(usersCache || '[]')
+
+      if (
+        !usersCache ||
+        usersCacheObj?.meta?.total <= 0 ||
+        usersCacheObj?.data?.length <= 0 ||
+        !usersCacheObj?.data
+      ) {
         const results = await cb()
-        data = results.serialize()
+
+        data = results?.serialize()
         await Redis.set(key, JSON.stringify(data), 'EX', duration)
       } else {
         data = JSON.parse(usersCache)
