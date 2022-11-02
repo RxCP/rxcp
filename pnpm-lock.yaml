@@ -20,7 +20,7 @@ importers:
       '@astrojs/node': 2.0.2
       '@astrojs/svelte': 1.0.2
       '@iconify-json/tabler': 1.1.44
-      '@iconify/json': 2.1.131
+      '@iconify/json': 2.1.132
       '@open-draft/until': 2.0.0
       '@popperjs/core': 2.11.6
       '@types/lodash-es': 4.17.6
@@ -67,7 +67,7 @@ importers:
     devDependencies:
       '@astrojs/svelte': 1.0.2_33xwm53hkaxanx3wwowuys7h54
       '@iconify-json/tabler': 1.1.44
-      '@iconify/json': 2.1.131
+      '@iconify/json': 2.1.132
       '@popperjs/core': 2.11.6
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
@@ -1584,8 +1584,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify/json/2.1.131:
-    resolution: {integrity: sha512-VUQLJ2IHEcB0Is9K/grtLEC0OuLV3Fj0h3t04fKMN9hXwJkn2SKounQr44w7LzcBlu2RRYA7/npGlovtWV0iXQ==}
+  /@iconify/json/2.1.132:
+    resolution: {integrity: sha512-b2ddD44ufErLm18Aku0WNxKzFz1Rvtcb4rOoBtzOyQcttZUawQvE8e/wBHMLhaMRlEn0p4YlVOl6jjj0xmDYJg==}
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 0.3.9
