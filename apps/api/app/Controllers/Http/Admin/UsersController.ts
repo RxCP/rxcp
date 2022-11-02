@@ -239,8 +239,7 @@ export default class UsersController {
    */
   public async clearAllCache({ bouncer, response }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.clearCache')
-
-    this.purgeCache()
+    await this.purgeCache()
 
     return response.noContent()
   }
