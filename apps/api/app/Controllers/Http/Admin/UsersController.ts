@@ -3,7 +3,6 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import User from 'App/Models/User'
 import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/Validations/user'
 import cacheData, { purgeCache } from 'App/Services/cacheData'
-import Redis from '@ioc:Adonis/Addons/Redis'
 
 export default class UsersController {
   /**
