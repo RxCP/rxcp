@@ -5,6 +5,8 @@ import { emailRules, firstNameRules, lastNameRules, passwordRules } from 'App/Va
 import cacheData, { purgeCache } from 'App/Services/cacheData'
 
 export default class UsersController {
+  private cachePrefix = 'users'
+
   /**
    * Users list
    */
@@ -14,7 +16,7 @@ export default class UsersController {
     const limit = request.input('limit', 10)
     const requestQs = request.qs()
     const qs = JSON.stringify(requestQs)
-    const cacheKey = qs !== '{}' ? `users:${qs}` : 'users:'
+    const cacheKey = qs !== '{}' ? `${this.cachePrefix}:${qs}` : this.cachePrefix
 
     return await cacheData(cacheKey)(response)(async () => {
       return await User.query()
@@ -32,7 +34,7 @@ export default class UsersController {
   public async show({ params, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::users.show')
 
-    const data = await cacheData(`user:${params?.id}`)(response)(async () => {
+    const data = await cacheData(`${this.cachePrefix}:${params?.id}`)(response)(async () => {
       return await User.find(params?.id)
     })
 
@@ -248,6 +250,6 @@ export default class UsersController {
    * Clear cache
    */
   private async purgeCache(id?: string) {
-    purgeCache(id && `user:${id}`)
+    purgeCache(id ? `${this.cachePrefix}:${id}` : `${this.cachePrefix}*`)
   }
 }
