@@ -133,9 +133,29 @@ export default class ProductsController {
   }
 
   /**
+   * Clear one product cache
+   */
+  public async clearOneCache({ response, params, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.clearCache')
+    await this.purgeCache(params?.id)
+
+    return response.noContent()
+  }
+
+  /**
+   * Clear products cache
+   */
+  public async clearAllCache({ bouncer, response }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.clearCache')
+    await this.purgeCache()
+
+    return response.noContent()
+  }
+
+  /**
    * Clear cache
    */
-   private async purgeCache(id?: string) {
-    purgeCache(id && `${this.cachePrefix}:${id}`)
+  private async purgeCache(id?: string) {
+    purgeCache(id ? `${this.cachePrefix}:${id}` : `${this.cachePrefix}*`)
   }
 }

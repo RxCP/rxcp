@@ -51,6 +51,8 @@ Route.group(() => {
     Route.post('products', 'Shop/ProductsController.create')
     Route.post('products/restore', 'Shop/ProductsController.restore')
     Route.delete('products/:id', 'Shop/ProductsController.archive')
+    Route.delete('cache/products', 'Shop/ProductsController.clearAllCache')
+    Route.delete('cache/products/:id', 'Shop/ProductsController.clearOneCache')
   }).namespace('App/Controllers/Http/Admin')
 })
   .prefix('/admin/api')
