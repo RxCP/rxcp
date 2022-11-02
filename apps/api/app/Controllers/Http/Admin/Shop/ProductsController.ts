@@ -17,20 +17,22 @@ export default class ProductsController {
     const cacheKey = qs !== '{}' ? `products:${qs}` : 'products:'
 
     return await cacheData(cacheKey)(response)(async () => {
-      return await Product.query()
-        .filter(requestQs)
-        .paginate(page, limit)
+      return await Product.query().filter(requestQs).paginate(page, limit)
     })
   }
 
   /**
    * Show product details
    */
-  public async show({ params, bouncer }: HttpContextContract) {
+  public async show({ params, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.show')
 
+    const data = await cacheData(`products:${params?.id}`)(response)(async () => {
+      return await Product.find(params?.id)
+    })
+
     return {
-      data: await Product.find(params?.id),
+      data,
     }
   }
 
@@ -107,7 +109,7 @@ export default class ProductsController {
   /**
    * Restore product from archived
    */
-   public async restore({ request, response, bouncer }: HttpContextContract) {
+  public async restore({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.restore')
     const payload = request.only(['product_id'])
 
