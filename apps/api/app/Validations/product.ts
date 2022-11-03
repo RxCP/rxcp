@@ -12,3 +12,4 @@ export const slugRules = (id?: number) => {
   return schema.string({ trim: true }, fieldRules)
 }
 export const statusRules = schema.string({ trim: true }, [rules.maxLength(10)])
+export const priceRules = schema.number([rules.range(0, 999999999)])

@@ -1,7 +1,13 @@
 import { schema } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Product from 'App/Models/Shop/Product'
-import { descriptionRules, slugRules, statusRules, titleRules } from 'App/Validations/product'
+import {
+  descriptionRules,
+  priceRules,
+  slugRules,
+  statusRules,
+  titleRules,
+} from 'App/Validations/product'
 import cacheData, { purgeCache } from 'App/Services/cacheData'
 
 export default class ProductsController {
@@ -43,7 +49,7 @@ export default class ProductsController {
    */
   public async create({ request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.create')
-    const payload = request.only(['title', 'description', 'slug', 'status'])
+    const payload = request.only(['title', 'description', 'slug', 'status', 'price'])
 
     // Validation
     const createProductSchema = schema.create({
@@ -51,6 +57,7 @@ export default class ProductsController {
       description: descriptionRules,
       slug: slugRules(),
       status: statusRules,
+      price: priceRules,
     })
 
     await request.validate({ schema: createProductSchema })
@@ -61,6 +68,7 @@ export default class ProductsController {
         description: payload.description,
         slug: payload.slug,
         status: payload.status,
+        price: payload.price,
       })
 
       await this.purgeCache()

@@ -8,9 +8,10 @@ export default class extends BaseSchema {
       table.increments('id')
 
       table.string('title', 255).notNullable()
-      table.string('description').nullable()
+      table.text('description', 'longtext')
       table.string('slug', 50).notNullable().unique()
       table.string('status', 10).notNullable()
+      table.integer('price').notNullable()
       table.timestamp('deleted_at', { useTz: true }).nullable()
 
       /**

@@ -21,6 +21,9 @@ export default class Product extends compose(BaseModel, Filterable, SoftDeletes)
   public slug: string
 
   @column()
+  public price: number
+
+  @column()
   public status: 'draft' | 'published'
 
   @column.dateTime()
