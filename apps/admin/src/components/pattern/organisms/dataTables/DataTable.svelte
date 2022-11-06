@@ -117,6 +117,7 @@
 <div class="mb-4 flex space-x-4 ">
   <FormInput
     iconClass="i-tabler-search"
+    inputClass="pl-10"
     id="searchAccounts"
     placeholder="Search..."
     class="w-60 md:focus-within:w-96 transition-all duration-300"
