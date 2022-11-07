@@ -1,3 +1,4 @@
+import Config from '@ioc:Adonis/Core/Config'
 import { initServerStatus } from 'App/Services/ServerStatus'
 import Ws from 'App/Services/Ws'
 
@@ -8,6 +9,7 @@ Ws.boot()
  */
 Ws.io.on('connection', async (socket) => {
   const server = await initServerStatus()
+  const refreshTime = Config.get('ragnarok.server.statusRefreshTimeMs', 1000)
 
   socket.emit('test-socket', { hello: 'world' })
 
@@ -17,5 +19,5 @@ Ws.io.on('connection', async (socket) => {
 
   setInterval(async () => {
     socket.emit('server-status', await server.status())
-  }, 1000)
+  }, refreshTime)
 })
