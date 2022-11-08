@@ -10,6 +10,7 @@ Ws.boot()
 Ws.io.on('connection', async (socket) => {
   const server = await initServerStatus()
   const refreshTime = Config.get('ragnarok.server.statusRefreshTimeMs', 1000)
+  let emitServerStatusTimer
 
   socket.emit('test-socket', { hello: 'world' })
 
@@ -17,7 +18,15 @@ Ws.io.on('connection', async (socket) => {
     console.log(data)
   })
 
-  setInterval(async () => {
+  // Server status
+  async function emitServerStatus() {
     socket.emit('server-status', await server.status())
-  }, refreshTime)
+    emitServerStatusTimer = setTimeout(emitServerStatus, refreshTime)
+  }
+  // clear timer
+  socket.on('disconnect', function () {
+    clearTimeout(emitServerStatusTimer)
+  })
+
+  emitServerStatus()
 })
