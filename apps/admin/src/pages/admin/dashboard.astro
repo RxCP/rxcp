@@ -22,8 +22,7 @@ if (!user) {
     <section class="grid grid-cols-2 lg:grid-cols-6 gap-4">
       <div
         un-bg="blue-50 dark:blue-800"
-        un-border="~ blue-300 dark:blue-700"
-        class="p-4 rounded lt-lg:col-span-2 col-span-2"
+        class="p-4 rounded lt-lg:col-span-2 col-span-2 wrapper-status"
       >
         <ServerStatusList client:load />
       </div>
@@ -42,3 +41,12 @@ if (!user) {
     </section>
   </div>
 </Layout>
+
+<style>
+  .wrapper-status {
+    @media (prefers-color-scheme: dark) {
+      background: rgb(34,49,84);
+      background: linear-gradient(49deg, rgba(34,49,84,1) 15%, rgba(34,59,117,1) 75%);
+    }
+  }
+</style>
