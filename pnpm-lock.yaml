@@ -17,7 +17,7 @@ importers:
       '@astro-auth/client': 1.0.5
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
-      '@astrojs/node': 2.0.2
+      '@astrojs/node': 3.0.0
       '@astrojs/svelte': 1.0.2
       '@iconify-json/tabler': 1.1.44
       '@iconify/json': 2.1.134
@@ -57,7 +57,7 @@ importers:
       '@astro-auth/client': 1.0.5_biqbaboplfbrettd7655fr4n2y
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
-      '@astrojs/node': 2.0.2
+      '@astrojs/node': 3.0.0_astro@1.6.4
       '@open-draft/until': 2.0.0
       a11y-dialog: 7.5.2
       astro: 1.6.4
@@ -784,10 +784,13 @@ packages:
       uvu: 0.5.6
       vfile-message: 3.1.2
 
-  /@astrojs/node/2.0.2:
-    resolution: {integrity: sha512-po6YZ+jecEXg2bo27hvi9hWppSCtR7zWJl/AwR4bcFWeUOcZKJcfv6LT4BQzzIsOjMbS3lIxZ4mgT2seYNLU9Q==}
+  /@astrojs/node/3.0.0_astro@1.6.4:
+    resolution: {integrity: sha512-07l0D0iq3Bdd4fw8LPf2/DveL3X0Mn/ZuhEvWh2W+hxsrDfot9XGmdzExjmY/C2DtYOUUJKf8mg1cA5ZXOif8Q==}
+    peerDependencies:
+      astro: ^1.6.4
     dependencies:
-      '@astrojs/webapi': 1.1.0
+      '@astrojs/webapi': 1.1.1
+      astro: 1.6.4
       send: 0.18.0
     transitivePeerDependencies:
       - supports-color
@@ -841,13 +844,6 @@ packages:
       which-pm-runs: 1.1.0
     transitivePeerDependencies:
       - supports-color
-
-  /@astrojs/webapi/1.1.0:
-    resolution: {integrity: sha512-yLSksFKv9kRbI3WWPuRvbBjS+J5ZNmZHacJ6Io8XQleKIHHHcw7RoNcrLK0s+9iwVPhqMYIzja6HJuvnO93oFw==}
-    dependencies:
-      global-agent: 3.0.0
-      node-fetch: 3.2.10
-    dev: false
 
   /@astrojs/webapi/1.1.1:
     resolution: {integrity: sha512-yeUvP27PoiBK/WCxyQzC4HLYZo4Hg6dzRd/dTsL50WGlAQVCwWcqzVJrIZKvzNDNaW/fIXutZTmdj6nec0PIGg==}
