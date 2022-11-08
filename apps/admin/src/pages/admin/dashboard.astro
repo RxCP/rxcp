@@ -3,6 +3,7 @@ import { getUser, redirectUser } from '@astro-auth/core';
 import CardTotalNumber from '@pattern/molecules/card/CardTotalNumber.svelte';
 import CardWrapper from '@pattern/molecules/card/cardWrapper.svelte';
 import Layout from '@layouts/Dashboard.astro';
+import ServerStatusList from '@components/server/status/status-list.svelte';
 
 const user = getUser({ client: Astro });
 if (!user) {
@@ -24,49 +25,7 @@ if (!user) {
         un-border="~ blue-300 dark:blue-700"
         class="p-4 rounded lt-lg:col-span-2 col-span-2"
       >
-        <h2 class="font-bold">Server Status</h2>
-        <ul class="mt-4 space-y-2">
-          <li
-            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
-          >
-            Login
-            <span
-              class="uppercase text-xs px-2 py-1 bg-green-700 rounded-full text-white"
-            >
-              Online
-            </span>
-          </li>
-          <li
-            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
-          >
-            Character
-            <span
-              class="uppercase text-xs px-2 py-1 bg-green-700 rounded-full text-white"
-            >
-              Online
-            </span>
-          </li>
-          <li
-            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
-          >
-            Map
-            <span
-              class="uppercase text-xs px-2 py-1 bg-green-700 rounded-full text-white"
-            >
-              Online
-            </span>
-          </li>
-          <li
-            class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
-          >
-            Players Online
-            <span
-              class="uppercase text-xs px-2 py-1 bg-slate-600 rounded-full text-white"
-            >
-              100
-            </span>
-          </li>
-        </ul>
+        <ServerStatusList client:load />
       </div>
       <CardTotalNumber label="Users" number={20} />
       <CardTotalNumber label="Accounts" number={20} />

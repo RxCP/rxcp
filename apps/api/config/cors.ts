@@ -42,9 +42,10 @@ const corsConfig: CorsConfig = {
   | String (*)        - A wildcard (*) to allow all request origins.
   | Function          - Receives the current origin string and should return
   |                     one of the above values.
-  |
+  | http://localhost:3000 = testing socket connection using npx server
+  | http://localhost:8080 - default admin URL
   */
-  origin: ['localhost', 'http://localhost:3000'],
+  origin: ['localhost', 'http://localhost:3000', 'http://localhost:8080'],
 
   /*
   |--------------------------------------------------------------------------
