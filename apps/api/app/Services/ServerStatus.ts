@@ -24,7 +24,6 @@ export async function initServerStatus() {
           ...serverStatus,
           ...{
             [server.name]: {
-              port: serverValue?.port,
               status: await getServerStatus(serverValue?.port, serverValue?.host),
             },
           },
