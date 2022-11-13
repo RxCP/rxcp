@@ -12,7 +12,7 @@
   "devDependencies": {
     "@histoire/plugin-svelte": "0.11.6",
     "@iconify-json/tabler": "1.1.46",
-    "@sveltejs/vite-plugin-svelte": "1.1.0",
+    "@sveltejs/vite-plugin-svelte": "1.1.1",
     "@unocss/core": "0.46.5",
     "@unocss/preset-attributify": "0.46.5",
     "@unocss/preset-icons": "0.46.5",
