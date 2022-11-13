@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test Realtime Server Status</title>
-    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
@@ -13,7 +12,9 @@
       const socket = io('ws://127.0.0.1:3333')
       socket.on('test-socket', (data) => {
         console.log(data)
-        socket.emit('my other event', { my: 'data' })
+      })
+      socket.on('server-status', (data) => {
+        console.log('server-status', data)
       })
     </script>
   </body>
