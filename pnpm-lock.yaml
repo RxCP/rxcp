@@ -26,7 +26,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
       '@unocss/core': 0.46.3
-      '@unocss/preset-attributify': 0.46.3
+      '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
@@ -74,7 +74,7 @@ importers:
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
       '@unocss/core': 0.46.3
-      '@unocss/preset-attributify': 0.46.3
+      '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
@@ -172,7 +172,7 @@ importers:
       '@iconify-json/tabler': 1.1.46
       '@sveltejs/vite-plugin-svelte': 1.1.0
       '@unocss/core': 0.46.3
-      '@unocss/preset-attributify': 0.46.3
+      '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
@@ -188,7 +188,7 @@ importers:
       '@iconify-json/tabler': 1.1.46
       '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.52.0+vite@3.2.3
       '@unocss/core': 0.46.3
-      '@unocss/preset-attributify': 0.46.3
+      '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
@@ -2645,6 +2645,10 @@ packages:
     resolution: {integrity: sha512-Wcyuw9KlFgxKz/QDJ+bNnQyI0h+LAWOpZWTkRQiDh1OxzLzYrBR3ljhtZe0tymKQRzQqUSpV5iBWOxJ8raJW1w==}
     dev: true
 
+  /@unocss/core/0.46.5:
+    resolution: {integrity: sha512-apPWISH2ASKySyp4vBAkEzr5XNJDv4mu26eQ4wvg2a32cHRokUsiHLWFNMDe7oJquivTAOHsXqbLQuR9ePKNSg==}
+    dev: true
+
   /@unocss/inspector/0.46.3:
     resolution: {integrity: sha512-WVcDTzORo7dZO7clEwzC19ENr7aLM2CsGsh75ofYiyZs2iYHvgnuZRspKv7SeXSjf4b49O0Xa9sDov7neTlMfA==}
     dependencies:
@@ -2656,6 +2660,12 @@ packages:
     resolution: {integrity: sha512-vOXHFQlSZU5QLchiGKKdwz/dDS7zH6xZlxEcwdWHxzpl+kd1RfryRFa0N7MiS/6i++ko6Whr53pUyb0etafKgw==}
     dependencies:
       '@unocss/core': 0.46.3
+    dev: true
+
+  /@unocss/preset-attributify/0.46.5:
+    resolution: {integrity: sha512-phhhF0bgO+sFCiin9dstuOB5wxgTg3n3gE+uoCCfhZz2XI6GmmcL60cV5xTMhFv9kxedrvy8kS6UF+W1GAUang==}
+    dependencies:
+      '@unocss/core': 0.46.5
     dev: true
 
   /@unocss/preset-icons/0.46.3:
