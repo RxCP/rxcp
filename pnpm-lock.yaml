@@ -19,7 +19,7 @@ importers:
       '@astro-auth/providers': 1.0.6
       '@astrojs/node': 3.0.0
       '@astrojs/svelte': 1.0.2
-      '@iconify-json/tabler': 1.1.44
+      '@iconify-json/tabler': 1.1.46
       '@iconify/json': 2.1.134
       '@open-draft/until': 2.0.0
       '@popperjs/core': 2.11.6
@@ -68,7 +68,7 @@ importers:
       svelte-french-toast: 1.0.3_svelte@3.52.0
     devDependencies:
       '@astrojs/svelte': 1.0.2_dcxkcjc4vlht47texqtlr64s3m
-      '@iconify-json/tabler': 1.1.44
+      '@iconify-json/tabler': 1.1.46
       '@iconify/json': 2.1.134
       '@popperjs/core': 2.11.6
       '@types/lodash-es': 4.17.6
@@ -171,7 +171,7 @@ importers:
   packages/rxcp-ui:
     specifiers:
       '@histoire/plugin-svelte': 0.11.6
-      '@iconify-json/tabler': 1.1.44
+      '@iconify-json/tabler': 1.1.46
       '@sveltejs/vite-plugin-svelte': 1.1.0
       '@unocss/core': 0.46.3
       '@unocss/preset-attributify': 0.46.3
@@ -187,7 +187,7 @@ importers:
       vite: 3.2.3
     devDependencies:
       '@histoire/plugin-svelte': 0.11.6_jtj4ud7jhxt37nsecs2bs6aliu
-      '@iconify-json/tabler': 1.1.44
+      '@iconify-json/tabler': 1.1.46
       '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.52.0+vite@3.2.3
       '@unocss/core': 0.46.3
       '@unocss/preset-attributify': 0.46.3
@@ -1578,8 +1578,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/tabler/1.1.44:
-    resolution: {integrity: sha512-nnoBi2DLUzEBc6ty+nQGlMPqQmZveAGd/7RoO7DZbGFSDbSAtuV0wGWQ/XYdrglkpdmgWslmLo3bI9nxjZq33g==}
+  /@iconify-json/tabler/1.1.46:
+    resolution: {integrity: sha512-RC688GFO0snxnrVCVJArGCIgmJCLDP/sDQ5Y4GKrw/Z1ETjUvYSlD8jEwQCggkEeVBDj8fHnVL4vLCpQCcqJTQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
