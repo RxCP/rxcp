@@ -57,14 +57,12 @@ export async function ServerStatusSocket(
   let emitServerStatusTimer: string | number | NodeJS.Timeout | undefined
 
   async function emitServerStatus() {
-    console.log('emitServerStatus')
     socket.emit('server-status', await server.status())
     emitServerStatusTimer = setTimeout(emitServerStatus, refreshTime)
   }
 
   // clear timer
   socket.on('disconnect', function () {
-    console.log('disconnect')
     clearTimeout(emitServerStatusTimer)
   })
 
