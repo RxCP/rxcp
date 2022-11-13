@@ -10,9 +10,9 @@
   },
   "type": "module",
   "devDependencies": {
-    "@histoire/plugin-svelte": "0.11.6",
+    "@histoire/plugin-svelte": "0.11.7",
     "@iconify-json/tabler": "1.1.46",
-    "@sveltejs/vite-plugin-svelte": "1.1.0",
+    "@sveltejs/vite-plugin-svelte": "1.1.1",
     "@unocss/core": "0.46.5",
     "@unocss/preset-attributify": "0.46.5",
     "@unocss/preset-icons": "0.46.5",
@@ -21,8 +21,8 @@
     "@unocss/preset-wind": "0.46.5",
     "@unocss/reset": "0.46.5",
     "@unocss/vite": "0.46.5",
-    "histoire": "0.11.6",
-    "svelte": "3.52.0",
+    "histoire": "0.11.7",
+    "svelte": "3.53.1",
     "svelte-preprocess": "4.10.7",
     "vite": "3.2.3"
   }
