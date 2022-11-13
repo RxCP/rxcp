@@ -29,7 +29,7 @@ importers:
       '@unocss/preset-attributify': 0.46.3
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
-      '@unocss/preset-web-fonts': 0.46.3
+      '@unocss/preset-web-fonts': 0.46.5
       '@unocss/preset-wind': 0.46.3
       '@unocss/reset': 0.46.3
       '@unocss/transformer-variant-group': 0.46.3
@@ -77,7 +77,7 @@ importers:
       '@unocss/preset-attributify': 0.46.3
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
-      '@unocss/preset-web-fonts': 0.46.3
+      '@unocss/preset-web-fonts': 0.46.5
       '@unocss/preset-wind': 0.46.3
       '@unocss/reset': 0.46.3
       '@unocss/transformer-variant-group': 0.46.3
@@ -175,7 +175,7 @@ importers:
       '@unocss/preset-attributify': 0.46.3
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
-      '@unocss/preset-web-fonts': 0.46.3
+      '@unocss/preset-web-fonts': 0.46.5
       '@unocss/preset-wind': 0.46.3
       '@unocss/reset': 0.46.3
       '@unocss/vite': 0.46.3
@@ -191,7 +191,7 @@ importers:
       '@unocss/preset-attributify': 0.46.3
       '@unocss/preset-icons': 0.46.3
       '@unocss/preset-uno': 0.46.3
-      '@unocss/preset-web-fonts': 0.46.3
+      '@unocss/preset-web-fonts': 0.46.5
       '@unocss/preset-wind': 0.46.3
       '@unocss/reset': 0.46.3
       '@unocss/vite': 0.46.3_vite@3.2.3
@@ -2645,6 +2645,10 @@ packages:
     resolution: {integrity: sha512-Wcyuw9KlFgxKz/QDJ+bNnQyI0h+LAWOpZWTkRQiDh1OxzLzYrBR3ljhtZe0tymKQRzQqUSpV5iBWOxJ8raJW1w==}
     dev: true
 
+  /@unocss/core/0.46.5:
+    resolution: {integrity: sha512-apPWISH2ASKySyp4vBAkEzr5XNJDv4mu26eQ4wvg2a32cHRokUsiHLWFNMDe7oJquivTAOHsXqbLQuR9ePKNSg==}
+    dev: true
+
   /@unocss/inspector/0.46.3:
     resolution: {integrity: sha512-WVcDTzORo7dZO7clEwzC19ENr7aLM2CsGsh75ofYiyZs2iYHvgnuZRspKv7SeXSjf4b49O0Xa9sDov7neTlMfA==}
     dependencies:
@@ -2704,6 +2708,13 @@ packages:
     resolution: {integrity: sha512-sY3pGJ4CUVOiIhX4foq5t5nd7NIcSq1Xa6jUS4Bf/pt0Nn9fyP5uRUgwXT0EXler2uF+Xq8JS9iNUA/dwmD9kg==}
     dependencies:
       '@unocss/core': 0.46.3
+      ohmyfetch: 0.4.20
+    dev: true
+
+  /@unocss/preset-web-fonts/0.46.5:
+    resolution: {integrity: sha512-ITOtD9AeklSqsVzBlK6wKbABQnD1o9wubN4bGkz7cd0G0GEt7YkW9dYwmXPYqo9Stoga92MJPy/Z2mxKT0ejVw==}
+    dependencies:
+      '@unocss/core': 0.46.5
       ohmyfetch: 0.4.20
     dev: true
 
