@@ -1,5 +1,5 @@
 const server = {
-  statusRefreshTimeMs: 3000, // in milliseconds
+  statusRefreshTimeMs: 5000, // in milliseconds
 }
 
 export default server
