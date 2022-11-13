@@ -31,7 +31,7 @@ importers:
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
       '@unocss/preset-wind': 0.46.3
-      '@unocss/reset': 0.46.3
+      '@unocss/reset': 0.46.5
       '@unocss/transformer-variant-group': 0.46.3
       a11y-dialog: 7.5.2
       astro: 1.6.5
@@ -79,7 +79,7 @@ importers:
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
       '@unocss/preset-wind': 0.46.3
-      '@unocss/reset': 0.46.3
+      '@unocss/reset': 0.46.5
       '@unocss/transformer-variant-group': 0.46.3
       astro-uno: 0.2.1_astro@1.6.5+unocss@0.46.3
       eslint: 8.27.0
@@ -177,7 +177,7 @@ importers:
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
       '@unocss/preset-wind': 0.46.3
-      '@unocss/reset': 0.46.3
+      '@unocss/reset': 0.46.5
       '@unocss/vite': 0.46.3
       histoire: 0.11.6
       svelte: 3.52.0
@@ -193,7 +193,7 @@ importers:
       '@unocss/preset-uno': 0.46.3
       '@unocss/preset-web-fonts': 0.46.3
       '@unocss/preset-wind': 0.46.3
-      '@unocss/reset': 0.46.3
+      '@unocss/reset': 0.46.5
       '@unocss/vite': 0.46.3_vite@3.2.3
       histoire: 0.11.6_vite@3.2.3
       svelte: 3.52.0
@@ -2716,6 +2716,10 @@ packages:
 
   /@unocss/reset/0.46.3:
     resolution: {integrity: sha512-Jb9zx3h5IPVjSAyW+cLq+/cyeTcExtRaK+Jd7Zjcw6LhgeY5uFeEAQPoFVLCX8az7BXO6FQD3cAmWvl/yogAOA==}
+    dev: true
+
+  /@unocss/reset/0.46.5:
+    resolution: {integrity: sha512-DU1sisNixEaUsnfDdbU+POaedJLKUtalHnOOce2Txxrcakf7M2/I5/9cRIXt5diVbPjIyoDPcx+7Gn8K0cTGqg==}
     dev: true
 
   /@unocss/scope/0.46.3:
