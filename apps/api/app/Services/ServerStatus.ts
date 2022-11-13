@@ -1,3 +1,4 @@
+import Character from 'App/Models/Character'
 import Server from 'App/Models/Server'
 import isPortReachable from 'is-port-reachable'
 
@@ -18,6 +19,11 @@ export async function initServerStatus() {
     status: async () => {
       let serverStatus = {}
 
+      const playersOnline = await Character.query()
+        .count('*', 'players_online')
+        .where('online', '>', 0)
+        .first()
+
       for (const server of serverSettings?.settings || []) {
         const serverValue = JSON.parse(server?.value || '{}')
         serverStatus = {
@@ -30,7 +36,12 @@ export async function initServerStatus() {
         }
       }
 
-      return serverStatus
+      return {
+        ...serverStatus,
+        ...{
+          online: playersOnline?.$extras.players_online || 0,
+        },
+      }
     },
   }
 }

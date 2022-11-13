@@ -6,6 +6,7 @@
   let loginStatus = 'offline'
   let charStatus = 'offline'
   let mapStatus = 'offline'
+  let playersOnline = 0
 
   onMount(() => {
     socket.on('server-status', (data) => {
@@ -13,6 +14,7 @@
       loginStatus = data?.login?.status
       charStatus = data?.char?.status
       mapStatus = data?.map?.status
+      playersOnline = data?.online
     })
   })
 </script>
@@ -65,7 +67,7 @@
         un-rounded="full"
         class="uppercase text-xs px-2 py-1 bg-slate-600 text-white"
       >
-        100
+        {playersOnline}
       </span>
     </li>
   </ul>
