@@ -5,6 +5,7 @@
  * file.
  */
 
+import Env from '@ioc:Adonis/Core/Env'
 import { CorsConfig } from '@ioc:Adonis/Core/Cors'
 
 const corsConfig: CorsConfig = {
@@ -45,7 +46,7 @@ const corsConfig: CorsConfig = {
   | http://localhost:3000 = testing socket connection using npx server
   | http://localhost:8080 - default admin URL
   */
-  origin: ['localhost', 'http://localhost:3000', 'http://localhost:8080'],
+  origin: ['localhost', 'http://localhost:3000', Env.get('ADMIN_BASE_URL')],
 
   /*
   |--------------------------------------------------------------------------
