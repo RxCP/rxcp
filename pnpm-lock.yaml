@@ -20,7 +20,7 @@ importers:
       '@astrojs/node': 3.0.0
       '@astrojs/svelte': 1.0.2
       '@iconify-json/tabler': 1.1.46
-      '@iconify/json': 2.1.136
+      '@iconify/json': 2.1.137
       '@open-draft/until': 2.0.0
       '@popperjs/core': 2.11.6
       '@types/lodash-es': 4.17.6
@@ -42,7 +42,7 @@ importers:
       eslint-plugin-svelte3: 4.0.0
       js-sticky-table-headers: 1.0.0-alpha.8
       lodash-es: 4.17.21
-      nanostores: 0.7.0
+      nanostores: 0.7.1
       prettier: 2.7.1
       prettier-plugin-astro: 0.7.0
       qs: 6.11.0
@@ -63,13 +63,13 @@ importers:
       astro: 1.6.7
       astro-spa: 1.3.9
       date-fns: 2.29.3
-      nanostores: 0.7.0
+      nanostores: 0.7.1
       socket.io-client: 4.5.3
       svelte-french-toast: 1.0.3_svelte@3.53.1
     devDependencies:
       '@astrojs/svelte': 1.0.2_dg4m7kv254kf2lhq5bmqfp3ium
       '@iconify-json/tabler': 1.1.46
-      '@iconify/json': 2.1.136
+      '@iconify/json': 2.1.137
       '@popperjs/core': 2.11.6
       '@types/lodash-es': 4.17.6
       '@types/qs': 6.9.7
@@ -1584,8 +1584,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify/json/2.1.136:
-    resolution: {integrity: sha512-tO5hV+yXn87+OCQqiVzis6i4YQiRX4044ZjubP6GmbeclE6tsypK+by/tXjbm90GTX0jhsOJ6YLzWl3szivywg==}
+  /@iconify/json/2.1.137:
+    resolution: {integrity: sha512-4814e7M8guSRxGeM73+CrNhRL1+gpbNwX/NLLCEHkwwGKWIuzxiF0Z/9GFpZ4ronmwEKhuYyua4mirn78NTVxg==}
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 0.3.9
@@ -8228,8 +8228,8 @@ packages:
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: false
 
-  /nanostores/0.7.0:
-    resolution: {integrity: sha512-y+ma9MVXuPzXKEXaRYW/iL/xG/HtMwB8fmFcMfUqt5fCNR/na2kDubbZGV4furUMTgmxfySJs0cQjORWhaPDyA==}
+  /nanostores/0.7.1:
+    resolution: {integrity: sha512-7HenoVpZOjRudHCmAVWKloBTk3+Ozw49KuRWq/pNlEIIVS3x9dID+I5z3Rhjxl1muhHwv4dFhpT+0FebT9jvaA==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     dev: false
 
