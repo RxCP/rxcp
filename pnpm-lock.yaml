@@ -42,7 +42,7 @@ importers:
       eslint-plugin-svelte3: 4.0.0
       js-sticky-table-headers: 1.0.0-alpha.8
       lodash-es: 4.17.21
-      nanostores: 0.7.0
+      nanostores: 0.7.1
       prettier: 2.7.1
       prettier-plugin-astro: 0.7.0
       qs: 6.11.0
@@ -63,7 +63,7 @@ importers:
       astro: 1.6.7
       astro-spa: 1.3.9
       date-fns: 2.29.3
-      nanostores: 0.7.0
+      nanostores: 0.7.1
       socket.io-client: 4.5.3
       svelte-french-toast: 1.0.3_svelte@3.53.1
     devDependencies:
@@ -8228,8 +8228,8 @@ packages:
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: false
 
-  /nanostores/0.7.0:
-    resolution: {integrity: sha512-y+ma9MVXuPzXKEXaRYW/iL/xG/HtMwB8fmFcMfUqt5fCNR/na2kDubbZGV4furUMTgmxfySJs0cQjORWhaPDyA==}
+  /nanostores/0.7.1:
+    resolution: {integrity: sha512-7HenoVpZOjRudHCmAVWKloBTk3+Ozw49KuRWq/pNlEIIVS3x9dID+I5z3Rhjxl1muhHwv4dFhpT+0FebT9jvaA==}
     engines: {node: ^14.0.0 || ^16.0.0 || >=18.0.0}
     dev: false
 
