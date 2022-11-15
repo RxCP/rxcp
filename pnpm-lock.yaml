@@ -172,7 +172,7 @@ importers:
     specifiers:
       '@histoire/plugin-svelte': 0.11.7
       '@iconify-json/tabler': 1.1.46
-      '@sveltejs/vite-plugin-svelte': 1.1.1
+      '@sveltejs/vite-plugin-svelte': 1.2.0
       '@unocss/core': 0.46.5
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -188,7 +188,7 @@ importers:
     devDependencies:
       '@histoire/plugin-svelte': 0.11.7_cuz5n7vpatvii2vcmlrubbinu4
       '@iconify-json/tabler': 1.1.46
-      '@sveltejs/vite-plugin-svelte': 1.1.1_svelte@3.53.1+vite@3.2.3
+      '@sveltejs/vite-plugin-svelte': 1.2.0_svelte@3.53.1+vite@3.2.3
       '@unocss/core': 0.46.5
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -810,7 +810,7 @@ packages:
     peerDependencies:
       svelte: ^3.46.4
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.1.1_svelte@3.53.1+vite@3.2.3
+      '@sveltejs/vite-plugin-svelte': 1.2.0_svelte@3.53.1+vite@3.2.3
       postcss-load-config: 3.1.4
       svelte: 3.53.1
       svelte-preprocess: 4.10.7_6ttkz6cz5ryp4lh7iqdtu2kwd4
@@ -2135,8 +2135,8 @@ packages:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: false
 
-  /@sveltejs/vite-plugin-svelte/1.1.1_svelte@3.53.1+vite@3.2.3:
-    resolution: {integrity: sha512-NzIaGIzWh5hCSMUoxukYEGmxFCWgzaVglqHJLV5r0BA7hHZbHXu8DYR80i6QUX4xyoQ4PZ8ir7SUYsThbreMcg==}
+  /@sveltejs/vite-plugin-svelte/1.2.0_svelte@3.53.1+vite@3.2.3:
+    resolution: {integrity: sha512-DT2oUkWAloH1tO7X5cQ4uDxQofaIS76skyFMElKtoqT6HJao+D82LI5i+0jPaSSmO7ex3Pa6jGYMlWy9ZJ1cdQ==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5
@@ -2151,8 +2151,9 @@ packages:
       kleur: 4.1.5
       magic-string: 0.26.7
       svelte: 3.53.1
-      svelte-hmr: 0.15.0_svelte@3.53.1
+      svelte-hmr: 0.15.1_svelte@3.53.1
       vite: 3.2.3
+      vitefu: 0.2.1_vite@3.2.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -10081,8 +10082,8 @@ packages:
       - svelte
     dev: false
 
-  /svelte-hmr/0.15.0_svelte@3.53.1:
-    resolution: {integrity: sha512-Aw21SsyoohyVn4yiKXWPNCSW2DQNH/76kvUnE9kpt4h9hcg9tfyQc6xshx9hzgMfGF0kVx0EGD8oBMWSnATeOg==}
+  /svelte-hmr/0.15.1_svelte@3.53.1:
+    resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       svelte: '>=3.19.0'
