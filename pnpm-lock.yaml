@@ -34,7 +34,7 @@ importers:
       '@unocss/reset': 0.46.5
       '@unocss/transformer-variant-group': 0.46.5
       a11y-dialog: 7.5.2
-      astro: 1.6.7
+      astro: 1.6.8
       astro-spa: 1.3.9
       astro-uno: 0.2.1
       date-fns: 2.29.3
@@ -57,10 +57,10 @@ importers:
       '@astro-auth/client': 1.0.5_biqbaboplfbrettd7655fr4n2y
       '@astro-auth/core': 1.0.12
       '@astro-auth/providers': 1.0.6
-      '@astrojs/node': 3.0.0_astro@1.6.7
+      '@astrojs/node': 3.0.0_astro@1.6.8
       '@open-draft/until': 2.0.0
       a11y-dialog: 7.5.2
-      astro: 1.6.7
+      astro: 1.6.8
       astro-spa: 1.3.9
       date-fns: 2.29.3
       nanostores: 0.7.1
@@ -81,7 +81,7 @@ importers:
       '@unocss/preset-wind': 0.46.5
       '@unocss/reset': 0.46.5
       '@unocss/transformer-variant-group': 0.46.5
-      astro-uno: 0.2.1_astro@1.6.7+unocss@0.46.5
+      astro-uno: 0.2.1_astro@1.6.8+unocss@0.46.5
       eslint: 8.27.0
       eslint-plugin-svelte3: 4.0.0_ktwpzwc5ejqdbyb2mks6m4mhya
       js-sticky-table-headers: 1.0.0-alpha.8
@@ -720,8 +720,8 @@ packages:
     resolution: {integrity: sha512-URe9Nf3UKLWYthFAV4ubnJXohJoTQZnfFntPkriXstmCV8brTE0+/77ZxumcR0CK3/7OlwYAt1HIPhF4LQWLow==}
     dev: false
 
-  /@astrojs/compiler/0.29.13:
-    resolution: {integrity: sha512-C9+91vsWiJspj/VkVp6UtSIrJGuj/Aia1KCEDzg2Ge27uSDCOl1QlUQuAAnAbGpFBF71uaYOUZOPCbptQeGbdQ==}
+  /@astrojs/compiler/0.29.15:
+    resolution: {integrity: sha512-vicPD8oOPNkcFZvz71Uz/nJcadovurUQ3L0yMZNPb6Nn6T1nHhlSHt5nAKaurB2pYU9DrxOFWZS2/RdV+JsWmQ==}
 
   /@astrojs/compiler/0.29.5:
     resolution: {integrity: sha512-XpSJyBO6ha5mGqsD71ie83SOcv3p7zKq6qzngyeLKhccCXtf9Zn/4tGbi/Iq4YmkRBNCjLEkF0wZMYWY+eJYAA==}
@@ -786,13 +786,13 @@ packages:
       uvu: 0.5.6
       vfile-message: 3.1.2
 
-  /@astrojs/node/3.0.0_astro@1.6.7:
+  /@astrojs/node/3.0.0_astro@1.6.8:
     resolution: {integrity: sha512-07l0D0iq3Bdd4fw8LPf2/DveL3X0Mn/ZuhEvWh2W+hxsrDfot9XGmdzExjmY/C2DtYOUUJKf8mg1cA5ZXOif8Q==}
     peerDependencies:
       astro: ^1.6.4
     dependencies:
       '@astrojs/webapi': 1.1.1
-      astro: 1.6.7
+      astro: 1.6.8
       send: 0.18.0
     transitivePeerDependencies:
       - supports-color
@@ -3154,22 +3154,22 @@ packages:
     resolution: {integrity: sha512-VmXMUsKNHA1gjJYq/SO5EqRAmqifOhBOpOAaXnlH5skgTy0tq9fwANJhh1LJpaahPBGqXAaoIw6Gdq/SBRz9Ww==}
     dev: false
 
-  /astro-uno/0.2.1_astro@1.6.7+unocss@0.46.5:
+  /astro-uno/0.2.1_astro@1.6.8+unocss@0.46.5:
     resolution: {integrity: sha512-lkcMLt0eS18eFf7GGGcfHQco3HW6OugSf1/xItTyuFhIVv3ClGzZ0xBVCRPexh6gQwhOK1OYKCF3TOgVARui2A==}
     peerDependencies:
       astro: ^1.0.0-beta.42
       unocss: '*'
     dependencies:
-      astro: 1.6.7
+      astro: 1.6.8
       unocss: 0.46.5_vite@3.2.3
     dev: true
 
-  /astro/1.6.7:
-    resolution: {integrity: sha512-xx910blM5qfSMyesmVmuhXqKMIOa2WL/WTSfYv84pB9JocgtAfGKlmS1HZNqWd0h9YLreYbGRzXhbtv2Qfd8vw==}
+  /astro/1.6.8:
+    resolution: {integrity: sha512-+kOj8s2fguCFCim9he6fl9iugIHrmAl7BmfNXdTdC9zU30VYV162HF5eRJyMlY5hGuDn3GvAoaNSzCMnybVsFQ==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 0.29.13
+      '@astrojs/compiler': 0.29.15
       '@astrojs/language-server': 0.28.3
       '@astrojs/markdown-remark': 1.1.3
       '@astrojs/telemetry': 1.0.1
@@ -3227,7 +3227,7 @@ packages:
       unist-util-visit: 4.1.1
       vfile: 5.3.5
       vite: 3.2.3
-      vitefu: 0.1.0_vite@3.2.3
+      vitefu: 0.2.1_vite@3.2.3
       yargs-parser: 21.1.1
       zod: 3.19.1
     transitivePeerDependencies:
@@ -10879,15 +10879,14 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitefu/0.1.0_vite@3.2.3:
-    resolution: {integrity: sha512-5MQSHP9yr0HIve8q4XNb7QXfO1P4tzZDZP99qH0FM5ClcwYddeGXRDQ4TQYRUeXLjZ+vLecirHtGNpwFFUF7sw==}
+  /vitefu/0.2.1_vite@3.2.3:
+    resolution: {integrity: sha512-clkvXTAeUf+XQKm3bhWUhT4pye+3acm6YCTGaWhxxIvZZ/QjnA3JA8Zud+z/mO5y5XYvJJhevs5Sjkv/FI8nRw==}
     peerDependencies:
       vite: ^3.0.0
     peerDependenciesMeta:
       vite:
         optional: true
     dependencies:
-      import-meta-resolve: 2.1.0
       vite: 3.2.3
 
   /vscode-css-languageservice/6.1.1:
