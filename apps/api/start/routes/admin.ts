@@ -16,6 +16,7 @@ Route.group(() => {
     Route.post('test-email-connection', 'MailController.testConnection')
     // Users
     Route.get('users', 'UsersController.index')
+    Route.get('users/total', 'UsersController.total')
     Route.get('users/archived', 'UsersController.archived')
     Route.get('users/:id', 'UsersController.show')
     Route.post('users', 'UsersController.create')

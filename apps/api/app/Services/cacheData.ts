@@ -3,7 +3,7 @@ import Redis from '@ioc:Adonis/Addons/Redis'
 
 function cacheData(key: string, duration: number = 86400) {
   return (response: ResponseContract) => {
-    return async (cb: Function) => {
+    return async (cb: Function, toSerialize = true) => {
       let data = {}
       const usersCache = await Redis.get(key)
       const usersCacheObj = JSON.parse(usersCache || '[]')
@@ -16,7 +16,12 @@ function cacheData(key: string, duration: number = 86400) {
       ) {
         const results = await cb()
 
-        data = results?.serialize()
+        if (toSerialize) {
+          data = results?.serialize()
+        } else {
+          data = results
+        }
+
         await Redis.set(key, JSON.stringify(data), 'EX', duration)
       } else {
         data = JSON.parse(usersCache)
