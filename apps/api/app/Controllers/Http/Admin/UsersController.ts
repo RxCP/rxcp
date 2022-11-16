@@ -44,6 +44,24 @@ export default class UsersController {
   }
 
   /**
+   * Total users
+   */
+   public async total({ params, response, bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::users.total')
+
+    const total = await cacheData(`${this.cachePrefix}:total:${params?.id}`)(response)(async () => {
+      const fetchTotal = await User.query().count('*', 'total').first()
+      return fetchTotal?.$extras?.total
+    }, false)
+
+    return {
+      data: {
+        total
+      },
+    }
+  }
+
+  /**
    * Create user
    */
   public async create({ request, response, bouncer }: HttpContextContract) {
