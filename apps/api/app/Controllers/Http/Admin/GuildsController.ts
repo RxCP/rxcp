@@ -23,4 +23,19 @@ export default class GuildsController {
       data: await Guild.find(params?.id),
     }
   }
+
+  /**
+   * Total guilds
+   */
+  public async total({ bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::guilds.total')
+
+    const fetchTotal = await Guild.query().count('*', 'total').first()
+
+    return {
+      data: {
+        total: fetchTotal?.$extras?.total,
+      },
+    }
+  }
 }

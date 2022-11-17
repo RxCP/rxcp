@@ -33,6 +33,7 @@ Route.group(() => {
     Route.get('permissions', 'PermissionsController.index')
     // Accounts
     Route.get('accounts', 'AccountsController.index')
+    Route.get('accounts/total', 'AccountsController.total')
     Route.get('accounts/:id', 'AccountsController.show')
     Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
     Route.post('accounts', 'AccountsController.create')
@@ -40,10 +41,12 @@ Route.group(() => {
     Route.delete('accounts/:id', 'AccountsController.destroy')
     // Characters
     Route.get('characters', 'CharactersController.index')
+    Route.get('characters/total', 'CharactersController.total')
     Route.get('characters/:id', 'CharactersController.show')
     Route.get('characters/:id/account', 'CharactersController.getAccount')
     // Guilds
     Route.get('guilds', 'GuildsController.index')
+    Route.get('guilds/total', 'GuildsController.total')
     Route.get('guilds/:id', 'GuildsController.show')
     // Shop
     Route.get('products', 'Shop/ProductsController.index')

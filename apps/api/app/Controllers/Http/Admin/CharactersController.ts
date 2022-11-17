@@ -40,4 +40,19 @@ export default class CharactersController {
       data: account,
     }
   }
+
+  /**
+   * Total characters
+   */
+  public async total({ bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::characters.total')
+
+    const fetchTotal = await Character.query().count('*', 'total').first()
+
+    return {
+      data: {
+        total: fetchTotal?.$extras?.total,
+      },
+    }
+  }
 }
