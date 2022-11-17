@@ -1,9 +1,10 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, belongsTo, BelongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import { Filterable } from '@ioc:Adonis/Addons/LucidFilter'
 import { SoftDeletes } from '@ioc:Adonis/Addons/LucidSoftDeletes'
 import { compose } from '@ioc:Adonis/Core/Helpers'
 import ProductFilter from '../Filters/ProductFilter'
+import User from '../User'
 
 export default class Product extends compose(BaseModel, Filterable, SoftDeletes) {
   public static $filter = () => ProductFilter
@@ -25,6 +26,15 @@ export default class Product extends compose(BaseModel, Filterable, SoftDeletes)
 
   @column()
   public status: 'draft' | 'published'
+
+  @column({ serializeAs: null })
+  public user_id: number
+
+  @belongsTo(() => User, {
+    foreignKey: 'user_id',
+    localKey: 'id'
+  })
+  public user: BelongsTo<typeof User>
 
   @column.dateTime()
   public deletedAt: DateTime | null

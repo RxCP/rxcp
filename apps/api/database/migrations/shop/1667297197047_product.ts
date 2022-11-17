@@ -12,6 +12,7 @@ export default class extends BaseSchema {
       table.string('slug', 50).notNullable().unique()
       table.string('status', 10).notNullable()
       table.integer('price').notNullable()
+      table.integer('user_id').unsigned().references('users.id').onDelete('cascade')
       table.timestamp('deleted_at', { useTz: true }).nullable()
 
       /**

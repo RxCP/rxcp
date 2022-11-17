@@ -25,7 +25,7 @@ export default class ProductsController {
     const cacheKey = qs !== '{}' ? `${this.cachePrefix}:${qs}` : this.cachePrefix
 
     return await cacheData(cacheKey)(response)(async () => {
-      return await Product.query().filter(requestQs).paginate(page, limit)
+      return await Product.query().preload('user').filter(requestQs).paginate(page, limit)
     })
   }
 
@@ -47,9 +47,11 @@ export default class ProductsController {
   /**
    * Create Product
    */
-  public async create({ request, response, bouncer }: HttpContextContract) {
+  public async create({ auth, request, response, bouncer }: HttpContextContract) {
     await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.create')
     const payload = request.only(['title', 'description', 'slug', 'status', 'price'])
+
+    const userId = auth.use('api').user?.id
 
     // Validation
     const createProductSchema = schema.create({
@@ -69,6 +71,7 @@ export default class ProductsController {
         slug: payload.slug,
         status: payload.status,
         price: payload.price,
+        user_id: userId,
       })
 
       await this.purgeCache()
