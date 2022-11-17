@@ -41,6 +41,7 @@ Route.group(() => {
     Route.delete('accounts/:id', 'AccountsController.destroy')
     // Characters
     Route.get('characters', 'CharactersController.index')
+    Route.get('characters/total', 'CharactersController.total')
     Route.get('characters/:id', 'CharactersController.show')
     Route.get('characters/:id/account', 'CharactersController.getAccount')
     // Guilds
