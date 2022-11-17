@@ -46,6 +46,7 @@ Route.group(() => {
     Route.get('characters/:id/account', 'CharactersController.getAccount')
     // Guilds
     Route.get('guilds', 'GuildsController.index')
+    Route.get('guilds/total', 'GuildsController.total')
     Route.get('guilds/:id', 'GuildsController.show')
   }).namespace('App/Controllers/Http/Admin')
 })
