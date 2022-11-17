@@ -33,6 +33,7 @@ Route.group(() => {
     Route.get('permissions', 'PermissionsController.index')
     // Accounts
     Route.get('accounts', 'AccountsController.index')
+    Route.get('accounts/total', 'AccountsController.total')
     Route.get('accounts/:id', 'AccountsController.show')
     Route.get('accounts/:id/characters', 'AccountsController.getCharacters')
     Route.post('accounts', 'AccountsController.create')

@@ -36,6 +36,21 @@ export default class AccountsController {
   }
 
   /**
+   * Total accounts
+   */
+  public async total({ bouncer }: HttpContextContract) {
+    await bouncer.with('RolePolicy').authorize('permission', 'api::accounts.total')
+
+    const fetchTotal = await Account.query().count('*', 'total').first()
+
+    return {
+      data: {
+        total: fetchTotal?.$extras?.total,
+      },
+    }
+  }
+
+  /**
    * Create account
    */
   public async create({ request, response, bouncer }: HttpContextContract) {
