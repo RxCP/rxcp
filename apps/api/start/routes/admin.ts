@@ -51,6 +51,7 @@ Route.group(() => {
     Route.get('guilds/total', 'GuildsController.total')
     Route.get('guilds/:id', 'GuildsController.show')
     // Shop
+    // Products
     Route.get('products', 'Shop/ProductsController.index')
     Route.get('products/archived', 'Shop/ProductsController.archived')
     Route.get('products/:id', 'Shop/ProductsController.show')
@@ -59,6 +60,8 @@ Route.group(() => {
     Route.delete('products/:id', 'Shop/ProductsController.archive')
     Route.delete('cache/products', 'Shop/ProductsController.clearAllCache')
     Route.delete('cache/products/:id', 'Shop/ProductsController.clearOneCache')
+    // Orders
+    Route.get('orders', 'Shop/OrdersController.index')
   }).namespace('App/Controllers/Http/Admin')
 })
   .prefix('/admin/api')

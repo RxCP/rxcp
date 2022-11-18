@@ -7,14 +7,21 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
-      table.json('customer')
-      table.json('cart')
-      table.json('payments')
-      table.string('payment_status', 10).notNullable()
+      table.string('email', 100).notNullable()
+      table.string('currency_code', 10).notNullable()
+      table.string('payment_status').notNullable()
       table.integer('total').notNullable()
       table.integer('subtotal').notNullable()
       table.integer('paid_total').notNullable()
+      table.integer('coupon').nullable()
       table.integer('discount_total').nullable()
+      table.integer('tax_rate').nullable()
+      table.integer('tax_total').nullable()
+      table.integer('refunded_total').nullable()
+      table.integer('refundable_amount').nullable()
+      table.string('status').notNullable()
+      table.integer('cart_id').notNullable()
+      table.integer('customer_id').unsigned().references('users.id').onDelete('cascade')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

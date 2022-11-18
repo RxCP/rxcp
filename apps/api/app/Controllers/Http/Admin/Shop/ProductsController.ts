@@ -17,7 +17,7 @@ export default class ProductsController {
    * Product list
    */
   public async index({ request, response, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.index')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.index')
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
     const requestQs = request.qs()
@@ -33,7 +33,7 @@ export default class ProductsController {
    * Show product details
    */
   public async show({ params, response, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.show')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.show')
 
     const data = await cacheData(`${this.cachePrefix}:${params?.id}`)(response)(async () => {
       return await Product.find(params?.id)
@@ -48,7 +48,7 @@ export default class ProductsController {
    * Create Product
    */
   public async create({ auth, request, response, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.create')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.create')
     const payload = request.only(['title', 'description', 'slug', 'status', 'price'])
 
     const userId = auth.use('api').user?.id
@@ -92,7 +92,7 @@ export default class ProductsController {
    * Archive product
    */
   public async archive({ params, response, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.archive')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.archive')
 
     try {
       const product = await Product.findOrFail(params?.id)
@@ -113,7 +113,7 @@ export default class ProductsController {
    * Archived products
    */
   public async archived({ request, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.archived')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.archived')
 
     const page = request.input('page', 1)
     const limit = request.input('limit', 10)
@@ -125,7 +125,7 @@ export default class ProductsController {
    * Restore product from archived
    */
   public async restore({ request, response, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.restore')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.restore')
     const payload = request.only(['product_id'])
 
     try {
@@ -147,7 +147,7 @@ export default class ProductsController {
    * Clear one product cache
    */
   public async clearOneCache({ response, params, bouncer }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.clearCache')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.clearCache')
     await this.purgeCache(params?.id)
 
     return response.noContent()
@@ -157,7 +157,7 @@ export default class ProductsController {
    * Clear products cache
    */
   public async clearAllCache({ bouncer, response }: HttpContextContract) {
-    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::product.clearCache')
+    await bouncer.with('RolePolicy').authorize('permission', 'api::shop::products.clearCache')
     await this.purgeCache()
 
     return response.noContent()
