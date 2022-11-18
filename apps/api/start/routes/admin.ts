@@ -12,6 +12,8 @@ Route.group(() => {
   })
 
   Route.group(() => {
+    // Uploads
+    Route.post('uploads', 'UploadsController.uploadOne')
     // Email
     Route.post('test-email-connection', 'MailController.testConnection')
     // Users
