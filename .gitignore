@@ -13,3 +13,4 @@ dist-ssr
 server/dist
 public/dist
 storybook-static/
+uploads
