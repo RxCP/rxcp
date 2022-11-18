@@ -2,7 +2,6 @@ import Drive from '@ioc:Adonis/Core/Drive'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class UploadsController {
-
   /**
    * Upload single binary file
    */
@@ -36,13 +35,12 @@ export default class UploadsController {
     }
 
     await file.moveToDisk(category, { visibility: 'public' })
-    const url = await Drive.getUrl(file?.fileName || '')
+    const url = await Drive.getUrl(`${category}/${file?.fileName}` || '')
 
     return {
       data: {
         url
-      }
+      },
     }
   }
-
 }
