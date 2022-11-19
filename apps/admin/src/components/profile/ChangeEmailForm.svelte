@@ -27,7 +27,7 @@
       <FormInput id="new_email" name="new_email" value="" />
     </div>
     <div class="space-y-2">
-      <FormLabel htmlFor="password" text="Password" />
+      <FormLabel htmlFor="password" text="Current Password" />
       <FormInput id="password" name="password" value="" />
     </div>
   </div>
