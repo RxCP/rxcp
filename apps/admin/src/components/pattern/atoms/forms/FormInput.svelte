@@ -8,6 +8,7 @@
   export let value: string | number = '';
   export let name: string = '';
   export let inputClass: string = '';
+  export let required: boolean = false;
 
   let className = $$props.class;
   // all props are for input except for class. This will be on the parent
@@ -43,7 +44,7 @@
     {placeholder}
     {name}
     {...$$restProps}
-    required
+    required={required}
     on:input={handleInput}
     on:change
   />
