@@ -24,11 +24,11 @@
   <div class="grid grid-cols-1 gap-4 mb-8">
     <div class="space-y-2">
       <FormLabel htmlFor="new_email" text="New Email" />
-      <FormInput id="new_email" name="new_email" value="" />
+      <FormInput id="new_email" type="email" name="new_email" value="" required/>
     </div>
     <div class="space-y-2">
       <FormLabel htmlFor="password" text="Current Password" />
-      <FormInput id="password" name="password" value="" />
+      <FormInput id="password" name="password" value="" required/>
     </div>
   </div>
   <div class="space-y-2 flex place-items-end">

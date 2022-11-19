@@ -44,11 +44,11 @@
   <div class="grid grid-cols-1 gap-4 mb-8">
     <div class="space-y-2">
       <FormLabel htmlFor="first_name" text="First name" />
-      <FormInput id="first_name" name="first_name" value={user.first_name} />
+      <FormInput id="first_name" name="first_name" value={user.first_name} required/>
     </div>
     <div class="space-y-2">
       <FormLabel htmlFor="last_name" text="Last name" />
-      <FormInput id="last_name" name="last_name" value={user.last_name} />
+      <FormInput id="last_name" name="last_name" value={user.last_name} required/>
     </div>
     <div class="space-y-2">
       <FormLabel htmlFor="email" text="Email address" />
