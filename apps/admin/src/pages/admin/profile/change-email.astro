@@ -1,10 +1,22 @@
 ---
+import { user as authUser } from '@store/auth';
 import MainSidebar from '@pattern/organisms/main/MainSidebar.svelte';
 import ProfileSidebarMenu from '@components/profile/ProfileSidebarMenu.svelte';
 import Layout from '@layouts/Dashboard.astro';
+import ChangeEmailForm from '@components/profile/ChangeEmailForm.svelte';
+
+const user = authUser.get();
+
+if (!user) {
+  return Astro.redirect('/login');
+}
 ---
 
 <Layout title="Change Email Address">
+  <div class="max-w-xl mx-auto">
+    {user && <ChangeEmailForm client:load />}
+  </div>
+
   <MainSidebar slot="sidebar">
     <ProfileSidebarMenu />
   </MainSidebar>

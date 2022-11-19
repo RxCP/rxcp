@@ -56,6 +56,6 @@
     </div>
   </div>
   <div class="space-y-2 flex place-items-end">
-    <Button type="submit" isLoading={isSubmitting}>Save</Button>
+    <Button type="submit" isLoading={isSubmitting}>Update</Button>
   </div>
 </form>
