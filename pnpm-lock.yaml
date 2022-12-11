@@ -5,11 +5,11 @@ importers:
   .:
     specifiers:
       eslint: 8.28.0
-      prettier: 2.7.1
+      prettier: 2.8.1
       turbo: latest
     devDependencies:
       eslint: 8.28.0
-      prettier: 2.7.1
+      prettier: 2.8.1
       turbo: 1.6.3
 
   apps/admin:
@@ -43,7 +43,7 @@ importers:
       js-sticky-table-headers: 1.0.0-alpha.8
       lodash-es: 4.17.21
       nanostores: 0.7.1
-      prettier: 2.7.1
+      prettier: 2.8.1
       prettier-plugin-astro: 0.7.0
       qs: 6.11.0
       rxcp-ui: '*'
@@ -86,7 +86,7 @@ importers:
       eslint-plugin-svelte3: 4.0.0_xgu65rlhscpnxffotiaicv6m5i
       js-sticky-table-headers: 1.0.0-alpha.8
       lodash-es: 4.17.21
-      prettier: 2.7.1
+      prettier: 2.8.1
       prettier-plugin-astro: 0.7.0
       qs: 6.11.0
       rxcp-ui: link:../../packages/rxcp-ui
@@ -162,7 +162,7 @@ importers:
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-adonis: 2.1.1_zksrc6ykdxhogxjbhb5axiabwi
-      eslint-plugin-prettier: 4.2.1_pgxuib4rd7wiymfktharf5ydt4
+      eslint-plugin-prettier: 4.2.1_qq4qrlmv7psaeddaptzfbe7nlq
       pino-pretty: 9.1.1
       typescript: 4.8.4
       youch: 3.2.2
@@ -732,7 +732,7 @@ packages:
     dependencies:
       '@vscode/emmet-helper': 2.8.4
       events: 3.3.0
-      prettier: 2.7.1
+      prettier: 2.8.1
       prettier-plugin-astro: 0.7.0
       source-map: 0.7.4
       vscode-css-languageservice: 6.1.1
@@ -4977,7 +4977,7 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_pgxuib4rd7wiymfktharf5ydt4:
+  /eslint-plugin-prettier/4.2.1_qq4qrlmv7psaeddaptzfbe7nlq:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -4990,7 +4990,7 @@ packages:
     dependencies:
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0_eslint@8.28.0
-      prettier: 2.7.1
+      prettier: 2.8.1
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -8929,12 +8929,12 @@ packages:
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
       '@astrojs/compiler': 0.29.5
-      prettier: 2.7.1
+      prettier: 2.8.1
       sass-formatter: 0.7.5
       synckit: 0.8.4
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier/2.8.1:
+    resolution: {integrity: sha512-lqGoSJBQNJidqCHE80vqZJHWHRFoNYsSpP9AjFhlhi9ODCJA541svILes/+/1GM3VaL/abZi7cpFzOpdR9UPKg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
 
