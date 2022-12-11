@@ -1,0 +1,102 @@
+@forward 'element-plus/theme-chalk/src/dark/var.scss' with (
+  $bg-color: (
+    'page': #0f172a,
+    '': #0f172a,
+    'overlay': #1e293b
+  ),
+  $fill-color: (
+    '': #94a3b8,
+    'light': #64748b,
+    'lighter': #334155,
+    'extra-light': #334155,
+    'dark': #141f38,
+    'darker': #141f38,
+    'blank': #0f172a
+  ),
+  $colors: (
+    'primary': (
+      'base': #3b82f6
+    )
+  ),
+  $border-color: (
+    '': #334155,
+    'light': #475569,
+    'lighter': #475569,
+    'extra-light': #cbd5e1,
+    'dark': #334155,
+    'darker': #1e293b
+  )
+);
+
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
+
+html {
+  background-color: var(--el-bg-color);
+}
+
+html.dark {
+  --color-primary-slate: #0f172a;
+
+  --el-menu-bg-color: #1e293b;
+  --el-mask-color: rgb(15, 23, 42, 0.8);
+
+  // Button
+  .el-button {
+    --el-button-bg-color: var(--color-primary-slate);
+    --el-button-hover-bg-color: #1e293b;
+    --el-button-hover-text-color: #fff;
+    --el-button-border-color: var(--color-primary-slate);
+  }
+
+  .el-button--primary {
+    --el-button-bg-color: #2563eb;
+    --el-button-hover-bg-color: #3b82f6;
+    --el-button-border-color: #2563eb;
+  }
+
+  // Table
+  .el-table {
+    --el-table-header-bg-color: #111827;
+    --el-table-tr-bg-color: #1e293b;
+    --el-table-border-color: #334155;
+    --el-table-row-hover-bg-color: #334155;
+    --el-table-current-row-bg-color: #334155;
+    --el-bg-color: #111827;
+  }
+
+  // Pagination
+  .el-pagination {
+    --el-pagination-button-bg-color: #334155;
+    --el-pagination-hover-color: #fff;
+    --el-text-color-placeholder: #64748b;
+    --el-disabled-bg-color: #334155;
+  }
+
+
+  // Menu
+  &.el-menu {
+    --el-menu-bg-color: #121a2d;
+
+    @media screen and (min-width: 1024px) and (max-width: 1280px) and (prefers-color-scheme: dark) {
+      --el-menu-bg-color: #0f172a;
+    }
+  }
+
+  .el-popper.is-light {
+    @media screen and (min-width: 1024px) and (max-width: 1280px) and (prefers-color-scheme: dark) {
+      --el-border-color-light: #64748b;
+    }
+  }
+
+  // Form
+  // dropdown
+  .el-select-dropdown__item.selected {
+      --el-color-primary: #fff;
+  }
+
+  // Popper
+  .el-dropdown__popper {
+    --el-dropdown-menuItem-hover-fill: #334155;
+    --el-dropdown-menuItem-hover-color: #fff;
+  }
+}
