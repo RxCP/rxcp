@@ -102,7 +102,7 @@ importers:
       '@adonisjs/bouncer': 2.3.0
       '@adonisjs/core': 5.8.9
       '@adonisjs/limiter': 1.0.1
-      '@adonisjs/lucid': 18.2.0
+      '@adonisjs/lucid': 18.3.0
       '@adonisjs/mail': 8.1.2
       '@adonisjs/redis': 7.3.2
       '@adonisjs/repl': 3.1.11
@@ -132,11 +132,11 @@ importers:
       youch: 3.2.2
       youch-terminal: 2.1.5
     dependencies:
-      '@adonisjs/auth': 8.2.3_phuqysu5y235nn3jxetkttun5e
+      '@adonisjs/auth': 8.2.3_64lurysts7pdvehkxejdexxst4
       '@adonisjs/bouncer': 2.3.0_v3v42jmjiye235ut2g2qvvmgfu
       '@adonisjs/core': 5.8.9
-      '@adonisjs/limiter': 1.0.1_jbihwlk4o2gctr3vy4kdmaooua
-      '@adonisjs/lucid': 18.2.0_fvcedqvlnbedyxzzyog7a26rum
+      '@adonisjs/limiter': 1.0.1_lnk3hencfxg4kc6au6ggkfj36e
+      '@adonisjs/lucid': 18.3.0_fvcedqvlnbedyxzzyog7a26rum
       '@adonisjs/mail': 8.1.2_t2ikmicruuldwtmaelela4coli
       '@adonisjs/redis': 7.3.2_@adonisjs+core@5.8.9
       '@adonisjs/repl': 3.1.11_@adonisjs+core@5.8.9
@@ -306,7 +306,7 @@ packages:
       - supports-color
     dev: true
 
-  /@adonisjs/auth/8.2.3_phuqysu5y235nn3jxetkttun5e:
+  /@adonisjs/auth/8.2.3_64lurysts7pdvehkxejdexxst4:
     resolution: {integrity: sha512-js9e8AHEsNC/8MGvho6MgL+uXr8SlhTg9MJJDWQBBiqsKkT7+H7NMP/pLbuSzYaaf40t2u/OXfq6wXuIC5ZYvw==}
     peerDependencies:
       '@adonisjs/core': ^5.7.1
@@ -325,7 +325,7 @@ packages:
         optional: true
     dependencies:
       '@adonisjs/core': 5.8.9
-      '@adonisjs/lucid': 18.2.0_fvcedqvlnbedyxzzyog7a26rum
+      '@adonisjs/lucid': 18.3.0_fvcedqvlnbedyxzzyog7a26rum
       '@adonisjs/redis': 7.3.2_@adonisjs+core@5.8.9
       '@poppinss/hooks': 5.0.3_dcp26hjfxbju2etdd3namxtgxu
       '@poppinss/utils': 5.0.0
@@ -366,7 +366,7 @@ packages:
       '@adonisjs/view':
         optional: true
     dependencies:
-      '@adonisjs/auth': 8.2.3_phuqysu5y235nn3jxetkttun5e
+      '@adonisjs/auth': 8.2.3_64lurysts7pdvehkxejdexxst4
       '@adonisjs/core': 5.8.9
       '@adonisjs/view': 6.2.0_@adonisjs+core@5.8.9
       '@poppinss/utils': 4.0.4
@@ -487,7 +487,7 @@ packages:
     resolution: {integrity: sha512-ik1C7f0Hbqenw6S1Ty06B4pznGfpUH5bL2fiCYgwq+jKPw8CKdsTQKvYudS6Tj68Nr6Mpqow4RNbvFV/OC0mZg==}
     dev: true
 
-  /@adonisjs/limiter/1.0.1_jbihwlk4o2gctr3vy4kdmaooua:
+  /@adonisjs/limiter/1.0.1_lnk3hencfxg4kc6au6ggkfj36e:
     resolution: {integrity: sha512-xVhhYbZul3O7vRZtyjttQNw/uEdLbz/JLda+PyhJ0yH5xx0wYSG8rk2LYnDGmpBTNTGvM8eQX+LL4hzau7iC4w==}
     peerDependencies:
       '@adonisjs/core': ^5.8.0
@@ -500,7 +500,7 @@ packages:
         optional: true
     dependencies:
       '@adonisjs/core': 5.8.9
-      '@adonisjs/lucid': 18.2.0_fvcedqvlnbedyxzzyog7a26rum
+      '@adonisjs/lucid': 18.3.0_fvcedqvlnbedyxzzyog7a26rum
       '@adonisjs/redis': 7.3.2_@adonisjs+core@5.8.9
       '@poppinss/utils': 5.0.0
       rate-limiter-flexible: 2.3.11
@@ -514,13 +514,13 @@ packages:
       abstract-logging: 2.0.1
       pino: 6.14.0
 
-  /@adonisjs/lucid/18.2.0_fvcedqvlnbedyxzzyog7a26rum:
-    resolution: {integrity: sha512-lF6+euwM5sOvpaUy+de+lfMKWjzpRFCvTbko+36bOz9IbUilQtnO3pzPNf7uTj5XUalFTICpVAzw8b8beQtb3g==}
+  /@adonisjs/lucid/18.3.0_fvcedqvlnbedyxzzyog7a26rum:
+    resolution: {integrity: sha512-EgLgwP/VkTdOjA4MvnXjZmXGJl1qQVpGe4D/bCZqyO4859LZ/kHZ5a4VXe5+b2Nk4QDWF8uYq0MbSMDGskZr1Q==}
     peerDependencies:
       '@adonisjs/core': ^5.1.0
     dependencies:
       '@adonisjs/core': 5.8.9
-      '@faker-js/faker': 7.5.0
+      '@faker-js/faker': 7.6.0
       '@poppinss/hooks': 5.0.3_dcp26hjfxbju2etdd3namxtgxu
       '@poppinss/utils': 5.0.0
       fast-deep-equal: 3.1.3
@@ -528,7 +528,7 @@ packages:
       knex: 2.3.0_mysql@2.18.1
       knex-dynamic-connection: 3.0.0_knex@2.3.0
       luxon: 3.1.0
-      macroable: 7.0.1
+      macroable: 7.0.2
       pretty-hrtime: 1.0.3
       qs: 6.11.0
       slash: 3.0.0
@@ -1766,8 +1766,8 @@ packages:
       '@ethersproject/strings': 5.7.0
     dev: false
 
-  /@faker-js/faker/7.5.0:
-    resolution: {integrity: sha512-8wNUCCUHvfvI0gQpDUho/3gPzABffnCn5um65F8dzQ86zz6dlt4+nmAA7PQUc8L+eH+9RgR/qzy5N/8kN0Ozdw==}
+  /@faker-js/faker/7.6.0:
+    resolution: {integrity: sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==}
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     dev: false
 
@@ -5737,7 +5737,7 @@ packages:
       edge-lexer: 4.0.10
       edge-parser: 8.2.1
       js-stringify: 1.0.2
-      macroable: 7.0.1
+      macroable: 7.0.2
       stringify-attributes: 2.0.0
     dev: false
 
@@ -8880,10 +8880,6 @@ packages:
   /luxon/3.1.0:
     resolution: {integrity: sha512-7w6hmKC0/aoWnEsmPCu5Br54BmbmUp5GfcqBxQngRcXJ+q5fdfjEzn7dxmJh2YdDhgW8PccYtlWKSv4tQkrTQg==}
     engines: {node: '>=12'}
-
-  /macroable/7.0.1:
-    resolution: {integrity: sha512-8bbZLq2JoGI7FdvmDIxed41opR2cqgUUrRN4fVEsajARzfHkZDAzbCg0RW+jIY93YhWuBsMOeLcIyYz5WU4HNQ==}
-    dev: false
 
   /macroable/7.0.2:
     resolution: {integrity: sha512-QS9p+Q20YBxpE0dJBnF6CPURP7p1GUsxnhTxTWH5nG3A1F5w8Rg3T4Xyh5UlrFSbHp88oOciVP/0agsNLhkHdQ==}
