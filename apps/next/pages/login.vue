@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { head } from 'ramda';
-import { reactive } from 'vue';
+import { head } from 'ramda'
+import { reactive } from 'vue'
 import {
   ElButton,
   ElForm,
@@ -8,22 +8,22 @@ import {
   ElFormItem,
   ElLink,
   ElMessage
-} from 'element-plus';
-import type { FormInstance, FormRules } from 'element-plus';
-import { getUser, login } from '@/api/auth.api';
+} from 'element-plus'
+import type { FormInstance, FormRules } from 'element-plus'
+import { getUser, login } from '@/api/auth.api'
 
 definePageMeta({
   layout: 'centered-form',
-  middleware: ['guest'],
-});
+  middleware: ['guest']
+})
 
-const { setAccessToken, setAuthUser } = useAuthStore();
-const router = useRouter();
-const ruleFormRef = ref<FormInstance>();
+const { setAccessToken, setAuthUser } = useAuthStore()
+const router = useRouter()
+const ruleFormRef = ref<FormInstance>()
 const form = reactive({
   email: '',
   password: ''
-});
+})
 
 const rules = reactive<FormRules>({
   email: [
@@ -38,19 +38,19 @@ const rules = reactive<FormRules>({
   password: [
     { required: true, message: 'This field is required', trigger: 'blur' }
   ]
-});
+})
 
-let isSubmitting = ref<Boolean>(false);
+let isSubmitting = ref<Boolean>(false)
 
 async function submitForm(formEl: FormInstance | undefined) {
-  if (!formEl || isSubmitting.value) return;
+  if (!formEl || isSubmitting.value) return
 
-  isSubmitting.value = true;
+  isSubmitting.value = true
 
   await formEl.validate(async (valid, fields) => {
     if (!valid) {
-      isSubmitting.value = false;
-      return;
+      isSubmitting.value = false
+      return
     }
 
     const [data, error, status] = await login
@@ -58,31 +58,31 @@ async function submitForm(formEl: FormInstance | undefined) {
         email: form.email,
         password: form.password
       })
-      .send();
+      .send()
 
     if (status !== 200) {
-      ElMessage.error(head(error?.errors || ['Server error']));
-      isSubmitting.value = false;
-      return;
+      ElMessage.error(head(error?.errors || ['Server error']))
+      isSubmitting.value = false
+      return
     }
 
     /* SUCESS */
     // save token to store
-    setAccessToken(data?.token);
+    setAccessToken(data?.token)
 
     // get user authenticated details
-    const [authData, _, authStatus] = await getUser.send();
+    const [authData, _, authStatus] = await getUser.send()
 
     // then save to store
     if (authStatus === 200) {
-      setAuthUser(authData?.data);
-      router.push({ path: '/admin' });
+      setAuthUser(authData?.data)
+      router.push({ path: '/admin' })
     } else {
-      ElMessage.error('Invalid user');
+      ElMessage.error('Invalid user')
     }
 
-    isSubmitting.value = false;
-  });
+    isSubmitting.value = false
+  })
 }
 </script>
 

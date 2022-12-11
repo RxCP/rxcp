@@ -1,16 +1,16 @@
 <script setup>
-import { ID_INJECTION_KEY } from 'element-plus';
+import { ID_INJECTION_KEY } from 'element-plus'
 
-const isLoading = ref(true);
+const isLoading = ref(true)
 
 provide(ID_INJECTION_KEY, {
   prefix: 100,
   current: 0
-});
+})
 
 onMounted(() => {
-  isLoading.value = false;
-});
+  isLoading.value = false
+})
 </script>
 
 <template>

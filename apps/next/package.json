@@ -28,6 +28,7 @@
     "sass-loader": "^12.6.0"
   },
   "dependencies": {
+    "@better-typed/hyper-fetch": "^1.5.1",
     "@hyper-fetch/core": "^1.7.1",
     "@pinia/nuxt": "^0.4.4",
     "@vueuse/nuxt": "^9.5.0",

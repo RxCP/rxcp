@@ -7,16 +7,16 @@ import {
   ElAvatar,
   ElButton,
   ElTooltip
-} from 'element-plus';
-import { useDark, useToggle } from '@vueuse/core';
+} from 'element-plus'
+import { useDark, useToggle } from '@vueuse/core'
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
 const firstName = computed(() => {
-  const { authUser } = useAuthStore();
-  return authUser?.first_name;
-});
+  const { authUser } = useAuthStore()
+  return authUser?.first_name
+})
 
 const pageTitle = computed(() => {
   const { pageTitle } = usePageStore()
@@ -24,7 +24,7 @@ const pageTitle = computed(() => {
 })
 
 async function handleLogOut() {
-  await useLogOut();
+  await useLogOut()
 }
 </script>
 
@@ -36,30 +36,18 @@ async function handleLogOut() {
     <!-- <h2 class="dark:text-gray-200 text-lg font-bold" v-text="pageTitle"></h2> -->
     <ul class="flex space-x-3 list-none p-0">
       <li>
-        <el-tooltip
-          effect="dark"
-          content="Login server"
-          placement="top-start"
-        >
-        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+        <el-tooltip effect="dark" content="Login server" placement="top-start">
+          <div class="w-3 h-3 rounded-full bg-green-500"></div>
         </el-tooltip>
       </li>
       <li>
-        <el-tooltip
-          effect="dark"
-          content="Char server"
-          placement="top-start"
-        >
-        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+        <el-tooltip effect="dark" content="Char server" placement="top-start">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
         </el-tooltip>
       </li>
       <li>
-        <el-tooltip
-          effect="dark"
-          content="Map server"
-          placement="top-start"
-        >
-        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+        <el-tooltip effect="dark" content="Map server" placement="top-start">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
         </el-tooltip>
       </li>
     </ul>

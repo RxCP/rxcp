@@ -1,7 +1,7 @@
 <script>
 definePageMeta({
   middleware: ['auth']
-});
+})
 
 const { setPageTitle } = usePageStore()
 

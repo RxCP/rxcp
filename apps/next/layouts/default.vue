@@ -7,15 +7,14 @@ import {
   ElButton,
   ElDivider,
   ElScrollbar
-} from 'element-plus';
-import { ref } from 'vue';
-import { useLogOut } from '~~/composables/useLogOut';
+} from 'element-plus'
+import { ref } from 'vue'
+import { useLogOut } from '~~/composables/useLogOut'
 
-
-const router = useRouter();
-const isSidebarCollapse = ref(false);
-const isLoading = ref(true);
-const isMobileMenuShow = ref(false);
+const router = useRouter()
+const isSidebarCollapse = ref(false)
+const isLoading = ref(true)
+const isMobileMenuShow = ref(false)
 const menu = ref({
   ragnarok: [
     {
@@ -74,57 +73,57 @@ const menu = ref({
       url: '/admin/plugin/tickets',
       text: 'Tickets',
       iconClass: 'i-tabler-ticket'
-    },
+    }
   ]
-});
-const $primaryMenu = ref();
+})
+const $primaryMenu = ref()
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - RXCP` : 'RXCP';
+    return titleChunk ? `${titleChunk} - RXCP` : 'RXCP'
   }
 })
 
 onMounted(() => {
   nextTick(() => {
-    window.addEventListener('resize', onResize);
-    collapseSidebar();
-  });
+    window.addEventListener('resize', onResize)
+    collapseSidebar()
+  })
 
-  isLoading.value = false;
-});
+  isLoading.value = false
+})
 
 onUnmounted(() => {
-  window.removeEventListener('resize', onResize);
-});
+  window.removeEventListener('resize', onResize)
+})
 
 function onResize() {
-  collapseSidebar();
+  collapseSidebar()
 }
 
 function collapseSidebar() {
   isSidebarCollapse.value =
-    window.innerWidth >= 1024 && window.innerWidth <= 1280;
+    window.innerWidth >= 1024 && window.innerWidth <= 1280
 }
 
 function handleMenuClick(url) {
-  router.push(url);
+  router.push(url)
 }
 
 function handleMobileMenuClick() {
-  const toggleClass = 'lt-lg:hidden';
+  const toggleClass = 'lt-lg:hidden'
 
   if ($primaryMenu?.value.classList.contains(toggleClass)) {
-    $primaryMenu?.value.classList.remove(toggleClass);
-    isMobileMenuShow.value = true;
+    $primaryMenu?.value.classList.remove(toggleClass)
+    isMobileMenuShow.value = true
   } else {
-    $primaryMenu?.value.classList.add(toggleClass);
-    isMobileMenuShow.value = false;
+    $primaryMenu?.value.classList.add(toggleClass)
+    isMobileMenuShow.value = false
   }
 }
 
 async function handleLogOut() {
-  await useLogOut();
+  await useLogOut()
 }
 </script>
 

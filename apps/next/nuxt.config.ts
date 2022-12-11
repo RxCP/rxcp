@@ -1,8 +1,8 @@
-import presetWebFonts from '@unocss/preset-web-fonts';
-import presetIcons from '@unocss/preset-icons';
-import presetUno from '@unocss/preset-uno';
-import presetAttributify from '@unocss/preset-attributify';
-import { presetScrollbar } from 'unocss-preset-scrollbar';
+import presetWebFonts from '@unocss/preset-web-fonts'
+import presetIcons from '@unocss/preset-icons'
+import presetUno from '@unocss/preset-uno'
+import presetAttributify from '@unocss/preset-attributify'
+import { presetScrollbar } from 'unocss-preset-scrollbar'
 
 export default defineNuxtConfig({
   app: {
@@ -69,4 +69,4 @@ export default defineNuxtConfig({
     },
     rules: []
   }
-});
+})

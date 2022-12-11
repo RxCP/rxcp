@@ -72,7 +72,6 @@ html.dark {
     --el-disabled-bg-color: #334155;
   }
 
-
   // Menu
   &.el-menu {
     --el-menu-bg-color: #121a2d;
@@ -91,7 +90,7 @@ html.dark {
   // Form
   // dropdown
   .el-select-dropdown__item.selected {
-      --el-color-primary: #fff;
+    --el-color-primary: #fff;
   }
 
   // Popper

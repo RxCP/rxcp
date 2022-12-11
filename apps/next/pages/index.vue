@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
   middleware: ['auth']
-});
-await navigateTo('/admin');
+})
+await navigateTo('/admin')
 </script>

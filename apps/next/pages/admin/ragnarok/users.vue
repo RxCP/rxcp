@@ -9,34 +9,34 @@ import {
   ElDropdownItem,
   ElDropdownMenu,
   vLoading
-} from 'element-plus';
-import { getUsers } from '~/api/users';
-import { format, parseISO } from 'date-fns';
+} from 'element-plus'
+import { getUsers } from '~/api/users'
+import { format, parseISO } from 'date-fns'
 
-let items = reactive([]);
-const isLoading = ref(true);
-const currentPage = ref(1);
-const pageSize = ref(100);
-const search = ref('');
+let items = reactive([])
+const isLoading = ref(true)
+const currentPage = ref(1)
+const pageSize = ref(100)
+const search = ref('')
 
 definePageMeta({
-  middleware: ['auth'],
-});
+  middleware: ['auth']
+})
 
 useHead({
-  title: 'Ragnarok Users',
+  title: 'Ragnarok Users'
 })
 
 onMounted(async () => {
-  const { data } = await fetchUsers();
+  const { data } = await fetchUsers()
   console.log(data)
-  items = data.map(item => {
+  items = data.map((item) => {
     return {
       user: {
-        name: `${item.first_name} ${item.last_name}`,
+        name: `${item.first_name} ${item.last_name}`
       },
       email: item.email,
-      role: item.roles.map(role => role.name),
+      role: item.roles.map((role) => role.name),
       registered: format(parseISO(item.created_at), 'MM/dd/yyyy')
     }
   })
@@ -44,20 +44,20 @@ onMounted(async () => {
 })
 
 async function fetchUsers() {
-  const [ data, error, status ] = await getUsers.send()
+  const [data, error, status] = await getUsers.send()
   if (status !== 200) {
-    console.warn(error);
+    console.warn(error)
     return
   }
   return data
 }
 
 const handleSizeChange = (val) => {
-  console.log(`${val} items per page`);
-};
+  console.log(`${val} items per page`)
+}
 const handleCurrentChange = (val) => {
-  console.log(`current page: ${val}`);
-};
+  console.log(`current page: ${val}`)
+}
 </script>
 
 <template>
@@ -106,12 +106,7 @@ const handleCurrentChange = (val) => {
         width="300"
         sortable
       />
-      <el-table-column
-        prop="role"
-        label="Role"
-        width="200"
-        sortable
-      />
+      <el-table-column prop="role" label="Role" width="200" sortable />
       />
       <el-table-column
         prop="registered"
@@ -122,14 +117,23 @@ const handleCurrentChange = (val) => {
       <el-table-column prop="action" label="" width="100">
         <template #default="scope">
           <div class="flex justify-center">
-            <el-dropdown size="default " @click="handleEdit(scope.$index, scope.row)">
+            <el-dropdown
+              size="default "
+              @click="handleEdit(scope.$index, scope.row)"
+            >
               <span class="cursor-pointer bold text-lg">
                 <div class="i-tabler-dots"></div>
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item><div class="i-tabler-pencil mr-2"></div> Details</el-dropdown-item>
-                  <el-dropdown-item disabled><div class="i-tabler-trash mr-2"></div> Delete</el-dropdown-item>
+                  <el-dropdown-item
+                    ><div class="i-tabler-pencil mr-2"></div>
+                    Details</el-dropdown-item
+                  >
+                  <el-dropdown-item disabled
+                    ><div class="i-tabler-trash mr-2"></div>
+                    Delete</el-dropdown-item
+                  >
                 </el-dropdown-menu>
               </template>
             </el-dropdown>
