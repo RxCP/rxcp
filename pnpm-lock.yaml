@@ -172,7 +172,7 @@ importers:
     specifiers:
       '@histoire/plugin-svelte': 0.11.7
       '@iconify-json/tabler': 1.1.47
-      '@sveltejs/vite-plugin-svelte': 1.2.0
+      '@sveltejs/vite-plugin-svelte': 1.4.0
       '@unocss/core': 0.46.5
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -188,7 +188,7 @@ importers:
     devDependencies:
       '@histoire/plugin-svelte': 0.11.7_6ggcnk5p3catmwfdnbka5h7cti
       '@iconify-json/tabler': 1.1.47
-      '@sveltejs/vite-plugin-svelte': 1.2.0_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.53.1+vite@3.2.4
       '@unocss/core': 0.46.5
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -810,7 +810,7 @@ packages:
     peerDependencies:
       svelte: ^3.46.4
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.2.0_svelte@3.53.1+vite@3.2.4
+      '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.53.1+vite@3.2.4
       postcss-load-config: 3.1.4
       svelte: 3.53.1
       svelte-preprocess: 4.10.7_6ttkz6cz5ryp4lh7iqdtu2kwd4
@@ -818,7 +818,6 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
-      - diff-match-patch
       - less
       - node-sass
       - postcss
@@ -2135,16 +2134,12 @@ packages:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: false
 
-  /@sveltejs/vite-plugin-svelte/1.2.0_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-DT2oUkWAloH1tO7X5cQ4uDxQofaIS76skyFMElKtoqT6HJao+D82LI5i+0jPaSSmO7ex3Pa6jGYMlWy9ZJ1cdQ==}
+  /@sveltejs/vite-plugin-svelte/1.4.0_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-6QupI/jemMfK+yI2pMtJcu5iO2gtgTfcBdGwMZZt+lgbFELhszbDl6Qjh000HgAV8+XUA+8EY8DusOFk8WhOIg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
-      diff-match-patch: ^1.0.5
       svelte: ^3.44.0
       vite: ^3.0.0
-    peerDependenciesMeta:
-      diff-match-patch:
-        optional: true
     dependencies:
       debug: 4.3.4
       deepmerge: 4.2.2
@@ -2153,7 +2148,7 @@ packages:
       svelte: 3.53.1
       svelte-hmr: 0.15.1_svelte@3.53.1
       vite: 3.2.4
-      vitefu: 0.2.1_vite@3.2.4
+      vitefu: 0.2.3_vite@3.2.4
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9830,6 +9825,7 @@ packages:
 
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
+    deprecated: Please use @jridgewell/sourcemap-codec instead
 
   /space-separated-tokens/2.0.1:
     resolution: {integrity: sha512-ekwEbFp5aqSPKaqeY1PGrlGQxPNaq+Cnx4+bE2D8sciBQrHpbwoBbawqTN2+6jPs9IdWxxiUcN0K2pkczD3zmw==}
@@ -10885,6 +10881,17 @@ packages:
         optional: true
     dependencies:
       vite: 3.2.4
+
+  /vitefu/0.2.3_vite@3.2.4:
+    resolution: {integrity: sha512-75l7TTuU8isAhz1QFtNKjDkqjxvndfMC1AfIMjJ0ZQ59ZD0Ow9QOIsJJX16Wv9PS8f+zMzp6fHy5cCbKG/yVUQ==}
+    peerDependencies:
+      vite: ^3.0.0 || ^4.0.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      vite: 3.2.4
+    dev: true
 
   /vscode-css-languageservice/6.1.1:
     resolution: {integrity: sha512-7d2NCq2plT0njAKmGZ11uof95y2fwbgq8QuToE3kX9uYQfVmejHX2/lFGKbK5AV5+Ja0L80UZoU0QspwqMKMHA==}
