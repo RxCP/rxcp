@@ -68,7 +68,7 @@
     "adonis-lucid-filter": "4.1.0",
     "adonis-lucid-soft-deletes": "1.4.3",
     "is-port-reachable": "3.1.0",
-    "luxon": "3.1.0",
+    "luxon": "3.1.1",
     "mjml": "4.13.0",
     "mysql": "2.18.1",
     "phc-argon2": "1.1.4",
