@@ -10,13 +10,13 @@ import {
   ElMessage
 } from 'element-plus'
 import type { FormInstance, FormRules } from 'element-plus'
-import { getUser, login } from '@/api/auth.api'
 
 definePageMeta({
   layout: 'centered-form',
   middleware: ['guest']
 })
 
+const { $api } = useNuxtApp()
 const { setAccessToken, setAuthUser } = useAuthStore()
 const router = useRouter()
 const ruleFormRef = ref<FormInstance>()
@@ -53,7 +53,7 @@ async function submitForm(formEl: FormInstance | undefined) {
       return
     }
 
-    const [data, error, status] = await login
+    const [data, error, status] = await $api.auth.login
       .setData({
         email: form.email,
         password: form.password
@@ -61,7 +61,8 @@ async function submitForm(formEl: FormInstance | undefined) {
       .send()
 
     if (status !== 200) {
-      ElMessage.error(head(error?.errors || ['Server error']))
+      ElMessage.error(head(error?.message || ['Server error']))
+      console.warn(error)
       isSubmitting.value = false
       return
     }
@@ -71,7 +72,7 @@ async function submitForm(formEl: FormInstance | undefined) {
     setAccessToken(data?.token)
 
     // get user authenticated details
-    const [authData, _, authStatus] = await getUser.send()
+    const [authData, _, authStatus] = await $api.auth.getUser.send()
 
     // then save to store
     if (authStatus === 200) {

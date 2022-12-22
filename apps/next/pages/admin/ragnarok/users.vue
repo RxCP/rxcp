@@ -10,7 +10,7 @@ import {
   ElDropdownMenu,
   vLoading
 } from 'element-plus'
-import { getUsers } from '~/api/users'
+// import { getUsers } from '~/api/users'
 import { format, parseISO } from 'date-fns'
 
 definePageMeta({
@@ -20,6 +20,7 @@ useHead({
   title: 'Ragnarok Users'
 })
 
+const { $api } = useNuxtApp()
 const {
   limit,
   page,
@@ -29,7 +30,7 @@ const {
   search,
   handleSearch,
   setSearchCallback
-} = await usePagination(getUsers)
+} = await usePagination($api.users.getUsers)
 
 setSearchCallback((searchText) => {
   return {

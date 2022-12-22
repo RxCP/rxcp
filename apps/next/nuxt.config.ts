@@ -5,6 +5,13 @@ import presetAttributify from '@unocss/preset-attributify'
 import { presetScrollbar } from 'unocss-preset-scrollbar'
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      apiUrl: 'http://127.0.0.1:3001',
+      socketUrl: 'ws://127.0.0.1:3001'
+    }
+  },
+
   app: {
     head: {
       htmlAttrs: {

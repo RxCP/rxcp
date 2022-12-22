@@ -10,7 +10,6 @@ import {
   ElDropdownMenu,
   vLoading
 } from 'element-plus'
-import { getAccounts } from '~/api/accounts'
 import { format, parseISO } from 'date-fns'
 
 definePageMeta({
@@ -20,8 +19,9 @@ useHead({
   title: 'Ragnarok Accounts'
 })
 
+const { $api } = useNuxtApp()
 const { limit, page, total, items, isLoading, search, handleSearch } =
-  await usePagination(getAccounts)
+  await usePagination($api.accounts.getAccounts)
 
 const accounts = computed(() => {
   return items.value.map((item) => {
