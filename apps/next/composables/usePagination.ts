@@ -10,6 +10,7 @@ export async function usePagination<T extends CommandInstance>(command: T) {
   const items = ref([])
   const search = ref('')
 
+  let searchCallback: Function = () => {}
   let where = reactive({})
   let error = reactive({})
 
@@ -44,8 +45,12 @@ export async function usePagination<T extends CommandInstance>(command: T) {
     isLoading.value = false
   }
 
+  function setSearchCallback(cb: Function) {
+    searchCallback = cb
+  }
+
   const handleSearch = debounce(async (value) => {
-    where = value
+    where = searchCallback(value)
     await fetch()
   }, 500)
 
@@ -59,6 +64,7 @@ export async function usePagination<T extends CommandInstance>(command: T) {
     error,
     isLoading,
     fetch,
-    handleSearch
+    handleSearch,
+    setSearchCallback
   }
 }

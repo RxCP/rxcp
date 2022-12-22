@@ -13,51 +13,59 @@ import {
 import { getUsers } from '~/api/users'
 import { format, parseISO } from 'date-fns'
 
-let items = reactive([])
-const isLoading = ref(true)
-const currentPage = ref(1)
-const pageSize = ref(100)
-const search = ref('')
-
 definePageMeta({
   middleware: ['auth']
 })
-
 useHead({
   title: 'Ragnarok Users'
 })
 
-onMounted(async () => {
-  const { data } = await fetchUsers()
-  console.log(data)
-  items = data.map((item) => {
-    return {
-      user: {
-        name: `${item.first_name} ${item.last_name}`
+const {
+  limit,
+  page,
+  total,
+  items,
+  isLoading,
+  search,
+  handleSearch,
+  setSearchCallback
+} = await usePagination(getUsers)
+
+setSearchCallback((searchText) => {
+  return {
+    or: [
+      {
+        email: {
+          like: searchText
+        }
       },
-      email: item.email,
-      role: item.roles.map((role) => role.name),
-      registered: format(parseISO(item.created_at), 'MM/dd/yyyy')
-    }
-  })
-  isLoading.value = false
+      {
+        first_name: {
+          like: searchText
+        }
+      },
+      {
+        last_name: {
+          like: searchText
+        }
+      }
+    ]
+  }
 })
 
-async function fetchUsers() {
-  const [data, error, status] = await getUsers.send()
-  if (status !== 200) {
-    console.warn(error)
-    return
-  }
-  return data
-}
-
-const handleSizeChange = (val) => {
-  console.log(`${val} items per page`)
-}
-const handleCurrentChange = (val) => {
-  console.log(`current page: ${val}`)
-}
+const users = computed(() => {
+  return items.value.map((item) => {
+    return {
+      ...item,
+      ...{
+        fullName: `${item.first_name} ${item.last_name}`,
+        email: item.email,
+        role: item.roles.map((role) => role.name),
+        registered: format(parseISO(item.created_at), 'MM/dd/yyyy')
+      }
+    }
+  })
+})
 </script>
 
 <template>
@@ -68,35 +76,33 @@ const handleCurrentChange = (val) => {
         <p class="text-slate-300 text-lg mt-2">Manage ragnarok users.</p>
       </div>
       <div class="ml-auto md:w-80">
-        <el-input v-model="search" placeholder="Search" />
+        <el-input v-model="search" placeholder="Search" @input="handleSearch" />
       </div>
     </div>
     <div class="flex justify-end mb-8">
       <el-pagination
-        v-model:current-page="currentPage"
-        v-model:page-size="pageSize"
-        :page-sizes="[100, 200, 300, 400]"
+        v-model:current-page="page"
+        v-model:page-size="limit"
+        :page-sizes="[5, 10, 30, 50, 100]"
         layout="sizes, prev, pager, next"
-        :total="1000"
+        :total="total"
         background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
       />
     </div>
     <el-table
       v-loading="isLoading"
-      :data="items"
+      :data="users"
       :default-sort="{ prop: 'id', order: 'descending' }"
       class="mb-6"
       style="width: 100%"
     >
-      <el-table-column prop="user" label="User" width="350" fixed sortable>
+      <el-table-column prop="fullName" label="User" width="350" fixed sortable>
         <template #default="scope">
           <div class="flex items-center space-x-4">
             <el-avatar
-              :src="`https://ui-avatars.com/api/?name=${scope.row.user.name}`"
+              :src="`https://ui-avatars.com/api/?name=${scope.row.fullName}`"
             />
-            <span>{{ scope.row.user.name }}</span>
+            <span>{{ scope.row.fullName }}</span>
           </div>
         </template>
       </el-table-column>
@@ -143,14 +149,12 @@ const handleCurrentChange = (val) => {
     </el-table>
     <div class="flex justify-end">
       <el-pagination
-        v-model:current-page="currentPage"
-        v-model:page-size="pageSize"
-        :page-sizes="[100, 200, 300, 400]"
+        v-model:current-page="page"
+        v-model:page-size="limit"
+        :page-sizes="[5, 10, 30, 50, 100]"
         layout="sizes, prev, pager, next"
-        :total="1000"
+        :total="total"
         background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
       />
     </div>
   </div>
