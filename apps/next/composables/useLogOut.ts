@@ -1,4 +1,4 @@
-import { logOut } from '~~/api/auth.api'
+import { logOut } from '~/api/auth.api'
 
 export async function useLogOut() {
   const { setAccessToken, setAuthUser } = useAuthStore()

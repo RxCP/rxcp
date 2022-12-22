@@ -14,3 +14,5 @@ server/dist
 public/dist
 storybook-static/
 uploads
+.output
+.nuxt

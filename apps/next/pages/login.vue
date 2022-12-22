@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { head } from 'ramda'
+import { head } from 'lodash-es'
 import { reactive } from 'vue'
 import {
   ElButton,

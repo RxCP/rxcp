@@ -11,7 +11,7 @@ import {
   vLoading
 } from 'element-plus'
 import { getAccounts } from '~/api/accounts'
-import { format } from 'date-fns'
+import { format, parseISO } from 'date-fns'
 
 definePageMeta({
   middleware: ['auth']
@@ -20,59 +20,20 @@ useHead({
   title: 'Ragnarok Accounts'
 })
 
-const isLoading = ref(true)
-const search = ref('')
-const pagination = reactive({
-  limit: 5,
-  page: 1,
-  total: 0
-})
-let items = reactive([])
+const { limit, page, total, items, isLoading, search, handleSearch } =
+  await usePagination(getAccounts)
 
-onMounted(async () => {
-  await fetchAccounts({ limit: pagination.limit, page: pagination.page })
-})
-
-async function fetchAccounts({ limit, page }) {
-  isLoading.value = true
-
-  const command = getAccounts.setQueryParams({
-    limit,
-    page
-  })
-  const [response, error, status] = await command.send()
-  const { data, meta } = response
-
-  if (status !== 200) {
-    console.warn(error)
-    return
-  }
-
-  items = data.map((item) => {
+const accounts = computed(() => {
+  return items.value.map((item) => {
     return {
       ...item,
-      status: item.state,
-      group: item.group_id,
-      lastloginDate: format(new Date(item.lastlogin), 'MM/dd/yyyy')
+      ...{
+        group: item.group_id,
+        lastloginDate: format(parseISO(item.lastlogin), 'MM/dd/yyyy')
+      }
     }
   })
-
-  pagination.total = meta.total
-  isLoading.value = false
-}
-
-watchEffect(async () => {
-  await fetchAccounts({ limit: pagination.limit, page: pagination.page })
 })
-
-async function handleSizeChange(val) {
-  pagination.limit = val
-  pagination.page = 1
-}
-
-async function handleCurrentChange(val) {
-  pagination.page = val
-}
 </script>
 
 <template>
@@ -83,24 +44,22 @@ async function handleCurrentChange(val) {
         <p class="text-slate-300 text-lg mt-2">Manage ragnarok accounts.</p>
       </div>
       <div class="ml-auto md:w-80">
-        <el-input v-model="search" placeholder="Search" />
+        <el-input v-model="search" placeholder="Search" @input="handleSearch" />
       </div>
     </div>
     <div class="flex justify-end mb-8">
       <el-pagination
-        v-model:current-page="pagination.page"
-        v-model:page-size="pagination.limit"
+        v-model:current-page="page"
+        v-model:page-size="limit"
         :page-sizes="[5, 10, 30, 50, 100]"
         layout="sizes, prev, pager, next"
-        :total="pagination.total"
+        :total="total"
         background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
       />
     </div>
     <el-table
       v-loading="isLoading"
-      :data="items"
+      :data="accounts"
       :default-sort="{ prop: 'id', order: 'descending' }"
       class="mb-6"
       style="width: 100%"
@@ -158,14 +117,12 @@ async function handleCurrentChange(val) {
     </el-table>
     <div class="flex justify-end">
       <el-pagination
-        v-model:current-page="pagination.page"
-        v-model:page-size="pagination.limit"
+        v-model:current-page="page"
+        v-model:page-size="limit"
         :page-sizes="[5, 10, 30, 50, 100]"
         layout="sizes, prev, pager, next"
-        :total="pagination.total"
+        :total="total"
         background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
       />
     </div>
   </div>

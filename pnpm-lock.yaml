@@ -174,7 +174,6 @@ importers:
       '@hyper-fetch/core': ^1.7.1
       '@pinia-plugin-persistedstate/nuxt': ^1.0.0
       '@pinia/nuxt': ^0.4.4
-      '@types/ramda': ^0.28.20
       '@unocss/nuxt': ^0.46.5
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -186,9 +185,9 @@ importers:
       eslint-config-prettier: 8.5.0
       eslint-plugin-prettier-vue: ^4.2.0
       eslint-plugin-vue: ^9.8.0
+      lodash-es: 4.17.21
       nuxt: 3.0.0
       prettier: 2.7.1
-      ramda: ^0.28.0
       sass: ^1.49.8
       sass-loader: ^12.6.0
     dependencies:
@@ -197,10 +196,8 @@ importers:
       '@pinia/nuxt': 0.4.5_rollup@2.79.1+vue@3.2.45
       '@vueuse/nuxt': 9.6.0_xsv3vwo4hvye53m3n4ybcmydue
       element-plus: 2.2.25_vue@3.2.45
-      ramda: 0.28.0
     devDependencies:
       '@pinia-plugin-persistedstate/nuxt': 1.0.0_dkp3ylf53u7rrwlprsvt5ukyx4
-      '@types/ramda': 0.28.20
       '@unocss/nuxt': 0.46.5_cggtkagrlotyt7qszvjrmtblfy
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -210,6 +207,7 @@ importers:
       eslint-config-prettier: 8.5.0_eslint@8.28.0
       eslint-plugin-prettier-vue: 4.2.0
       eslint-plugin-vue: 9.8.0_eslint@8.28.0
+      lodash-es: 4.17.21
       nuxt: 3.0.0_tsrzy4yxdxlflhlwjosd7x3yca
       prettier: 2.7.1
       sass: 1.56.1
@@ -2989,12 +2987,6 @@ packages:
 
   /@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
-    dev: true
-
-  /@types/ramda/0.28.20:
-    resolution: {integrity: sha512-MeUhzGSXQTRsY19JGn5LIBTLxVEnyF6HDNr08KSJqybsm4DlfLIgK1jBHjhpiSyk252tXYmp+UOe0UFg0UiFsA==}
-    dependencies:
-      ts-toolbelt: 6.15.5
     dev: true
 
   /@types/resolve/1.20.2:
@@ -11211,10 +11203,6 @@ packages:
   /radix3/1.0.0:
     resolution: {integrity: sha512-6n3AEXth91ASapMVKiEh2wrbFJmI+NBilrWE0AbiGgfm0xet0QXC8+a3K19r1UVYjUjctUgB053c3V/J6V0kCQ==}
 
-  /ramda/0.28.0:
-    resolution: {integrity: sha512-9QnLuG/kPVgWvMQ4aODhsBUFKOUmnbUnsSXACv+NCQZcHbeb+v8Lodp8OVxtRULN1/xOyYLLaL6npE6dMq5QTA==}
-    dev: false
-
   /rand-token/1.0.1:
     resolution: {integrity: sha512-Zri5SfJmEzBJ3IexFdigvPSCamslJ7UjLkUn0tlgH7COJvaUr5V7FyUYgKifEMTw7gFO8ZLcWjcU+kq8akipzg==}
     engines: {node: '>= 10'}
@@ -12792,10 +12780,6 @@ packages:
 
   /truncatise/0.0.8:
     resolution: {integrity: sha512-cXzueh9pzBCsLzhToB4X4gZCb3KYkrsAcBAX97JnazE74HOl3cpBJYEV7nabHeG/6/WXCU5Yujlde/WPBUwnsg==}
-
-  /ts-toolbelt/6.15.5:
-    resolution: {integrity: sha512-FZIXf1ksVyLcfr7M317jbB67XFJhOO1YqdTcuGaq9q5jLUoTikukZ+98TPjKiP2jC5CgmYdWWYs0s2nLSU0/1A==}
-    dev: true
 
   /tsconfig-resolver/3.0.1:
     resolution: {integrity: sha512-ZHqlstlQF449v8glscGRXzL6l2dZvASPCdXJRWG4gHEZlUVx2Jtmr+a2zeVG4LCsKhDXKRj5R3h0C/98UcVAQg==}

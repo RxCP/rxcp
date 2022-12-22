@@ -12,7 +12,6 @@
   },
   "devDependencies": {
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
-    "@types/ramda": "^0.28.20",
     "@unocss/nuxt": "^0.46.5",
     "@unocss/preset-attributify": "0.46.5",
     "@unocss/preset-icons": "0.46.5",
@@ -25,14 +24,14 @@
     "nuxt": "3.0.0",
     "prettier": "2.7.1",
     "sass": "^1.49.8",
-    "sass-loader": "^12.6.0"
+    "sass-loader": "^12.6.0",
+    "lodash-es": "4.17.21"
   },
   "dependencies": {
     "@better-typed/hyper-fetch": "^1.5.1",
     "@hyper-fetch/core": "^1.7.1",
     "@pinia/nuxt": "^0.4.4",
     "@vueuse/nuxt": "^9.5.0",
-    "element-plus": "^2.2.22",
-    "ramda": "^0.28.0"
+    "element-plus": "^2.2.22"
   }
 }
