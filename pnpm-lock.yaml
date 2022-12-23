@@ -170,7 +170,7 @@ importers:
 
   packages/rxcp-ui:
     specifiers:
-      '@histoire/plugin-svelte': 0.11.7
+      '@histoire/plugin-svelte': 0.12.4
       '@iconify-json/tabler': 1.1.47
       '@sveltejs/vite-plugin-svelte': 1.2.0
       '@unocss/core': 0.46.5
@@ -186,7 +186,7 @@ importers:
       svelte-preprocess: 4.10.7
       vite: 3.2.4
     devDependencies:
-      '@histoire/plugin-svelte': 0.11.7_6ggcnk5p3catmwfdnbka5h7cti
+      '@histoire/plugin-svelte': 0.12.4_6ggcnk5p3catmwfdnbka5h7cti
       '@iconify-json/tabler': 1.1.47
       '@sveltejs/vite-plugin-svelte': 1.2.0_svelte@3.53.1+vite@3.2.4
       '@unocss/core': 0.46.5
@@ -1526,15 +1526,28 @@ packages:
       '@histoire/vendors': 0.11.7
     dev: true
 
-  /@histoire/plugin-svelte/0.11.7_6ggcnk5p3catmwfdnbka5h7cti:
-    resolution: {integrity: sha512-Kr+lsiFylmzEjkWRCFVk56B5bsFqo2YdfzkkfDgu6LrMddkW8Dc0ek+uRq3xRuYCy8S0+aAjQ9jTfzczgQuAWQ==}
+  /@histoire/controls/0.12.4:
+    resolution: {integrity: sha512-p4qa11vXqhSMsnXW1p+n7ZqawoHVErLFL24yNnA9peMuXnR306/0cvdAnsLMQJdq5mDNayOY5Di69YKVQ0Shqg==}
+    dependencies:
+      '@codemirror/commands': 6.1.1
+      '@codemirror/lang-json': 6.0.0
+      '@codemirror/language': 6.2.1
+      '@codemirror/lint': 6.0.0
+      '@codemirror/state': 6.1.2
+      '@codemirror/theme-one-dark': 6.1.0
+      '@codemirror/view': 6.3.0
+      '@histoire/vendors': 0.12.4
+    dev: true
+
+  /@histoire/plugin-svelte/0.12.4_6ggcnk5p3catmwfdnbka5h7cti:
+    resolution: {integrity: sha512-/bM5caUOjQ/vf6n4AVaGgHK5Z3yJvEF+SMp1KFDTBFqUFWbaC2d0sHNpuKJP8ilhfvtZVKBLdjRltbnT/+4gNQ==}
     peerDependencies:
-      histoire: ^0.11.7
+      histoire: ^0.12.4
       svelte: ^3.0.0
     dependencies:
-      '@histoire/controls': 0.11.7
-      '@histoire/shared': 0.11.7_vite@3.2.4
-      '@histoire/vendors': 0.11.7
+      '@histoire/controls': 0.12.4
+      '@histoire/shared': 0.12.4_vite@3.2.4
+      '@histoire/vendors': 0.12.4
       histoire: 0.11.7_vite@3.2.4
       svelte: 3.53.1
     transitivePeerDependencies:
@@ -1554,8 +1567,25 @@ packages:
       vite: 3.2.4
     dev: true
 
+  /@histoire/shared/0.12.4_vite@3.2.4:
+    resolution: {integrity: sha512-dVSrfsEu17KczjyHVW8yPvSlguhEV7hWjDSwsjlUrRdbe7hwztX4GbbcCIWvG5hy5gASpKpQq6FJa5uTs0HOsg==}
+    peerDependencies:
+      vite: ^2.9.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      '@types/fs-extra': 9.0.13
+      '@types/markdown-it': 12.2.3
+      chokidar: 3.5.3
+      pathe: 0.2.0
+      picocolors: 1.0.0
+      vite: 3.2.4
+    dev: true
+
   /@histoire/vendors/0.11.7:
     resolution: {integrity: sha512-PsA8lNQoArIXLP5d+4FUhnRTtThLK7mat7agdHZDSoZKj2bCeX3KHi/nFVvvyd32TcbwFSJqrKgacjJlgAcQ6A==}
+    dev: true
+
+  /@histoire/vendors/0.12.4:
+    resolution: {integrity: sha512-NIi0krz19iSjPHhIsGLrW4Q3tvrCLfvCet2kFA8crKPX6inaMZm8g/+pDQBqlh9DRCXVbxV5RWQKcumrIFbrmw==}
     dev: true
 
   /@humanwhocodes/config-array/0.11.6:
