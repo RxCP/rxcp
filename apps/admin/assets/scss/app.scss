@@ -1,0 +1,73 @@
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': #2563eb
+    )
+  ),
+  $fill-color: (
+    '': #f0f2f5,
+    'light': #f5f7fa,
+    'lighter': #fafafa,
+    'extra-light': #fafcff,
+    'dark': #ebedf0,
+    'darker': #e6e8eb,
+    'blank': #ffffff
+  ),
+  $bg-color: (
+    'page': #f1f5f9,
+    '': #f1f5f9,
+    'overlay': #fff
+  ),
+  $border-color: (
+    '': #dcdfe6,
+    'light': #e4e7ed,
+    'lighter': #ebeef5,
+    'extra-light': #f2f6fc,
+    'dark': #d4d7de,
+    'darker': #cdd0d6
+  ),
+  $common-component-size: (
+    'large': 80px,
+    'default': 40px,
+    'small': 30px
+  ),
+  $table-padding: (
+    'large': 14px 0,
+    'default': 10px 0,
+    'small': 4px 0
+  )
+);
+
+@use 'element-plus/theme-chalk/src/index.scss' as *;
+
+:root {
+  --el-menu-item-height: 48px;
+
+  .el-pagination {
+    --el-pagination-button-height: 38px;
+  }
+
+  // Table
+  .el-table {
+    --el-table-header-bg-color: #f9fafb;
+    --el-table-border-color: #e5e7eb;
+    --el-bg-color: #f9fafb;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.el-menu-item,
+.el-sub-menu {
+  font-weight: 400;
+}
+
+.el-menu--collapse {
+  .el-menu-item > div,
+  .el-sub-menu__title {
+    display: flex;
+    justify-content: center;
+  }
+}
