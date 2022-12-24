@@ -1,6 +1,7 @@
 import io from 'socket.io-client'
 
-export function useSocket() {
-  // const url : string = import.meta?.env?.PUBLIC_SOCKET_URL || '';
-  // return io(url || '');
+export default function useSocket() {
+  const config = useRuntimeConfig()
+  const url: string = config.public.socketUrl
+  return io(url)
 }

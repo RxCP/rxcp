@@ -6,21 +6,33 @@ import {
   ElDropdownMenu,
   ElAvatar,
   ElButton,
-  ElTooltip
+  ElTooltip,
+  ElPopover
 } from 'element-plus'
 import { useDark, useToggle } from '@vueuse/core'
 
+const socket = useSocket()
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+const serverStatus = reactive({
+  login: false,
+  char: false,
+  map: false,
+  online: 0
+})
 
 const firstName = computed(() => {
   const { authUser } = useAuthStore()
   return authUser?.first_name
 })
 
-const pageTitle = computed(() => {
-  const { pageTitle } = usePageStore()
-  return pageTitle
+onMounted(() => {
+  socket.on('server-status', (data) => {
+    serverStatus.login = data?.login?.status
+    serverStatus.char = data?.char?.status
+    serverStatus.map = data?.map?.status
+    serverStatus.online = data?.online
+  })
 })
 
 async function handleLogOut() {
@@ -33,21 +45,56 @@ async function handleLogOut() {
   <header
     class="flex items-center px-4 mb-4 md:px-6 py-2 bg-white dark:bg-slate-800/50"
   >
-    <!-- <h2 class="dark:text-gray-200 text-lg font-bold" v-text="pageTitle"></h2> -->
-    <ul class="flex space-x-3 list-none p-0">
+    <ul class="flex space-x-3 list-none p-0 items-center">
+      <li>
+        <span class="text-lg uppercase">
+          <el-popover
+            placement="top-start"
+            title="Online"
+            :width="200"
+            trigger="hover"
+          >
+            <template #reference>
+              <div class="i-tabler-users"></div>
+            </template>
+            <div>
+              <strong class="text-green-500">{{ serverStatus.online }}</strong>
+              player(s) online right now
+            </div>
+          </el-popover>
+        </span>
+      </li>
       <li>
         <el-tooltip effect="dark" content="Login server" placement="top-start">
-          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          <div
+            :class="{
+              'bg-green-500': serverStatus.login,
+              'bg-red-500': !serverStatus.login
+            }"
+            class="w-3 h-3 rounded-full"
+          ></div>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip effect="dark" content="Char server" placement="top-start">
-          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <div
+            :class="{
+              'bg-green-500': serverStatus.char,
+              'bg-red-500': !serverStatus.char
+            }"
+            class="w-3 h-3 rounded-full"
+          ></div>
         </el-tooltip>
       </li>
       <li>
         <el-tooltip effect="dark" content="Map server" placement="top-start">
-          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <div
+            :class="{
+              'bg-green-500': serverStatus.map,
+              'bg-red-500': !serverStatus.map
+            }"
+            class="w-3 h-3 rounded-full"
+          ></div>
         </el-tooltip>
       </li>
     </ul>
