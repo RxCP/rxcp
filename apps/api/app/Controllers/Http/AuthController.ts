@@ -22,7 +22,13 @@ export default class AuthController {
     })
 
     if (await limiter.isBlocked(throttleKey)) {
-      return response.tooManyRequests('Login attempts exhausted. Please try after some time')
+      return response.tooManyRequests({
+        errors: [
+          {
+            message: 'Login attempts exhausted. Please try after some time',
+          },
+        ],
+      })
     }
 
     try {

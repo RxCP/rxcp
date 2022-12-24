@@ -1,31 +1,7 @@
 {
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
-    // Enable top-level await, and other modern ESM features.
-    "target": "ESNext",
-    "module": "ESNext",
-    // Enable node-style module resolution, for things like npm package imports.
-    "moduleResolution": "node",
-    // Enable JSON imports.
-    "resolveJsonModule": true,
-    // Enable stricter transpilation for better output.
-    "isolatedModules": true,
-    // Astro will directly run your TypeScript code, no transpilation needed.
-    "noEmit": true,
-    // Enable strict type checking.
-    "strict": true,
-    // Error when a value import is only used as a type.
-    "importsNotUsedAsValues": "error",
-    // Enable for qs module types to work
-    "allowSyntheticDefaultImports": true,
-    // https://docs.astro.build/en/guides/aliases/
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@pattern/*": ["src/components/pattern/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@assets/*": ["src/assets/*"],
-      "@store/*": ["src/store/*"],
-      "@util/*": ["src/util/*"]
-    }
+    "types": ["element-plus/global"]
   }
 }
