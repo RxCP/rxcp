@@ -21,17 +21,18 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier-vue": "4.2.0",
     "eslint-plugin-vue": "9.8.0",
+    "lodash-es": "4.17.21",
     "nuxt": "3.0.0",
     "prettier": "2.7.1",
     "sass": "1.49.8",
-    "sass-loader": "12.6.0",
-    "lodash-es": "4.17.21"
+    "sass-loader": "12.6.0"
   },
   "dependencies": {
     "@better-typed/hyper-fetch": "1.5.1",
     "@hyper-fetch/core": "1.7.1",
     "@pinia/nuxt": "0.4.4",
     "@vueuse/nuxt": "9.5.0",
-    "element-plus": "2.2.22"
+    "element-plus": "2.2.22",
+    "unocss-preset-scrollbar": "^0.2.1"
   }
 }
