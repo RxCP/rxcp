@@ -19,11 +19,12 @@
 
 ## 💻 Technologies
 
-![Technologies](https://skillicons.dev/icons?i=redis,mysql,nodejs,typescript,html,css,astro,svelte)
+![Technologies](https://skillicons.dev/icons?i=redis,mysql,nodejs,typescript,html,css,nuxtjs,vue)
 
 Other: [AdonisJs](https://adonisjs.com/), [UnoCSS](https://github.com/unocss/unocss).
 
 ## 📘 Documentation
+
 - [Developement Setup](https://github.com/RxCP/rxcp/wiki/Development-Setup-&-Installation)
 - Production Setup (Coming Soon)
 - [API](https://documenter.getpostman.com/view/390924/VUjSGPdG)
