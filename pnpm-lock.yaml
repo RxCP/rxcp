@@ -17,7 +17,7 @@ importers:
       '@better-typed/hyper-fetch': 1.5.1
       '@hyper-fetch/core': 1.7.1
       '@pinia-plugin-persistedstate/nuxt': 1.0.0
-      '@pinia/nuxt': 0.4.4
+      '@pinia/nuxt': 0.4.6
       '@unocss/nuxt': 0.46.5
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -40,12 +40,12 @@ importers:
     dependencies:
       '@better-typed/hyper-fetch': 1.5.1
       '@hyper-fetch/core': 1.7.1
-      '@pinia/nuxt': 0.4.4_rollup@2.79.1+vue@3.2.45
+      '@pinia/nuxt': 0.4.6_rollup@2.79.1+vue@3.2.45
       '@vueuse/nuxt': 9.5.0_xsv3vwo4hvye53m3n4ybcmydue
       element-plus: 2.2.22_vue@3.2.45
       socket.io-client: 4.5.4
     devDependencies:
-      '@pinia-plugin-persistedstate/nuxt': 1.0.0_7dpzm3zlapexbt4iznau2ceaeu
+      '@pinia-plugin-persistedstate/nuxt': 1.0.0_in7wrjovo4fruzgfljd4sof2ty
       '@unocss/nuxt': 0.46.5_cggtkagrlotyt7qszvjrmtblfy
       '@unocss/preset-attributify': 0.46.5
       '@unocss/preset-icons': 0.46.5
@@ -1378,25 +1378,25 @@ packages:
     resolution: {integrity: sha512-m7X9U6BG2+J+R1lSOdCiITLLrxm+cWlNI3HUFA92oLO77ObGNzaKdh8pMLqdZcshtkKuV84olNNXDfMc4FezBQ==}
     engines: {node: '>=10'}
 
-  /@pinia-plugin-persistedstate/nuxt/1.0.0_7dpzm3zlapexbt4iznau2ceaeu:
+  /@pinia-plugin-persistedstate/nuxt/1.0.0_in7wrjovo4fruzgfljd4sof2ty:
     resolution: {integrity: sha512-oBLnkFXy0mcP9wCR0NQj1SguhgalEoubDF302gpRr1lh0V34vSL2Nlw8XDwRrULq5v3eHt4da632YSjNny1+BA==}
     peerDependencies:
       '@pinia/nuxt': ^0.4.4
     dependencies:
       '@nuxt/kit': 3.0.0_rollup@2.79.1
-      '@pinia/nuxt': 0.4.4_rollup@2.79.1+vue@3.2.45
-      pinia-plugin-persistedstate: 3.0.0_pinia@2.0.26
+      '@pinia/nuxt': 0.4.6_rollup@2.79.1+vue@3.2.45
+      pinia-plugin-persistedstate: 3.0.0_pinia@2.0.28
     transitivePeerDependencies:
       - pinia
       - rollup
       - supports-color
     dev: true
 
-  /@pinia/nuxt/0.4.4_rollup@2.79.1+vue@3.2.45:
-    resolution: {integrity: sha512-8C9Vv/Mx+IMZFnWTX0nFGW+pXk6hF4Ibgc0OZqlI6/Ii26/Do+gfEQLC/0J/7gFFe/VFhwLMlrK8WEL6oIRdmA==}
+  /@pinia/nuxt/0.4.6_rollup@2.79.1+vue@3.2.45:
+    resolution: {integrity: sha512-HjrYEfLdFpmsjhicPJgL36jVhzHWukIQPFFHGTSF84Cplu+f2nY2XHKqe9ToHzE9rLee2RjLOwAzOnXa/I/u6A==}
     dependencies:
       '@nuxt/kit': 3.0.0_rollup@2.79.1
-      pinia: 2.0.26_vue@3.2.45
+      pinia: 2.0.28_vue@3.2.45
     transitivePeerDependencies:
       - '@vue/composition-api'
       - rollup
@@ -7768,16 +7768,16 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /pinia-plugin-persistedstate/3.0.0_pinia@2.0.26:
+  /pinia-plugin-persistedstate/3.0.0_pinia@2.0.28:
     resolution: {integrity: sha512-q62E691P9X0LRCj6QW44w0+HcXPQSteBiTHkQmXJcqcY6OD1mne0X0im3ghqjXDyo1hSq6pKRdnBIKEc988r/g==}
     peerDependencies:
       pinia: ^2.0.0
     dependencies:
-      pinia: 2.0.26_vue@3.2.45
+      pinia: 2.0.28_vue@3.2.45
     dev: true
 
-  /pinia/2.0.26_vue@3.2.45:
-    resolution: {integrity: sha512-tSxZNUcMGxQOvKZRjPKXxd2+/2NZhRF/CoYVE/+K6uE/Z3v1Oi4fcQFpxu5nMB1dCchjXUZ+lz0tBxV5ntwmQQ==}
+  /pinia/2.0.28_vue@3.2.45:
+    resolution: {integrity: sha512-YClq9DkqCblq9rlyUual7ezMu/iICWdBtfJrDt4oWU9Zxpijyz7xB2xTwx57DaBQ96UGvvTMORzALr+iO5PVMw==}
     peerDependencies:
       '@vue/composition-api': ^1.4.0
       typescript: '>=4.4.4'
