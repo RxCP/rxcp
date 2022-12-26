@@ -25,7 +25,7 @@ importers:
       '@unocss/preset-web-fonts': 0.46.5
       '@vueuse/nuxt': 9.5.0
       date-fns: ^2.29.3
-      element-plus: 2.2.22
+      element-plus: 2.2.27
       eslint: 8.28.0
       eslint-config-prettier: 8.5.0
       eslint-plugin-prettier-vue: 4.2.0
@@ -42,7 +42,7 @@ importers:
       '@hyper-fetch/core': 1.7.1
       '@pinia/nuxt': 0.4.6_rollup@2.79.1+vue@3.2.45
       '@vueuse/nuxt': 9.5.0_xsv3vwo4hvye53m3n4ybcmydue
-      element-plus: 2.2.22_vue@3.2.45
+      element-plus: 2.2.27_vue@3.2.45
       socket.io-client: 4.5.4
     devDependencies:
       '@pinia-plugin-persistedstate/nuxt': 1.0.0_in7wrjovo4fruzgfljd4sof2ty
@@ -4152,8 +4152,8 @@ packages:
   /electron-to-chromium/1.4.266:
     resolution: {integrity: sha512-saJTYECxUSv7eSpnXw0XIEvUkP9x4s/x2mm3TVX7k4rIFS6f5TjBih1B5h437WzIhHQjid+d8ouQzPQskMervQ==}
 
-  /element-plus/2.2.22_vue@3.2.45:
-    resolution: {integrity: sha512-gg2g2WOMNpWf0wGesymUvTV0VZDF/4khQKroSNeCV/vWJ/cqssPYdtqfGxTiFRt/f+JpyFkV7O1mo0yzMCzrBg==}
+  /element-plus/2.2.27_vue@3.2.45:
+    resolution: {integrity: sha512-P04HDOZBYDdvlYuleuCZRULzAc5xJVOBfLDK9xWxVo0vyo8ntdaXS5sTU+/76vrNzuO3FhLn9kvrsbiJEVa1jg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
