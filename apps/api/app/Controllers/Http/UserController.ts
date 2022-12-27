@@ -10,8 +10,16 @@ export default class UserController {
    * Currently logged-in user details
    */
   public async index({ auth }: HttpContextContract) {
+    const authUser = auth.use('api').user
+    const user = await User.query()
+      .where('id', authUser?.id || '')
+      .preload('roles', (query) => {
+        query.select('code')
+      })
+      .first()
+
     return {
-      data: auth.use('api').user,
+      data: user,
     }
   }
 
