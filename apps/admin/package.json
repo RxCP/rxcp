@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@better-typed/hyper-fetch": "1.5.1",
-    "@hyper-fetch/core": "1.7.1",
+    "@hyper-fetch/core": "2.1.0",
     "@pinia/nuxt": "0.4.6",
     "@vueuse/nuxt": "9.5.0",
     "element-plus": "2.2.27",
