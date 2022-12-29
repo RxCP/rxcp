@@ -1,12 +1,12 @@
-import { Builder } from '@hyper-fetch/core'
+import { Builder, CommandInstance } from '@hyper-fetch/core'
 import { apiAccounts } from '~~/api/accounts'
 import { apiAuth } from '~~/api/auth.api'
 import { apiUsers } from '~~/api/users'
 
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
-  const builder = new Builder({ baseUrl: config.public.apiUrl }).onAuth(
-    (command) => {
+  const builder = new Builder({ url: config.public.apiUrl }).onAuth(
+    (command: CommandInstance) => {
       const { accessToken } = useAuthStore()
       // For every authenticated command we want to
       // add the header with token and return the extended command
