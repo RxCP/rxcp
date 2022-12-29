@@ -1,6 +1,7 @@
 import { Builder, CommandInstance } from '@hyper-fetch/core'
 import { apiAccounts } from '~~/api/accounts'
 import { apiAuth } from '~~/api/auth.api'
+import { apiCharacters } from '~~/api/characters'
 import { apiUsers } from '~~/api/users'
 
 export default defineNuxtPlugin(() => {
@@ -22,7 +23,8 @@ export default defineNuxtPlugin(() => {
       api: {
         auth: apiAuth(builder),
         accounts: apiAccounts(builder),
-        users: apiUsers(builder)
+        users: apiUsers(builder),
+        characters: apiCharacters(builder)
       }
     }
   }
