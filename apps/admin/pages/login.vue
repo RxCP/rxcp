@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { head } from 'lodash-es'
+import { head, isArray } from 'lodash-es'
 import { reactive } from 'vue'
 import {
   ElButton,
@@ -61,7 +61,11 @@ async function submitForm(formEl: FormInstance | undefined) {
       .send()
 
     if (status !== 200) {
-      ElMessage.error(head(error?.message || ['Server error']))
+      const errorMsg = isArray(error?.message)
+        ? head(error?.message || ['Server error'])
+        : error?.message
+
+      ElMessage.error(errorMsg)
       console.warn(error)
       isSubmitting.value = false
       return
