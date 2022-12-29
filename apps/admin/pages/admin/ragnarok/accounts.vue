@@ -29,7 +29,8 @@ const accounts = computed(() => {
       ...item,
       ...{
         group: item.group_id,
-        lastloginDate: format(parseISO(item.lastlogin), 'MM/dd/yyyy')
+        lastloginDate:
+          item.lastlogin && format(parseISO(item.lastlogin), 'MM/dd/yyyy')
       }
     }
   })
