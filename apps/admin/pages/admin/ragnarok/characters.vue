@@ -64,7 +64,7 @@ const accounts = computed(() => {
       style="width: 100%"
     >
       <el-table-column prop="char_id" label="Char ID" width="150" sortable />
-      <el-table-column prop="name" label="Name" width="150" sortable fixed>
+      <el-table-column prop="name" label="Name" width="250" sortable fixed>
         <template #default="scope">
           <div class="flex items-center space-x-4">
             <el-avatar

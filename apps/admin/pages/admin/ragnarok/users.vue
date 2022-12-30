@@ -121,7 +121,7 @@ const users = computed(() => {
         width="266"
         sortable
       />
-      <el-table-column prop="action" label="" width="100">
+      <el-table-column prop="action" label="" width="100" fixed="right">
         <template #default="scope">
           <div class="flex justify-center">
             <el-dropdown
