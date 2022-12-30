@@ -61,11 +61,11 @@ async function submitForm(formEl: FormInstance | undefined) {
       .send()
 
     if (status !== 200) {
-      const errorMsg = isArray(error?.message)
-        ? head(error?.message || ['Server error'])
-        : error?.message
+      const errorMsg: { message: string } | undefined = isArray(error.errors)
+        ? head(error.errors || [{ message: 'Server error' }])
+        : { message: 'Something went wrong! Please contact the administrator.' }
 
-      ElMessage.error(errorMsg)
+      ElMessage.error(errorMsg?.message)
       console.warn(error)
       isSubmitting.value = false
       return
