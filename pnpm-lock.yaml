@@ -16,6 +16,7 @@ importers:
     specifiers:
       '@better-typed/hyper-fetch': 1.5.1
       '@hyper-fetch/core': 2.1.0
+      '@iconify/json': ^2.1.158
       '@pinia-plugin-persistedstate/nuxt': 1.0.0
       '@pinia/nuxt': 0.4.6
       '@unocss/nuxt': 0.48.0
@@ -45,6 +46,7 @@ importers:
       element-plus: 2.2.27_vue@3.2.45
       socket.io-client: 4.5.4
     devDependencies:
+      '@iconify/json': 2.1.158
       '@pinia-plugin-persistedstate/nuxt': 1.0.0_in7wrjovo4fruzgfljd4sof2ty
       '@unocss/nuxt': 0.48.0_cggtkagrlotyt7qszvjrmtblfy
       '@unocss/preset-attributify': 0.48.0
@@ -992,6 +994,13 @@ packages:
   /@hyper-fetch/core/2.1.0:
     resolution: {integrity: sha512-dMUyM1SpO61j+hjOOhcfyB8sOzWDJ1BDoknq0gl38fC1jUizo+7bI1UHD6/b5ITYjqHMDH3tbaMBVqWujjC2rw==}
     dev: false
+
+  /@iconify/json/2.1.158:
+    resolution: {integrity: sha512-7rw3LTk6Y9aLyVESGoFADBJiYpsLdNRV7GCEarh3HpbR4jdDH29s8kF6yJybgYoBfb01J6h6PzDgjujSxlNUaQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 0.3.9
+    dev: true
 
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -7716,6 +7725,10 @@ packages:
 
   /pathe/0.2.0:
     resolution: {integrity: sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==}
+
+  /pathe/0.3.9:
+    resolution: {integrity: sha512-6Y6s0vT112P3jD8dGfuS6r+lpa0qqNrLyHPOwvXMnyNTQaYiwgau2DP3aNDsR13xqtGj7rrPo+jFUATpU6/s+g==}
+    dev: true
 
   /pathe/1.0.0:
     resolution: {integrity: sha512-nPdMG0Pd09HuSsr7QOKUXO2Jr9eqaDiZvDwdyIhNG5SHYujkQHYKDfGQkulBxvbDHz8oHLsTgKN86LSwYzSHAg==}
