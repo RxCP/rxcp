@@ -20,6 +20,7 @@ useHead({
   title: 'Ragnarok Users'
 })
 
+const router = useRouter()
 const { $api } = useNuxtApp()
 const {
   limit,
@@ -67,6 +68,10 @@ const users = computed(() => {
     }
   })
 })
+
+function handleViewDetails(id) {
+  router.push(`/admin/ragnarok/users/${id}`)
+}
 </script>
 
 <template>
@@ -136,10 +141,10 @@ const users = computed(() => {
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item
-                    ><div class="i-tabler-pencil mr-2"></div>
-                    Details</el-dropdown-item
-                  >
+                  <el-dropdown-item @click="handleViewDetails(scope.row.id)">
+                    <div class="i-tabler-pencil mr-2"></div>
+                    Details
+                  </el-dropdown-item>
                   <el-dropdown-item disabled
                     ><div class="i-tabler-trash mr-2"></div>
                     Delete</el-dropdown-item
