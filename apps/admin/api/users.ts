@@ -9,6 +9,13 @@ export const apiUsers = (client: Client<Error, Partial<XMLHttpRequest>>) => {
       auth: true,
       cache: true,
       cacheTime: DateInterval.second * 10
+    }),
+    getUser: client.createRequest()({
+      method: 'GET',
+      endpoint: '/admin/api/users/:userId',
+      auth: true,
+      cache: true,
+      cacheTime: DateInterval.second * 10
     })
   }
 }
