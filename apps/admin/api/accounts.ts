@@ -1,10 +1,8 @@
-import { Builder } from '@hyper-fetch/core'
+import { Client } from '@hyper-fetch/core'
 
-export const apiAccounts = (
-  builder: Builder<Error, Partial<XMLHttpRequest>>
-) => {
+export const apiAccounts = (client: Client<Error, Partial<XMLHttpRequest>>) => {
   return {
-    getAccounts: builder.createCommand()({
+    getAccounts: client.createRequest()({
       method: 'GET',
       endpoint: '/admin/api/accounts',
       auth: true

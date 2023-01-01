@@ -1,12 +1,13 @@
-import { Builder } from '@hyper-fetch/core'
+import { Client, RequestInstance } from '@hyper-fetch/core'
 import { apiAccounts } from '~~/api/accounts'
 import { apiAuth } from '~~/api/auth.api'
+import { apiCharacters } from '~~/api/characters'
 import { apiUsers } from '~~/api/users'
 
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
-  const builder = new Builder({ baseUrl: config.public.apiUrl }).onAuth(
-    (command) => {
+  const client = new Client({ url: config.public.apiUrl }).onAuth(
+    (command: RequestInstance) => {
       const { accessToken } = useAuthStore()
       // For every authenticated command we want to
       // add the header with token and return the extended command
@@ -20,9 +21,10 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       api: {
-        auth: apiAuth(builder),
-        accounts: apiAccounts(builder),
-        users: apiUsers(builder)
+        auth: apiAuth(client),
+        accounts: apiAccounts(client),
+        users: apiUsers(client),
+        characters: apiCharacters(client)
       }
     }
   }

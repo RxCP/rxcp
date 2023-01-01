@@ -1,3 +1,8 @@
+<script setup>
+const isDark = useDark()
+useToggle(isDark)
+</script>
+
 <template>
   <div
     class="login-wrapper flex items-center flex-col justify-center h-screen px-4 lt-lg:pb-8 min-h-md"

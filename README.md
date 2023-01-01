@@ -7,7 +7,7 @@
 <p align="center">🚀 Fast - 🔒 Secured - 💖 Free</p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/workflow/status/RxCP/rxcp/CI?style=flat-square&logo=appveyor">
+  <img src="https://img.shields.io/github/actions/workflow/status/RxCP/rxcp/ci.yml?branch=main">
   <img src="https://img.shields.io/github/last-commit/RxCP/rxcp.svg?style=flat-square&logo=appveyor" alt="Last commit">
   <img src="https://img.shields.io/github/package-json/v/RXCP/rxcp?style=flat-square&logo=appveyor">
   <img src="https://img.shields.io/github/license/RxCP/rxcp?style=flat-square&logo=appveyor" alt="Commit activity">

@@ -29,7 +29,8 @@ const accounts = computed(() => {
       ...item,
       ...{
         group: item.group_id,
-        lastloginDate: format(parseISO(item.lastlogin), 'MM/dd/yyyy')
+        lastloginDate:
+          item.lastlogin && format(parseISO(item.lastlogin), 'MM/dd/yyyy')
       }
     }
   })
@@ -88,7 +89,7 @@ const accounts = computed(() => {
         sortable
       />
       <el-table-column prop="status" label="Status" width="100" sortable />
-      <el-table-column prop="action" label="" width="100">
+      <el-table-column prop="action" label="" width="100" fixed="right">
         <template #default="scope">
           <div class="flex justify-center">
             <el-dropdown

@@ -20,6 +20,7 @@ useHead({
   title: 'Ragnarok Users'
 })
 
+const router = useRouter()
 const { $api } = useNuxtApp()
 const {
   limit,
@@ -67,16 +68,20 @@ const users = computed(() => {
     }
   })
 })
+
+function handleViewDetails(id) {
+  router.push(`/admin/ragnarok/users/${id}`)
+}
 </script>
 
 <template>
   <div class="bg-white dark:bg-slate-800 rounded p-8">
-    <div class="flex mb-6">
+    <div class="flex flex-col md:flex-row mb-6">
       <div>
         <h1 class="my-0">Users</h1>
         <p class="text-slate-300 text-lg mt-2">Manage ragnarok users.</p>
       </div>
-      <div class="ml-auto md:w-80">
+      <div class="md:ml-auto md:w-80">
         <el-input v-model="search" placeholder="Search" @input="handleSearch" />
       </div>
     </div>
@@ -99,12 +104,15 @@ const users = computed(() => {
     >
       <el-table-column prop="fullName" label="User" width="350" fixed sortable>
         <template #default="scope">
-          <div class="flex items-center space-x-4">
+          <NuxtLink
+            :to="`/admin/ragnarok/users/${scope.row.id}`"
+            class="flex items-center space-x-4 text-gray-500 dark:text-gray-200"
+          >
             <el-avatar
               :src="`https://ui-avatars.com/api/?name=${scope.row.fullName}`"
             />
             <span>{{ scope.row.fullName }}</span>
-          </div>
+          </NuxtLink>
         </template>
       </el-table-column>
       <el-table-column
@@ -121,7 +129,7 @@ const users = computed(() => {
         width="266"
         sortable
       />
-      <el-table-column prop="action" label="" width="100">
+      <el-table-column prop="action" label="" width="100" fixed="right">
         <template #default="scope">
           <div class="flex justify-center">
             <el-dropdown
@@ -133,10 +141,10 @@ const users = computed(() => {
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item
-                    ><div class="i-tabler-pencil mr-2"></div>
-                    Details</el-dropdown-item
-                  >
+                  <el-dropdown-item @click="handleViewDetails(scope.row.id)">
+                    <div class="i-tabler-pencil mr-2"></div>
+                    Details
+                  </el-dropdown-item>
                   <el-dropdown-item disabled
                     ><div class="i-tabler-trash mr-2"></div>
                     Delete</el-dropdown-item

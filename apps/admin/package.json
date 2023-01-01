@@ -11,30 +11,31 @@
     "format": "prettier -w --plugin-search-dir=. ."
   },
   "devDependencies": {
+    "@iconify/json": "^2.1.158",
     "@pinia-plugin-persistedstate/nuxt": "1.0.0",
-    "@unocss/nuxt": "0.46.5",
-    "@unocss/preset-attributify": "0.46.5",
-    "@unocss/preset-icons": "0.46.5",
-    "@unocss/preset-uno": "0.46.5",
-    "@unocss/preset-web-fonts": "0.46.5",
+    "@unocss/nuxt": "0.48.0",
+    "@unocss/preset-attributify": "0.48.0",
+    "@unocss/preset-icons": "0.48.0",
+    "@unocss/preset-uno": "0.48.0",
+    "@unocss/preset-web-fonts": "0.48.0",
     "date-fns": "^2.29.3",
-    "eslint": "8.28.0",
+    "eslint": "8.30.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier-vue": "4.2.0",
     "eslint-plugin-vue": "9.8.0",
     "lodash-es": "4.17.21",
     "nuxt": "3.0.0",
     "prettier": "2.7.1",
-    "sass": "1.49.8",
+    "sass": "1.57.1",
     "sass-loader": "12.6.0",
     "unocss-preset-scrollbar": "^0.2.1"
   },
   "dependencies": {
     "@better-typed/hyper-fetch": "1.5.1",
-    "@hyper-fetch/core": "1.7.1",
-    "@pinia/nuxt": "0.4.4",
-    "@vueuse/nuxt": "9.5.0",
-    "element-plus": "2.2.22",
+    "@hyper-fetch/core": "3.1.0",
+    "@pinia/nuxt": "0.4.6",
+    "@vueuse/nuxt": "9.9.0",
+    "element-plus": "2.2.27",
     "socket.io-client": "^4.5.4"
   }
 }

@@ -1,11 +1,18 @@
 import { DateInterval } from '@better-typed/hyper-fetch'
-import { Builder } from '@hyper-fetch/core'
+import { Client } from '@hyper-fetch/core'
 
-export const apiUsers = (builder: Builder<Error, Partial<XMLHttpRequest>>) => {
+export const apiUsers = (client: Client<Error, Partial<XMLHttpRequest>>) => {
   return {
-    getUsers: builder.createCommand()({
+    getUsers: client.createRequest()({
       method: 'GET',
       endpoint: '/admin/api/users',
+      auth: true,
+      cache: true,
+      cacheTime: DateInterval.second * 10
+    }),
+    getUser: client.createRequest()({
+      method: 'GET',
+      endpoint: '/admin/api/users/:userId',
       auth: true,
       cache: true,
       cacheTime: DateInterval.second * 10
