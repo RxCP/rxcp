@@ -27,7 +27,7 @@
     "nuxt": "3.0.0",
     "prettier": "2.7.1",
     "sass": "1.57.1",
-    "sass-loader": "12.6.0",
+    "sass-loader": "13.2.0",
     "unocss-preset-scrollbar": "^0.2.1"
   },
   "dependencies": {
