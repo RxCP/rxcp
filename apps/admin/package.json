@@ -35,7 +35,7 @@
     "@hyper-fetch/core": "3.1.0",
     "@pinia/nuxt": "0.4.6",
     "@vueuse/nuxt": "9.9.0",
-    "element-plus": "2.2.27",
+    "element-plus": "2.2.28",
     "socket.io-client": "^4.5.4"
   }
 }
