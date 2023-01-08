@@ -88,7 +88,7 @@ importers:
       eslint-plugin-adonis: 2.1.1
       eslint-plugin-prettier: 4.2.1
       is-port-reachable: 3.1.0
-      luxon: 3.2.0
+      luxon: 3.2.1
       mjml: 4.13.0
       mysql: 2.18.1
       phc-argon2: 1.1.4
@@ -107,14 +107,14 @@ importers:
       '@adonisjs/core': 5.9.0
       '@adonisjs/limiter': 1.0.1_q5pie4njsnujotyn7htjd2sqhy
       '@adonisjs/lucid': 18.3.0_cnpk76o52hpgoamxzwbe7c3fma
-      '@adonisjs/mail': 8.1.2_4ghgic225jlfl7e7vw3dxxpjdy
+      '@adonisjs/mail': 8.1.2_7e7l2sn6ahe5tgtb3f7sixdt24
       '@adonisjs/redis': 7.3.2_@adonisjs+core@5.9.0
       '@adonisjs/repl': 3.1.11_@adonisjs+core@5.9.0
       '@adonisjs/view': 6.2.0_@adonisjs+core@5.9.0
       adonis-lucid-filter: 4.1.0
       adonis-lucid-soft-deletes: 1.4.3
       is-port-reachable: 3.1.0
-      luxon: 3.2.0
+      luxon: 3.2.1
       mjml: 4.13.0
       mysql: 2.18.1
       phc-argon2: 1.1.4
@@ -232,7 +232,7 @@ packages:
       '@adonisjs/redis': 7.3.2_@adonisjs+core@5.9.0
       '@poppinss/hooks': 5.0.3_wgdfb774pn54a4dpwjtuyywjqy
       '@poppinss/utils': 5.0.0
-      luxon: 3.2.0
+      luxon: 3.2.1
     transitivePeerDependencies:
       - '@adonisjs/application'
     dev: false
@@ -430,7 +430,7 @@ packages:
       igniculus: 1.5.0
       knex: 2.3.0_mysql@2.18.1
       knex-dynamic-connection: 3.0.0_knex@2.3.0
-      luxon: 3.2.0
+      luxon: 3.2.1
       macroable: 7.0.2
       pretty-hrtime: 1.0.3
       qs: 6.11.0
@@ -448,7 +448,7 @@ packages:
       - tedious
     dev: false
 
-  /@adonisjs/mail/8.1.2_4ghgic225jlfl7e7vw3dxxpjdy:
+  /@adonisjs/mail/8.1.2_7e7l2sn6ahe5tgtb3f7sixdt24:
     resolution: {integrity: sha512-5mjSbrm9CZdjMVB3Ht3LBfifZPtijAK51ZmtCrga5gPhNYn3SgJdhD0NIg05ROq1+au1g53I8cZ8cESA3g84DQ==}
     peerDependencies:
       '@adonisjs/core': ^5.1.0
@@ -462,7 +462,7 @@ packages:
       fastq: 1.13.0
       get-stream: 6.0.1
       got: 11.8.5
-      ical-generator: 3.5.2_luxon@3.2.0
+      ical-generator: 3.5.2_luxon@3.2.1
       multi-part: 3.0.0
       nodemailer: 6.7.8
     transitivePeerDependencies:
@@ -557,7 +557,7 @@ packages:
       '@poppinss/utils': 5.0.0
       '@types/luxon': 3.0.1
       '@types/validator': 13.7.7
-      luxon: 3.2.0
+      luxon: 3.2.1
       normalize-url: 6.1.0
       tmp-cache: 1.1.0
       validator: 13.7.0
@@ -5468,7 +5468,7 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
-  /ical-generator/3.5.2_luxon@3.2.0:
+  /ical-generator/3.5.2_luxon@3.2.1:
     resolution: {integrity: sha512-SJzGuRSH50AqzHc8niA4jSO7Gq/CFMlheQZhXQcLihhGgubNRaYHFwhc21owLRLxAP5LnvReDNPCURo9sXs8Wg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5501,7 +5501,7 @@ packages:
       rrule:
         optional: true
     dependencies:
-      luxon: 3.2.0
+      luxon: 3.2.1
       uuid-random: 1.3.2
     dev: false
 
@@ -6328,8 +6328,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /luxon/3.2.0:
-    resolution: {integrity: sha512-Namj3XqoJjFekq/JHQEaaAv4zyE/fyyDBrMEBnIL2s/X54SC8W5Ea0uej1TRXUArWec8OojsAVsGBYhNRjpMVw==}
+  /luxon/3.2.1:
+    resolution: {integrity: sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==}
     engines: {node: '>=12'}
 
   /macroable/7.0.2:
