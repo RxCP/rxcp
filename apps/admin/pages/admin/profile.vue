@@ -18,7 +18,7 @@
               <span
                 class="i-ic-baseline-keyboard-arrow-right text-xl inline-block"
               ></span>
-              <span class="inline-block">Profile Information</span>
+              <span class="inline-block font-bold">Profile Information</span>
             </NuxtLink>
           </li>
           <li>
@@ -29,7 +29,7 @@
               <span
                 class="i-ic-baseline-keyboard-arrow-right text-xl inline-block"
               ></span>
-              <span class="inline-block">Change Email</span>
+              <span class="inline-block font-bold">Change Email</span>
             </NuxtLink>
           </li>
           <li>
@@ -40,7 +40,18 @@
               <span
                 class="i-ic-baseline-keyboard-arrow-right text-xl inline-block"
               ></span>
-              <span class="inline-block">Change Password</span>
+              <span class="inline-block font-bold">Change Password</span>
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              to="/admin/profile/security"
+              class="no-underline p-2 block dark:text-slate-300 flex items-center space-x-2"
+            >
+              <span
+                class="i-ic-baseline-keyboard-arrow-right text-xl inline-block"
+              ></span>
+              <span class="inline-block font-bold">Security</span>
             </NuxtLink>
           </li>
         </ul>
@@ -48,3 +59,11 @@
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.router-link-exact-active {
+  span {
+    color: var(--el-color-primary);
+  }
+}
+</style>
