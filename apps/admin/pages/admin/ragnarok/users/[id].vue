@@ -1,11 +1,14 @@
 <script setup>
-import { ElButton, ElForm, ElInput, ElFormItem } from 'element-plus'
+import { ElSwitch, ElForm, ElInput, ElFormItem } from 'element-plus'
 const { $api } = useNuxtApp()
 
 const form = reactive({
   firstName: '',
   lastName: '',
-  email: ''
+  email: '',
+  createdAt: '',
+  confirmed: false,
+  blocked: false
 })
 
 onMounted(async () => {
@@ -23,6 +26,9 @@ onMounted(async () => {
   form.firstName = user.first_name
   form.lastName = user.last_name
   form.email = user.email
+  form.createdAt = user.created_at
+  form.confirmed = user.confirmed
+  form.blocked = user.blocked
 })
 </script>
 
@@ -54,6 +60,15 @@ onMounted(async () => {
         </el-form-item>
         <el-form-item label="Email Address">
           <el-input v-model="form.email" readonly />
+        </el-form-item>
+        <el-form-item label="Date Created">
+          <el-input v-model="form.createdAt" readonly />
+        </el-form-item>
+        <el-form-item label="Confirmed">
+          <el-switch v-model="form.confirmed" disabled />
+        </el-form-item>
+        <el-form-item label="Blocked">
+          <el-switch v-model="form.blocked" disabled />
         </el-form-item>
       </div>
       <!-- <div class="text-right mt-8">
