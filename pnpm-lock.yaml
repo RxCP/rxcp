@@ -15,7 +15,7 @@ importers:
   apps/admin:
     specifiers:
       '@better-typed/hyper-fetch': 1.5.1
-      '@hyper-fetch/core': 3.2.0
+      '@hyper-fetch/core': 3.3.1
       '@iconify/json': ^2.1.158
       '@pinia-plugin-persistedstate/nuxt': 1.0.0
       '@pinia/nuxt': 0.4.6
@@ -40,7 +40,7 @@ importers:
       unocss-preset-scrollbar: ^0.2.1
     dependencies:
       '@better-typed/hyper-fetch': 1.5.1
-      '@hyper-fetch/core': 3.2.0
+      '@hyper-fetch/core': 3.3.1
       '@pinia/nuxt': 0.4.6_vue@3.2.47
       '@vueuse/nuxt': 9.12.0_nuxt@3.2.0+vue@3.2.47
       element-plus: 2.2.29_vue@3.2.47
@@ -1328,8 +1328,10 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
 
-  /@hyper-fetch/core/3.2.0:
-    resolution: {integrity: sha512-2wLot4UsJOUKmRlISEJTorfV7bovFTX4WsTHRup/SFk0mLIO1XLaFOjRReMLD5b25rlXIaOBZOE4MQj2RTeo2Q==}
+  /@hyper-fetch/core/3.3.1:
+    resolution: {integrity: sha512-RcHDViUxNYUB0ZhcwujJxdHWuIBS4YTfr8sTRDIC/ZzuPh28VDeyXYGbF4KJIL9JuqmDQzHDSgbwOerBtx6kQg==}
+    dependencies:
+      events: 3.3.0
     dev: false
 
   /@iconify/json/2.1.158:
