@@ -99,7 +99,7 @@ importers:
       socket.io: ^4.5.3
       source-map-support: 0.5.21
       typescript: 4.8.4
-      youch: 3.2.2
+      youch: 3.2.3
       youch-terminal: 2.2.0
     dependencies:
       '@adonisjs/auth': 8.2.3_ljoyct2ja223qb7yn5g54aupgm
@@ -135,7 +135,7 @@ importers:
       eslint-plugin-prettier: 4.2.1_qa2thblfovmfepmgrc7z2owbo4
       pino-pretty: 9.2.0
       typescript: 4.8.4
-      youch: 3.2.2
+      youch: 3.2.3
       youch-terminal: 2.2.0
 
   packages/tsconfig:
@@ -10825,14 +10825,6 @@ packages:
       kleur: 4.1.5
       string-width: 4.2.3
       wordwrap: 1.0.0
-    dev: true
-
-  /youch/3.2.2:
-    resolution: {integrity: sha512-+xhTK8sY9qV3nLbWVaOUFZPdlQ3wrMKiu3dKqKkAkLaYzzkYmpWY+v+eQIAfbPu7TZhS1G5FhEV++sl8fhuT4w==}
-    dependencies:
-      cookie: 0.5.0
-      mustache: 4.2.0
-      stacktracey: 2.1.8
     dev: true
 
   /youch/3.2.3:
