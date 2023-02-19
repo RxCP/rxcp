@@ -12,8 +12,8 @@
     "format": "turbo run format"
   },
   "devDependencies": {
-    "eslint": "8.30.0",
-    "prettier": "2.7.1",
+    "eslint": "8.33.0",
+    "prettier": "2.8.3",
     "turbo": "latest"
   },
   "engines": {

@@ -11,6 +11,7 @@ import {
 } from 'element-plus'
 import { useDark, useToggle } from '@vueuse/core'
 
+const router = useRouter()
 const socket = useSocket()
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
@@ -114,8 +115,12 @@ async function handleLogOut() {
         </span>
         <template #dropdown>
           <el-dropdown-menu class="white dark:gray-700 w-44">
-            <el-dropdown-item>Profile</el-dropdown-item>
-            <el-dropdown-item>Settings</el-dropdown-item>
+            <el-dropdown-item @click="router.push('/admin/profile')"
+              >Profile</el-dropdown-item
+            >
+            <el-dropdown-item @click="router.push('/admin/settings')"
+              >Settings</el-dropdown-item
+            >
             <el-dropdown-item divided @click="handleLogOut"
               >Sign Out</el-dropdown-item
             >
