@@ -52,7 +52,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "pino-pretty": "9.2.0",
     "typescript": "4.8.4",
-    "youch": "3.2.2",
+    "youch": "3.2.3",
     "youch-terminal": "2.2.0"
   },
   "dependencies": {
