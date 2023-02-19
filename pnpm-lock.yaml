@@ -23,7 +23,7 @@ importers:
       '@unocss/preset-attributify': 0.49.4
       '@unocss/preset-icons': 0.49.4
       '@unocss/preset-uno': 0.49.4
-      '@unocss/preset-web-fonts': 0.49.4
+      '@unocss/preset-web-fonts': 0.49.7
       '@vueuse/nuxt': 9.12.0
       date-fns: ^2.29.3
       element-plus: 2.2.29
@@ -52,7 +52,7 @@ importers:
       '@unocss/preset-attributify': 0.49.4
       '@unocss/preset-icons': 0.49.4
       '@unocss/preset-uno': 0.49.4
-      '@unocss/preset-web-fonts': 0.49.4
+      '@unocss/preset-web-fonts': 0.49.7
       date-fns: 2.29.3
       eslint: 8.33.0
       eslint-config-prettier: 8.6.0_eslint@8.33.0
@@ -2622,6 +2622,10 @@ packages:
     resolution: {integrity: sha512-1RNV+KBgRo0uuaa5Etwc5cfxkdhJelIXRFz3LeXBOU4dIrTzBAMr352M+oZ/nnkbnAROGf3icTE0UcmSaCA2RQ==}
     dev: true
 
+  /@unocss/core/0.49.7:
+    resolution: {integrity: sha512-RmSxSqpwrj2Qx4HQTg/xDZsimOfOWqGriUG1w0kFDhNmEoLuxZiDPEZhZYHIo2QaVzxxBdIiSKkMfvFOTqbUgA==}
+    dev: true
+
   /@unocss/inspector/0.49.4:
     resolution: {integrity: sha512-Irp0c+SsS2lxeBouhZe91ZRhd2VHVjrnIr7Ns+re3mhZ0WtBW1kVRxN3+45Cj07jQiRgPe/fms13MSuMgtFzUQ==}
     dependencies:
@@ -2706,6 +2710,13 @@ packages:
     dependencies:
       '@unocss/core': 0.49.4
       ofetch: 0.4.21
+    dev: true
+
+  /@unocss/preset-web-fonts/0.49.7:
+    resolution: {integrity: sha512-GMeBjXQ1uBIIv5g4zbH7/0Nu+iJL7Q615Ygd+c3RY2CgIFwfY49zRuPiZBPehuCjdBpdGn5wGzmBupDAI2WQlg==}
+    dependencies:
+      '@unocss/core': 0.49.7
+      ofetch: 1.0.0
     dev: true
 
   /@unocss/preset-wind/0.49.4:
@@ -4569,6 +4580,7 @@ packages:
 
   /destr/1.2.1:
     resolution: {integrity: sha512-ud8w0qMLlci6iFG7CNgeRr8OcbUWMsbfjtWft1eJ5Luqrz/M8Ebqk/KCzne8rKUlIQWWfLv0wD6QHrqOf4GshA==}
+    dev: true
 
   /destr/1.2.2:
     resolution: {integrity: sha512-lrbCJwD9saUQrqUfXvl6qoM+QN3W7tLV5pAOs+OqOmopCCz/JkE05MHedJR1xfk4IAnZuJXPVuN5+7jNA2ZCiA==}
@@ -8852,7 +8864,7 @@ packages:
     resolution: {integrity: sha512-yVeYJHOpJLOhs3V6RKwz7RPPwPurrx3JjwK264sPgvo/lFdhuUrLien7iSvAO6STVkN0gSMk/MehQNHQhflqZw==}
     dependencies:
       defu: 6.1.1
-      destr: 1.2.1
+      destr: 1.2.2
       flat: 5.0.2
 
   /react-is/16.13.1:
