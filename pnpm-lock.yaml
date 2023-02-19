@@ -5,11 +5,11 @@ importers:
   .:
     specifiers:
       eslint: 8.33.0
-      prettier: 2.8.3
+      prettier: 2.8.4
       turbo: latest
     devDependencies:
       eslint: 8.33.0
-      prettier: 2.8.3
+      prettier: 2.8.4
       turbo: 1.8.1
 
   apps/admin:
@@ -33,7 +33,7 @@ importers:
       eslint-plugin-vue: 9.9.0
       lodash-es: 4.17.21
       nuxt: 3.2.0
-      prettier: 2.8.3
+      prettier: 2.8.4
       sass: 1.58.1
       sass-loader: 13.2.0
       socket.io-client: ^4.5.4
@@ -60,7 +60,7 @@ importers:
       eslint-plugin-vue: 9.9.0_eslint@8.33.0
       lodash-es: 4.17.21
       nuxt: 3.2.0_eslint@8.33.0+sass@1.58.1
-      prettier: 2.8.3
+      prettier: 2.8.4
       sass: 1.58.1
       sass-loader: 13.2.0_sass@1.58.1+webpack@5.75.0
       unocss-preset-scrollbar: 0.2.1_unocss@0.49.4
@@ -99,7 +99,7 @@ importers:
       socket.io: ^4.5.3
       source-map-support: 0.5.21
       typescript: 4.8.4
-      youch: 3.2.2
+      youch: 3.2.3
       youch-terminal: 2.2.0
     dependencies:
       '@adonisjs/auth': 8.2.3_ljoyct2ja223qb7yn5g54aupgm
@@ -132,10 +132,10 @@ importers:
       eslint: 8.33.0
       eslint-config-prettier: 8.6.0_eslint@8.33.0
       eslint-plugin-adonis: 2.1.1_o2s6jvgtr2hafiobaqfgu6k2l4
-      eslint-plugin-prettier: 4.2.1_jqplj6qf3uqpxpu4gdyhwwasnq
+      eslint-plugin-prettier: 4.2.1_qa2thblfovmfepmgrc7z2owbo4
       pino-pretty: 9.2.0
       typescript: 4.8.4
-      youch: 3.2.2
+      youch: 3.2.3
       youch-terminal: 2.2.0
 
   packages/tsconfig:
@@ -4974,11 +4974,11 @@ packages:
     dependencies:
       '@vue/compiler-sfc': 3.2.45
       chalk: 4.1.2
-      prettier: 2.8.3
+      prettier: 2.8.4
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-prettier/4.2.1_jqplj6qf3uqpxpu4gdyhwwasnq:
+  /eslint-plugin-prettier/4.2.1_qa2thblfovmfepmgrc7z2owbo4:
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -4991,7 +4991,7 @@ packages:
     dependencies:
       eslint: 8.33.0
       eslint-config-prettier: 8.6.0_eslint@8.33.0
-      prettier: 2.8.3
+      prettier: 2.8.4
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -8698,8 +8698,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.8.3:
-    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -10825,14 +10825,6 @@ packages:
       kleur: 4.1.5
       string-width: 4.2.3
       wordwrap: 1.0.0
-    dev: true
-
-  /youch/3.2.2:
-    resolution: {integrity: sha512-+xhTK8sY9qV3nLbWVaOUFZPdlQ3wrMKiu3dKqKkAkLaYzzkYmpWY+v+eQIAfbPu7TZhS1G5FhEV++sl8fhuT4w==}
-    dependencies:
-      cookie: 0.5.0
-      mustache: 4.2.0
-      stacktracey: 2.1.8
     dev: true
 
   /youch/3.2.3:
