@@ -33,7 +33,7 @@
   "dependencies": {
     "@better-typed/hyper-fetch": "1.5.1",
     "@hyper-fetch/core": "3.3.1",
-    "@pinia/nuxt": "0.4.6",
+    "@pinia/nuxt": "0.4.7",
     "@vueuse/nuxt": "9.13.0",
     "element-plus": "2.2.32",
     "socket.io-client": "^4.5.4"
