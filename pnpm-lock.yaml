@@ -78,7 +78,7 @@ importers:
       '@adonisjs/repl': 3.1.11
       '@adonisjs/view': 6.2.0
       '@japa/preset-adonis': 1.2.0
-      '@japa/runner': 2.5.0
+      '@japa/runner': 2.5.1
       '@types/mjml': 4.7.0
       adonis-lucid-filter: 4.1.0
       adonis-lucid-soft-deletes: 1.4.3
@@ -125,8 +125,8 @@ importers:
       source-map-support: 0.5.21
     devDependencies:
       '@adonisjs/assembler': 5.9.5_@adonisjs+core@5.9.0
-      '@japa/preset-adonis': 1.2.0_mj5okdof5wfuahsk7ogqdg3isq
-      '@japa/runner': 2.5.0
+      '@japa/preset-adonis': 1.2.0_j3mi2h5egeb32xpgmio7ta7fmu
+      '@japa/runner': 2.5.1
       '@types/mjml': 4.7.0
       adonis-preset-ts: 2.1.0
       eslint: 8.34.0
@@ -1361,12 +1361,12 @@ packages:
   /@ioredis/commands/1.2.0:
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
 
-  /@japa/api-client/1.4.2_@japa+runner@2.5.0:
+  /@japa/api-client/1.4.2_@japa+runner@2.5.1:
     resolution: {integrity: sha512-JWkveIKc+01sCaAwKUUu4wQIhet6d4E3uliac+V1ZjRyi/o3LGjj75i2HN5YayWATBwj5EkH2MmHv78YHQqFQQ==}
     peerDependencies:
       '@japa/runner': ^2.1.1
     dependencies:
-      '@japa/runner': 2.5.0
+      '@japa/runner': 2.5.1
       '@poppinss/hooks': 6.0.2-0
       '@types/superagent': 4.1.15
       cookie: 0.5.0
@@ -1377,12 +1377,12 @@ packages:
       - supports-color
     dev: true
 
-  /@japa/assert/1.3.6_mphg5mhgxdke2uaoa457xlxmju:
+  /@japa/assert/1.3.6_hrjb2kemgpojs35zg64nkijc6e:
     resolution: {integrity: sha512-aFyCRdLAgYR4P45CayMY7MlzHKLp+oKr2fGj34jObWqmNZOWgFJuEcwBGoqbr+ApL/9Qhkcq0hoFL2FyfFJ7Jw==}
     peerDependencies:
       '@japa/runner': ^2.1.1
     dependencies:
-      '@japa/runner': 2.5.0
+      '@japa/runner': 2.5.1
       '@types/chai': 4.3.3
       api-contract-validator: 2.2.8_openapi-types@12.0.2
       chai: 4.3.6
@@ -1391,19 +1391,19 @@ packages:
       - openapi-types
     dev: true
 
-  /@japa/base-reporter/1.0.3_@japa+core@7.3.1:
+  /@japa/base-reporter/1.0.3_@japa+core@7.3.2:
     resolution: {integrity: sha512-SOL0MyTZq6eIRkR9rOElxY1oYJfVH3qCO18DbCkrtV6cKSF6c5MHjhES56Frs0ugj0ginBxcAXHoczZk1GXXTA==}
     peerDependencies:
       '@japa/core': ^7.0.0
     dependencies:
-      '@japa/core': 7.3.1
+      '@japa/core': 7.3.2
       '@japa/errors-printer': 2.1.0
       '@poppinss/cliui': 3.0.5
       ms: 2.1.3
     dev: true
 
-  /@japa/core/7.3.1:
-    resolution: {integrity: sha512-5RjVmiVjqpwo8tiPxYZ289YxMEfFEByZv5mEqhrWVnZVmzx1T/6IsBc17DY8uhP7xOKfAiphw3NTyOeQob+WKw==}
+  /@japa/core/7.3.2:
+    resolution: {integrity: sha512-OtYs6j3nro5Ew57HRZ4AwFC6dB91PB0ZhTnltISMa0lgSXf6mPU3Ma8+7T/t5sYreMLObAAzuS6viVmBZB7AhQ==}
     dependencies:
       '@poppinss/hooks': 6.0.2-0
       async-retry: 1.3.3
@@ -1421,39 +1421,39 @@ packages:
       youch-terminal: 2.2.0
     dev: true
 
-  /@japa/preset-adonis/1.2.0_mj5okdof5wfuahsk7ogqdg3isq:
+  /@japa/preset-adonis/1.2.0_j3mi2h5egeb32xpgmio7ta7fmu:
     resolution: {integrity: sha512-jcvQCN9U5WA4kdKDtYuV6DZMzrZomxho3MASS6yhnJsSqSW6jgFDNwhOgSzY7AyPgxmVAf3jZ6JKd7r2USctlA==}
     peerDependencies:
       '@adonisjs/core': ^5.0.0
       '@japa/runner': ^2.0.0
     dependencies:
       '@adonisjs/core': 5.9.0
-      '@japa/api-client': 1.4.2_@japa+runner@2.5.0
-      '@japa/assert': 1.3.6_mphg5mhgxdke2uaoa457xlxmju
-      '@japa/run-failed-tests': 1.1.0_@japa+runner@2.5.0
-      '@japa/runner': 2.5.0
-      '@japa/spec-reporter': 1.3.1_@japa+core@7.3.1
+      '@japa/api-client': 1.4.2_@japa+runner@2.5.1
+      '@japa/assert': 1.3.6_hrjb2kemgpojs35zg64nkijc6e
+      '@japa/run-failed-tests': 1.1.0_@japa+runner@2.5.1
+      '@japa/runner': 2.5.1
+      '@japa/spec-reporter': 1.3.1_@japa+core@7.3.2
     transitivePeerDependencies:
       - '@japa/core'
       - openapi-types
       - supports-color
     dev: true
 
-  /@japa/run-failed-tests/1.1.0_@japa+runner@2.5.0:
+  /@japa/run-failed-tests/1.1.0_@japa+runner@2.5.1:
     resolution: {integrity: sha512-kwD/esM3Mc+4eslhAN31e5r/fCMHi9kNlg4FvetgdmS6bR9XTlTR3Cy2fJ4LwMYhNcLFRcBEw9x8d0Nobq9ryg==}
     peerDependencies:
       '@japa/runner': ^2.1.1
     dependencies:
-      '@japa/runner': 2.5.0
+      '@japa/runner': 2.5.1
       '@poppinss/cliui': 3.0.5
       find-cache-dir: 3.3.2
       fs-extra: 10.1.0
     dev: true
 
-  /@japa/runner/2.5.0:
-    resolution: {integrity: sha512-JbfsXpaCHjTrVhZSMQ1gLEZ9kleoUKJr2CnsLegIyj38AlQvemQE3HnNgdPsZdwW4MZpdaHc7UASaoRUy5oSYQ==}
+  /@japa/runner/2.5.1:
+    resolution: {integrity: sha512-p1zjniMCiGxRnZkUs5WtZjTQhbXcnK0aM2Wu4Qc+w+MBpmOrw5J2zJuge0FweepTUR9CT3r2x65uw4qIshy8XQ==}
     dependencies:
-      '@japa/core': 7.3.1
+      '@japa/core': 7.3.2
       '@japa/errors-printer': 2.1.0
       '@poppinss/cliui': 3.0.5
       '@poppinss/hooks': 6.0.2-0
@@ -1462,10 +1462,10 @@ packages:
       inclusion: 1.0.1
     dev: true
 
-  /@japa/spec-reporter/1.3.1_@japa+core@7.3.1:
+  /@japa/spec-reporter/1.3.1_@japa+core@7.3.2:
     resolution: {integrity: sha512-DVPi4C2T0Xdkz95FKD/AwBO7EfpTA4WKz26HmpE2SxgHKyLawKoV75/KNtZsOBmt9FA/BxFUBGMS508o0nzm8A==}
     dependencies:
-      '@japa/base-reporter': 1.0.3_@japa+core@7.3.1
+      '@japa/base-reporter': 1.0.3_@japa+core@7.3.2
       '@japa/errors-printer': 2.1.0
       '@poppinss/cliui': 3.0.5
       ms: 2.1.3
