@@ -1,5 +1,6 @@
-import { apiProfile } from '~/api/profile'
 import { Client, RequestInstance } from '@hyper-fetch/core'
+import { apiAuth } from '~/api/auth.api'
+import { apiProfile } from '~/api/profile'
 
 export default function () {
   const config = useRuntimeConfig()
@@ -17,6 +18,7 @@ export default function () {
   )
 
   return {
+    ...apiAuth(client),
     ...apiProfile(client)
   }
 }
