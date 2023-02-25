@@ -40,7 +40,9 @@ const accounts = computed(() => {
     <div class="flex mb-6">
       <div>
         <h1 class="my-0">Characters</h1>
-        <p class="text-slate-300 text-lg mt-2">Manage ragnarok characters.</p>
+        <p class="text-slate-300 text-md leading-normal mt-2">
+          Administer and manage your Ragnarok characters.
+        </p>
       </div>
       <div class="ml-auto md:w-80">
         <el-input v-model="search" placeholder="Search" @input="handleSearch" />

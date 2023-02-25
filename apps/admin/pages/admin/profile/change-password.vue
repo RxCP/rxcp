@@ -6,8 +6,11 @@ import { ElButton, ElForm, ElInput, ElFormItem } from 'element-plus'
   <div class="flex mb-8">
     <div>
       <h1 class="my-0">Change Password</h1>
-      <p class="text-gray-400 dark:text-slate-300 text-lg mt-2 mb-0">
-        Change your password.
+      <p
+        class="text-gray-400 dark:text-slate-300 text-md mt-2 mb-0 leading-normal"
+      >
+        Update your account security by changing your password. Choose a strong
+        and memorable password to ensure your information is safe.
       </p>
     </div>
   </div>
