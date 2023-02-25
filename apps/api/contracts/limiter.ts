@@ -8,7 +8,7 @@
 import type limiterConfig from '../config/limiter'
 
 declare module '@adonisjs/limiter/build/services/index' {
-  type Config = typeof limiterConfig['stores']
+  type Config = (typeof limiterConfig)['stores']
 
   /**
    * Compute limiter stores from the config file

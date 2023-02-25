@@ -7,8 +7,8 @@ import { presetScrollbar } from 'unocss-preset-scrollbar'
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      apiUrl: 'http://127.0.0.1:3001',
-      socketUrl: 'ws://127.0.0.1:3001'
+      apiUrl: process.env.PUBLIC_API_URL || 'http://127.0.0.1:3001',
+      socketUrl: process.env.PUBLIC_SOCKET_URL || 'ws://127.0.0.1:3001'
     }
   },
 

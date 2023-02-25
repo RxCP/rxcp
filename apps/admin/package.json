@@ -36,6 +36,8 @@
     "@pinia/nuxt": "0.4.7",
     "@vueuse/nuxt": "9.13.0",
     "element-plus": "2.2.32",
-    "socket.io-client": "^4.5.4"
+    "socket.io-client": "^4.5.4",
+    "vee-validate": "^4.7.4",
+    "yup": "^1.0.0"
   }
 }
