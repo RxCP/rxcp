@@ -44,8 +44,11 @@ onMounted(async () => {
     <div class="flex mb-6">
       <div>
         <h1 class="my-0">User Details</h1>
-        <p class="text-gray-400 dark:text-slate-300 text-lg mt-2">
-          Manage user information.
+        <p
+          class="text-gray-400 dark:text-slate-300 text-md leading-normal mt-2"
+        >
+          Access and manage user information, including login credentials,
+          account settings, and privacy preferences.
         </p>
       </div>
     </div>

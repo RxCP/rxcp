@@ -60,8 +60,9 @@ async function onSubmit(values, actions) {
   <div class="flex mb-8">
     <div>
       <h1 class="my-0">Profile Information</h1>
-      <p class="text-gray-400 dark:text-slate-300 text-lg mt-2 mb-0">
-        Manage your profile information.
+      <p class="text-gray-400 dark:text-slate-300 text-md mt-2 mb-0">
+        Edit and update your profile information, including your personal
+        details and preferences.
       </p>
     </div>
   </div>
