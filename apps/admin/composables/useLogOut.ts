@@ -1,5 +1,5 @@
 export async function useLogOut() {
-  const { $api } = useNuxtApp()
+  const { postLogOut } = useApi()
   const { setAccessToken, setAuthUser } = useAuthStore()
   const router = useRouter()
 
@@ -8,5 +8,5 @@ export async function useLogOut() {
 
   router.push({ path: '/login' })
 
-  return await $api.auth.logOut.send()
+  return await postLogOut.send()
 }

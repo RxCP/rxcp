@@ -22,8 +22,6 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       api: {
-        auth: apiAuth(client),
-        profile: apiProfile(client),
         accounts: apiAccounts(client),
         users: apiUsers(client),
         characters: apiCharacters(client)

@@ -104,8 +104,7 @@ async function onSubmit(values, actions) {
       </div>
       <div class="text-right mt-8">
         <el-button type="primary" native-type="submit" :loading="isSubmitting">
-          <span v-show="!isSubmitting">Update Profile</span>
-          <span v-show="isSubmitting">Please wait...</span>
+          {{ isSubmitting ? 'Please wait...' : 'Update Profile' }}
         </el-button>
       </div>
     </Form>

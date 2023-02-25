@@ -1,93 +1,74 @@
-<script lang="ts" setup>
-import { head, isArray } from 'lodash-es'
-import { reactive } from 'vue'
-import {
-  ElButton,
-  ElForm,
-  ElInput,
-  ElFormItem,
-  ElLink,
-  ElMessage
-} from 'element-plus'
-import type { FormInstance, FormRules } from 'element-plus'
+<script setup>
+import { Field, Form } from 'vee-validate'
+import { object, string } from 'yup'
+import { ElButton, ElInput, ElFormItem, ElLink, ElMessage } from 'element-plus'
 
 definePageMeta({
   layout: 'centered-form',
   middleware: ['guest']
 })
 
-const { $api } = useNuxtApp()
+const { postLogin, getUser } = useApi()
 const { setAccessToken, setAuthUser } = useAuthStore()
 const router = useRouter()
-const ruleFormRef = ref<FormInstance>()
-const form = reactive({
-  email: '',
-  password: ''
+
+// State
+const isSubmitting = ref(false)
+const formSchema = object({
+  email: string().email().required().label('Email'),
+  password: string().required().label('Password')
 })
 
-const rules = reactive<FormRules>({
-  email: [
-    { required: true, message: 'This field is required', trigger: 'blur' },
-    {
-      type: 'email',
-      required: true,
-      message: 'Invalid email',
-      trigger: 'change'
-    }
-  ],
-  password: [
-    { required: true, message: 'This field is required', trigger: 'blur' }
-  ]
-})
-
-let isSubmitting = ref<Boolean>(false)
-
-async function submitForm(formEl: FormInstance | undefined) {
-  if (!formEl || isSubmitting.value) return
-
+async function onSubmit(values) {
   isSubmitting.value = true
 
-  await formEl.validate(async (valid, fields) => {
-    if (!valid) {
-      isSubmitting.value = false
-      return
-    }
+  const [data, resError, status] = await postLogin.setData(values).send()
 
-    const [data, error, status] = await $api.auth.login
-      .setData({
-        email: form.email,
-        password: form.password
-      })
-      .send()
-
-    if (status !== 200) {
-      const errorMsg: { message: string } | undefined = isArray(error.errors)
-        ? head(error.errors || [{ message: 'Server error' }])
-        : { message: 'Something went wrong! Please contact the administrator.' }
-
-      ElMessage.error(errorMsg?.message)
-      console.warn(error)
-      isSubmitting.value = false
-      return
-    }
-
-    /* SUCESS */
-    // save token to store
-    setAccessToken(data?.token)
-
-    // get user authenticated details
-    const [authData, _, authStatus] = await $api.auth.getUser.send()
-
-    // then save to store
-    if (authStatus === 200) {
-      setAuthUser(authData?.data)
-      router.push({ path: '/admin' })
-    } else {
-      ElMessage.error('Invalid user')
-    }
+  if (![401, 422, 200].includes(status)) {
+    ElMessage({
+      showClose: true,
+      message: `We're sorry, but there seems to be a server error. Please try again later or contact support for assistance.`,
+      type: 'error',
+      duration: 5000
+    })
 
     isSubmitting.value = false
-  })
+    return
+  }
+
+  if (resError) {
+    ElMessage({
+      showClose: true,
+      message: resError.errors[0].message,
+      type: 'error'
+    })
+
+    isSubmitting.value = false
+    return
+  }
+
+  /* SUCESS */
+  // save token to store
+  setAccessToken(data?.token)
+
+  // get user authenticated details
+  const [authData, _, authStatus] = await getUser.send()
+
+  // then save to store
+  if (authStatus === 200) {
+    setAuthUser(authData?.data)
+    router.push({ path: '/admin' })
+  } else {
+    ElMessage({
+      showClose: true,
+      message:
+        'Access to this account has been restricted. Please contact an administrator for further assistance.',
+      duration: 5000,
+      type: 'error'
+    })
+  }
+
+  isSubmitting.value = false
 }
 </script>
 
@@ -96,36 +77,45 @@ async function submitForm(formEl: FormInstance | undefined) {
     <Title>Login</Title>
   </Head>
   <h1 class="text-xl font-bold mt-0 mb-6 text-center">Sign In</h1>
-  <el-form ref="ruleFormRef" :model="form" :rules="rules">
-    <el-form-item prop="email">
-      <el-input
-        v-model="form.email"
-        type="email"
-        placeholder="Email Address"
-        required
-      />
-    </el-form-item>
-    <el-form-item prop="password">
-      <el-input
-        v-model="form.password"
-        type="password"
-        placeholder="Password"
-        required
-      />
-    </el-form-item>
+  <Form
+    :validation-schema="formSchema"
+    class="el-form el-form--default el-form--label-top"
+    @submit="onSubmit"
+  >
+    <Field name="email" v-slot="{ value, field, errorMessage }">
+      <el-form-item :error="errorMessage">
+        <el-input
+          type="email"
+          placeholder="Email Address"
+          v-bind="field"
+          :validate-event="false"
+          :model-value="value"
+        />
+      </el-form-item>
+    </Field>
+    <Field name="password" v-slot="{ value, field, errorMessage }">
+      <el-form-item :error="errorMessage">
+        <el-input
+          type="password"
+          placeholder="Password"
+          v-bind="field"
+          :validate-event="false"
+          :model-value="value"
+        />
+      </el-form-item>
+    </Field>
     <el-form-item class="mt-8">
       <el-button
-        native-type="submit"
         type="primary"
+        native-type="submit"
         class="w-full"
         :loading="isSubmitting"
-        @click="submitForm(ruleFormRef)"
       >
-        Sign In
+        {{ isSubmitting ? 'Signing In...' : 'Sign In' }}
       </el-button>
     </el-form-item>
     <el-link type="primary" :underline="false" class="text-center w-full">
       Forgot password ?
     </el-link>
-  </el-form>
+  </Form>
 </template>

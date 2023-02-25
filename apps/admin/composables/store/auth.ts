@@ -21,14 +21,14 @@ type authUser = {
 export const useAuthStore = defineStore('auth', {
   state: () => ({
     accessToken: '' as string,
-    authUser: ({} as authUser) || {}
+    authUser: {} as authUser | {}
   }),
   actions: {
     setAccessToken(newToken: string) {
       this.accessToken = newToken
     },
-    setAuthUser(user: authUser) {
-      this.authUser = user
+    setAuthUser(user: authUser | {}) {
+      this.authUser = user || {}
     }
   },
   persist: true
