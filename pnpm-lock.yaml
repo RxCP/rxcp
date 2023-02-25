@@ -96,7 +96,7 @@ importers:
       mjml: 4.13.0
       mysql: 2.18.1
       phc-argon2: 1.1.4
-      pino-pretty: 9.3.0
+      pino-pretty: 9.4.0
       proxy-addr: 2.0.7
       rand-token: 1.0.1
       reflect-metadata: 0.1.13
@@ -137,7 +137,7 @@ importers:
       eslint-config-prettier: 8.6.0_eslint@8.34.0
       eslint-plugin-adonis: 2.1.1_vvbfoh7ci2jjuy6alapehrh2ri
       eslint-plugin-prettier: 4.2.1_u5wnrdwibbfomslmnramz52buy
-      pino-pretty: 9.3.0
+      pino-pretty: 9.4.0
       typescript: 4.8.4
       youch: 3.2.3
       youch-terminal: 2.2.0
@@ -8278,8 +8278,8 @@ packages:
       split2: 4.1.0
     dev: true
 
-  /pino-pretty/9.3.0:
-    resolution: {integrity: sha512-T3FIzVc2sQfDY6FSjhvAEOeA1sby0YKI4he4VsI+d8q3MyYnfsPT+7OI3W/99v0v3TfJN/nMJradEvJWjbjRaQ==}
+  /pino-pretty/9.4.0:
+    resolution: {integrity: sha512-NIudkNLxnl7MGj1XkvsqVyRgo6meFP82ECXF2PlOI+9ghmbGuBUUqKJ7IZPIxpJw4vhhSva0IuiDSAuGh6TV9g==}
     hasBin: true
     dependencies:
       colorette: 2.0.19
