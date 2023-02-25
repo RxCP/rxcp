@@ -39,7 +39,7 @@ export default class UploadsController {
 
     return {
       data: {
-        url
+        url,
       },
     }
   }
