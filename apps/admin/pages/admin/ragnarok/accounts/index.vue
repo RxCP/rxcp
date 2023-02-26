@@ -20,6 +20,7 @@ useHead({
   title: 'Ragnarok Accounts'
 })
 
+const router = useRouter()
 const { getAccounts } = useApi()
 const { limit, page, total, items, isLoading, search, handleSearch } =
   await usePagination(getAccounts)
@@ -36,6 +37,10 @@ const accounts = computed(() => {
     }
   })
 })
+
+function handleViewDetails(id) {
+  router.push(`/admin/ragnarok/accounts/${id}`)
+}
 </script>
 
 <template>
@@ -108,9 +113,11 @@ const accounts = computed(() => {
               <template #dropdown>
                 <el-dropdown-menu>
                   <el-dropdown-item
-                    ><div class="i-tabler-pencil mr-2"></div>
-                    Details</el-dropdown-item
+                    @click="handleViewDetails(scope.row.account_id)"
                   >
+                    <div class="i-tabler-pencil mr-2"></div>
+                    Details
+                  </el-dropdown-item>
                   <el-dropdown-item disabled
                     ><div class="i-tabler-trash mr-2"></div>
                     Delete</el-dropdown-item
