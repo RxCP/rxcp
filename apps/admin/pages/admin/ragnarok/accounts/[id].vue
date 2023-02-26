@@ -17,7 +17,6 @@ onMounted(async () => {
   }
 
   accountDetails.value = response?.data
-  console.log(response?.data)
 })
 </script>
 
