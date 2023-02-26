@@ -1,6 +1,8 @@
 <script setup>
 import { ElSwitch, ElForm, ElInput, ElFormItem } from 'element-plus'
-const { $api } = useNuxtApp()
+
+const { getUser } = useApi()
+const route = useRoute()
 
 const form = reactive({
   firstName: '',
@@ -12,8 +14,9 @@ const form = reactive({
 })
 
 onMounted(async () => {
-  const [data, error, status] = await $api.users.getUser
-    .setParams({ userId: 1 })
+  console.log(route.params.id)
+  const [data, error, status] = await getUser
+    .setParams({ userId: route.params.id })
     .send()
 
   if (status !== 200) {

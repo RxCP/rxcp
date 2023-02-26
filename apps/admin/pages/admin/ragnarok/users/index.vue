@@ -21,7 +21,7 @@ useHead({
 })
 
 const router = useRouter()
-const { $api } = useNuxtApp()
+const { getUsers } = useApi()
 const {
   limit,
   page,
@@ -31,7 +31,7 @@ const {
   search,
   handleSearch,
   setSearchCallback
-} = await usePagination($api.users.getUsers)
+} = await usePagination(getUsers)
 
 setSearchCallback((searchText) => {
   return {
