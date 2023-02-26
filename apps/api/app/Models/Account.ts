@@ -60,7 +60,7 @@ export default class Account extends BaseModel {
   @column()
   public character_slots: number
 
-  @column()
+  @column({ serializeAs: null })
   public pincode: string
 
   @column()

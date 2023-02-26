@@ -70,12 +70,15 @@ const accounts = computed(() => {
     >
       <el-table-column prop="userid" label="User" width="250" fixed sortable>
         <template #default="scope">
-          <div class="flex items-center space-x-4">
+          <NuxtLink
+            :to="`/admin/ragnarok/accounts/${scope.row.account_id}`"
+            class="flex items-center space-x-4 text-gray-500 dark:text-gray-200"
+          >
             <el-avatar
               :src="`https://ui-avatars.com/api/?name=${scope.row.userid}`"
             />
             <span>{{ scope.row.userid }}</span>
-          </div>
+          </NuxtLink>
         </template>
       </el-table-column>
       <el-table-column
