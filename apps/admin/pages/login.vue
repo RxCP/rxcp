@@ -8,7 +8,7 @@ definePageMeta({
   middleware: ['guest']
 })
 
-const { postLogin, getUser } = useApi()
+const { postLogin, getAuthUser } = useApi()
 const { setAccessToken, setAuthUser } = useAuthStore()
 const router = useRouter()
 
@@ -52,7 +52,7 @@ async function onSubmit(values) {
   setAccessToken(data?.token)
 
   // get user authenticated details
-  const [authData, _, authStatus] = await getUser.send()
+  const [authData, _, authStatus] = await getAuthUser.send()
 
   // then save to store
   if (authStatus === 200) {

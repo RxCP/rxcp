@@ -17,7 +17,7 @@ export const apiAuth = (client: Client<Error, Partial<XMLHttpRequest>>) => {
       endpoint: '/api/logout',
       auth: true
     }),
-    getUser: client.createRequest()({
+    getAuthUser: client.createRequest()({
       method: 'GET',
       endpoint: '/api/me',
       auth: true
