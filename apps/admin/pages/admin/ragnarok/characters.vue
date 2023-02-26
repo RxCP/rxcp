@@ -15,13 +15,14 @@ import { format, parseISO } from 'date-fns'
 definePageMeta({
   middleware: ['auth']
 })
+
 useHead({
   title: 'Ragnarok Characters'
 })
 
-const { $api } = useNuxtApp()
+const { getCharacters } = useApi()
 const { limit, page, total, items, isLoading, search, handleSearch } =
-  await usePagination($api.characters.getCharacters)
+  await usePagination(getCharacters)
 
 const accounts = computed(() => {
   return items.value.map((item) => {
