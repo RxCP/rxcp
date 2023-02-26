@@ -20,6 +20,7 @@ useHead({
   title: 'Ragnarok Accounts'
 })
 
+const router = useRouter()
 const { getAccounts } = useApi()
 const { limit, page, total, items, isLoading, search, handleSearch } =
   await usePagination(getAccounts)
@@ -36,6 +37,10 @@ const accounts = computed(() => {
     }
   })
 })
+
+function handleViewDetails(id) {
+  router.push(`/admin/ragnarok/accounts/${id}`)
+}
 </script>
 
 <template>
@@ -70,12 +75,15 @@ const accounts = computed(() => {
     >
       <el-table-column prop="userid" label="User" width="250" fixed sortable>
         <template #default="scope">
-          <div class="flex items-center space-x-4">
+          <NuxtLink
+            :to="`/admin/ragnarok/accounts/${scope.row.account_id}`"
+            class="flex items-center space-x-4 text-gray-500 dark:text-gray-200"
+          >
             <el-avatar
               :src="`https://ui-avatars.com/api/?name=${scope.row.userid}`"
             />
             <span>{{ scope.row.userid }}</span>
-          </div>
+          </NuxtLink>
         </template>
       </el-table-column>
       <el-table-column
@@ -105,9 +113,11 @@ const accounts = computed(() => {
               <template #dropdown>
                 <el-dropdown-menu>
                   <el-dropdown-item
-                    ><div class="i-tabler-pencil mr-2"></div>
-                    Details</el-dropdown-item
+                    @click="handleViewDetails(scope.row.account_id)"
                   >
+                    <div class="i-tabler-pencil mr-2"></div>
+                    Details
+                  </el-dropdown-item>
                   <el-dropdown-item disabled
                     ><div class="i-tabler-trash mr-2"></div>
                     Delete</el-dropdown-item

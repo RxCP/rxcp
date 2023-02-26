@@ -14,7 +14,6 @@ const form = reactive({
 })
 
 onMounted(async () => {
-  console.log(route.params.id)
   const [data, error, status] = await getUser
     .setParams({ userId: route.params.id })
     .send()
