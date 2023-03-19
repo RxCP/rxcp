@@ -15,7 +15,7 @@ importers:
   apps/admin:
     specifiers:
       '@better-typed/hyper-fetch': 1.5.1
-      '@hyper-fetch/core': 3.3.1
+      '@hyper-fetch/core': 3.3.2
       '@iconify/json': ^2.1.158
       '@pinia-plugin-persistedstate/nuxt': 1.0.0
       '@pinia/nuxt': 0.4.7
@@ -42,7 +42,7 @@ importers:
       yup: ^1.0.0
     dependencies:
       '@better-typed/hyper-fetch': 1.5.1
-      '@hyper-fetch/core': 3.3.1
+      '@hyper-fetch/core': 3.3.2
       '@pinia/nuxt': 0.4.7_vue@3.2.47
       '@vueuse/nuxt': 9.13.0_nuxt@3.2.2+vue@3.2.47
       element-plus: 2.2.32_vue@3.2.47
@@ -1336,8 +1336,8 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
 
-  /@hyper-fetch/core/3.3.1:
-    resolution: {integrity: sha512-RcHDViUxNYUB0ZhcwujJxdHWuIBS4YTfr8sTRDIC/ZzuPh28VDeyXYGbF4KJIL9JuqmDQzHDSgbwOerBtx6kQg==}
+  /@hyper-fetch/core/3.3.2:
+    resolution: {integrity: sha512-q3fsg58qy7Fm9W3BSnjE4gjwECSLU5aPrSShNnHtQkuPHHdVkHHTkbDZpKUZHZXolAqChc19gjmiW0JNjlwUCw==}
     dependencies:
       events: 3.3.0
     dev: false
