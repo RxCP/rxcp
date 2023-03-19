@@ -23,7 +23,7 @@ importers:
       '@unocss/preset-attributify': 0.50.1
       '@unocss/preset-icons': 0.50.1
       '@unocss/preset-uno': 0.50.1
-      '@unocss/preset-web-fonts': 0.50.1
+      '@unocss/preset-web-fonts': 0.50.6
       '@vueuse/nuxt': 9.13.0
       date-fns: ^2.29.3
       element-plus: 2.2.32
@@ -56,7 +56,7 @@ importers:
       '@unocss/preset-attributify': 0.50.1
       '@unocss/preset-icons': 0.50.1
       '@unocss/preset-uno': 0.50.1
-      '@unocss/preset-web-fonts': 0.50.1
+      '@unocss/preset-web-fonts': 0.50.6
       date-fns: 2.29.3
       eslint: 8.35.0
       eslint-config-prettier: 8.6.0_eslint@8.35.0
@@ -2638,6 +2638,10 @@ packages:
     resolution: {integrity: sha512-jnWClMMGybzyXcRX4DY+g/DJ4JrH9w8YN/H6OTHt0WyrNfR1V3ebJtEc6gbqCkZCh2XmqSA5F49QPhTbErYePg==}
     dev: true
 
+  /@unocss/core/0.50.6:
+    resolution: {integrity: sha512-WMIp8xr7YSlID2whqfRGLwagp59e6u4ckPACEpoDOW8sTeSPRZm54hxPhuWXD1SQuqcwHPMtM9nzGD8UOnqQxA==}
+    dev: true
+
   /@unocss/inspector/0.50.1:
     resolution: {integrity: sha512-pKjhO8hlkcYVksnQn/ly1HLnh49ZYu/MDnexaQaPtS3/1KLibiinTNqzZpZJZ71T0dVUadW9fMfV2t283GhJzA==}
     dependencies:
@@ -2721,6 +2725,13 @@ packages:
     resolution: {integrity: sha512-V9i5t57gPbpuuP7rKIS9wj2PUuLojG8/nkMIutivIOXNK+O+7klp3YDrs+0cwUjCRPgXCbnbBTAs/eXOjTitUQ==}
     dependencies:
       '@unocss/core': 0.50.1
+      ofetch: 1.0.1
+    dev: true
+
+  /@unocss/preset-web-fonts/0.50.6:
+    resolution: {integrity: sha512-81meQMAq2lOy7k5qHQZ2EGWN5iJQUJOLl8dc9dxIo1eZPgiZQruxTVr4AkNVH5LRFcjHs/1sDb2CYxAiakwTVg==}
+    dependencies:
+      '@unocss/core': 0.50.6
       ofetch: 1.0.1
     dev: true
 
@@ -7948,7 +7959,7 @@ packages:
     dependencies:
       destr: 1.2.2
       node-fetch-native: 1.0.2
-      ufo: 1.1.0
+      ufo: 1.1.1
 
   /ohash/1.0.0:
     resolution: {integrity: sha512-kxSyzq6tt+6EE/xCnD1XaFhCCjUNUaz3X30rJp6mnjGLXAAvuPFqohMdv0aScWzajR45C29HyBaXZ8jXBwnh9A==}
@@ -10025,9 +10036,6 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
-
-  /ufo/1.1.0:
-    resolution: {integrity: sha512-LQc2s/ZDMaCN3QLpa+uzHUOQ7SdV0qgv3VBXOolQGXTaaZpIur6PwUclF5nN2hNkiTRcUugXd1zFOW3FLJ135Q==}
 
   /ufo/1.1.1:
     resolution: {integrity: sha512-MvlCc4GHrmZdAllBc0iUDowff36Q9Ndw/UzqmEKyrfSzokTd9ZCy1i+IIk5hrYKkjoYVQyNbrw7/F8XJ2rEwTg==}
