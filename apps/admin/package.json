@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.1.158",
-    "@pinia-plugin-persistedstate/nuxt": "1.0.0",
+    "@pinia-plugin-persistedstate/nuxt": "1.1.1",
     "@unocss/nuxt": "0.50.6",
     "@unocss/preset-attributify": "0.50.6",
     "@unocss/preset-icons": "0.50.6",
