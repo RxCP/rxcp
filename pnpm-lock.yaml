@@ -29,8 +29,8 @@ importers:
         specifier: 9.13.0
         version: 9.13.0(nuxt@3.3.1)(vue@3.2.47)
       element-plus:
-        specifier: 2.2.32
-        version: 2.2.32(vue@3.2.47)
+        specifier: 2.3.3
+        version: 2.3.3(vue@3.2.47)
       socket.io-client:
         specifier: ^4.5.4
         version: 4.5.4
@@ -4686,8 +4686,8 @@ packages:
   /electron-to-chromium@1.4.333:
     resolution: {integrity: sha512-YyE8+GKyGtPEP1/kpvqsdhD6rA/TP1DUFDN4uiU/YI52NzDxmwHkEb3qjId8hLBa5siJvG0sfC3O66501jMruQ==}
 
-  /element-plus@2.2.32(vue@3.2.47):
-    resolution: {integrity: sha512-DTJMhYOy6MApbmh6z/95hPTK5WrBiNHGzV4IN+uEkup1WoimQ+Qyt8RxKdTe/X1LWEJ8YgWv/Cl8P4ocrt5z5g==}
+  /element-plus@2.3.3(vue@3.2.47):
+    resolution: {integrity: sha512-Zy61OXrG6b4FF3h29A9ZOUkaEQXjCuFwNa7DlpB3Vo+42Tw5zBbHe5a4BY7i56TVJG5xTbS9UQyA726J91pDqg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
