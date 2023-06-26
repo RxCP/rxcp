@@ -190,8 +190,8 @@ importers:
         specifier: 4.2.1
         version: 4.2.1(eslint-config-prettier@8.8.0)(eslint@8.37.0)(prettier@2.8.8)
       pino-pretty:
-        specifier: 9.4.0
-        version: 9.4.0
+        specifier: 10.0.0
+        version: 10.0.0
       typescript:
         specifier: 4.8.4
         version: 4.8.4
@@ -8204,8 +8204,8 @@ packages:
       split2: 4.1.0
     dev: true
 
-  /pino-pretty@9.4.0:
-    resolution: {integrity: sha512-NIudkNLxnl7MGj1XkvsqVyRgo6meFP82ECXF2PlOI+9ghmbGuBUUqKJ7IZPIxpJw4vhhSva0IuiDSAuGh6TV9g==}
+  /pino-pretty@10.0.0:
+    resolution: {integrity: sha512-zKFjYXBzLaLTEAN1ayKpHXtL5UeRQC7R3lvhKe7fWs7hIVEjKGG/qIXwQt9HmeUp71ogUd/YcW+LmMwRp4KT6Q==}
     hasBin: true
     dependencies:
       colorette: 2.0.19
