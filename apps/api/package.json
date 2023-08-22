@@ -66,7 +66,7 @@
     "@adonisjs/repl": "3.1.11",
     "@adonisjs/view": "6.2.0",
     "adonis-lucid-filter": "4.1.0",
-    "adonis-lucid-soft-deletes": "1.4.3",
+    "adonis-lucid-soft-deletes": "1.4.4",
     "is-port-reachable": "3.1.0",
     "luxon": "3.3.0",
     "mjml": "4.14.1",
