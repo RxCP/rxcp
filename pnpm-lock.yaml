@@ -200,8 +200,8 @@ importers:
         specifier: 4.8.4
         version: 4.8.4
       youch:
-        specifier: 3.2.3
-        version: 3.2.3
+        specifier: 3.3.3
+        version: 3.3.3
       youch-terminal:
         specifier: 2.2.0
         version: 2.2.0
@@ -1715,7 +1715,7 @@ packages:
     dependencies:
       '@poppinss/cliui': 3.0.5
       jest-diff: 29.4.3
-      youch: 3.2.3
+      youch: 3.3.3
       youch-terminal: 2.2.0
     dev: true
 
@@ -11467,8 +11467,8 @@ packages:
       wordwrap: 1.0.0
     dev: true
 
-  /youch@3.2.3:
-    resolution: {integrity: sha512-ZBcWz/uzZaQVdCvfV4uk616Bbpf2ee+F/AvuKDR5EwX/Y4v06xWdtMluqTD7+KlZdM93lLm9gMZYo0sKBS0pgw==}
+  /youch@3.3.3:
+    resolution: {integrity: sha512-qSFXUk3UZBLfggAW3dJKg0BMblG5biqSF8M34E06o5CSsZtH92u9Hqmj2RzGiHDi64fhe83+4tENFP2DB6t6ZA==}
     dependencies:
       cookie: 0.5.0
       mustache: 4.2.0
