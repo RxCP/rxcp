@@ -20,7 +20,7 @@
     "@unocss/preset-web-fonts": "0.55.7",
     "date-fns": "^2.29.3",
     "eslint": "8.37.0",
-    "eslint-config-prettier": "8.8.0",
+    "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier-vue": "4.2.0",
     "eslint-plugin-vue": "9.11.0",
     "lodash-es": "4.17.21",
