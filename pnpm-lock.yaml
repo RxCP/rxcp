@@ -119,7 +119,7 @@ importers:
         version: 18.3.0(@adonisjs/application@5.3.0)(@adonisjs/core@5.9.0)(mysql@2.18.1)
       '@adonisjs/mail':
         specifier: 8.1.2
-        version: 8.1.2(@adonisjs/core@5.9.0)(@adonisjs/view@6.2.0)(luxon@3.3.0)
+        version: 8.1.2(@adonisjs/core@5.9.0)(@adonisjs/view@6.2.0)(luxon@3.5.0)
       '@adonisjs/redis':
         specifier: 7.3.2
         version: 7.3.2(@adonisjs/core@5.9.0)
@@ -139,8 +139,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       luxon:
-        specifier: 3.3.0
-        version: 3.3.0
+        specifier: 3.5.0
+        version: 3.5.0
       mjml:
         specifier: 4.14.1
         version: 4.14.1
@@ -299,7 +299,7 @@ packages:
       '@adonisjs/redis': 7.3.2(@adonisjs/core@5.9.0)
       '@poppinss/hooks': 5.0.3(@adonisjs/application@5.3.0)
       '@poppinss/utils': 5.0.0
-      luxon: 3.3.0
+      luxon: 3.5.0
     transitivePeerDependencies:
       - '@adonisjs/application'
     dev: false
@@ -497,7 +497,7 @@ packages:
       igniculus: 1.5.0
       knex: 2.3.0(mysql@2.18.1)
       knex-dynamic-connection: 3.0.0(knex@2.3.0)
-      luxon: 3.3.0
+      luxon: 3.5.0
       macroable: 7.0.2
       pretty-hrtime: 1.0.3
       qs: 6.11.0
@@ -515,7 +515,7 @@ packages:
       - tedious
     dev: false
 
-  /@adonisjs/mail@8.1.2(@adonisjs/core@5.9.0)(@adonisjs/view@6.2.0)(luxon@3.3.0):
+  /@adonisjs/mail@8.1.2(@adonisjs/core@5.9.0)(@adonisjs/view@6.2.0)(luxon@3.5.0):
     resolution: {integrity: sha512-5mjSbrm9CZdjMVB3Ht3LBfifZPtijAK51ZmtCrga5gPhNYn3SgJdhD0NIg05ROq1+au1g53I8cZ8cESA3g84DQ==}
     peerDependencies:
       '@adonisjs/core': ^5.1.0
@@ -529,7 +529,7 @@ packages:
       fastq: 1.13.0
       get-stream: 6.0.1
       got: 11.8.5
-      ical-generator: 3.5.2(luxon@3.3.0)
+      ical-generator: 3.5.2(luxon@3.5.0)
       multi-part: 3.0.0
       nodemailer: 6.7.8
     transitivePeerDependencies:
@@ -624,7 +624,7 @@ packages:
       '@poppinss/utils': 5.0.0
       '@types/luxon': 3.0.1
       '@types/validator': 13.7.7
-      luxon: 3.3.0
+      luxon: 3.5.0
       normalize-url: 6.1.0
       tmp-cache: 1.1.0
       validator: 13.7.0
@@ -6483,7 +6483,7 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  /ical-generator@3.5.2(luxon@3.3.0):
+  /ical-generator@3.5.2(luxon@3.5.0):
     resolution: {integrity: sha512-SJzGuRSH50AqzHc8niA4jSO7Gq/CFMlheQZhXQcLihhGgubNRaYHFwhc21owLRLxAP5LnvReDNPCURo9sXs8Wg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -6516,7 +6516,7 @@ packages:
       rrule:
         optional: true
     dependencies:
-      luxon: 3.3.0
+      luxon: 3.5.0
       uuid-random: 1.3.2
     dev: false
 
@@ -7316,8 +7316,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /luxon@3.3.0:
-    resolution: {integrity: sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==}
+  /luxon@3.5.0:
+    resolution: {integrity: sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ==}
     engines: {node: '>=12'}
 
   /macroable@7.0.2:
