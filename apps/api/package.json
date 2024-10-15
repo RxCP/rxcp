@@ -58,7 +58,7 @@
   "dependencies": {
     "@adonisjs/auth": "8.2.3",
     "@adonisjs/bouncer": "2.3.0",
-    "@adonisjs/core": "5.9.0",
+    "@adonisjs/core": "6.14.1",
     "@adonisjs/limiter": "1.0.1",
     "@adonisjs/lucid": "18.3.0",
     "@adonisjs/mail": "8.1.2",
