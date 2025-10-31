@@ -1,7 +1,13 @@
 import { schema, rules } from '@ioc:Adonis/Core/Validator'
 
-export const firstNameRules = schema.string({ trim: true }, [rules.maxLength(20)])
-export const lastNameRules = schema.string({ trim: true }, [rules.maxLength(20)])
+export const firstNameRules = schema.string({ trim: true }, [
+  rules.minLength(2),
+  rules.maxLength(20),
+])
+export const lastNameRules = schema.string({ trim: true }, [
+  rules.minLength(2),
+  rules.maxLength(20),
+])
 export const emailRules = (id?: number) => {
   let fieldRules = [rules.maxLength(30), rules.email()]
   if (id) {

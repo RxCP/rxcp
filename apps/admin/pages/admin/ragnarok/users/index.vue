@@ -21,7 +21,7 @@ useHead({
 })
 
 const router = useRouter()
-const { $api } = useNuxtApp()
+const { getUsers } = useApi()
 const {
   limit,
   page,
@@ -31,7 +31,7 @@ const {
   search,
   handleSearch,
   setSearchCallback
-} = await usePagination($api.users.getUsers)
+} = await usePagination(getUsers)
 
 setSearchCallback((searchText) => {
   return {
@@ -79,7 +79,9 @@ function handleViewDetails(id) {
     <div class="flex flex-col md:flex-row mb-6">
       <div>
         <h1 class="my-0">Users</h1>
-        <p class="text-slate-300 text-lg mt-2">Manage ragnarok users.</p>
+        <p class="text-slate-300 text-md mt-2 leading-normal">
+          Administer and manage your user accounts.
+        </p>
       </div>
       <div class="md:ml-auto md:w-80">
         <el-input v-model="search" placeholder="Search" @input="handleSearch" />

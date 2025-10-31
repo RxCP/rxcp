@@ -15,13 +15,15 @@ import { format, parseISO } from 'date-fns'
 definePageMeta({
   middleware: ['auth']
 })
+
 useHead({
   title: 'Ragnarok Accounts'
 })
 
-const { $api } = useNuxtApp()
+const router = useRouter()
+const { getAccounts } = useApi()
 const { limit, page, total, items, isLoading, search, handleSearch } =
-  await usePagination($api.accounts.getAccounts)
+  await usePagination(getAccounts)
 
 const accounts = computed(() => {
   return items.value.map((item) => {
@@ -35,6 +37,10 @@ const accounts = computed(() => {
     }
   })
 })
+
+function handleViewDetails(id) {
+  router.push(`/admin/ragnarok/accounts/${id}`)
+}
 </script>
 
 <template>
@@ -42,7 +48,9 @@ const accounts = computed(() => {
     <div class="flex mb-6">
       <div>
         <h1 class="my-0">Accounts</h1>
-        <p class="text-slate-300 text-lg mt-2">Manage ragnarok accounts.</p>
+        <p class="text-slate-300 text-md leading-normal mt-2">
+          Administer and manage your Ragnarok user accounts.
+        </p>
       </div>
       <div class="ml-auto md:w-80">
         <el-input v-model="search" placeholder="Search" @input="handleSearch" />
@@ -67,12 +75,15 @@ const accounts = computed(() => {
     >
       <el-table-column prop="userid" label="User" width="250" fixed sortable>
         <template #default="scope">
-          <div class="flex items-center space-x-4">
+          <NuxtLink
+            :to="`/admin/ragnarok/accounts/${scope.row.account_id}`"
+            class="flex items-center space-x-4 text-gray-500 dark:text-gray-200"
+          >
             <el-avatar
               :src="`https://ui-avatars.com/api/?name=${scope.row.userid}`"
             />
             <span>{{ scope.row.userid }}</span>
-          </div>
+          </NuxtLink>
         </template>
       </el-table-column>
       <el-table-column
@@ -102,9 +113,11 @@ const accounts = computed(() => {
               <template #dropdown>
                 <el-dropdown-menu>
                   <el-dropdown-item
-                    ><div class="i-tabler-pencil mr-2"></div>
-                    Details</el-dropdown-item
+                    @click="handleViewDetails(scope.row.account_id)"
                   >
+                    <div class="i-tabler-pencil mr-2"></div>
+                    Details
+                  </el-dropdown-item>
                   <el-dropdown-item disabled
                     ><div class="i-tabler-trash mr-2"></div>
                     Delete</el-dropdown-item

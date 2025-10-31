@@ -6,8 +6,11 @@ import { ElButton, ElAlert, ElForm, ElInput, ElFormItem } from 'element-plus'
   <div class="flex mb-8">
     <div>
       <h1 class="my-0">Email Address</h1>
-      <p class="text-gray-400 dark:text-slate-300 text-lg mt-2 mb-0">
-        Change your email address.
+      <p
+        class="text-gray-400 dark:text-slate-300 text-md mt-2 mb-0 leading-normal"
+      >
+        Change the email address associated with your account to ensure that you
+        receive all account-related communication.
       </p>
     </div>
   </div>
@@ -25,7 +28,7 @@ import { ElButton, ElAlert, ElForm, ElInput, ElFormItem } from 'element-plus'
       </div>
       <div class="grid md:grid-cols-2 gap-4">
         <el-alert
-          title="Password is required to change your email address."
+          title="To ensure account security, please provide your password in order to change your email address."
           type="info"
           :closable="false"
           show-icon

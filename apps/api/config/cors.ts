@@ -43,10 +43,8 @@ const corsConfig: CorsConfig = {
   | String (*)        - A wildcard (*) to allow all request origins.
   | Function          - Receives the current origin string and should return
   |                     one of the above values.
-  | http://localhost:3000 = testing socket connection using npx server
-  | http://localhost:8080 - default admin URL
   */
-  origin: ['localhost', 'http://localhost:3000', Env.get('ADMIN_BASE_URL')],
+  origin: ['localhost', Env.get('ADMIN_BASE_URL')],
 
   /*
   |--------------------------------------------------------------------------
@@ -58,7 +56,7 @@ const corsConfig: CorsConfig = {
   |
   | Following is the list of default methods. Feel free to add more.
   */
-  methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'HEAD', 'POST', 'PUT', 'PATCH', 'DELETE'],
 
   /*
   |--------------------------------------------------------------------------

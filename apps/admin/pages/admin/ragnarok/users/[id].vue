@@ -1,6 +1,8 @@
 <script setup>
 import { ElSwitch, ElForm, ElInput, ElFormItem } from 'element-plus'
-const { $api } = useNuxtApp()
+
+const { getUser } = useApi()
+const route = useRoute()
 
 const form = reactive({
   firstName: '',
@@ -12,8 +14,8 @@ const form = reactive({
 })
 
 onMounted(async () => {
-  const [data, error, status] = await $api.users.getUser
-    .setParams({ userId: 1 })
+  const [data, error, status] = await getUser
+    .setParams({ userId: route.params.id })
     .send()
 
   if (status !== 200) {
@@ -44,8 +46,11 @@ onMounted(async () => {
     <div class="flex mb-6">
       <div>
         <h1 class="my-0">User Details</h1>
-        <p class="text-gray-400 dark:text-slate-300 text-lg mt-2">
-          Manage user information.
+        <p
+          class="text-gray-400 dark:text-slate-300 text-md leading-normal mt-2"
+        >
+          Access and manage user information, including login credentials,
+          account settings, and privacy preferences.
         </p>
       </div>
     </div>

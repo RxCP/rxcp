@@ -6,6 +6,11 @@ export const apiAccounts = (client: Client<Error, Partial<XMLHttpRequest>>) => {
       method: 'GET',
       endpoint: '/admin/api/accounts',
       auth: true
+    }),
+    getAccount: client.createRequest()({
+      method: 'GET',
+      endpoint: '/admin/api/accounts/:accountId',
+      auth: true
     })
   }
 }
