@@ -26,6 +26,15 @@ export default class extends BaseSeeder {
           port: '6900',
         }),
       },
+      // Product settings
+      {
+        name: 'shop_currency',
+        value: JSON.stringify({
+          symbol: '$',
+          name: 'United States Dollar',
+          abbreviation: 'USD',
+        }),
+      },
     ])
   }
 }
