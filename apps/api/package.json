@@ -58,7 +58,7 @@
   "dependencies": {
     "@adonisjs/auth": "8.2.3",
     "@adonisjs/bouncer": "2.3.0",
-    "@adonisjs/core": "5.9.0",
+    "@adonisjs/core": "6.2.0",
     "@adonisjs/limiter": "1.0.1",
     "@adonisjs/lucid": "18.3.0",
     "@adonisjs/mail": "8.1.2",
@@ -69,13 +69,13 @@
     "adonis-lucid-soft-deletes": "1.4.3",
     "is-port-reachable": "3.1.0",
     "luxon": "3.3.0",
-    "mjml": "4.14.1",
+    "mjml": "4.15.0",
     "mysql": "2.18.1",
     "phc-argon2": "1.1.4",
     "proxy-addr": "2.0.7",
     "rand-token": "1.0.1",
     "reflect-metadata": "0.1.13",
-    "socket.io": "^4.5.3",
+    "socket.io": "^4.8.0",
     "source-map-support": "0.5.21"
   },
   "engines": {
